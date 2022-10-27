@@ -1,0 +1,5545 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap');
+
+@font-face {
+    font-family: 'GenRyuMin';
+    src: url('../vendor/fontawesome-free/webfonts/GenRyuMin-B.ttc') format("truetype");
+}
+
+@font-face {
+    font-family: 'GenRyuMin-EL';
+    src: url('../vendor/fontawesome-free/webfonts/GenRyuMin-EL.ttc') format("truetype");
+}
+
+@font-face {
+    font-family: 'Arial-Black';
+    src: url('../vendor/fontawesome-free/webfonts/Arial-Black.TTF') format("truetype");
+}
+
+@font-face {
+    font-family: 'Barlow-Medium';
+    src: url('../vendor/fontawesome-free/webfonts/Barlow-Medium.ttf');
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: .8rem
+    }
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/* 繁體中文、簡體中文共用 */
+body {
+    background: #0b1438;
+    overflow-x: hidden;
+    font-size: 1.4rem;
+    font-weight: 100;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+p {
+    line-height: 200%;
+    letter-spacing: 1px;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+a {
+    color: #44392E
+}
+
+a:hover {
+    color: #8A7064
+}
+
+.text-primary {
+    color: #fed136 !important
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+.none {
+    display:none;
+}
+
+.w-full {
+    width: 100%;
+}
+.h-full {
+    height: 100%;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.flex li{
+    display: flex;
+}
+
+.flex span {
+    align-self: center;
+    display: block;
+    float: right;
+}
+
+.flex .img-link{
+    /* width: 50%; */
+    display:block;
+    /* margin-right: 20px; */
+}
+.flex img{
+    max-width: 100%;
+}
+
+.mb-20px {
+    margin-bottom: 20px;
+}
+
+.mb-55px {
+    margin-bottom: 55px;
+}
+
+.mb-45px {
+    margin-bottom: 45px;
+}
+
+.mb-75px {
+    margin-bottom: 75px;
+}
+
+.mb-130px {
+    margin-bottom: 130px;
+}
+
+.ml-10{
+    margin-left: 10.666667%;
+}
+
+.ml-16 {
+    margin-left: 18.666667%;
+}
+
+.ml-23 {
+    margin-left: 23.666667%;
+}
+
+.ml-35{
+    margin-left: 35.333333%;
+}
+
+.ml-43 {
+    margin-left: 43.33333%;
+}
+
+.ml-51 {
+    margin-left: 51.333333%;
+}
+
+.ml-54 {
+    margin-left: 54.666667%;
+}
+
+.select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.page-section {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0
+}
+
+.page-section p.section-text {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.page-section h2.section-heading {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    /* line-height: 47px; */
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.page-section h3.section-subheading {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 55px;
+    text-transform: none;
+    color: #003e64;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+.page-section .section-title {
+    margin-bottom: 70px;
+    text-align: center;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.ic-animation {
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    65% {
+        -webkit-transform: translateY(-6.5px);
+        transform: translateY(-6.5px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-section {
+        padding: 60px 0
+    }
+}
+
+.media-icon {
+    width: 40px;
+}
+
+@media (max-width: 768px) {
+    .media-icon {
+        width: 45px;
+    }
+}
+
+.bg-dark h2.section-heading,
+.bg-dark h3.section-subheading {
+    color: white
+}
+
+.bg-dark h2.section-heading::after {
+    background: white
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 80px 0
+    }
+}
+
+::-moz-selection {
+    background: #cebfac;
+    text-shadow: none
+}
+
+/* ::selection {
+    background: #cebfac;
+    text-shadow: none
+} */
+
+img::-moz-selection {
+    background: transparent
+}
+
+img::selection {
+    background: transparent
+}
+
+img::-moz-selection {
+    background: transparent
+}
+
+.bg-gray {
+    background: #e9ecef
+}
+
+.border-text {
+    font-size: 2.5rem;
+    border: 1px solid;
+    padding: 1em 3em;
+    font-weight: 900;
+    color: #003e64;
+    margin-bottom: 3rem
+}
+
+@media (max-width: 992px) {
+    .border-text {
+        padding: 1em 1em
+    }
+}
+
+.btn {
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-weight: 700;
+    /* width: 250px; */
+    border-radius: 3rem;
+    color: white
+}
+
+.btn-xl {
+    font-size: 18px;
+    padding: 20px 40px
+}
+.btn-xii {
+    font-size: 1.5rem;
+    letter-spacing: 0.3em;
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    border:1.5px solid ;
+    border-image: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%) 1;
+    padding: .6em 0.7em !important;
+    transition: .5s;
+}
+
+.btn-xii:hover{
+    font-size: 1.7rem;
+    color: white;
+    text-shadow: 2px 3px 3px black;
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    border:1.5px solid ;
+    border-image: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%) 1;
+    text-decoration: none;
+}
+
+.btn-test {
+    font-size: 1.5rem;
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    border:1.5px solid ;
+    border-image: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%) 1;
+    padding: .6em 0.7em !important;
+    transition: .5s;
+}
+
+.btn-test:hover{
+    font-size: 1.7rem;
+    color: white;
+    text-shadow: 2px 3px 3px black;
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    border:1.5px solid ;
+    border-image: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%) 1;
+    text-decoration: none;
+}
+
+.btn-md {
+    /* width: 250px; */
+    padding: 0rem 5rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    border-radius: 3rem;
+    border: 2px solid ;
+}
+
+#mainNav {
+    background-color: #1F213C;
+    width: 100%
+}
+
+#mainNav #BackTop {
+    cursor: pointer;
+}
+
+#mainNav #BackTop .text:hover {
+    color: #614F3D
+}
+
+
+#mainNav .navbar-toggler {
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: #003e64;
+    border: 0;
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+.change {
+    background-color: #1F213C !important;
+
+}
+
+#mainNav .show-menu {
+    display: none;
+}
+
+#mainNav .show-menu2 {
+    display: flex;
+}
+
+#mainNav img .navbar-collapse {
+    display: none;
+}
+
+#mainNav img .change {
+    display: block;
+}
+
+#mainNav .navbar-brand {
+    color: #003e64;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    line-height: 1.1;
+    font-weight: bold;
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#mainNav .navbar-brand.active,
+#mainNav .navbar-brand:active,
+#mainNav .navbar-brand:focus {
+    color: #fec503
+}
+
+#mainNav .navbar-brand img {
+    margin-right: 10px;
+    /* width: 100%; */
+}
+
+#mainNav .navbar-brand span {
+    font-size: 1.2rem;
+    font-weight: normal
+}
+
+.btn-mint,
+#mainNav .navbar-phone {
+    text-decoration: none;
+    display: none;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0.75em 0;
+    letter-spacing: 1px;
+    color: #fff;
+    line-height: 27px;
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#mainNav .navbar-nav .nav-item:last-child .nav-link {
+    color: white;
+}
+
+#mainNav .navbar-nav .nav-item:nth-last-child(2) {
+    align-self: center;
+}
+
+#mainNav .navbar-nav .nav-item:nth-last-child(2) .nav-link {
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    border:1.5px solid ;
+    border-image: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%) 1;
+    padding: .2em 0.7em !important;
+    transition: .5s;
+}
+
+#mainNav .navbar-nav .nav-item:nth-last-child(2) .nav-link:hover {
+    color: white;
+    text-shadow: 2px 3px 3px black;
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    border:1.5px solid ;
+    border-image: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%) 1;
+    text-decoration: none;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    /*color: #fed136;*/
+    font-weight: bold;
+    color: #D7BE8A;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active::after {
+    content: '';
+    /*height: 4px;*/
+    border-bottom: solid 3px;
+    /*width: 2em;*/
+    background: #8C715B;
+    display: block;
+    /*margin: .8rem auto 0;*/
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #fff;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-item.router-link-exact-active,
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #D7BE8A;
+    text-decoration: none;
+    background-color: #ffffff00;
+}
+
+.dropdown-menu {
+    background-color: #ffffff42;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+@media (min-width: 1024px) {
+    #mainNav .navbar-nav .nav-item .nav-link {
+        padding: 1.1em 0.7em !important
+    }
+    
+}
+
+@media (min-width: 992px) {
+    #mainNav {
+        padding: 15px 3rem;
+        -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+        transition: padding-top 0.3s, padding-bottom 0.3s;
+        border: none;
+    }
+
+    #mainNav .navbar-brand {
+        font-size: 1.4em;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link {
+        padding: 1.1em 0.5em !important
+    }
+
+    #mainNav.navbar-shrink {
+        padding-top: 0;
+        padding-bottom: 0
+    }
+
+    #mainNav.navbar-shrink .navbar-brand {
+        font-size: 1.25em;
+        padding: 12px 0
+    }
+
+    #mainNav .menuIcon {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    #mainNav {
+        text-align: center;
+    }
+
+    #mainNav .navbar-brand img {
+        width: 100%;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link.active::after {
+        border-bottom: solid 0px;
+    }
+
+    #mainNav .dropdown-menu {
+        text-align: center;
+        background-color: #ffffff42;
+        border: 0px solid;
+        border-radius: 0;
+    }
+
+    #mainNav .navbar-phone {
+        display:block
+    }
+
+    #mainNav .show-menu {
+        display: flex;
+    }
+    
+    #mainNav .show-menu2 {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+
+    #mainNav .navbar-brand img {
+        width: 200px;
+    }
+} 
+
+header .page-header {
+    position: relative;
+    width: 100%;
+    /* height: 635px; */
+    padding: 100px;
+}
+
+#slider {
+    margin-top: 90px;
+    background: url("../img/xii_persona/bg/banner_bg.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 601px;
+    
+}
+
+#slider .slider-gift-img {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#slider .gift-img-br{
+    position: absolute;
+    left: 17%;
+    top: 9%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .5s;
+}
+
+#slider .gift-img-b {
+    position: absolute;
+    right: 25%;
+    top: 2%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .8s;
+}
+
+#slider .gift-img-d {
+    justify-items: center;
+    /* position: absolute;
+    left: 45.5%;
+    top: 18%; */
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#slider .gift-img-w {
+    position: absolute;
+    top: 99%;
+    right: 20%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .3s;
+}
+
+#slider .intro-text {
+    padding: 6rem 4rem;
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#slider .intro-text .intro {
+    display: inline;
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 65px;
+    letter-spacing: 0.1em;
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#slider .intro-text .intro-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0.3em;
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+@media (max-width: 1080px) {
+
+    #slider {
+        margin-top: 70px;
+    }
+
+}
+
+@media (max-width: 1025px) {
+
+    #slider {
+        background: url("../img/xii_persona/bg/banner_bg.png") no-repeat center;
+        background-size: cover;
+        margin-top: 85px;
+    }
+
+    #slider .intro-text {
+        padding: 3rem 2rem;
+        margin-top: 45px;
+    }
+
+    #slider .intro-text .intro {
+        display: block;
+        margin-bottom: 18px;
+
+    }
+    #slider .gift-img-br{
+        display: none;
+    }
+    
+    #slider .gift-img-b {
+        display: none;
+    }
+    
+    #slider .gift-img-w {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+
+    #slider {
+        background-size: cover;
+    }
+
+    #slider .intro-text .intro-lead-in {
+        font-size: 3rem;
+    }
+
+    #slider .intro-text .intro-heading {
+        font-size: 1.4rem
+    }
+
+    #slider .intro-text .intro-lead-strong {
+        font-size: 3rem;
+    }
+
+    #slider .intro-text .intro-r {
+        margin-right: 2px;
+    }
+
+    #slider .intro-text .intro-l {
+        margin-left: 0px;
+    }
+
+    #slider .intro-text .intro-heading {
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0.3em;
+    }
+
+}
+
+@media (max-width: 820px) {
+
+
+    .btn-mint {
+        display:block
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+    #slider .intro-text {
+        padding: 3rem 2rem;
+        /* margin-top: 175px; */
+    }
+
+    #slider .intro-text .intro {
+        font-size: 3rem;
+    }
+
+    #slider .slider-animation {
+        animation:jump-phone-576 1s ease-out infinite ;
+    }
+}
+
+@media (max-width: 425px) {
+
+    #slider {
+        background: url("../img/xii_persona/bg/banner_phone_bg.png") no-repeat center;
+        background-size: cover;
+        margin-top: 63px;
+    }
+
+    /* #slider .intro-text {
+        margin-top: 110px;
+    } */
+
+    #slider .intro-text .intro {
+        margin-bottom: 0px;
+    }
+    #slider .gift-img-br{
+        display: block;
+        left: 8%;
+        top: 11%;
+        width: 70px;
+    }
+    #slider .gift-img-w{
+        display: block;
+        left: 73%;
+        bottom: 0;
+        width: 90px;
+    }
+
+}
+
+@media (max-width: 391px) {
+    #slider .intro-text .intro {
+        font-size: 2.5rem;
+    }
+}
+
+
+#story {
+    background: url("../img/xii_persona/bg/story_bg.png") no-repeat center;
+    background-size: cover;
+}
+
+#story img.story-img {
+    position: absolute;
+    top: -118px;
+    left: -127px;
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+@media (max-width: 992px) {
+
+    #story {
+        background: url("../img/xii_persona/bg/story_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+
+    #story img.story-img {
+        display: none;
+    }
+}
+
+#mythology {
+    background: url("../img/xii_persona/bg/mythology_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1171px; */
+}
+
+.mythology-hide {
+    overflow: hidden;
+    /* height: 0px;
+    transition: .35s ease; */
+}
+
+.mythology-show {
+    display: block;
+    /* max-height: 100%;
+    transition: .35s ease; */
+}
+
+ #check-out {
+    display: none;
+}
+
+.mythology-mask {
+    display: block;
+    margin: auto;
+    width: 44px;
+    height: 22px;
+    background: #f0f0f5;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding-top: 6px;
+    cursor: pointer;
+}
+
+.mask {
+    width: 100%;
+    padding-top: 100px;
+    /* background: linear-gradient(transparent 45%, #1f213c); */
+    background-image: linear-gradient(-180deg,transparent 0%,#1f213c 100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.btn-mythology-up,
+.btn-mythology-down {
+    display: block;
+    margin: auto;
+    font-size: 1.5rem;
+    color: white;
+    background-color: transparent;
+    border: 1.5px solid white;
+    padding: .6em 0.7em !important;
+    transition: .5s;
+}
+
+.btn-mythology-up::before {
+    display: inline-block;
+    margin-right: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0.3em solid;
+    border-left: 0.3em solid transparent;
+}
+
+.btn-mythology-down::before {
+    display: inline-block;
+    margin-right: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.btn-mythology-up:hover,
+.btn-mythology-down:hover {
+    font-size: 1.7rem;
+    color: black;
+    background-color: white;
+    border-color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    #mythology {
+        height: auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .mask {
+        padding-top: 500px;
+        background-image: linear-gradient(-180deg,transparent 0%,#1f213c 100%);
+    }
+}
+
+@media (max-width: 425px) {
+    #mythology {
+        background: url("../img/xii_persona/bg/mythology_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+}
+
+#psychometric {
+    background: url("../img/xii_persona/bg/psychometric_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 836px; */
+}
+
+#psychometric .psychometric-text{
+    position: relative;
+    text-align: center;
+    letter-spacing: 0.25em;
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#psychometric .psychometric-text::before,
+#psychometric .psychometric-text::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 70px;
+    color: white;
+    background: #1f213c;
+    z-index: 1;
+}
+
+#psychometric .psychometric-text::before {
+    left: 0;
+}
+
+#psychometric .psychometric-text::after {
+    right: 0;
+}
+
+#psychometric .psychometric-content {
+    display: inline;
+}
+
+#psychometric .psychometric-p {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+#psychometric .psychometric-border {
+    border: 1px solid #888888;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    border-image: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%) 1;
+    width: 100%;
+}
+#psychometric .psychometric-border::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-color: #e8e8e8 transparent transparent; 
+    border-style: solid solid solid; 
+    border-width: 20px 30px 20px 30px; 
+    bottom: -40px;
+    right: 46.5%; 
+}
+#psychometric .psychometric-border::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-color: #1f213c transparent transparent; 
+    border-style: solid solid solid solid; 
+    border-width: 20px 30px 20px 30px; 
+    right: 46.5%;
+    bottom: -37px;
+}
+
+#psychometric .angel-animation {
+    position: relative;    
+}
+
+#psychometric .angel-animation::before,
+#psychometric .angel-animation::after {
+    display: inline;
+    position: absolute;
+    
+}
+
+#psychometric .angel-animation::before {
+    content: url('../img/xii_persona/bg/angel1.png');
+    /* content: "";
+    background: url('../img/xii_persona/bg/angel1.png') no-repeat center;
+    background-size: 300px 273px;
+    width: 300px;
+    height: 273px; */
+    left: -350px;
+    top: -45px;
+    transform-origin: 50%;
+    animation-name: angel1;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+#psychometric .angel-animation::after {
+    content: url('../img/xii_persona/bg/angel2.png');
+    right: -388px;
+    top: -257px;
+    transform-origin: 50%;
+    animation-name: angel2;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+@keyframes angel1 {
+    0% {
+        opacity: 0;
+        left: -577px;
+        top: 151px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes angel2 {
+    0% {
+        opacity: 0;
+        right: -545px;
+        top: -394px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1025px) {
+
+    #psychometric .psychometric-content {
+        display: block;
+    }
+
+    #psychometric .psychometric-text::before, 
+    #psychometric .psychometric-text::after {
+        width: 140px;
+        height: 35px;
+    }
+    
+    #psychometric .psychometric-text::before {
+        left: 0;
+        bottom: -35px;
+    }
+
+    #psychometric .angel-animation::before {
+        left: -244px;
+        top: 48px;
+        animation-name: angel1;
+        transform: rotate(330deg);
+        z-index: 10;
+    }
+
+    #psychometric .angel-animation::after {
+        right: -194px;
+        top: -368px;
+        animation-name: angel2;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #psychometric .psychometric-text::before, 
+    #psychometric .psychometric-text::after {
+        width: 182px;
+    }
+    #psychometric .angel-animation::before {
+        content: url('../img/xii_persona/bg/angel1_phone.png');
+        left: 0;
+        top: 120px;
+        transform: rotate(356deg);
+    }
+    #psychometric .angel-animation::after {
+        content: url('../img/xii_persona/bg/angel2_phone.png');
+        right: 40px;
+        top: -154px;
+    }
+
+    @keyframes angel1 {
+        0% {
+            opacity: 0;
+            left: -177px;
+            top: 151px;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes angel2 {
+        0% {
+            opacity: 0;
+            right: -145px;
+            top: -394px;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    #psychometric .psychometric-text::before, 
+    #psychometric .psychometric-text::after {
+        width: 250px;
+    }
+    #psychometric .psychometric-text::before {
+        left: -155px;
+    }
+    #psychometric .psychometric-text::after {
+        right: -150px;
+    }
+
+    #psychometric .angel-animation::after {
+        right: -20px;
+        top: -154px;
+    }
+    #psychometric .angel-animation::before {
+        left: -20px;
+        top: 150px;
+    }
+    #psychometric .psychometric-p {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    #psychometric {
+        background: url("../img/xii_persona/bg/psychometric_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+    #psychometric .psychometric-text {
+        font-size: 1.8rem;
+    }
+    #psychometric .psychometric-p {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    #psychometric .psychometric-text::before, 
+    #psychometric .psychometric-text::after {
+        width: 209px;
+    }
+    #psychometric .psychometric-border::before {
+        right: 43.5%; 
+    }
+    #psychometric .psychometric-border::after {
+        right: 43.5%;
+    }
+    #psychometric .psychometric-border {
+        border: .9px solid #888888;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        border-image: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%) 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 391px) {
+    #psychometric .angel-animation::before {
+        left: -38px;
+    }
+    #psychometric .psychometric-text::before, 
+    #psychometric .psychometric-text::after {
+        width: 193px;
+    }
+    
+}
+
+#type {
+    background: url("../img/xii_persona/bg/type_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1761px; */
+}
+
+/* .type-gem-display,
+.type-shape-display,
+.type-constellations-display {
+    display: block;
+    max-height: 100%;
+    transition: .35s ease;
+} */
+
+.type-hide {
+    display: block;
+    /* overflow: hidden; */
+    /* height: 0px;
+    transition: .35s ease; */
+}
+
+.type-show {
+    display: block;
+    /* max-height: 100%;
+    transition: .35s ease; */
+}
+
+ #gem-check-in,
+ #gem-check-out,
+ #shape-check-in,
+ #shape-check-out,
+ #cts-check-in,
+ #cts-check-out {
+    display: none;
+}
+
+#type span{
+    display: block;
+    position: relative;
+    color: white;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#type .gem img,
+#type .shape img,
+#type .constellations img {
+    width: 160px;
+}
+
+#type .type-name::before,
+#type .type-name::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    background: #aaa;
+    width: 28%;
+    height: 1px;
+}
+#type .col-12:nth-child(2) .type-name::before {
+    left: 175px; 
+    width: 28%;
+}
+
+#type .col-12:nth-child(2) .type-name::after {
+    right: 175px; 
+    width: 28%;
+}
+
+#type .col-12:nth-child(4) .type-name::before {
+    left: 128px; 
+    width: 32%;
+}
+
+#type .col-12:nth-child(4) .type-name::after {
+    right: 128px;
+    width: 32%;
+}
+
+#type .col-12:nth-child(6) .type-name::before {
+    left: 80px; 
+    width: 34%;
+}
+
+#type .col-12:nth-child(6) .type-name::after {
+    right: 80px;
+    width: 34%;
+}
+
+#type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+#type .row .gem:nth-child(1) .col-gem:nth-child(5)::before,
+#type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+#type .row .shape:nth-child(1) .col-shape:nth-child(4)::before,
+#type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+#type .row .constellations:nth-child(1) .col-constellations:nth-child(6)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -33px;
+    background: #aaa;
+    width: 1px;
+    height: 15px;
+}
+
+@media (max-width: 1025px) {
+
+    #type .col-12:nth-child(2) .type-name::before {
+        left: 146px; 
+    }
+
+    #type .col-12:nth-child(2) .type-name::after {
+        right: 146px; 
+    }
+
+    #type .col-12:nth-child(4) .type-name::before {
+        left: 105px; 
+    }
+    
+    #type .col-12:nth-child(4) .type-name::after {
+        right: 105px;
+    }
+
+    #type .col-12:nth-child(6) .type-name::before {
+        left: 66px; 
+    }
+    
+    #type .col-12:nth-child(6) .type-name::after {
+        right: 66px;
+    }
+    
+}
+
+@media (max-width: 992px) {
+    #gem-check-in,
+    #shape-check-in,
+    #cts-check-in {
+        display: block;
+    }
+
+    .type-hide {
+        overflow: hidden;
+    }
+    /* .type-gem-display, */
+    /* .type-shape-display, */
+    /* .type-constellations-display, */
+    #gem-check-out,
+    #shape-check-out,
+    #cts-check-out {
+        display: none;
+        
+    }
+
+    #type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 34%;
+    }
+
+    #type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 34%;
+    }
+
+    #type .col-12:nth-child(4) .type-name::before {
+        left: 45px;
+        width: 34%;
+    }
+    
+    #type .col-12:nth-child(4) .type-name::after {
+        right: 45px;
+        width: 34%;
+    }
+
+    #type .col-12:nth-child(6) .type-name::before {
+        left: 20px; 
+    }
+    
+    #type .col-12:nth-child(6) .type-name::after {
+        right: 20px;
+    }
+
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::after,
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after,
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        content: "";
+        position: absolute;
+        background: #aaa;
+        width: 2px;
+        height: 25px;
+    }
+
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::before {
+        left: 59px;
+    }
+
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -33px;
+        right: 59px;
+    }
+
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::before {
+        left: 59px;
+    }
+
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -33px;
+        right: -301px;
+    }
+
+    #type .row .gem:nth-child(1) .col-gem:nth-child(5)::before,
+    #type .row .shape:nth-child(1) .col-shape:nth-child(4)::before,
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(6)::before {
+        display: none;
+    }
+
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before  {
+        left: 35px;
+        top: -32px;
+    }
+
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 203px;
+        top: -32px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -27px;
+    }
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::before{
+        top: -27px;
+    }
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -27px;
+        right: -211px;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        top: -26px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -26px;
+    }
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -26px;
+    }
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -228px;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        top: -27px;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 145px;
+    }
+    
+}
+
+@media (max-width: 425px) {
+
+    #type {
+        background: url("../img/xii_persona/bg/type_phone_bg.png") no-repeat center;
+        background-size: cover;
+        /* height: 1761px; */
+    }
+    #type .constellations img {
+        width: 100px;
+    }
+    #type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 25%;
+    }
+    #type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 25%;
+    }
+    #type .col-12:nth-child(4) .type-name::before {
+        width: 28%;
+    }
+    #type .col-12:nth-child(4) .type-name::after {
+        width: 28%;
+    }
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -152px;
+    }
+    #type .col-12:nth-child(6) .type-name::before {
+        width: 28%;
+    }
+    #type .col-12:nth-child(6) .type-name::after {
+        width: 28%;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before {
+        top: -26px;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 104px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 391px) {
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -135px;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 94px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 376px) {
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -128px;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 89px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 321px) {
+    #type .gem img,
+    #type .shape img {
+        width: 130px;
+    }
+    #type .constellations img {
+        width: 80px;
+    }
+    #type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 18%;
+    }
+    #type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 18%;
+    }
+    #type .col-12:nth-child(4) .type-name::before {
+        width: 20%;
+    }
+    #type .col-12:nth-child(4) .type-name::after {
+        width: 20%;
+    }
+    #type .col-12:nth-child(6) .type-name::before {
+        width: 20%;
+    }
+    #type .col-12:nth-child(6) .type-name::after {
+        width: 20%;
+    }
+    #type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -100px;
+    }
+    #type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 70px;
+        top: -26.5px;
+    }
+
+}
+
+#empowerment {
+    /* background: url("../img/xii_persona/bg/empowerment_bg_old.png") no-repeat center; */
+    background: url("../img/xii_persona/bg/empowerment_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1601px; */
+}
+
+#empowerment .empowerment-row div{
+    display: flex;
+}
+
+#empowerment .empowerment-row span {
+    color: white;
+    align-self: center;
+    display: block;
+    float: right;
+}
+
+#empowerment .empowerment-star::before {
+    content: url('../img/xii_persona/bg/star1.png');
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#empowerment .empowerment-star:last-child:before,
+#empowerment .empowerment-star2:before {
+    content: url('../img/xii_persona/bg/star2.png');
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#empowerment .empowerment-star::after,
+#empowerment .empowerment-star2::after  {
+    content: "";
+    position: absolute;
+    color: white;
+    background: white;
+    width: 1px;
+}
+
+#empowerment .empowerment-star:nth-child(1):after {
+    height: 232px;
+    left: 154px;
+    top: 0;
+    transform: rotate(125deg);
+}
+
+#empowerment .empowerment-star:nth-child(2):after {
+    height: 361px;
+    left: -90px;
+    top: -43px;
+    transform: rotate(241deg);
+}
+
+#empowerment .empowerment-star:nth-child(3):after {
+    height: 113px;
+    left: 74px;
+    top: 59px;
+    transform: rotate(169deg);
+}
+
+#empowerment .empowerment-star:nth-child(4):after {
+    height: 273px;
+    left: 160px;
+    top: 4px;
+    transform: rotate(130deg);
+}
+
+#empowerment .empowerment-star:nth-child(5):after {
+    height: 388px;
+    left: 229px;
+    top: -43px;
+    transform: rotate(120deg);
+}
+
+#empowerment .empowerment-star:nth-child(6):after {
+    height: 223px;
+    left: 0px;
+    top: 35px;
+    transform: rotate(212deg)
+}
+
+#empowerment .empowerment-star:last-child:after {
+    height: 221px;
+    left: 110px;
+    top: -167px;
+    transform: rotate(224deg);
+}
+
+#empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+    position: absolute;
+    top: 209px;
+    left: 245px
+}
+
+#empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+    height: 263px;
+    left: 393px;
+    top: 69px;
+    transform: rotate(77deg);
+}
+
+#empowerment .empowerment-star:nth-child(5) .empowerment-star2::before {
+    position: absolute;
+    top: 229px;
+    left: 380px;
+}
+
+#empowerment .empowerment-star:nth-child(5) .empowerment-star2::after {
+    height: 369px;
+    left: 225px;
+    top: 123px;
+    transform: rotate(71deg);
+}
+
+#empowerment .empowerment-star:nth-child(6) .empowerment-star2::before {
+    position: absolute;
+    top: 186px;
+    left: 347px;
+}
+
+#empowerment .empowerment-star:nth-child(6) .empowerment-star2::after {
+    height: 341px;
+    left: 215px;
+    top: -39px;
+    transform: rotate(117deg);
+}
+
+#empowerment .empowerment-star:nth-child(7) .empowerment-star2::before {
+    position: absolute;
+    top: -23px;
+    left: -431px;
+}
+
+#empowerment .empowerment-star:nth-child(7) .empowerment-star2::after {
+    height: 473px;
+    left: -178px;
+    top: -214px;
+    transform: rotate(96deg);
+}
+
+@media (max-width: 1025px) {
+    #empowerment .empowerment-star:nth-child(1):after {
+        left: 137px;
+        transform: rotate(130deg);
+    }
+    #empowerment .empowerment-star:nth-child(2):after {
+        height: 308px;
+        left: -75px;
+        top: -13px;
+        transform: rotate(238deg);
+    }
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 213px;
+        left: 364px;
+        top: 89px;
+        transform: rotate(72deg);
+    }
+    #empowerment .empowerment-star:nth-child(5) .empowerment-star2::after {
+        height: 323px;
+        left: 248px;
+        top: 148px;
+        transform: rotate(69deg);
+    }
+    #empowerment .empowerment-star:nth-child(6):after {
+        height: 248px;
+        left: -31px;
+        top: 26px;
+        transform: rotate(222deg);
+    }
+    #empowerment .empowerment-star:last-child:after {
+        height: 215px;
+        left: 102px;
+        top: -167px;
+        transform: rotate(220deg);
+    }
+}
+
+@media (max-width: 992px) {
+    #empowerment .empowerment-row {
+        margin-left: 10%;
+    }
+    #empowerment .empowerment-star {
+        margin: 0;
+    }
+    #empowerment .empowerment-star:nth-child(2) {
+        margin-left: 16%;
+    }
+    #empowerment .empowerment-star:nth-child(4) {
+        margin-left: 6%;
+    }
+    #empowerment .empowerment-star:nth-child(5) {
+        margin-left: 17%;
+    }
+    #empowerment .empowerment-star:nth-child(7) {
+        margin-left: 11%;
+    }
+
+    #empowerment .empowerment-star:nth-child(1):after {
+        height: 140px;
+        top: 42px;
+        left: 111px;
+        transform: rotate(139deg);
+    }
+    #empowerment .empowerment-star:nth-child(2):after {
+        height: 144px;
+        left: 10px;
+        top: 38px;
+        transform: rotate(220deg);
+    }
+    #empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #empowerment .empowerment-star:nth-child(5):after {
+        height: 150px;
+        left: 5px;
+        top: 37px;
+        transform: rotate(222deg);
+    }
+    #empowerment .empowerment-star:nth-child(6):after {
+        height: 137px;
+        left: 101px;
+        top: 44px;
+        transform: rotate(148deg);
+    }
+    #empowerment .empowerment-star:nth-child(7):after {
+        height: 117px;
+        left: 11px;
+        top: 38px;
+        transform: rotate(230deg);
+    }
+
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+    #empowerment .empowerment-star:last-child:after,
+    #empowerment .empowerment-star:nth-child(5) .empowerment-star2::before,
+    #empowerment .empowerment-star:nth-child(5) .empowerment-star2::after,
+    #empowerment .empowerment-star:nth-child(6) .empowerment-star2::before,
+    #empowerment .empowerment-star:nth-child(6) .empowerment-star2::after,
+    #empowerment .empowerment-star:nth-child(7) .empowerment-star2::after {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    #empowerment {
+        /* background: url("../img/xii_persona/bg/empowerment_bg_old.png") no-repeat center; */
+        background: url("../img/xii_persona/bg/empowerment_phone_bg.png") no-repeat center;
+        background-size: cover;
+        /* height: 1601px; */
+    }
+    #empowerment .empowerment-row {
+        margin-left: 15%;
+    }
+    #empowerment .empowerment-star:nth-child(2) {
+        margin-left: 16%;
+    }
+    #empowerment .empowerment-star:nth-child(4) {
+        margin-left: 6%;
+    }
+    #empowerment .empowerment-star:nth-child(5) {
+        margin-left: 17%;
+    }
+    #empowerment .empowerment-star:nth-child(7) {
+        margin-left: 11%;
+    }
+
+    #empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+}
+
+@media (max-width: 576px) {
+    #empowerment .empowerment-row {
+        margin-left: 8%;
+    }
+    #empowerment .empowerment-star:nth-child(2) {
+        margin-left: 20%;
+    }
+    #empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #empowerment .empowerment-star:nth-child(5) {
+        margin-left: 21%;
+    }
+    #empowerment .empowerment-star:nth-child(7) {
+        margin-left: 13%;
+    }
+
+    #empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+}
+
+@media (max-width: 425px) {
+    #empowerment span {
+        font-size: 15px;
+    }
+    #empowerment .empowerment-row {
+        margin-left: 0%;
+    }
+    #empowerment .empowerment-star:nth-child(2) {
+        margin-left: 22%;
+    }
+    #empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #empowerment .empowerment-star:nth-child(5) {
+        margin-left: 24%;
+    }
+    #empowerment .empowerment-star:nth-child(7) {
+        margin-left: 16%;
+    }
+
+    #empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+}
+
+@media (max-width: 321px) {
+    #empowerment span {
+        font-size: 15px;
+    }
+    #empowerment .empowerment-row {
+        margin-left: 0%;
+    }
+    #empowerment .empowerment-star:nth-child(2) {
+        margin-left: 22%;
+    }
+    #empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #empowerment .empowerment-star:nth-child(5) {
+        margin-left: 24%;
+    }
+    #empowerment .empowerment-star:nth-child(7) {
+        margin-left: 16%;
+    }
+
+    #empowerment .empowerment-star:nth-child(1):after {
+        height: 120px;
+        top: 49px;
+        left: 93px;
+        transform: rotate(149deg);
+    }
+    #empowerment .empowerment-star:nth-child(2):after {
+        height: 125px;
+        left: 26px;
+        top: 47px;
+        transform: rotate(211deg);
+    }
+    #empowerment .empowerment-star:nth-child(3):after {
+        height: 105px;
+        left: 73px;
+        top: 58px;
+        transform: rotate(169deg);
+    }
+    #empowerment .empowerment-star:nth-child(4):after {
+        height: 108px;
+        left: 17px;
+        top: 36px;
+        transform: rotate(51deg);
+    }
+    #empowerment .empowerment-star:nth-child(5):after {
+        height: 134px;
+        left: 21px;
+        top: 46px;
+        transform: rotate(214deg);
+    }
+    #empowerment .empowerment-star:nth-child(6):after {
+        height: 112px;
+        left: 84px;
+        top: 53px;
+        transform: rotate(156deg);
+    }
+    #empowerment .empowerment-star:nth-child(7):after {
+        height: 110px;
+        left: 25px;
+        top: 37px;
+        transform: rotate(222deg);
+    }
+
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -45px;
+    }
+    #empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 147px;
+        left: 50px;
+        top: 70px;
+        transform: rotate(106deg);
+    }
+}
+
+#creation {
+    background: url("../img/xii_persona/bg/creation_bg.png") no-repeat center;
+    background-size: cover;
+}
+
+@media (max-width: 425px) {
+    #creation {
+        background: url("../img/xii_persona/bg/creation_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+}
+
+#qa {
+    background: url("../img/xii_persona/bg/faq_bg.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#qa a {
+    color: white;
+}
+
+#qa .nav .nav-link {
+    font-size: 1.6rem;
+    color: #343a40;
+    margin-bottom: .5rem;
+    border: 1px solid #003e64
+}
+
+#qa .nav .nav-link.active {
+    color: white;
+    background: #003e64
+}
+
+#qa .qa-box {
+    margin-bottom: 39px;
+}
+
+#qa .qa-box:last-child {
+    margin-bottom: 0!important;
+}
+
+#qa .qa-box .card h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #1F213C;
+    cursor: pointer;
+    line-height: 1.5;
+    letter-spacing: 3.5px;
+}
+
+#qa .qa-box .card h2::after {
+    font-family: "Font Awesome 5 Free";
+    float: right;
+    content: "\f078";
+    font-weight: 900;
+}
+
+#qa .qa-box .card h2.collapsed::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+}
+
+#qa .qa-box .card {
+    background-color: transparent;
+    border: 3px solid transparent;
+}
+
+#qa .qa-box .card-header {
+    background-color: white;
+}
+
+#qa .qa-box .card-body {
+    letter-spacing: 1px;
+    color: white;
+    padding: 2rem;
+    background-color: transparent;
+}
+
+@media (max-width: 992px) {
+    #qa .qa-box {
+        margin: 39px auto;
+    }
+}
+
+.footer {
+    padding: 25px 0;
+    background-color: #0b1438;
+}
+
+.footer span.copyright {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    text-transform: none;
+    color: white;
+    font-weight: 400;
+    line-height: 23px;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+.footer ul.quicklinks {
+    font-size: 90%;
+    line-height: 40px;
+    margin-bottom: 0;
+    text-transform: none;
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+/* 英文 */
+
+.en_ .page-section h2.section-heading {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    /* line-height: 47px; */
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.en_ .page-section p.section-text {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.en_ .btn-xii {
+    letter-spacing: 0;
+}
+
+.en_ .menu .fa-bars:hover {
+    color: #D7BE8A;
+}
+
+.en_ .menu .dropdown-toggle::after {
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    /* content: "\f0c9"; */
+    content: "";
+    margin-left: 0;
+    vertical-align: 0;
+    border-top: 0em solid;
+    border-right: 0em solid transparent;
+    border-bottom: 0;
+    border-left: 0em solid transparent;
+}
+
+
+@media (max-width: 576px) {
+    .en_ .page-section h2.section-heading {
+        font-size: 2.5rem;
+    }
+    
+}
+
+#en_slider {
+    margin-top: 90px;
+    /* background: url("../img/xii_persona/bg/banner-mj3.png") no-repeat center bottom,
+    url("../img/xii_persona/bg/banner_bg.png") no-repeat center; */
+    background: url("../img/xii_persona/bg/banner_bg.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 601px;
+    
+}
+
+#en_slider .slider-gift-img {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#en_slider .gift-img-br{
+    position: absolute;
+    left: 17%;
+    top: 9%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .5s;
+}
+
+#en_slider .gift-img-b {
+    position: absolute;
+    right: 25%;
+    top: 2%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .8s;
+}
+
+#en_slider .gift-img-d {
+    justify-items: center;
+    /* position: absolute;
+    left: 45.5%;
+    top: 18%; */
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#en_slider .gift-img-w {
+    position: absolute;
+    top: 99%;
+    right: 20%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .3s;
+}
+
+#en_slider .intro-text {
+    padding: 6rem 4rem;
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#en_slider .intro-text .intro {
+    display: inline;
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 65px;
+    /* letter-spacing: 0.1em; */
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#en_slider .intro-text .intro-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 36px;
+    /* letter-spacing: 0.3em; */
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+@media (max-width: 1080px) {
+
+    #en_slider {
+        margin-top: 70px;
+    }
+
+}
+
+@media (max-width: 1025px) {
+
+    #en_slider {
+        background: url("../img/xii_persona/bg/banner_bg.png") no-repeat center;
+        background-size: cover;
+        margin-top: 85px;
+    }
+
+    #en_slider .intro-text {
+        padding: 3rem 2rem;
+        margin-top: 45px;
+    }
+
+    #en_slider .intro-text .intro {
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    #en_slider .gift-img-br{
+        display: none;
+    }
+    
+    #en_slider .gift-img-b {
+        display: none;
+    }
+
+    #en_slider .gift-img-w {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+
+    #en_slider {
+        background-size: cover;
+    }
+
+    #en_slider .intro-text .intro {
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    #en_slider .intro-text .intro-lead-in {
+        font-size: 3rem;
+    }
+
+    #en_slider .intro-text .intro-heading {
+        font-size: 1.4rem
+    }
+
+    #en_slider .intro-text .intro-lead-strong {
+        font-size: 3rem;
+    }
+
+    #en_slider .intro-text .intro-r {
+        margin-right: 2px;
+    }
+
+    #en_slider .intro-text .intro-l {
+        margin-left: 0px;
+    }
+
+    #en_slider .intro-text .intro-heading {
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 27px;
+        /* letter-spacing: 0.3em; */
+    }
+
+}
+
+@media (max-width: 820px) {
+
+
+    .btn-mint {
+        display:block
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+    #en_slider .intro-text {
+        padding: 3rem 2rem;
+        /* margin-top: 175px; */
+    }
+
+    #en_slider .intro-text .intro {
+        font-size: 3rem;
+    }
+
+    #en_slider .slider-animation {
+        animation:jump-phone-576 1s ease-out infinite ;
+    }
+}
+
+@media (max-width: 425px) {
+
+    #en_slider {
+        background: url("../img/xii_persona/bg/banner_phone_bg.png") no-repeat center;
+        background-size: cover;
+        margin-top: 63px;
+    }
+
+    #en_slider .intro-text {
+        margin-top: 10px;
+    }
+
+    #en_slider .intro-text .intro {
+        margin-bottom: 0px;
+    }
+    #en_slider .intro-text .intro {
+        display: inline;
+        font-size: 3.5rem;
+        font-weight: bold;
+        line-height: 54px;
+        /* letter-spacing: 0.1em; */
+        font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+    }
+
+    #en_slider .gift-img-br{
+        display: block;
+        left: 8%;
+        top: 11%;
+        width: 70px;
+    }
+    #en_slider .gift-img-w{
+        display: block;
+        left: 73%;
+        bottom: 0;
+        width: 90px;
+    }
+
+}
+
+@media (max-width: 391px) {
+    #en_slider .intro-text .intro {
+        font-size: 2.5rem;
+    }
+}
+
+
+#en_story {
+    background: url("../img/xii_persona/bg/story_bg.png") no-repeat center;
+    background-size: cover;
+}
+
+#en_story img.story-img {
+    position: absolute;
+    top: -118px;
+    left: -127px;
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+@media (max-width: 992px) {
+
+    #en_story {
+        background: url("../img/xii_persona/bg/story_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+
+    #en_story img.story-img {
+        display: none;
+    }
+}
+
+#en_mythology {
+    background: url("../img/xii_persona/bg/mythology_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1171px; */
+}
+
+@media (max-width: 1024px) {
+    #en_mythology {
+        height: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    #en_mythology {
+        background: url("../img/xii_persona/bg/mythology_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+}
+
+#en_psychometric {
+    background: url("../img/xii_persona/bg/psychometric_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 836px; */
+}
+
+#en_psychometric .psychometric-text{
+    position: relative;
+    text-align: center;
+    letter-spacing: 0.1em;
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#en_psychometric .psychometric-text::before,
+#en_psychometric .psychometric-text::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 70px;
+    color: white;
+    background: #1f213c;
+    z-index: 1;
+}
+
+#en_psychometric .psychometric-text::before {
+    left: 0;
+}
+
+#en_psychometric .psychometric-text::after {
+    right: 0;
+}
+
+#en_psychometric .psychometric-content {
+    display: inline;
+}
+
+#en_psychometric .psychometric-p {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+#en_psychometric .psychometric-border {
+    border: 1px solid #888888;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    border-image: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%) 1;
+    width: 100%;
+}
+#en_psychometric .psychometric-border::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-color: #e8e8e8 transparent transparent; 
+    border-style: solid solid solid; 
+    border-width: 20px 30px 20px 30px; 
+    bottom: -40px;
+    right: 46.5%; 
+}
+#en_psychometric .psychometric-border::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-color: #1f213c transparent transparent; 
+    border-style: solid solid solid solid; 
+    border-width: 20px 30px 20px 30px; 
+    right: 46.5%;
+    bottom: -37px;
+}
+
+#en_psychometric .angel-animation {
+    position: relative;    
+}
+
+#en_psychometric .angel-animation::before,
+#en_psychometric .angel-animation::after {
+    display: inline;
+    position: absolute;
+    
+}
+
+#en_psychometric .angel-animation::before {
+    content: url('../img/xii_persona/bg/angel1.png');
+    /* content: "";
+    background: url('../img/xii_persona/bg/angel1.png') no-repeat center;
+    background-size: 300px 273px;
+    width: 300px;
+    height: 273px; */
+    left: -350px;
+    top: -45px;
+    transform-origin: 50%;
+    animation-name: angel1;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+#en_psychometric .angel-animation::after {
+    content: url('../img/xii_persona/bg/angel2.png');
+    right: -388px;
+    top: -257px;
+    transform-origin: 50%;
+    animation-name: angel2;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+@keyframes angel1 {
+    0% {
+        opacity: 0;
+        left: -577px;
+        top: 151px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes angel2 {
+    0% {
+        opacity: 0;
+        right: -545px;
+        top: -394px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1025px) {
+
+    #en_psychometric .psychometric-content {
+        display: block;
+    }
+
+    #en_psychometric .psychometric-text::before, 
+    #en_psychometric .psychometric-text::after {
+        width: 115px;
+        height: 35px;
+    }
+    
+    #en_psychometric .psychometric-text::before {
+        left: 0;
+        bottom: -35px;
+    }
+
+    #en_psychometric .angel-animation::before {
+        left: -275px;
+        top: 129px;
+        animation-name: angel1;
+        transform: rotate(330deg);
+        z-index: 10;
+    }
+
+    #en_psychometric .angel-animation::after {
+        right: -280px;
+        top: -196px;
+        animation-name: angel2;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #en_psychometric .psychometric-text::before, 
+    #en_psychometric .psychometric-text::after {
+        width: 158px;
+    }
+    #en_psychometric .angel-animation::before {
+        content: url('../img/xii_persona/bg/angel1_phone.png');
+        left: 0;
+        top: 120px;
+        transform: rotate(356deg);
+    }
+    #en_psychometric .angel-animation::after {
+        content: url('../img/xii_persona/bg/angel2_phone.png');
+        right: 40px;
+        top: -154px;
+    }
+
+    #en_psychometric .psychometric-p {
+        text-align: left!important;
+        padding-left: 13rem;
+        padding-right: 13rem;
+    }
+
+    @keyframes angel1 {
+        0% {
+            opacity: 0;
+            left: -177px;
+            top: 151px;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes angel2 {
+        0% {
+            opacity: 0;
+            right: -145px;
+            top: -394px;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    #en_psychometric .psychometric-text::before, 
+    #en_psychometric .psychometric-text::after {
+        width: 228px;
+    }
+    #en_psychometric .psychometric-text::before {
+        left: -155px;
+    }
+    #en_psychometric .psychometric-text::after {
+        right: -150px;
+    }
+
+    #en_psychometric .angel-animation::after {
+        right: -20px;
+        top: -154px;
+    }
+    #en_psychometric .angel-animation::before {
+        left: -3px;
+        top: 150px;
+    }
+    #en_psychometric .psychometric-p {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+    #en_psychometric .psychometric-border {
+        border: .9px solid #888888;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        border-image: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%) 1;
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    #en_psychometric {
+        background: url("../img/xii_persona/bg/psychometric_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+    #en_psychometric .psychometric-text {
+        font-size: 1.8rem;
+    }
+    #en_psychometric .psychometric-p {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    #en_psychometric .psychometric-text::before, 
+    #en_psychometric .psychometric-text::after {
+        width: 185px;
+    }
+    #en_psychometric .psychometric-border::before {
+        right: 43.5%; 
+    }
+    #en_psychometric .psychometric-border::after {
+        right: 43.5%;
+    }
+    #en_psychometric .angel-animation::before {
+        left: -34px;
+    }
+}
+
+@media (max-width: 391px) {
+    #en_psychometric .angel-animation::before {
+        left: -40px;
+    }
+    #en_psychometric .psychometric-text::before, 
+    #en_psychometric .psychometric-text::after {
+        width: 170px;
+    }
+    
+}
+
+#en_type {
+    background: url("../img/xii_persona/bg/type_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1761px; */
+}
+
+#en_type span{
+    display: block;
+    position: relative;
+    color: white;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#en_type .gem img,
+#en_type .shape img,
+#en_type .constellations img {
+    width: 160px;
+}
+
+#en_type .type-name::before,
+#en_type .type-name::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    background: #aaa;
+    width: 28%;
+    height: 1px;
+}
+#en_type .col-12:nth-child(2) .type-name::before {
+    left: 175px; 
+    width: 28%;
+}
+
+#en_type .col-12:nth-child(2) .type-name::after {
+    right: 175px; 
+    width: 28%;
+}
+
+#en_type .col-12:nth-child(4) .type-name::before {
+    left: 127px;
+    width: 31%;
+}
+
+#en_type .col-12:nth-child(4) .type-name::after {
+    right: 127px;
+    width: 31%;
+}
+
+#en_type .col-12:nth-child(6) .type-name::before {
+    left: 80px; 
+    width: 30%;
+}
+
+#en_type .col-12:nth-child(6) .type-name::after {
+    right: 80px;
+    width: 30%;
+}
+
+#en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+#en_type .row .gem:nth-child(1) .col-gem:nth-child(5)::before,
+#en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+#en_type .row .shape:nth-child(1) .col-shape:nth-child(4)::before,
+#en_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+#en_type .row .constellations:nth-child(1) .col-constellations:nth-child(6)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -33px;
+    background: #aaa;
+    width: 1px;
+    height: 15px;
+}
+
+@media (max-width: 1025px) {
+
+    #en_type .col-12:nth-child(2) .type-name::before {
+        left: 146px; 
+    }
+
+    #en_type .col-12:nth-child(2) .type-name::after {
+        right: 146px; 
+    }
+
+    #en_type .col-12:nth-child(4) .type-name::before {
+        left: 105px;
+        width: 31%;
+    }
+    
+    #en_type .col-12:nth-child(4) .type-name::after {
+        right: 105px;
+        width: 31%;
+    }
+
+    #en_type .col-12:nth-child(6) .type-name::before {
+        left: 66px; 
+        width: 29%;
+    }
+    
+    #en_type .col-12:nth-child(6) .type-name::after {
+        right: 66px;
+        width: 29%;
+    }
+    
+}
+
+@media (max-width: 992px) {
+
+    #en_type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 34%;
+    }
+
+    #en_type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 34%;
+    }
+
+    #en_type .col-12:nth-child(4) .type-name::before {
+        left: 42px;
+        width: 33%;
+    }
+    
+    #en_type .col-12:nth-child(4) .type-name::after {
+        right: 42px;
+        width: 33%;
+    }
+
+    #en_type .col-12:nth-child(6) .type-name::before {
+        left: 20px; 
+    }
+    
+    #en_type .col-12:nth-child(6) .type-name::after {
+        right: 20px;
+    }
+
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after,
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after,
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        content: "";
+        position: absolute;
+        background: #aaa;
+        width: 2px;
+        height: 25px;
+    }
+
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before {
+        left: 59px;
+    }
+
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -33px;
+        right: 59px;
+    }
+
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before {
+        left: 57px;
+    }
+
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -33px;
+        right: -303px;
+    }
+
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(5)::before,
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(4)::before,
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(6)::before {
+        display: none;
+    }
+
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before  {
+        left: 35px;
+        top: -32px;
+    }
+
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 203px;
+        top: -32px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -26px;
+    }
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before{
+        top: -26px;
+    }
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -26px;
+        right: -304px;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        top: -26px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    #en_type .col-12:nth-child(2) .type-name::before,
+    #en_type .col-12:nth-child(2) .type-name::after{
+        width: 30%;
+    }
+    #en_type .col-12:nth-child(4) .type-name::before,
+    #en_type .col-12:nth-child(4) .type-name::after{
+        width: 30%;
+    }
+    #en_type .col-12:nth-child(6) .type-name::before,
+    #en_type .col-12:nth-child(6) .type-name::after{
+        width: 25%;
+    }
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #en_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -26px;
+    }
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -26px;
+    }
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -213px;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        top: -27px;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 145px;
+    }
+    
+}
+
+@media (max-width: 425px) {
+
+    #en_type {
+        background: url("../img/xii_persona/bg/type_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+    #en_type .constellations img {
+        width: 100px;
+    }
+    #en_type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 25%;
+    }
+    #en_type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 25%;
+    }
+    #en_type .col-12:nth-child(4) .type-name::before {
+        width: 25%;
+    }
+    #en_type .col-12:nth-child(4) .type-name::after {
+        width: 25%;
+    }
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -155px;
+    }
+    #en_type .col-12:nth-child(6) .type-name::before {
+        width: 18%;
+    }
+    #en_type .col-12:nth-child(6) .type-name::after {
+        width: 18%;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before {
+        top: -26px;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 104px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 391px) {
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -140px;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 94px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 376px) {
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -131px;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 89px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 321px) {
+    #en_type .gem img,
+    #en_type .shape img {
+        width: 130px;
+    }
+    #en_type .constellations img {
+        width: 80px;
+    }
+    #en_type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 18%;
+    }
+    #en_type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 18%;
+    }
+    #en_type .col-12:nth-child(4) .type-name::before {
+        width: 17%;
+    }
+    #en_type .col-12:nth-child(4) .type-name::after {
+        width: 17%;
+    }
+    #en_type .col-12:nth-child(6) .type-name::before {
+        width: 9%;
+    }
+    #en_type .col-12:nth-child(6) .type-name::after {
+        width: 9%;
+    }
+    #en_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -103px;
+    }
+    #en_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 70px;
+        top: -26.5px;
+    }
+
+}
+
+#en_empowerment {
+    /* background: url("../img/xii_persona/bg/empowerment_bg_old.png") no-repeat center; */
+    background: url("../img/xii_persona/bg/empowerment_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1601px; */
+}
+
+#en_empowerment .empowerment-row div{
+    display: flex;
+}
+
+#en_empowerment .empowerment-row span {
+    color: white;
+    align-self: center;
+    display: block;
+    float: right;
+}
+
+#en_empowerment .empowerment-star::before {
+    content: url('../img/xii_persona/bg/star1.png');
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#en_empowerment .empowerment-star:last-child:before,
+#en_empowerment .empowerment-star2:before {
+    content: url('../img/xii_persona/bg/star2.png');
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#en_empowerment .empowerment-star::after,
+#en_empowerment .empowerment-star2::after  {
+    content: "";
+    position: absolute;
+    color: white;
+    background: white;
+    width: 1px;
+}
+
+#en_empowerment .empowerment-star:nth-child(1):after {
+    height: 232px;
+    left: 154px;
+    top: 0;
+    transform: rotate(125deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(2):after {
+    height: 361px;
+    left: -90px;
+    top: -43px;
+    transform: rotate(241deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(3):after {
+    height: 113px;
+    left: 74px;
+    top: 59px;
+    transform: rotate(169deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(4):after {
+    height: 273px;
+    left: 160px;
+    top: 4px;
+    transform: rotate(130deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(5):after {
+    height: 388px;
+    left: 229px;
+    top: -43px;
+    transform: rotate(120deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(6):after {
+    height: 223px;
+    left: 0px;
+    top: 35px;
+    transform: rotate(212deg)
+}
+
+#en_empowerment .empowerment-star:last-child:after {
+    height: 221px;
+    left: 110px;
+    top: -167px;
+    transform: rotate(224deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+    position: absolute;
+    top: 209px;
+    left: 245px
+}
+
+#en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+    height: 263px;
+    left: 393px;
+    top: 69px;
+    transform: rotate(77deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(5) .empowerment-star2::before {
+    position: absolute;
+    top: 229px;
+    left: 380px;
+}
+
+#en_empowerment .empowerment-star:nth-child(5) .empowerment-star2::after {
+    height: 369px;
+    left: 225px;
+    top: 123px;
+    transform: rotate(71deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(6) .empowerment-star2::before {
+    position: absolute;
+    top: 186px;
+    left: 347px;
+}
+
+#en_empowerment .empowerment-star:nth-child(6) .empowerment-star2::after {
+    height: 341px;
+    left: 215px;
+    top: -39px;
+    transform: rotate(117deg);
+}
+
+#en_empowerment .empowerment-star:nth-child(7) .empowerment-star2::before {
+    position: absolute;
+    top: -23px;
+    left: -431px;
+}
+
+#en_empowerment .empowerment-star:nth-child(7) .empowerment-star2::after {
+    height: 473px;
+    left: -178px;
+    top: -214px;
+    transform: rotate(96deg);
+}
+
+@media (max-width: 1025px) {
+    #en_empowerment .empowerment-star:nth-child(1):after {
+        left: 137px;
+        transform: rotate(130deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(2):after {
+        height: 308px;
+        left: -75px;
+        top: -13px;
+        transform: rotate(238deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 213px;
+        left: 364px;
+        top: 89px;
+        transform: rotate(72deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(5) .empowerment-star2::after {
+        height: 323px;
+        left: 248px;
+        top: 148px;
+        transform: rotate(69deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(6):after {
+        height: 248px;
+        left: -31px;
+        top: 26px;
+        transform: rotate(222deg);
+    }
+    #en_empowerment .empowerment-star:last-child:after {
+        height: 215px;
+        left: 102px;
+        top: -167px;
+        transform: rotate(220deg);
+    }
+}
+
+@media (max-width: 992px) {
+    #en_empowerment .empowerment-row {
+        margin-left: 10%;
+    }
+    #en_empowerment .empowerment-star {
+        margin: 0;
+    }
+    #en_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 16%;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 6%;
+    }
+    #en_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 17%;
+    }
+    #en_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 11%;
+    }
+
+    #en_empowerment .empowerment-star:nth-child(1):after {
+        height: 140px;
+        top: 42px;
+        left: 111px;
+        transform: rotate(139deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(2):after {
+        height: 144px;
+        left: 10px;
+        top: 38px;
+        transform: rotate(220deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(5):after {
+        height: 150px;
+        left: 5px;
+        top: 37px;
+        transform: rotate(222deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(6):after {
+        height: 137px;
+        left: 101px;
+        top: 44px;
+        transform: rotate(148deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(7):after {
+        height: 117px;
+        left: 11px;
+        top: 38px;
+        transform: rotate(230deg);
+    }
+
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+    #en_empowerment .empowerment-star:last-child:after,
+    #en_empowerment .empowerment-star:nth-child(5) .empowerment-star2::before,
+    #en_empowerment .empowerment-star:nth-child(5) .empowerment-star2::after,
+    #en_empowerment .empowerment-star:nth-child(6) .empowerment-star2::before,
+    #en_empowerment .empowerment-star:nth-child(6) .empowerment-star2::after,
+    #en_empowerment .empowerment-star:nth-child(7) .empowerment-star2::after {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    #en_empowerment {
+        /* background: url("../img/xii_persona/bg/empowerment_bg_old.png") no-repeat center; */
+        background: url("../img/xii_persona/bg/empowerment_phone_bg.png") no-repeat center;
+        background-size: cover;
+        /* height: 1601px; */
+    }
+    #en_empowerment .empowerment-row {
+        margin-left: 15%;
+    }
+    #en_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 16%;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 6%;
+    }
+    #en_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 17%;
+    }
+    #en_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 11%;
+    }
+
+    #en_empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+}
+
+@media (max-width: 576px) {
+    #en_empowerment .empowerment-row {
+        margin-left: 8%;
+    }
+    #en_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 20%;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #en_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 21%;
+    }
+    #en_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 13%;
+    }
+
+    #en_empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+}
+
+@media (max-width: 425px) {
+    #en_empowerment span {
+        font-size: 15px;
+    }
+    #en_empowerment .empowerment-row {
+        margin-left: 0%;
+    }
+    #en_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 22%;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #en_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 24%;
+    }
+    #en_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 16%;
+    }
+
+    #en_empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(4):after {
+        height: 101px;
+        left: 16px;
+        top: 41px;
+        transform: rotate(232deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -45px;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 147px;
+        left: 50px;
+        top: 70px;
+        transform: rotate(106deg);
+    }
+}
+
+@media (max-width: 321px) {
+    #en_empowerment span {
+        font-size: 15px;
+    }
+    #en_empowerment .empowerment-row {
+        margin-left: 0%;
+    }
+    #en_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 22%;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #en_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 24%;
+    }
+    #en_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 16%;
+    }
+
+    #en_empowerment .empowerment-star:nth-child(1):after {
+        height: 120px;
+        top: 49px;
+        left: 93px;
+        transform: rotate(149deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(2):after {
+        height: 125px;
+        left: 26px;
+        top: 47px;
+        transform: rotate(211deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(3):after {
+        height: 105px;
+        left: 73px;
+        top: 58px;
+        transform: rotate(169deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(4):after {
+        height: 108px;
+        left: 17px;
+        top: 36px;
+        transform: rotate(51deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(5):after {
+        height: 134px;
+        left: 21px;
+        top: 46px;
+        transform: rotate(214deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(6):after {
+        height: 112px;
+        left: 84px;
+        top: 53px;
+        transform: rotate(156deg);
+    }
+    #en_empowerment .empowerment-star:nth-child(7):after {
+        height: 110px;
+        left: 25px;
+        top: 37px;
+        transform: rotate(222deg);
+    }
+
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -45px;
+    }
+    #en_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 147px;
+        left: 50px;
+        top: 70px;
+        transform: rotate(106deg);
+    }
+}
+
+#en_creation {
+    background: url("../img/xii_persona/bg/creation_bg.png") no-repeat center;
+    background-size: cover;
+}
+
+@media (max-width: 425px) {
+    #en_creation {
+        background: url("../img/xii_persona/bg/creation_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+}
+
+#en_qa {
+    background: url("../img/xii_persona/bg/faq_bg.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#en_qa a {
+    color: white;
+}
+
+#en_qa .nav .nav-link {
+    font-size: 1.6rem;
+    color: #343a40;
+    margin-bottom: .5rem;
+    border: 1px solid #003e64
+}
+
+#en_qa .nav .nav-link.active {
+    color: white;
+    background: #003e64
+}
+
+#en_qa .qa-box {
+    margin-bottom: 39px;
+}
+
+#en_qa .qa-box:last-child {
+    margin-bottom: 0!important;
+}
+
+#en_qa .qa-box .card h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #1F213C;
+    cursor: pointer;
+    line-height: 1.5;
+    /* letter-spacing: 3.5px; */
+}
+
+#en_qa .qa-box .card h2::after {
+    font-family: "Font Awesome 5 Free";
+    float: right;
+    content: "\f078";
+    font-weight: 900;
+}
+
+#en_qa .qa-box .card h2.collapsed::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+}
+
+#en_qa .qa-box .card {
+    background-color: transparent;
+    border: 3px solid transparent;
+}
+
+#en_qa .qa-box .card-header {
+    background-color: white;
+}
+
+#en_qa .qa-box .card-body {
+    letter-spacing: 1px;
+    color: white;
+    padding: 2rem;
+    background-color: transparent;
+}
+
+@media (max-width: 992px) {
+    #en_qa .qa-box {
+        margin: 39px auto;
+    }
+}
+
+@media (max-width: 425px) {
+    #en_qa .qa-box .card h2 {
+        font-size: 1.4rem;
+    }
+    
+}
+
+/* 越南文 */
+
+.vn_ .page-section h2.section-heading {
+    position: relative;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    /* line-height: 47px; */
+    background: linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background: -webkit-linear-gradient(to right,#C8A76E 0%, #EDDFA8 16%, #8F6D3C 40%, #A3814D 49%, #C8A76E 62%, #F5ECB5 80%, #C8A76E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.vn_ .page-section p.section-text {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.vn_ .btn-xii {
+    letter-spacing: 0;
+}
+
+.vn_ .menu .fa-bars:hover {
+    color: #D7BE8A;
+}
+
+.vn_ .menu .dropdown-toggle::after {
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    /* content: "\f0c9"; */
+    content: "";
+    margin-left: 0;
+    vertical-align: 0;
+    border-top: 0em solid;
+    border-right: 0em solid transparent;
+    border-bottom: 0;
+    border-left: 0em solid transparent;
+}
+
+@media (max-width: 576px) {
+    .vn_ .page-section h2.section-heading {
+        font-size: 2.5rem;
+    }
+    
+}
+
+#vn_slider {
+    margin-top: 90px;
+    /* background: url("../img/xii_persona/bg/banner-mj3.png") no-repeat center bottom,
+    url("../img/xii_persona/bg/banner_bg.png") no-repeat center; */
+    background: url("../img/xii_persona/bg/banner_bg.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 601px;
+    
+}
+
+#vn_slider .slider-gift-img {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+#vn_slider .gift-img-br{
+    position: absolute;
+    left: 17%;
+    top: 9%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .5s;
+}
+
+#vn_slider .gift-img-b {
+    position: absolute;
+    right: 25%;
+    top: 2%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .8s;
+}
+
+#vn_slider .gift-img-d {
+    justify-items: center;
+    /* position: absolute;
+    left: 45.5%;
+    top: 18%; */
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#vn_slider .gift-img-w {
+    position: absolute;
+    top: 99%;
+    right: 20%;
+    transform-origin: 50%;
+    animation-name: float;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: .3s;
+}
+
+#vn_slider .intro-text {
+    padding: 6rem 4rem;
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#vn_slider .intro-text .intro {
+    display: inline;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 65px;
+    /* letter-spacing: 0.1em; */
+    font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#vn_slider .intro-text .intro-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 36px;
+    /* letter-spacing: 0.3em; */
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+@media (max-width: 1080px) {
+
+    #vn_slider {
+        margin-top: 70px;
+    }
+
+}
+
+@media (max-width: 1025px) {
+
+    #vn_slider {
+        background: url("../img/xii_persona/bg/banner_bg.png") no-repeat center;
+        background-size: cover;
+        margin-top: 85px;
+    }
+
+    #vn_slider .intro-text {
+        padding: 3rem 2rem;
+        margin-top: 45px;
+    }
+
+    #vn_slider .intro-text .intro {
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    #vn_slider .gift-img-br{
+        display: none;
+    }
+    
+    #vn_slider .gift-img-b {
+        display: none;
+    }
+    
+    #vn_slider .gift-img-w {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+
+    #vn_slider {
+        background-size: cover;
+    }
+
+    #vn_slider .intro-text .intro {
+        display: block;
+        margin-bottom: 0px;
+    }
+
+    #vn_slider .intro-text .intro-lead-in {
+        font-size: 3rem;
+    }
+
+    #vn_slider .intro-text .intro-heading {
+        font-size: 1.4rem
+    }
+
+    #vn_slider .intro-text .intro-lead-strong {
+        font-size: 3rem;
+    }
+
+    #vn_slider .intro-text .intro-r {
+        margin-right: 2px;
+    }
+
+    #vn_slider .intro-text .intro-l {
+        margin-left: 0px;
+    }
+
+    #vn_slider .intro-text .intro-heading {
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 27px;
+        /* letter-spacing: 0.3em; */
+    }
+
+}
+
+@media (max-width: 820px) {
+
+
+    .btn-mint {
+        display:block
+    }
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+    #vn_slider .intro-text {
+        padding: 3rem 2rem;
+        /* margin-top: 175px; */
+    }
+
+    #vn_slider .intro-text .intro {
+        font-size: 3rem;
+    }
+
+    #vn_slider .slider-animation {
+        animation:jump-phone-576 1s ease-out infinite ;
+    }
+}
+
+@media (max-width: 425px) {
+
+    #vn_slider {
+        background: url("../img/xii_persona/bg/banner_phone_bg.png") no-repeat center;
+        background-size: cover;
+        margin-top: 63px;
+    }
+
+    #vn_slider .intro-text {
+        margin-top: 10px;
+    }
+
+    #vn_slider .intro-text .intro {
+        margin-bottom: 0px;
+    }
+    #vn_slider .intro-text .intro {
+        display: inline;
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 45px;
+        /* letter-spacing: 0.1em; */
+        font-family: 'GenRyuMin', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+    }
+    #vn_slider .gift-img-br{
+        display: block;
+        left: 8%;
+        top: 11%;
+        width: 70px;
+    }
+    #vn_slider .gift-img-w{
+        display: block;
+        left: 73%;
+        bottom: 0;
+        width: 90px;
+    }
+
+}
+
+@media (max-width: 391px) {
+    #vn_slider .intro-text .intro {
+        font-size: 2rem;
+    }
+}
+
+
+#vn_story {
+    background: url("../img/xii_persona/bg/story_bg.png") no-repeat center;
+    background-size: cover;
+}
+
+#vn_story img.story-img {
+    position: absolute;
+    top: -118px;
+    left: -127px;
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+@media (max-width: 992px) {
+
+    #vn_story {
+        background: url("../img/xii_persona/bg/story_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+
+    #vn_story img.story-img {
+        display: none;
+    }
+}
+
+#vn_mythology {
+    background: url("../img/xii_persona/bg/mythology_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1171px; */
+}
+
+@media (max-width: 1024px) {
+    #vn_mythology {
+        height: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    #vn_mythology {
+        background: url("../img/xii_persona/bg/mythology_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+}
+
+#vn_psychometric {
+    background: url("../img/xii_persona/bg/psychometric_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 836px; */
+}
+
+#vn_psychometric .psychometric-text{
+    position: relative;
+    text-align: center;
+    letter-spacing: 0.1em;
+    background: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background: -webkit-linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#vn_psychometric .psychometric-text::before,
+#vn_psychometric .psychometric-text::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 76px;
+    height: 70px;
+    color: white;
+    background: #1f213c;
+    z-index: 1;
+}
+
+#vn_psychometric .psychometric-text::before {
+    left: 0;
+}
+
+#vn_psychometric .psychometric-text::after {
+    right: 0;
+}
+
+#vn_psychometric .psychometric-content {
+    display: inline;
+}
+
+#vn_psychometric .psychometric-p {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+#vn_psychometric .psychometric-border {
+    border: 1px solid #888888;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    border-image: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%) 1;
+    width: 100%;
+}
+#vn_psychometric .psychometric-border::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-color: #e8e8e8 transparent transparent; 
+    border-style: solid solid solid; 
+    border-width: 20px 30px 20px 30px; 
+    bottom: -40px;
+    right: 46.5%; 
+}
+#vn_psychometric .psychometric-border::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-color: #1f213c transparent transparent; 
+    border-style: solid solid solid solid; 
+    border-width: 20px 30px 20px 30px; 
+    right: 46.5%;
+    bottom: -37px;
+}
+
+#vn_psychometric .angel-animation {
+    position: relative;    
+}
+
+#vn_psychometric .angel-animation::before,
+#vn_psychometric .angel-animation::after {
+    display: inline;
+    position: absolute;
+    
+}
+
+#vn_psychometric .angel-animation::before {
+    content: url('../img/xii_persona/bg/angel1.png');
+    /* content: "";
+    background: url('../img/xii_persona/bg/angel1.png') no-repeat center;
+    background-size: 300px 273px;
+    width: 300px;
+    height: 273px; */
+    left: -350px;
+    top: -45px;
+    transform-origin: 50%;
+    animation-name: angel1;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+#vn_psychometric .angel-animation::after {
+    content: url('../img/xii_persona/bg/angel2.png');
+    right: -388px;
+    top: -257px;
+    transform-origin: 50%;
+    animation-name: angel2;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+}
+
+@keyframes angel1 {
+    0% {
+        opacity: 0;
+        left: -577px;
+        top: 151px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes angel2 {
+    0% {
+        opacity: 0;
+        right: -545px;
+        top: -394px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1025px) {
+
+    #vn_psychometric .psychometric-content {
+        display: block;
+    }
+
+    #vn_psychometric .psychometric-text::before, 
+    #vn_psychometric .psychometric-text::after {
+        width: 135px;
+        height: 35px;
+    }
+    
+    #vn_psychometric .psychometric-text::before {
+        left: 0;
+        bottom: -35px;
+    }
+
+    #vn_psychometric .angel-animation::before {
+        left: -275px;
+        top: 129px;
+        animation-name: angel1;
+        transform: rotate(330deg);
+        z-index: 10;
+    }
+
+    #vn_psychometric .angel-animation::after {
+        right: -280px;
+        top: -196px;
+        animation-name: angel2;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #vn_psychometric .psychometric-text::before, 
+    #vn_psychometric .psychometric-text::after {
+        width: 158px;
+    }
+    #vn_psychometric .angel-animation::before {
+        content: url('../img/xii_persona/bg/angel1_phone.png');
+        left: 0;
+        top: 120px;
+        transform: rotate(356deg);
+    }
+    #vn_psychometric .angel-animation::after {
+        content: url('../img/xii_persona/bg/angel2_phone.png');
+        right: 40px;
+        top: -154px;
+    }
+
+    #vn_psychometric .psychometric-p {
+        padding-left: 13rem;
+        padding-right: 13rem;
+    }
+
+    @keyframes angel1 {
+        0% {
+            opacity: 0;
+            left: -177px;
+            top: 151px;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes angel2 {
+        0% {
+            opacity: 0;
+            right: -145px;
+            top: -394px;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    #vn_psychometric .psychometric-text::before, 
+    #vn_psychometric .psychometric-text::after {
+        width: 242px;
+    }
+    #vn_psychometric .psychometric-text::before {
+        left: -155px;
+    }
+    #vn_psychometric .psychometric-text::after {
+        right: -150px;
+    }
+
+    #vn_psychometric .angel-animation::after {
+        right: -20px;
+        top: -154px;
+    }
+    #vn_psychometric .angel-animation::before {
+        left: -3px;
+        top: 150px;
+    }
+    #vn_psychometric .psychometric-p {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+    #vn_psychometric .psychometric-border {
+        border: .8px solid #888888;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        border-image: linear-gradient(to right,#EAE7E3 0%, #DBD8D5 6%, #B5B1B3 19%, #9A959A 26%, #F9F9F9 52%, #EAEAEA 59%, #C6C3C4 71%, #8E888B 88%, #B5B5B6 100%) 1;
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    #vn_psychometric {
+        background: url("../img/xii_persona/bg/psychometric_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+    #vn_psychometric .psychometric-text {
+        font-size: 1.8rem;
+    }
+    #vn_psychometric .psychometric-p {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    #vn_psychometric .psychometric-text::before, 
+    #vn_psychometric .psychometric-text::after {
+        width: 195px;
+    }
+    #vn_psychometric .psychometric-border::before {
+        right: 43.5%; 
+    }
+    #vn_psychometric .psychometric-border::after {
+        right: 43.5%;
+    }
+    #vn_psychometric .angel-animation::before {
+        left: -34px;
+    }
+}
+
+@media (max-width: 391px) {
+    #vn_psychometric .angel-animation::before {
+        left: -40px;
+    }
+    #vn_psychometric .psychometric-text::before, 
+    #vn_psychometric .psychometric-text::after {
+        width: 185px;
+    }
+    
+}
+
+#vn_type {
+    background: url("../img/xii_persona/bg/type_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1761px; */
+}
+
+#vn_type span{
+    display: block;
+    position: relative;
+    color: white;
+    font-family: 'GenRyuMin-EL', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
+}
+
+#vn_type .gem img,
+#vn_type .shape img,
+#vn_type .constellations img {
+    width: 160px;
+}
+
+#vn_type .type-name::before,
+#vn_type .type-name::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    background: #aaa;
+    width: 28%;
+    height: 1px;
+}
+#vn_type .col-12:nth-child(2) .type-name::before {
+    left: 175px; 
+    width: 28%;
+}
+
+#vn_type .col-12:nth-child(2) .type-name::after {
+    right: 175px; 
+    width: 28%;
+}
+
+#vn_type .col-12:nth-child(4) .type-name::before {
+    left: 127px;
+    width: 31%;
+}
+
+#vn_type .col-12:nth-child(4) .type-name::after {
+    right: 127px;
+    width: 31%;
+}
+
+#vn_type .col-12:nth-child(6) .type-name::before {
+    left: 80px; 
+    width: 30%;
+}
+
+#vn_type .col-12:nth-child(6) .type-name::after {
+    right: 80px;
+    width: 30%;
+}
+
+#vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+#vn_type .row .gem:nth-child(1) .col-gem:nth-child(5)::before,
+#vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+#vn_type .row .shape:nth-child(1) .col-shape:nth-child(4)::before,
+#vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+#vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(6)::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -33px;
+    background: #aaa;
+    width: 1px;
+    height: 15px;
+}
+
+@media (max-width: 1025px) {
+
+    #vn_type .col-12:nth-child(2) .type-name::before {
+        left: 146px; 
+    }
+
+    #vn_type .col-12:nth-child(2) .type-name::after {
+        right: 146px; 
+    }
+
+    #vn_type .col-12:nth-child(4) .type-name::before {
+        left: 105px;
+        width: 31%;
+    }
+    
+    #vn_type .col-12:nth-child(4) .type-name::after {
+        right: 105px;
+        width: 31%;
+    }
+
+    #vn_type .col-12:nth-child(6) .type-name::before {
+        left: 66px; 
+        width: 29%;
+    }
+    
+    #vn_type .col-12:nth-child(6) .type-name::after {
+        right: 66px;
+        width: 29%;
+    }
+    
+}
+
+@media (max-width: 992px) {
+
+    #vn_type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 34%;
+    }
+
+    #vn_type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 34%;
+    }
+
+    #vn_type .col-12:nth-child(4) .type-name::before {
+        left: 20px; 
+    }
+    
+    #vn_type .col-12:nth-child(4) .type-name::after {
+        right: 20px;
+    }
+
+    #vn_type .col-12:nth-child(6) .type-name::before {
+        left: 20px; 
+    }
+    
+    #vn_type .col-12:nth-child(6) .type-name::after {
+        right: 20px;
+    }
+
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after,
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after,
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        content: "";
+        position: absolute;
+        background: #aaa;
+        width: 2px;
+        height: 25px;
+    }
+
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before {
+        left: 59px;
+    }
+
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -33px;
+        right: 59px;
+    }
+
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before {
+        left: 57px;
+    }
+
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -33px;
+        right: -303px;
+    }
+
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(5)::before,
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(4)::before,
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(6)::before {
+        display: none;
+    }
+
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before  {
+        left: 35px;
+        top: -32px;
+    }
+
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 203px;
+        top: -32px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -27px;
+    }
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before{
+        top: -26px;
+    }
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -26px;
+        right: -304px;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        top: -26px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+
+    #vn_type .col-12:nth-child(2) .type-name::before,
+    #vn_type .col-12:nth-child(2) .type-name::after{
+        width: 30%;
+    }
+    #vn_type .col-12:nth-child(4) .type-name::before,
+    #vn_type .col-12:nth-child(4) .type-name::after{
+        width: 25%;
+    }
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::before,
+    #vn_type .row .gem:nth-child(1) .col-gem:nth-child(1)::after {
+        top: -26px;
+    }
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::before,
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        top: -26px;
+    }
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -213px;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before,
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        top: -27px;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 145px;
+    }
+    
+}
+
+@media (max-width: 425px) {
+
+    #vn_type {
+        background: url("../img/xii_persona/bg/type_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+    #vn_type .constellations img {
+        width: 100px;
+    }
+    #vn_type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 25%;
+    }
+    #vn_type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 25%;
+    }
+    #vn_type .col-12:nth-child(4) .type-name::before {
+        width: 18%;
+    }
+    #vn_type .col-12:nth-child(4) .type-name::after {
+        width: 18%;
+    }
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -155px;
+    }
+    #vn_type .col-12:nth-child(6) .type-name::before {
+        width: 18%;
+    }
+    #vn_type .col-12:nth-child(6) .type-name::after {
+        width: 18%;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(1)::before {
+        top: -26px;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 104px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 391px) {
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -140px;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 94px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 376px) {
+    #vn_type .row .shape:nth-child(1) .col-shape:nth-child(1)::after {
+        right: -131px;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 89px;
+        top: -26.5px;
+    }
+}
+
+@media (max-width: 321px) {
+    #vn_type .gem img,
+    #vn_type .shape img {
+        width: 130px;
+    }
+    #vn_type .constellations img {
+        width: 80px;
+    }
+    #vn_type .col-12:nth-child(2) .type-name::before {
+        left: 45px;
+        width: 18%;
+    }
+    #vn_type .col-12:nth-child(2) .type-name::after {
+        right: 45px;
+        width: 18%;
+    }
+    #vn_type .col-12:nth-child(4) .type-name::before {
+        width: 17%;
+    }
+    #vn_type .col-12:nth-child(4) .type-name::after {
+        width: 17%;
+    }
+    #vn_type .col-12:nth-child(6) .type-name::before {
+        width: 9%;
+    }
+    #vn_type .col-12:nth-child(6) .type-name::after {
+        width: 9%;
+    }
+    #vn_type .row .constellations:nth-child(1) .col-constellations:nth-child(3)::before {
+        left: 70px;
+        top: -26.5px;
+    }
+
+}
+
+#vn_empowerment {
+    /* background: url("../img/xii_persona/bg/empowerment_bg_old.png") no-repeat center; */
+    background: url("../img/xii_persona/bg/empowerment_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 1601px; */
+}
+
+#vn_empowerment .empowerment-row div{
+    display: flex;
+}
+
+#vn_empowerment .empowerment-row span {
+    color: white;
+    align-self: center;
+    display: block;
+    float: right;
+}
+
+#vn_empowerment .empowerment-star::before {
+    content: url('../img/xii_persona/bg/star1.png');
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#vn_empowerment .empowerment-star:last-child:before,
+#vn_empowerment .empowerment-star2:before {
+    content: url('../img/xii_persona/bg/star2.png');
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+#vn_empowerment .empowerment-star::after,
+#vn_empowerment .empowerment-star2::after  {
+    content: "";
+    position: absolute;
+    color: white;
+    background: white;
+    width: 1px;
+}
+
+#vn_empowerment .empowerment-star:nth-child(1):after {
+    height: 232px;
+    left: 154px;
+    top: 0;
+    transform: rotate(125deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(2):after {
+    height: 361px;
+    left: -90px;
+    top: -43px;
+    transform: rotate(241deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(3):after {
+    height: 113px;
+    left: 74px;
+    top: 59px;
+    transform: rotate(169deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(4):after {
+    height: 273px;
+    left: 160px;
+    top: 4px;
+    transform: rotate(130deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(5):after {
+    height: 388px;
+    left: 229px;
+    top: -43px;
+    transform: rotate(120deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(6):after {
+    height: 223px;
+    left: 0px;
+    top: 35px;
+    transform: rotate(212deg)
+}
+
+#vn_empowerment .empowerment-star:last-child:after {
+    height: 221px;
+    left: 110px;
+    top: -167px;
+    transform: rotate(224deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+    position: absolute;
+    top: 209px;
+    left: 245px
+}
+
+#vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+    height: 263px;
+    left: 393px;
+    top: 69px;
+    transform: rotate(77deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(5) .empowerment-star2::before {
+    position: absolute;
+    top: 229px;
+    left: 380px;
+}
+
+#vn_empowerment .empowerment-star:nth-child(5) .empowerment-star2::after {
+    height: 369px;
+    left: 225px;
+    top: 123px;
+    transform: rotate(71deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(6) .empowerment-star2::before {
+    position: absolute;
+    top: 186px;
+    left: 347px;
+}
+
+#vn_empowerment .empowerment-star:nth-child(6) .empowerment-star2::after {
+    height: 341px;
+    left: 215px;
+    top: -39px;
+    transform: rotate(117deg);
+}
+
+#vn_empowerment .empowerment-star:nth-child(7) .empowerment-star2::before {
+    position: absolute;
+    top: -23px;
+    left: -431px;
+}
+
+#vn_empowerment .empowerment-star:nth-child(7) .empowerment-star2::after {
+    height: 473px;
+    left: -178px;
+    top: -214px;
+    transform: rotate(96deg);
+}
+
+@media (max-width: 1025px) {
+    #vn_empowerment .empowerment-star:nth-child(1):after {
+        left: 137px;
+        transform: rotate(130deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(2):after {
+        height: 308px;
+        left: -75px;
+        top: -13px;
+        transform: rotate(238deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 213px;
+        left: 364px;
+        top: 89px;
+        transform: rotate(72deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(5) .empowerment-star2::after {
+        height: 323px;
+        left: 248px;
+        top: 148px;
+        transform: rotate(69deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(6):after {
+        height: 248px;
+        left: -31px;
+        top: 26px;
+        transform: rotate(222deg);
+    }
+    #vn_empowerment .empowerment-star:last-child:after {
+        height: 215px;
+        left: 102px;
+        top: -167px;
+        transform: rotate(220deg);
+    }
+}
+
+@media (max-width: 992px) {
+    #vn_empowerment .empowerment-row {
+        margin-left: 10%;
+    }
+    #vn_empowerment .empowerment-star {
+        margin: 0;
+    }
+    #vn_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 16%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 6%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 17%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 11%;
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(1):after {
+        height: 140px;
+        top: 42px;
+        left: 111px;
+        transform: rotate(139deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(2):after {
+        height: 144px;
+        left: 10px;
+        top: 38px;
+        transform: rotate(220deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(5):after {
+        height: 150px;
+        left: 5px;
+        top: 37px;
+        transform: rotate(222deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(6):after {
+        height: 137px;
+        left: 101px;
+        top: 44px;
+        transform: rotate(148deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(7):after {
+        height: 117px;
+        left: 11px;
+        top: 38px;
+        transform: rotate(230deg);
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+    #vn_empowerment .empowerment-star:last-child:after,
+    #vn_empowerment .empowerment-star:nth-child(5) .empowerment-star2::before,
+    #vn_empowerment .empowerment-star:nth-child(5) .empowerment-star2::after,
+    #vn_empowerment .empowerment-star:nth-child(6) .empowerment-star2::before,
+    #vn_empowerment .empowerment-star:nth-child(6) .empowerment-star2::after,
+    #vn_empowerment .empowerment-star:nth-child(7) .empowerment-star2::after {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    #vn_empowerment {
+        /* background: url("../img/xii_persona/bg/empowerment_bg_old.png") no-repeat center; */
+        background: url("../img/xii_persona/bg/empowerment_phone_bg.png") no-repeat center;
+        background-size: cover;
+        /* height: 1601px; */
+    }
+    #vn_empowerment .empowerment-row {
+        margin-left: 15%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 16%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 6%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 17%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 11%;
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+}
+
+@media (max-width: 576px) {
+    #vn_empowerment .empowerment-row {
+        margin-left: 8%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 20%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 21%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 13%;
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(4):after {
+        height: 134px;
+        left: -2px;
+        top: 20px;
+        transform: rotate(241deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -84px;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 208px;
+        left: 38px;
+        top: 40px;
+        transform: rotate(102deg);
+    }
+}
+
+@media (max-width: 425px) {
+    #vn_empowerment span {
+        font-size: 15px;
+    }
+    #vn_empowerment .empowerment-row {
+        margin-left: 0%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(2) {
+        margin-left: 22%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) {
+        margin-left: 9%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(5) {
+        margin-left: 24%;
+    }
+    #vn_empowerment .empowerment-star:nth-child(7) {
+        margin-left: 16%;
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(1):after {
+        height: 131px;
+        top: 47px;
+        left: 109px;
+        transform: rotate(141deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(2):after {
+        height: 135px;
+        left: 11px;
+        top: 44px;
+        transform: rotate(219deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(3):after {
+        height: 123px;
+        left: 83px;
+        top: 50px;
+        transform: rotate(162deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(4):after {
+        height: 101px;
+        left: 16px;
+        top: 41px;
+        transform: rotate(232deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(5):after {
+        height: 141px;
+        left: 8px;
+        top: 40px;
+        transform: rotate(221deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(6):after {
+        height: 126px;
+        left: 91px;
+        top: 44px;
+        transform: rotate(149deg);
+    }
+    #vn_empowerment .empowerment-star:nth-child(7):after {
+        height: 113px;
+        left: 12px;
+        top: 41px;
+        transform: rotate(228deg);
+    }
+
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::before {
+        position: absolute;
+        top: 103px;
+        left: -45px;
+    }
+    #vn_empowerment .empowerment-star:nth-child(4) .empowerment-star2::after {
+        height: 147px;
+        left: 50px;
+        top: 70px;
+        transform: rotate(106deg);
+    }
+}
+
+#vn_creation {
+    background: url("../img/xii_persona/bg/creation_bg.png") no-repeat center;
+    background-size: cover;
+}
+
+@media (max-width: 425px) {
+    #vn_creation {
+        background: url("../img/xii_persona/bg/creation_phone_bg.png") no-repeat center;
+        background-size: cover;
+    }
+}
+
+#vn_qa {
+    background: url("../img/xii_persona/bg/faq_bg.png") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#vn_qa a {
+    color: white;
+}
+
+#vn_qa .nav .nav-link {
+    font-size: 1.6rem;
+    color: #343a40;
+    margin-bottom: .5rem;
+    border: 1px solid #003e64
+}
+
+#vn_qa .nav .nav-link.active {
+    color: white;
+    background: #003e64
+}
+
+#vn_qa .qa-box {
+    margin-bottom: 39px;
+}
+
+#vn_qa .qa-box:last-child {
+    margin-bottom: 0!important;
+}
+
+#vn_qa .qa-box .card h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #1F213C;
+    cursor: pointer;
+    line-height: 1.5;
+    /* letter-spacing: 3.5px; */
+}
+
+#vn_qa .qa-box .card h2::after {
+    font-family: "Font Awesome 5 Free";
+    float: right;
+    content: "\f078";
+    font-weight: 900;
+}
+
+#vn_qa .qa-box .card h2.collapsed::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+}
+
+#vn_qa .qa-box .card {
+    background-color: transparent;
+    border: 3px solid transparent;
+}
+
+#vn_qa .qa-box .card-header {
+    background-color: white;
+}
+
+#vn_qa .qa-box .card-body {
+    letter-spacing: 1px;
+    color: white;
+    padding: 2rem;
+    background-color: transparent;
+}
+
+@media (max-width: 992px) {
+    #vn_qa .qa-box {
+        margin: 39px auto;
+    }
+}
+
+@media (max-width: 425px) {
+    #vn_qa .qa-box .card h2 {
+        font-size: 1.4rem;
+    }
+    
+}
+
+/*# sourceMappingURL=edf.min.css.map */

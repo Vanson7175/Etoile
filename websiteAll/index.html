@@ -1,0 +1,1569 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="">
+  <meta name="keywords" content="Etoile Art, Etoile Art NFT, 時尚NFT">
+  <meta name="description" content="Etoile Art希望運用NFT的獨一特性及藝術創作的多樣性，來成就主體獨特性，任何主體只要有了Etoile Art 的配搭，立刻化身為時尚的代表。Etoile Art是一種全新的時尚思維，擁有Etoile Art不僅是NFT潮流的象徵，更是Z世代下萬眾矚目的焦點。">
+
+  <!-- Facebook Opengraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Etoile Art - 一個結合時尚與NFT的精品品牌" />
+  <meta property="og:description" content="Etoile Art希望運用NFT的獨一特性及藝術創作的多樣性，來成就主體獨特性，任何主體只要有了Etoile Art的配搭，立刻化身為時尚的代表。Etoile Art是一種全新的時尚思維，擁有Etoile Art不僅是NFT潮流的象徵，更是Z世代下萬眾矚目的焦點。"/>
+  <meta property="og:image" content="./img/etoile/icon/logo.png" />
+  <meta property="og:image:alt" content="Etoile Art" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="" />
+  <meta property="og:image:height" content="" />
+  <!-- End Facebook Opengraph -->
+
+  <title>Etoile Art</title>
+
+  <link rel="icon" type="image/x-icon" href="./img/etoile/icon/favicon.png" >
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,500,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+  <!-- Custom styles for this template -->
+  <link href="vendor/owl/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+
+  <link href="css/eto.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+   <main id="app" :class="cssLocal" v-cloak>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-lg-5 " id="mainNav" :class="{'change':menuView}">
+    <div class="container px-4">
+      <a class="navbar-brand js-scroll-trigger" id="BackTop" href="#" v-scroll-to="'#page-top'">
+        <img src="./img/etoile/icon/logo.png" :style="[logoStyle]" width="80" alt="logo">
+      </a>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation" @click='changeIcon'> 
+        <!-- <i class="fas fa-bars"></i> -->
+        <img :src="menuImg" alt="">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <img src="./img/etoile/icon/logo.png" class="mb-2" :style="[phoneLogoStyle]" alt="logo">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li v-for="(menu, index) in $t('menuList')" class="nav-item">
+            <a class="nav-link js-scroll-trigger" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id"><% $t(menu.name) %></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="MenuLink"
+             ><% lanName %></a>
+            <div class="dropdown-menu" aria-labelledby="MenuLink">
+              <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList" class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)"><% lan.name %></router-link>
+            </div>
+          </li>
+        </ul>
+        <div class="col-md-12 text-center mt-2 mb-5 menuIcon">
+          <a href="https://discord.gg/5fjqCQHShY" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/etoile/icon/discord.png" alt="discord"></a>
+          <a href="https://twitter.com/etoile___2022" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/etoile/icon/twitter.png" alt="twitter"></a>
+          <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/etoile/icon/instagram.png" alt="instagram"></a>
+          <a href="https://www.facebook.com/Étoilé-108247735273167" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/etoile/icon/facebook.png" alt="facebook"></a>
+          <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/etoile/icon/potato.png" alt="potato"></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+  <header :id="cssLocal + 'slider'" class="">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="slider-star">
+            <img class="slider-star-1" src="./img/etoile/slider_star_1.png" alt="">
+            <img class="slider-star-2" src="./img/etoile/slider_star_2.png" alt="">
+          </div>
+          <div class="slider-ball-star">
+            <img class="slider-ball" src="./img/etoile/slider_ball.png" alt="">
+            <img class="slider-star-3 " src="./img/etoile/slider_star_3.png" alt="">
+          </div>
+          <div class="text-center slider-r">
+            <div class="intro-text text-center">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="flex">
+                    <div class="intro-animation">
+                      <span class="intro-lead-in intro-r"><% $t('slider.text1') %><span class="intro-lead-strong"><% $t('slider.text2') %></span></span>
+                      <span class="intro-lead-in intro-l"><% $t('slider.text3') %><span class="intro-lead-strong"><% $t('slider.text4') %></span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="intro-heading mt-4"><% $t('slider.heading') %></p>
+              <a class="btn btn-nft btn-md mt-5" href="#"  v-scroll-to="'#' + cssLocal + 'nft'" role="button"><% $t('slider.button') %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="page-section " :id="cssLocal + 'about'">
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-end">
+        <div class="col-12">
+          <img class="about-ball" src="./img/etoile/ball_4.png">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase"><% $t('about.heading') %></h2>
+          </div>
+          <p class="text-left" data-aos="zoom-in-right">
+            <% $t('about.content1') %>
+          </p>
+          <p class="text-left" data-aos="zoom-in-right">
+            <% $t('about.content2') %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="page-section bg-beige " :id="cssLocal + 'gallery'">
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-12">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase"><% $t('gallery.heading') %></h2>
+          </div>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee mb-5 " style="--play: running;
+      --direction: normal;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;" >
+            <div class="mx-2" v-for="gallery1 in galleryList1" :key="gallery1">
+              <span>
+                <img :src="gallery1.image" alt="">
+              </span>
+            </div>
+          </div>
+          <div class="marquee mb-5 " style="--play: running;
+      --direction: normal;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;" >
+            <div class="mx-2" v-for="gallery1 in galleryList1" :key="gallery1">
+              <span>
+                <img :src="gallery1.image" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="marquee-container">
+          <div class="marquee"style="--play: running;
+      --direction: reverse;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;" >
+            <div class="mx-2" v-for="gallery2 in galleryList2" :key="gallery2">
+              <span>
+                <img :src="gallery2.image" alt="">
+              </span>
+            </div>
+          </div>
+          <div class="marquee"style="--play: running;
+      --direction: reverse;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;" >
+            <div class="mx-2" v-for="gallery2 in galleryList2" :key="gallery2">
+              <span>
+                <img :src="gallery2.image" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NFT -->
+  <section class="page-section " :id="cssLocal + 'nft'">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-12">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase"><% $t('nft.heading') %></h2>
+          </div>
+          <div class="row mt-5">
+            <div v-for="nftItem in $t('nftList')" :key="nftItem" class="col-lg-4 mb-5 webkit-center">
+              <div class="nft-top mb-3">
+                <span class="font-italic"><% $t(nftItem.title) %></span>
+              </div>
+              <div class="shadow bg-white rounded nft-width">
+                <img :src="nftItem.image" class="card-img-top nft-img" alt="nft">
+              </div>
+
+              <div class="text-center mt-3">
+                <!-- <a :href="nftItem.url" target="_blank" v-if="nftItem.isValue">
+                  <span :class="'badge rounded-pill ' + checkBadge(nftItem.isValue)"><% $t(nftItem.badge) %></span>
+                </a> -->
+                <!-- <router-link :to="{ name:'xii_persona1', params:{ lang:redirectPath} }" v-if="nftItem.isValue" :href="nftItem.url" target="_blank">
+                  <span :class="'badge rounded-pill ' + checkBadge(nftItem.isValue)"><% $t(nftItem.badge) %></span>
+                </router-link> -->
+                <a :href="url" target="_blank" v-if="nftItem.isValue">
+                  <span :class="'badge rounded-pill ' + checkBadge(nftItem.isValue)"><% $t(nftItem.badge) %></span>
+                </a>
+                <span :class="'badge rounded-pill ' + checkBadge(nftItem.isValue)" v-if="!nftItem.isValue"><% $t(nftItem.badge) %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Media -->
+  <section class="page-section bg-beige" :id="cssLocal + 'media'">
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-12">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase"><% $t('media.heading') %></h2>
+          </div>
+        </div>
+        <!-- Swiper -->
+        <div class="swiper media-swiper">
+          <div class="swiper-wrapper">
+            <div v-for="mediaItem in $t('mediaList')" class="swiper-slide card shadow p-3 bg-white rounded">
+              <img class="card-img-top rounded" :src="mediaItem.image" alt="">
+              <div class="card-body">
+                <a :href="mediaItem.url" target="_blank" class="multiline-ellipsis" :title="$t(mediaItem.content)">
+                  <p class="card-text text-center">
+                    <span><% $t(mediaItem.content) %></span><br>
+                    <span v-if="$t(mediaItem.content2)"><% $t(mediaItem.content2) %></span>
+                  </p>
+                </a>
+              </div>
+              <p class="card-text"><small class="text-muted"><% $t(mediaItem.time) %></small></p>
+            </div>
+          </div>
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Futrue -->
+  <section class="page-section " :id="cssLocal + 'futrue'">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-12">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase"><% $t('futrue.heading1') %></h2>
+          </div>
+        </div>
+        <div class="col-lg-12 mb-5">
+          <div class="row">
+            <div class="col-lg-5">
+              
+            </div> 
+            <div class="col-lg-7 offset-lg-4 offset-md-0">
+              <img src="./img/etoile/star_4.png" class="futrue-star" alt="">
+              <p class="text-left" data-aos="zoom-in-right">
+                <% $t('futrue.text1') %>
+              </p>
+              <p class="text-left" data-aos="zoom-in-right">
+                <% $t('futrue.text2') %>
+              </p>
+              <p class="text-left" data-aos="zoom-in-right">
+                <% $t('futrue.text3') %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-12">
+          <div class="text-center">
+            <h2 class="section-heading text-uppercase"><% $t('futrue.heading2') %></h2>
+          </div>
+          <div class="row mb-100 mt-100">
+            <div class="col-lg-5 offset-lg-3 col-sm-12 offset-md-3">
+              <img class="futrue-ball-1" src="./img/etoile/ball_4.png">
+              <img class="futrue-star-1" src="./img/etoile/future_star.png">
+              <ul class="list-center">
+                <li v-for="list1 in $t('futrueList1')"><% $t(list1.text) %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mb-100">
+            <div class="col-lg-5 offset-lg-8 col-sm-12 offset-md-7">
+              <img class="futrue-ball-2" src="./img/etoile/ball_4.png">
+              <ul class="list-center">
+                <li v-for="list2 in $t('futrueList2')"><% $t(list2.text) %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mb-100">
+            <div class="col-lg-5 offset-lg-2 col-sm-12 offset-md-1">
+              <img class="futrue-ball-3" src="./img/etoile/ball_4.png">
+              <ul class="list-center">
+                <li v-for="list3 in $t('futrueList3')"><% $t(list3.text) %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row mb-100">
+            <div class="col-lg-5 offset-lg-7 col-sm-12 offset-md-6">
+              <img class="futrue-ball-4" src="./img/etoile/ball_4.png">
+              <ul class="list-center">
+                <li v-for="list4 in $t('futrueList4')"><% $t(list4.text) %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QA -->
+  <section class="page-section bg-beige " :id="cssLocal + 'qa'">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase"><% $t('faq.heading') %></h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-8">
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-contact-1" role="tabpanel"
+              aria-labelledby="pills-contact-tab">
+              <div v-for="(item, index) in $t('faqList')" :key="item" class="accordion qa-box mb-3" :id="'qaBox_' + index">
+                <div class="card">
+                  <div class="card-header" id="contact_1_q1" :style="qaStyle.boxShadow + qaStyle.transition">
+                    <h2 class="mb-0 collapsed" data-toggle="collapse" :data-target="'#contact_' + index" aria-expanded="false"  @click="qaStyleClick">
+                      <% $t(item.question) %>
+                    </h2>
+                  </div>
+                
+                  <div :id="'contact_' + index" class="collapse" :data-parent="'#qaBox_' + index">
+                      <div class="card-body">
+                        <P v-if="$t(item.ans1)"><% $t(item.ans1) %></P>
+                        <P v-if="$t(item.ans2)"><% $t(item.ans2) %></P>
+                        <P v-if="$t(item.ans3)" ><% $t(item.ans3) %></P>
+                        <p><a v-if="$t(item.urlText)" :href="item.url" target="_blank"><% $t(item.urlText) %></a></p>
+                        <p><a v-if="$t(item.urlText2)" :href="item.url2" target="_blank"><% $t(item.urlText2) %></a></p>
+                        <p><a v-if="$t(item.urlText3)" :href="item.url3" target="_blank"><% $t(item.urlText3) %></a></p>
+                        <p><% $t(item.mailText) %><a v-if="$t(item.mailText)" :href="'https://mail.google.com/mail/?view=cm&fs=1&to='+ item.mailUrl" target="_blank"><% $t(item.mailUrl) %></a></p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer ">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12 mt-5 mb-5">
+          <img src="./img/etoile/icon/logo.png" width="100" alt="logo">
+        </div>
+        <div class="col-md-12 text-center mt-2">
+          <a href="https://discord.gg/5fjqCQHShY" target="_blank"><img class="media-icon ml-3 mr-3" src="./img/etoile/icon/discord.png" alt="discord"></a>
+          <a href="https://twitter.com/etoile___2022" target="_blank"><img class="media-icon ml-3 mr-3" src="./img/etoile/icon/twitter.png" alt="twitter"></a>
+          <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-3 mr-3" src="./img/etoile/icon/instagram.png" alt="instagram"></a>
+          <a href="https://www.facebook.com/Étoilé-108247735273167" target="_blank"><img class="media-icon ml-3 mr-3" src="./img/etoile/icon/facebook.png" alt="facebook"></a>
+          <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-3 mr-3" src="./img/etoile/icon/potato.png" alt="potato"></a>
+        </div>
+        <div class="col-md-12 text-center mt-2">
+          <span class="copyright">
+            &copy; 2022 Etoile Art. All rights reserved. &ensp;
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <router-view></router-view>
+  </main>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Vue.js -->
+  <script src="vendor/vue/vue.min.js"></script>
+  <!-- Vue-18n -->
+  <script src="vendor/vue-i18n/vue-i18n.js"></script>
+  <!-- Vue-router -->
+  <script src="js/vue-router.js"></script>
+  <!-- Vue-scrollto -->
+  <script src="js/vue-scrollto.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="vendor/owl/owl.carousel.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="js/eto.min.js"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      AOS.init();
+      
+      const messages = {
+        tw: {
+          // Menu
+          menuList:[
+            {name:"品牌介紹", id: "about", },
+            {name:"畫廊",id: "gallery", },
+            {name:"精選NFT",id: "nft", },
+            {name:"媒體報導",id: "media", },
+            {name:"未來願景",id: "futrue",},
+            {name:"FAQ",id: "qa", },
+          ],
+          // Slider
+          slider:{
+            text1:"我即是",
+            text2:"時尚",
+            text3:"我即是",
+            text4:"優雅",
+            heading:"一個結合時尚與NFT的精品品牌",
+            button:"典藏NFT"
+          },
+          // 品牌介紹 About
+          about:{
+            heading:"品牌介紹",
+            content1:"Etoile Art想要創作的，不再只是傳統精品，而是嶄新的NFT時尚。Coco Chanel.被喻為二十世紀最有影響力的百人之一，她曾說過 “Je ne fais pas la mode, je suis la mode.”她不是時尚的創造者，而是時尚本身！這是一段多麼優雅的字句。",
+            content2:"Etoile Art希望運用NFT的獨一特性及藝術創作的多樣性，來成就主體獨特性，任何主體只要有了Etoile Art的配搭，立刻化身為時尚的代表。Etoile Art是一種全新的時尚思維，擁有Etoile Art不僅是NFT潮流的象徵，更是Z世代下萬眾矚目的焦點。",
+          },
+          // 畫廊 Gallery
+          gallery:{
+            heading:"畫廊",
+          },
+          // 精選NFT
+          nft:{
+            heading:"精選NFT"
+          },
+          nftList:[
+            {
+              image:"./img/etoile/nft/mint.png",
+              title:"XII Persona", 
+              badge:"Mint", 
+              // url:"https://www.chaebol.art/store/120000000000000001", 
+              url:"xii_persona.html", 
+              routerName:"xii_persona", 
+              isValue:true
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false},
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            }
+          ],
+          // 媒體報導 media
+          media:{
+            heading:"媒體報導"
+          },
+          mediaList:[
+            {
+              image:"./img/etoile/media/news_1.png",
+              content:"震撼彈!元宇宙精品品牌Etoile Art 將發行192顆全球獨有NFT寶石",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E9%9C%87%E6%92%BC%E5%BD%88-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cetoile-%E5%B0%87%E7%99%BC%E8%A1%8C192%E9%A1%86%E5%85%A8%E7%90%83%E7%8D%A8%E6%9C%89nft%E5%AF%B6%E7%9F%B3-093734064.html",
+              time:"2022/06/05"
+            },
+            {
+              image:"./img/etoile/media/news_2.png",
+              content:"元宇宙公司推12星座寶石 金牛座「心形寶石」表達愛意最佳禮物",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E5%85%83%E5%AE%87%E5%AE%99%E5%85%AC%E5%8F%B8%E6%8E%A812%E6%98%9F%E5%BA%A7%E5%AF%B6%E7%9F%B3-%E9%87%91%E7%89%9B%E5%BA%A7-%E5%BF%83%E5%BD%A2%E5%AF%B6%E7%9F%B3-%E8%A1%A8%E9%81%94%E6%84%9B%E6%84%8F%E6%9C%80%E4%BD%B3%E7%A6%AE%E7%89%A9-142607363.html",
+              time:"2022/06/26"
+            },
+            {
+              image:"./img/etoile/media/news_3.png",
+              content:"精品NFT品牌",
+              content2:"發表12星座主題寶石系列NFT",
+              url:"https://tw.news.yahoo.com/%E7%B2%BE%E5%93%81nft%E5%93%81%E7%89%8C-%E7%99%BC%E8%A1%A812%E6%98%9F%E5%BA%A7%E4%B8%BB%E9%A1%8C%E5%AF%B6%E7%9F%B3%E7%B3%BB%E5%88%97nft-063851341.html",
+              time:"2022/07/12"
+            },
+            {
+              image:"./img/etoile/media/news_4.png",
+              content:"豪奢逸品！",
+              content2:"元宇宙精品品牌NFT問世",
+              url:"https://tw.news.yahoo.com/%E8%B1%AA%E5%A5%A2%E9%80%B8%E5%93%81-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cnft%E5%95%8F%E4%B8%96-035655874.html",
+              time:"2022/07/05"
+            }
+          ],
+          // 未來願景 Futrue
+          futrue:{
+            heading1:"Etoile Art理念",
+            heading2:"未來願景",
+            text1:"「Etoile」發音為e.twal，在法文中為「星星」的意思。 每一顆星星，看似遙遠而渺小，但都是如太陽炙熱的能源體， 藉由不斷燃燒自我，散發出恆遠的光澤和能量。 ",
+            text2:"在元宇宙裡的這顆「Etoile Art」，雖然距你千萬光年，雖然與你不同次元， 但會永遠伴你身邊，為你綻放持久而耀眼的光芒。",
+            text3:"希望擁有「Etoile Art」的你，也能夠閃閃發光。",
+          },
+          futrueList1:[
+            {text:"XII Persona首發鑄造"},
+            {text:"實體店家合作"},
+            {text:"NFT知識新聞分享"},
+          ],
+          futrueList2:[
+            {text:"NFT質押借貸"},
+            {text:"發售其他精品系列NFT"},
+            {text:"客製化NFT"},
+          ],
+          futrueList3:[
+            {text:"和知名藝術家品牌聯名"},
+            {text:"虛擬空間賣場"},
+            {text:"製作相關IP商品，讓持有者回潤"},
+          ],
+          futrueList4:[
+            {text:"Etoile Art專屬展場"},
+            {text:"Etoile Art Dao"},
+            {text:"治理代幣空投給持有者"},
+          ],
+          // 常見問題
+          faq:{
+            heading:"常見問題"
+          },
+          faqList:[
+            {
+              question:'NFT(非同質化代幣)是什麼？',
+              ans1:'不具可替代性：每個 NFT 都是獨一無二、不可替換的，比方蒙娜麗莎跟剛畫好的畫一定是不等值的，而蒙娜麗莎也無法被其他的畫取代。',
+              ans2:'不具可分割性：如果蒙娜麗莎為一枚 NFT 代幣，則此枚代幣無法被分割成更小單位進行交易，每次交易的單位是枚，也就是說獲得這個 NFT 的人擁有完整的蒙娜麗莎，由於上述的兩個特性，此枚蒙娜麗莎的 NFT，同時具有所有權的證明功能，並且成為可流通的數位收藏品。',
+              ans3:'',
+              urlText:'詳細請參閱Etoile Art文章：【NFT是什麼？如何運用在我們生活當中？】',
+              url:"https://www.potatomedia.co/post/1c60d28d-a830-47d1-a29a-5b800131eeb1"
+            },
+            {
+              question:'如何購買Etoile Art NFT？',
+              ans1:'',
+              ans2:'',
+              ans3:'',
+              urlText:'請參閱Etoile Art的公開鑄造文章說明',
+              url:'https://www.potatomedia.co/post/f721acd3-afd8-427e-a288-df9a64b1ff0c',
+              urlText2:'請參閱Etoile Art的白名單鑄造文章說明',
+              url2:'https://www.potatomedia.co/post/d8f84a25-a772-45bf-8a5f-105d5ad59119',
+              urlText3:'如何轉帳加密貨幣到CHAEBOL錢包？',
+              url3:'https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%84%B2%E5%80%BC%E6%8F%90%E9%A0%98-c9f1fe6aba'
+            },
+            {
+              question:'為何選擇CHAEBOL平台？',
+              ans1:'CHAEBOL 致力於為藝術品市場與加密貨幣市場構築起堅實的橋樑，是一個嶄新的全新藝術NFT平台，其理念也與Etoile Art不謀而和。',
+              ans2:'CHAEBOL想透過區塊鏈技術打造一個數位藝術品與收藏品的自由市場，結合實體藝術品拍賣，達到虛實的無縫結合。',
+              ans3:'此外，CHAEBOL也將鼓勵用戶對平台系統產生貢獻，將提供激勵措施給予回饋，讓CHAEBOL不只是個單純NFT平台，讓用戶除了買賣數位藝術品，也能享受Web 3.0的全新體驗感!!',
+              urlText:'',
+              url:''
+            },
+            {
+              question:'如何聯繫我們？',
+              ans1:'歡迎有任何商務與合作上的需求，都請來信詢問。',
+              ans2:'',
+              ans3:'',
+              urlText:'',
+              url:'',
+              mailText:'Email：',
+              mailUrl:'etoile666777@gmail.com'
+            }
+          ],
+        },
+        cn: {
+          // Menu
+          menuList:[
+            {name:"品牌介绍", id: "about", },
+            {name:"画廊",id: "gallery", },
+            {name:"精选NFT",id: "nft", },
+            {name:"媒体报道",id: "media", },
+            {name:"未来愿景",id: "futrue",},
+            {name:"FAQ",id: "qa", },
+          ],
+          // Slider
+          slider:{
+            text1:"我即是",
+            text2:"时尚",
+            text3:"我即是",
+            text4:"优雅",
+            heading:"一个结合时尚与NFT的精品品牌",
+            button:"典藏NFT"
+          },
+          // About
+          about:{
+            heading:"品牌介绍",
+            content1:"Etoile Art想要创作的，不再只是传统精品，而是崭新的NFT时尚。 Coco Chanel. 被喻为二十世纪最有影响力的百人之一，她曾说过 “Je ne fais pas la mode， je suis la mode.” 她不是时尚的创造者，而是时尚本身！ 这是一段多么优雅的字句。",
+            content2:"Etoile Art希望运用NFT的独一特性及艺术创作的多样性，来成就主体独特性，任何主体只要有了Etoile Art的配搭，立刻化身为时尚的代表。 Etoile Art是一种全新的时尚思维，拥有Etoile Art不仅是NFT潮流的象征，更是Z世代下万众瞩目的焦点。",
+          },
+          // Gallery
+          gallery:{
+            heading:"画廊",
+          },
+          // 精選NFT
+          nft:{
+            heading:"精选NFT"
+          },
+          nftList:[
+            {
+              image:"./img/etoile/nft/mint.png",
+              title:"XII Persona", 
+              badge:"Mint", 
+              // url:"https://www.chaebol.art/store/120000000000000001", 
+              url:"xii_persona.html", 
+              isValue:true
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false},
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"典藏系列", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            }
+          ],
+          // 媒體報導
+          media:{
+            heading:"媒体报道"
+          },
+          mediaList:[
+            {
+              image:"./img/etoile/media/news_1.png",
+              content:"震撼弹！ 元宇宙精品品牌Etoile Art 将发行192颗全球独有NFT宝石",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E9%9C%87%E6%92%BC%E5%BD%88-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cetoile-%E5%B0%87%E7%99%BC%E8%A1%8C192%E9%A1%86%E5%85%A8%E7%90%83%E7%8D%A8%E6%9C%89nft%E5%AF%B6%E7%9F%B3-093734064.html",
+              time:"2022/06/05"
+            },
+            {
+              image:"./img/etoile/media/news_2.png",
+              content:"元宇宙公司推12星座宝石 金牛座「心形宝石」表达爱意最佳礼物",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E5%85%83%E5%AE%87%E5%AE%99%E5%85%AC%E5%8F%B8%E6%8E%A812%E6%98%9F%E5%BA%A7%E5%AF%B6%E7%9F%B3-%E9%87%91%E7%89%9B%E5%BA%A7-%E5%BF%83%E5%BD%A2%E5%AF%B6%E7%9F%B3-%E8%A1%A8%E9%81%94%E6%84%9B%E6%84%8F%E6%9C%80%E4%BD%B3%E7%A6%AE%E7%89%A9-142607363.html",
+              time:"2022/06/26"
+            },
+            {
+              image:"./img/etoile/media/news_3.png",
+              content:"精品NFT品牌",
+              content2:"发表12星座主题宝石系列NFT",
+              url:"https://tw.news.yahoo.com/%E7%B2%BE%E5%93%81nft%E5%93%81%E7%89%8C-%E7%99%BC%E8%A1%A812%E6%98%9F%E5%BA%A7%E4%B8%BB%E9%A1%8C%E5%AF%B6%E7%9F%B3%E7%B3%BB%E5%88%97nft-063851341.html",
+              time:"2022/07/12"
+            },
+            {
+              image:"./img/etoile/media/news_4.png",
+              content:"豪奢逸品！",
+              content2:"元宇宙精品品牌NFT问世",
+              url:"https://tw.news.yahoo.com/%E8%B1%AA%E5%A5%A2%E9%80%B8%E5%93%81-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cnft%E5%95%8F%E4%B8%96-035655874.html",
+              time:"2022/07/05"
+            }
+          ],
+          // 未來願景 Futrue
+          futrue:{
+            heading1:"Etoile Art理念",
+            heading2:"未来愿景",
+            text1:"「Etoile」发音为e.twal，在法文中为「星星」的意思。 每一颗星星，看似遥远而渺小，但都是如太阳炙热的能源体，借由不断燃烧自我，散发出恒远的光泽和能量。 ",
+            text2:"在元宇宙里的这颗「Etoile Art」，虽然距你千万光年，虽然与你不同次元， 但会永远伴你身边，为你绽放持久而耀眼的光芒。",
+            text3:"希望拥有「Etoile Art」的你，也能够闪闪发光。",
+          },
+          futrueList1:[
+            {text:"XII Persona首发铸造"},
+            {text:"实体店家合作"},
+            {text:"NFT知识新闻分享"},
+          ],
+          futrueList2:[
+            {text:"NFT质押借贷"},
+            {text:"发售其他精品系列NFT"},
+            {text:"定制NFT"},
+          ],
+          futrueList3:[
+            {text:"和知名艺术家品牌联名"},
+            {text:"虚拟空间卖场"},
+            {text:"制作相关IP商品，让持有者回润"},
+          ],
+          futrueList4:[
+            {text:"Etoile Art专属展场"},
+            {text:"Etoile Art Dao"},
+            {text:"治理代币空投给持有者"},
+          ],
+          faq:{
+            heading:"常见问题"
+          },
+          faqList:[
+            {
+              question:'NFT（非同质化代币）是什么？',
+              ans1:'不具可替代性：每个 NFT 都是独一无二、不可替换的，比方蒙娜丽莎跟刚画好的画一定是不等值的，而蒙娜丽莎也无法被其他的画取代。',
+              ans2:'不具可分割性：如果蒙娜丽莎为一枚 NFT 代币，则此枚代币无法被分割成更小单位进行交易，每次交易的单位是枚，也就是说获得这个 NFT 的人拥有完整的蒙娜丽莎，由于上述的两个特性，此枚蒙娜丽莎的 NFT，同时具有所有权的证明功能，并且成为可流通的数字收藏品。',
+              ans3:'',
+              urlText:'详细请参阅Etoile Art文章：【NFT是什么？ 如何运用在我们生活当中？ 】',
+              url:'https://www.potatomedia.co/post/1c60d28d-a830-47d1-a29a-5b800131eeb1'
+            },
+            {
+              question:'如何购买Etoile Art NFT？',
+              ans1:'',
+              ans2:'',
+              ans3:'',
+              urlText:'请参阅Etoile Art的公开铸造文章说明',
+              url:'https://www.potatomedia.co/post/be9a73c2-fb46-4f95-9335-95da63ce3663',
+              urlText2:'请参阅Etoile Art的白名单铸造文章说明',
+              url2:'https://www.potatomedia.co/post/43adb381-02dd-4d0e-947b-302b6e376b8e',
+              urlText3:'如何转帐加密货币到CHAEBOL钱包？',
+              url3:'https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%82%A8%E5%80%BC%E6%8F%90%E9%A2%86-4258a319986a'
+            },
+            {
+              question:'为何选择CHAEBOL平台？',
+              ans1:'CHAEBOL 致力于为艺术品市场与加密货币市场构筑起坚实的桥梁，是一个崭新的全新艺术NFT平台，其理念也与Etoile Art不谋而和。',
+              ans2:'CHAEBOL想通过区块链技术打造一个数字艺术品与收藏品的自由市场，结合实体艺术品拍卖，达到虚实的无缝结合。',
+              ans3:'此外，CHAEBOL也将鼓励用户对平台系统产生贡献，将提供激励措施给予回馈，让CHAEBOL不只是个单纯NFT平台，让用户除了买卖数字艺术品之外，更能享受Web 3.0 的全新体验感受！！',
+              urlText:'',
+              url:''
+            },
+            {
+              question:'如何联系我们？',
+              ans1:'欢迎有任何商务与合作上的需求，都请来信询问。',
+              ans2:'',
+              ans3:'',
+              urlText:'',
+              url:'',
+              mailText:'Email：',
+              mailUrl:'etoile666777@gmail.com'
+            }
+          ],
+        },
+        en: {
+          // Menu
+          menuList:[
+            {name:"Introduction", id: "about", },
+            {name:"Exhibition",id: "gallery", },
+            {name:"Selected NFT",id: "nft", },
+            {name:"Press Release",id: "media", },
+            {name:"Vision",id: "futrue",},
+            {name:"FAQ",id: "qa", },
+          ],
+          // Slider
+          slider:{
+            text1:"I am ",
+            text2:"Fashion",
+            text3:"I am ",
+            text4:"Elegant",
+            heading:"A brand that combines fashion and NFT",
+            button:"NFT Collection"
+          },
+          // 品牌介紹 About
+          about:{
+            heading:"Brand introduction",
+            content1:"What Etoile Art wants to create is not just a traditional brand, but a new NFT fashion brand. Coco Chanel was hailed as one of the 100 most influential people of the 20th century, once said, “Je ne fais pas la mode, je suis la mode. - I am not the creator of fashion, I am the fashion! “This is truly an unpredictable elegance.",
+            content2:"Etoile Art hopes to use the unique characteristics of the NFT and the diversity of artistic creation to achieve the originality of the subject. Etoile Art is a fashion brand with a completely new mindset, owning Etoile Art is not only the ownership of the trend icon of NFT but also the focus of attention of Generation Z.",
+          },
+          // 畫廊 Gallery
+          gallery:{
+            heading:"Exhibition",
+          },
+          // 精選NFT
+          nft:{
+            heading:"Selected NFT"
+          },
+          nftList:[
+            {
+              image:"./img/etoile/nft/mint.png",
+              title:"XII Persona", 
+              badge:"Mint", 
+              // url:"https://www.chaebol.art/store/120000000000000001", 
+              url:"xii_persona.html", 
+              isValue:true
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false},
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Other collections", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            }
+          ],
+          // 媒體報導 media
+          media:{
+            heading:"Press Release"
+          },
+          mediaList:[
+            {
+              image:"./img/etoile/media/news_1.png",
+              content:"Shocking! Metaverse Etoile Art Brand Will Release 192 Unique NFT Gems Worldwide",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E9%9C%87%E6%92%BC%E5%BD%88-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cetoile-%E5%B0%87%E7%99%BC%E8%A1%8C192%E9%A1%86%E5%85%A8%E7%90%83%E7%8D%A8%E6%9C%89nft%E5%AF%B6%E7%9F%B3-093734064.html",
+              time:"06/05/2022"
+            },
+            {
+              image:"./img/etoile/media/news_2.png",
+              content:'The Metaverse company promotes the 12 constellations gem. Taurus-"Heart-shaped Stone" to express love as the best gift',
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E5%85%83%E5%AE%87%E5%AE%99%E5%85%AC%E5%8F%B8%E6%8E%A812%E6%98%9F%E5%BA%A7%E5%AF%B6%E7%9F%B3-%E9%87%91%E7%89%9B%E5%BA%A7-%E5%BF%83%E5%BD%A2%E5%AF%B6%E7%9F%B3-%E8%A1%A8%E9%81%94%E6%84%9B%E6%84%8F%E6%9C%80%E4%BD%B3%E7%A6%AE%E7%89%A9-142607363.html",
+              time:"06/26/2022"
+            },
+            {
+              image:"./img/etoile/media/news_3.png",
+              content:"NFT store brand releases 12 Constellations theme gems NFT series",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E7%B2%BE%E5%93%81nft%E5%93%81%E7%89%8C-%E7%99%BC%E8%A1%A812%E6%98%9F%E5%BA%A7%E4%B8%BB%E9%A1%8C%E5%AF%B6%E7%9F%B3%E7%B3%BB%E5%88%97nft-063851341.html",
+              time:"07/12/2022"
+            },
+            {
+              image:"./img/etoile/media/news_4.png",
+              content:"Lavish and luxurious! New Metaverse NFT store brand launched",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E8%B1%AA%E5%A5%A2%E9%80%B8%E5%93%81-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cnft%E5%95%8F%E4%B8%96-035655874.html",
+              time:"07/05/2022"
+            }
+          ],
+          // 未來願景 Futrue
+          futrue:{
+            heading1:"Etoile Art Foundation",
+            heading2:"Vision",
+            text1:'"Etoile" is pronounced e.twal, which means "star" in French. Every star seems distant and insignificant, but it is a hot energetic entity like the sun, by continuously burning itself, emits eternal light and energy.',
+            text2:'Although this "Etoile Art" is thousands of light years away from you and different from you, it will always be by your side, shining a long and bright light on you.',
+            text3:'We hope those of you who own "Etoile Art" can also shine.',
+          },
+          futrueList1:[
+            {text:"XII Persona first mint"},
+            {text:"Physical cooperation store"},
+            {text:"NFT Knowledge Sharing News"},
+          ],
+          futrueList2:[
+            {text:"NFT Pledge Loan"},
+            {text:"Release others NFT series boutique"},
+            {text:"Customized NFT"},
+          ],
+          futrueList3:[
+            {text:" Co-branded with famous artist brands"},
+            {text:"Virtual store space"},
+            {text:"Create related IP products, leave the owner profitable"},
+          ],
+          futrueList4:[
+            {text:"Etoile Art Exclusive Exhibition"},
+            {text:"Etoile Art Dao"},
+            {text:"Airdrop governance tokens to holders"},
+          ],
+          // 常見問題
+          faq:{
+            heading:"FAQ"
+          },
+          faqList:[
+            {
+              question:'What is NFT (Non-Fungible Token)?',
+              ans1:'Can not be replaced：Each NFT is unique and irreplaceable. For example, the original Mona Lisa and a recently painted Mona Lisa cannot be the same and the Mona Lisa cannot be replaced by other paintings.',
+              ans2:'Indivisible：If the Mona Lisa is an NFT, the NFT cannot be divided into smaller units for transactions and the unit of each transaction is 1, which means that the person who obtained this NFT fully owns the Mona Lisa, due to the above two characteristics, this Mona Lisa NFT also has the function of proof of ownership and becomes a circulated digital collectible.',
+              ans3:'',
+              urlText:'For details, please refer to the article:【What is NFT? How to apply it in our life?】',
+              url:"https://www.potatomedia.co/post/1c60d28d-a830-47d1-a29a-5b800131eeb1"
+            },
+            {
+              question:'How to buy Etoile Art NFT？',
+              ans1:"",
+              ans2:'',
+              ans3:'',
+              urlText:"Etoile Art's Public Mint instructions article",
+              url:'https://www.potatomedia.co/post/481d08e3-25f0-4db0-bff1-571d4d1217af',
+              urlText2:"Etoile Art's White List Mint instructions article",
+              url2:'https://www.potatomedia.co/post/ab655182-a4fa-4108-add5-a92b83282d0c',
+              urlText3:"How can I transfer crypto assets to my CHAEBOL wallet?",
+              url3:'https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641'
+            },
+            {
+              question:'Why CHAEBOL',
+              ans1:'CHAEBOL is committed to building a solid bridge between the art market and the crypto assets market. This is a completely new artistic NFT platform and the idea of ​​the foundation is also in harmony with Etoile Art.',
+              ans2:'CHAEBOL wants to create a free marketplace for digital art and collectibles through blockchain technology, combined with physical art auctions, to achieve a seamless fusion of reality and reality. In addition, CHAEBOL will also encourage users to contribute to the platform system and will provide incentives to give back, so that CHAEBOL is not just a mere NFT platform so that users can enjoy a new experience. of Web 3.0 in addition to buying and selling digital art!!',
+              ans3:'',
+              urlText:'',
+              url:''
+            },
+            {
+              question:'How to contact us?',
+              ans1:'If you have any questions, co-operate on business, you can write to us!',
+              ans2:'',
+              ans3:'',
+              urlText:'',
+              url:'',
+              mailText:'Email：',
+              mailUrl:'etoile666777@gmail.com'
+            }
+          ],
+          
+        },
+        vn: {
+          // Menu
+          menuList:[
+            {name:"Giới thiệu", id: "about", },
+            {name:"Phòng trưng bày",id: "gallery", },
+            {name:"NFT tuyển chọn",id: "nft", },
+            {name:"Thông cáo báo chí",id: "media", },
+            {name:"Tầm nhìn",id: "futrue",},
+            {name:"FAQ",id: "qa", },
+            // {name:"Câu hỏi thường gặp",id: "qa", },
+          ],
+          // Slider
+          slider:{
+            text1:"Tôi là ",
+            text2:"thời trang",
+            text3:"Tôi là ",
+            text4:"thanh lịch",
+            heading:"Một thương hiệu kết hợp thời trang và NFT",
+            button:"Bộ sưu tập NFT"
+          },
+          // 品牌介紹 About
+          about:{
+            heading:"Giới thiệu thương hiệu",
+            content1:"Những gì Etoile Art muốn tạo ra không chỉ là một thương hiệu truyền thống, mà là một thương hiệu thời trang NFT mới. Coco Chanel được ca ngợi là một trong 100 người có ảnh hưởng nhất thế kỷ 20, tôi từng nói “Je ne fais pas la mode, je suis la mode. - Tôi không phải là người tạo ra thời trang, tôi chính là thời trang! “ Đây thật sự là một sự tao nhã khó lường.",
+            content2:"Etoile Art hy vọng sẽ sử dụng những đặc điểm riêng biệt của NFT và sự đa dạng của sáng tạo nghệ thuật để đạt được tính độc đáo của chủ thể. Etoile Art là một thương hiệu thời trang với tư duy hoàn toàn mới, sở hữu Etoile Art không chỉ là sở hữu biểu tượng xu hướng của NFT mà còn là tâm điểm chú ý của Gen Z.",
+          },
+          // 畫廊 Gallery
+          gallery:{
+            heading:"Phòng trưng bày",
+          },
+          // 精選NFT
+          nft:{
+            heading:"NFT tuyển chọn"
+          },
+          nftList:[
+            {
+              image:"./img/etoile/nft/mint.png",
+              title:"XII Persona", 
+              badge:"Mint", 
+              // url:"https://www.chaebol.art/store/120000000000000001", 
+              url:"xii_persona.html",  
+              isValue:true
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false},
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_2.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            },
+            {
+              image:"./img/etoile/nft/box_1.png", 
+              title:"Các bộ sưu tập khác", 
+              badge:"Coming Soon", 
+              url:"#",
+              isValue:false
+            }
+          ],
+          // 媒體報導 media
+          media:{
+            heading:"Thông cáo báo chí"
+          },
+          mediaList:[
+            {
+              image:"./img/etoile/media/news_1.png",
+              content:"Giật tít ! Thương hiệu cửa hàng Metaverse Etoile Art sẽ phát hành 192 viên ngọc NFT độc nhất trên toàn cầu",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E9%9C%87%E6%92%BC%E5%BD%88-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cetoile-%E5%B0%87%E7%99%BC%E8%A1%8C192%E9%A1%86%E5%85%A8%E7%90%83%E7%8D%A8%E6%9C%89nft%E5%AF%B6%E7%9F%B3-093734064.html",
+              time:"05/06/2022"
+            },
+            {
+              image:"./img/etoile/media/news_2.png",
+              content:'Công ty Metaverse quảng bá đá quý 12 chòm sao. Taurus-"Heart shaped Stone" để thể hiện tình yêu như một món quà tuyệt vời nhất',
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E5%85%83%E5%AE%87%E5%AE%99%E5%85%AC%E5%8F%B8%E6%8E%A812%E6%98%9F%E5%BA%A7%E5%AF%B6%E7%9F%B3-%E9%87%91%E7%89%9B%E5%BA%A7-%E5%BF%83%E5%BD%A2%E5%AF%B6%E7%9F%B3-%E8%A1%A8%E9%81%94%E6%84%9B%E6%84%8F%E6%9C%80%E4%BD%B3%E7%A6%AE%E7%89%A9-142607363.html",
+              time:"26/06/2022"
+            },
+            {
+              image:"./img/etoile/media/news_3.png",
+              content:"Thương hiệu cửa hàng NFT phát hành loạt NFT đá quý chủ đề 12 chòm sao",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E7%B2%BE%E5%93%81nft%E5%93%81%E7%89%8C-%E7%99%BC%E8%A1%A812%E6%98%9F%E5%BA%A7%E4%B8%BB%E9%A1%8C%E5%AF%B6%E7%9F%B3%E7%B3%BB%E5%88%97nft-063851341.html",
+              time:"12/07/2022"
+            },
+            {
+              image:"./img/etoile/media/news_4.png",
+              content:"Xa hoa và sang trọng! Thương hiệu cửa hàng Metaverse NFT mới ra mắt",
+              content2:"",
+              url:"https://tw.news.yahoo.com/%E8%B1%AA%E5%A5%A2%E9%80%B8%E5%93%81-%E5%85%83%E5%AE%87%E5%AE%99%E7%B2%BE%E5%93%81%E5%93%81%E7%89%8Cnft%E5%95%8F%E4%B8%96-035655874.html",
+              time:"05/07/2022"
+            }
+          ],
+          // 未來願景 Futrue
+          futrue:{
+            heading1:"Ý tưởng thành lập Etoile Art",
+            heading2:"Tầm nhìn",
+            text1:'"Etoile" được phát âm là e.twal, có nghĩa là "ngôi sao" trong tiếng Pháp. Mọi ngôi sao đều có vẻ xa xôi và tầm thường, nhưng nó là một thực thể năng lượng nóng như mặt trời, bằng cách liên tục đốt cháy chính nó, nó phát ra ánh sáng và năng lượng vĩnh cửu.',
+            text2:'Mặc dù "Etoile Art" này ở cách xa bạn hàng nghìn năm ánh sáng và khác biệt với bạn, nó sẽ luôn ở bên cạnh bạn, chiếu ánh sáng lâu dài và chói lọi cho bạn.',
+            text3:'Chúng tôi hy vọng những người bạn sở hữu "Etoile Art" cũng có thể tỏa sáng.',
+          },
+          futrueList1:[
+            {text:"Lần đầu mint XII Persona"},
+            {text:"Các cửa hàng đồng hành"},
+            {text:"Tin tức chia sẻ kiến ​​thức NFT"},
+          ],
+          futrueList2:[
+            {text:"Vay thế chấp NFT"},
+            {text:"Phát hành chuỗi cửa hàng NFT khác"},
+            {text:"Tuỳ chỉnh NFT"},
+          ],
+          futrueList3:[
+            {text:"Đồng thương hiệu với các thương hiệu nghệ sĩ nổi tiếng"},
+            {text:"Không gian cửa hàng ảo"},
+            {text:"Tạo các sản phẩm IP liên quan, để chủ sở hữu  lại lợi nhuận"},
+          ],
+          futrueList4:[
+            {text:"Triển lãm độc quyền Etoile Art"},
+            {text:"Etoile Art Dao"},
+            {text:"Airdrop các token quản trị cho chủ sở hữu"},
+          ],
+          // 常見問題
+          faq:{
+            heading:"FAQ"
+            // heading:"Câu hỏi thường gặp"
+          },
+          faqList:[
+            {
+              question:'NFT (Non-Fungible Token) là gì?',
+              ans1:'Không thể thay thế：Mỗi NFT là duy nhất và không thể thay thế. Ví dụ, bức Mona Lisa ban đầu và một bức Mona Lisa vừa vẽ không thể giống nhau và Mona Lisa không thể bị thay thế bằng các bức tranh khác.',
+              ans2:'Không thể phân chia：Nếu Mona Lisa là một đồng NFT, đồng NFT này không thể được chia thành các đơn vị nhỏ hơn cho các giao dịch và đơn vị của mỗi giao dịch là 1, có nghĩa là người có được NFT này đã hoàn toàn sở hữu Mona Lisa, do hai trên đặc điểm trên, NFT  Mona Lisa này còn có chức năng chứng minh quyền sở hữu và trở thành đồ sưu tầm kỹ thuật số có thể được lưu hành.',
+              ans3:'',
+              urlText:'Chi tiết vui lòng tham khảo bài viết:【NFT là gì? Làm thế nào để áp dụng nó trong cuộc sống của chúng ta? 】',
+              url:"https://www.potatomedia.co/post/1c60d28d-a830-47d1-a29a-5b800131eeb1"
+            },
+            {
+              question:'Làm sao để mua NFT của Etoile Art？',
+              ans1:'',
+              ans2:'',
+              ans3:'',
+              urlText:'Bài viết hướng dẫn Mint công khai Etoile Art',
+              url:'https://www.potatomedia.co/post/b5f7fb28-168d-4835-a8b1-f9499a33d1ca',
+              urlText2:'Bài viết hướng dẫn Mint Whitelist của Etoile Art',
+              url2:'https://www.potatomedia.co/post/48d652a2-d2cd-46cc-9d51-f900550ea590',
+              urlText3:'Làm cách nào để chuyển tiền điện tử sang ví CHAEBOL?',
+              url3:'https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641'
+            },
+            {
+              question:'Tại sao lại chọn nền tảng CHAEBOL？',
+              ans1:'CHAEBOL cam kết xây dựng một cầu nối vững chắc giữa thị trường nghệ thuật và thị trường tiền điện tử. Đây là một nền tảng NFT nghệ thuật hoàn toàn mới và ý tưởng thành lập đồng thời cũng hài hòa với Etoile Art.',
+              ans2:'CHAEBOL muốn tạo ra một thị trường tự do cho các tác phẩm nghệ thuật kỹ thuật số và các bộ sưu tầm thông qua công nghệ blockchain, kết hợp với đấu giá nghệ thuật vật lý, để đạt được sự kết hợp liền mạch giữa thực tế và thực tế. Ngoài ra, ',
+              ans3:'CHAEBOL cũng sẽ khuyến khích người dùng đóng góp vào hệ thống nền tảng và sẽ cung cấp các ưu đãi để tặng lại, để CHAEBOL không chỉ là một nền tảng NFT đơn thuần, để người dùng có thể tận hưởng trải nghiệm mới của Web 3.0 ngoài việc mua và bán các tác phẩm nghệ thuật kỹ thuật số !!',
+              urlText:'',
+              url:''
+            },
+            {
+              question:'Cách thức liên hệ?',
+              ans1:'Nếu bạn có bất kì câu hỏi hoặc nhu cầu kinh doanh và hợp tác nào, xin vui lòng viết thư cho chúng tôi.',
+              ans2:'',
+              ans3:'',
+              urlText:'',
+              url:'',
+              mailText:'Email：',
+              mailUrl:'etoile666777@gmail.com'
+            }
+          ],
+          
+        }
+      }
+      const i18n = new VueI18n({
+        //定義默認語言
+        locale: 'tw', 
+        messages:messages,
+        silentTranslationWarn: true
+      })
+
+      const routes = [
+        { 
+          path: '/',
+          children:[
+            {
+              path:'',
+              name: 'index',
+              // redirect: '/TW' ,
+            },
+            { 
+              path: '/:lang',
+              name: 'lang',
+            },
+            { 
+              path: '/xii_persona',
+              name: 'xii_persona1',
+            },
+            { 
+              path: '/xii_persona/:lang',
+              name: 'xii_persona',
+            },
+          ]
+        },
+
+      ]
+      Vue.use(VueRouter);
+      const router = new VueRouter({
+        // mode: 'history',
+        routes,
+      });
+      // console.log(route.query);
+
+      let vue = new Vue({
+          el: "#app",
+          i18n:i18n,
+          router:router,
+          delimiters: ['<%', '%>'],
+          data: {
+            lanName:"繁體中文",
+            checkIndex:"",
+            menuView:false,
+            locale: "tw",
+            cssLocal:"",
+            menuImg:"./img/etoile/icon/Menu.png",
+            menuTrigger:false,
+            mediaSwiper:"",
+            logoStyle:{
+              display: ''
+            },
+            phoneLogoStyle:{
+              display: 'none',
+              width: '100px',
+            },
+            qaCheck:false,
+            qaStyle:{
+              boxShadow:'',
+              transition:''
+            },
+            redirectPath:"",
+            url:"",
+            // Language
+            lanList:[
+              {name:"繁體中文", href:"#", routeName:"index", router:""},
+              {name:"简体中文", href:"#", routeName:"lang",router:"CN"},
+              {name:"English", href:"#", routeName:"lang",router:"EN"},
+              {name:"Tiếng Việt", href:"#", routeName:"lang",router:"VN"},
+            ],
+            // 畫廊
+            galleryList1:[
+              {image:"./img/etoile/gallery/Draw1.png"},
+              {image:"./img/etoile/gallery/Draw2.png"},
+              {image:"./img/etoile/gallery/Draw3.png"},
+              {image:"./img/etoile/gallery/Draw1.png"},
+              {image:"./img/etoile/gallery/Draw2.png"},
+              {image:"./img/etoile/gallery/Draw3.png"},
+            ],
+            galleryList2:[
+              {image:"./img/etoile/gallery/happybithday01.png"},
+              {image:"./img/etoile/gallery/happybithday02.png"},
+              {image:"./img/etoile/gallery/happybithday03.png"},
+              {image:"./img/etoile/gallery/happybithday04.png"},
+              {image:"./img/etoile/gallery/happybithday05.png"},
+              {image:"./img/etoile/gallery/happybithday06.png"},
+              {image:"./img/etoile/gallery/happybithday07.png"},
+              {image:"./img/etoile/gallery/happybithday01.png"},
+              {image:"./img/etoile/gallery/happybithday02.png"},
+              {image:"./img/etoile/gallery/happybithday03.png"},
+              {image:"./img/etoile/gallery/happybithday04.png"},
+              {image:"./img/etoile/gallery/happybithday05.png"},
+              {image:"./img/etoile/gallery/happybithday06.png"},
+              {image:"./img/etoile/gallery/happybithday07.png"},
+            ],
+            
+          },
+          mounted: function () {
+            // 畫廊
+            var gallerySwiper = new Swiper(".gallery-swiper", {
+                // slidesPerView: 3,
+                spaceBetween: 50,
+                slidesPerGroup: 1,
+                loop: true,
+                loopFillGroupWithBlank: true,
+                // pagination: false,
+                // slidesOffsetAfter: 200,
+                // slidesOffsetBefore: 30,
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                  },
+                  640: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                  },
+              }
+              });
+            // media
+            var mediaSwiper = new Swiper(".media-swiper", {
+                slidesPerView: 3,
+                spaceBetween: 50,
+                slidesPerGroup: 1,
+                loop: true,
+                loopFillGroupWithBlank: true,
+                // pagination: false,
+                // slidesOffsetAfter: 200,
+                // slidesOffsetBefore: 30,
+                pagination: {
+                  el: ".swiper-pagination",
+                  clickable: true,
+                },
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  760: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                  },
+                  1280: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                  },
+              }
+              });
+            this.mediaSwiper = mediaSwiper
+            var owl = $('.owl-carousel').owlCarousel({
+                items: 3,
+                loop: true,
+                autoplay: false,
+                dots: false
+              });
+          },
+          created: function () {
+            this.$i18n.locale = this.locale;
+          },
+          watch: { 
+            '$route.path': {
+              handler: function(path) {
+                console.log(path)
+                if(path=='/'){
+                  this.locale = 'tw'
+                  this.lanName = '繁體中文'
+                  this.cssLocal = ''
+                  this.redirectPath = ""
+                  this.url = this.replaceUrl(window.location.href, "/");
+                }else if(path=='/CN'){
+                  this.locale = 'cn'
+                  this.lanName = '简体中文'
+                   this.cssLocal = ''
+                   this.redirectPath = "CN"
+                   this.url = this.replaceUrl(window.location.href, "/CN");
+                }else if (path=='/EN'){
+                  this.locale = 'en'
+                  this.cssLocal = 'en_'
+                  this.lanName = 'English'
+                  this.redirectPath = "EN"
+                  this.url = this.replaceUrl(window.location.href, "/EN");
+                }else if (path=='/VN'){
+                  this.locale = 'vn'
+                  this.lanName = 'Tiếng Việt'
+                  this.cssLocal = 'vn_'
+                  this.redirectPath = "VN"
+                  this.url = this.replaceUrl(window.location.href, "/VN");
+                }
+                this.$i18n.locale = this.locale
+              },
+              deep: true,
+              immediate: true,
+            }
+          },
+          computed: {
+              checkBadge: function (badge) {
+                  if(badge === 'Coming Soon') {
+                      return "badge-soon";
+                  } else {
+                      return "badge-beige";
+                  }
+              }
+          },
+          methods: {
+              checkBadge: function (isValue) {
+                  if(isValue) {
+                      return "badge-beige";
+                  } else {
+                      return "badge-soon";
+                  }
+              },
+              languageChange: function (lanName, index) {
+                this.checkIndex = index;
+                this.lanName = lanName
+                if(lanName == '繁體中文'){
+                  this.locale = 'tw'
+                  this.cssLocal = ''
+                }else if (lanName == '简体中文'){
+                  this.locale = 'cn'
+                  this.cssLocal = ''
+                }else if (lanName == 'English'){
+                  this.locale = 'en'
+                  this.cssLocal = 'en_'
+                }else if (lanName == 'Tiếng Việt'){
+                  this.locale = 'vn'
+                  this.cssLocal = 'vn_'
+
+                }
+                this.$i18n.locale = this.locale;
+                // console.log(this.$t("header.title"));
+                localStorage.setItem("locale", this.locale);
+              },
+              changeIcon: function() {
+                this.menuView = !this.menuView;
+                
+                if (this.menuTrigger) {
+                  this.menuTrigger = false
+                  this.menuImg = "./img/etoile/icon/Menu.png"
+                  this.logoStyle.display = ''
+                  this.phoneLogoStyle.display = 'none'
+                }else{
+                  this.menuTrigger = true
+                  this.menuImg = "./img/etoile/icon/Close.png"
+                  this.logoStyle.display = 'none'
+                  this.phoneLogoStyle.display = ''
+                }
+                
+              },
+              qaStyleClick: function(){
+                if(this.qaCheck){
+                  this.qaStyle.boxShadow = ''
+                  this.qaStyle.transition = ''
+                  this.qaCheck = false
+                }else{
+                  // this.qaStyle.boxShadow = 'box-shadow: 0px 37px 5px 18px #7c645a;'
+                  // this.qaStyle.transition = 'transition: all 1s ease 0.1s;'
+                  this.qaCheck = true
+                }
+                
+              },
+              replaceUrl: function(url, lan) {
+                url = url.replace("index", "xii_persona")
+                return url
+              }
+          },
+          updated() {
+            if (this.mediaSwiper) {
+              this.$nextTick(() => {
+                this.mediaSwiper.loopDestroy()
+                this.mediaSwiper.loopCreate()
+              })
+            }
+          },
+          components: {
+              
+          }
+      });
+  });<!-- End-Document_Ready -->
+  </script>
+  
+</body>
+
+</html>

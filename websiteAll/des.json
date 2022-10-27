@@ -1,0 +1,98 @@
+[
+    {
+        "name": "天秤座",
+        "code": "LIB",
+        "tw": "重感情、知性、不與他人相爭是你的優點，遇到問題常避重就輕，但優柔寡斷，內心經常猶豫不定，因此會讓人難以捉模。",
+        "cn": "重感情、知性、不与他人相争是你的优点，遇到问题常避重就轻，但优柔寡断，内心经常犹豫不定，因此会让人难以捉模。",
+        "en": "You are among the most emotional and intelligent individuals on the planet and are concerned with attaining balance, harmony, and peace. When encountering a problem, Libra often avoids and makes light of them. Besides that you are infamous for sometimes being indecisive and hesitant. Therefore, you are a kind of elusive person.",
+        "vn": "Bạn là một trong những người sống tình cảm và có trí tuệ nhất trên hành tinh này. Luôn quan tâm đến sự cân bằng và hài hoà. Khi xảy ra tranh cãi, Thiên Bình thường không muốn đối diện và luôn cố gắng giảm mức độ căng thẳng. Bên cạnh đó, bạn còn nổi tiếng là đôi khi thiếu quyết đoán và do dự. Chính vì vậy, bạn khá khó để nắm bắt."
+    }, 
+    {
+        "name": "天蠍座",
+        "code": "SCO",
+        "tw": "妳/你是極具有魅力的人物，會吸引到身旁人的目光，願意犧牲奉獻幫助身旁的人；有時太過於好強，會讓自己受了些傷，深呼吸一口氣，敞開心懷會更好的！",
+        "cn": "妳/你是极具有魅力的人物，会吸引到身旁人的目光，愿意牺牲奉献帮助身旁的人；有时太过于好强，会让自己受了些伤，深呼吸一口气，敞开心怀会更好的！",
+        "en": "You are charismatic and charming. You know how to impress people and always attract the attention of those around you. If you care about someone,  you can be very sacrificing, bending over backward at times, to prove your devotion, loyalty, and the depth of your relationship. Sometimes being too strong will hurt yourself a little bit, take a deep breath and open your heart will be better!",
+        "vn": "Scorpios rất lôi cuốn và quyến rũ. Bạn biết cách gây ấn tượng với mọi người và luôn thu hút sự chú ý của những người xung quanh. Nếu Scorpios quan tâm đến ai đó, họ có thể hy sinh, đôi khi cúi xuống lùi lại phía sau, để chứng minh sự tận tâm, lòng trung thành của họ dành cho mối quan hệ đó. Nhưng đôi khi sự mạnh mẽ này sẽ khiến bản thân bạn bị tổn thương, hãy hít thở thật sâu và mở lòng sẽ tốt hơn nhé!"
+    }, 
+    {
+        "name": "水瓶座",
+        "code": "AQU",
+        "tw": "頗富知性，且具有銳利的觀察力、推測能力、以及富有冒險的開拓精神。水瓶座的個性是具有求知慾，對於社會種種的不平等以及矛盾現象，總產生懷疑的態度或不平之心，而逐漸傾向反體制的思想。",
+        "cn": "颇富知性，且具有锐利的观察力、推测能力、以及富有冒险的开拓精神。水瓶座的个性是具有求知欲，对于社会种种的不平等以及矛盾现象，总产生怀疑的态度或不平之心，而逐渐倾向反体制的思想。",
+        "en": "Those born under the Aquarius sign have the highest levels of analytical intelligence and have a sharp sense of observation. Besides, you also possess an ability to infer and an adventurous pioneering spirit. Your personality is inquisitive and always skeptical or unjust about social inequalities and contradictions, and gradually inclined to anti-social.",
+        "vn": "Những người sinh ra dưới cung Bảo Bình có mức độ thông minh phân tích cao nhất và có óc quan sát nhạy bén. Bên cạnh đó, họ còn sở hữu khả năng suy luận và tinh thần tiên phong mạo hiểm. Tính cách của họ ham học hỏi và luôn hoài nghi hoặc bất công về những bất bình đẳng và mâu thuẫn xã hội, lâu dần có xu hướng chống đối xã hội."
+    }, 
+    {
+        "name": "巨蟹座",
+        "code": "CNC",
+        "tw": "偏好在固定範疇內行事，以求得保護與安全感，常是家庭的守護者，個性較念舊敏銳，家庭意識深厚，若無法受到保護與慰藉時，容易產生排外性、防衛心。",
+        "cn": "偏好在固定范畴内行事，以求得保护与安全感，常是家庭的守护者，个性较念旧敏锐，家庭意识深厚，若无法受到保护与慰藉时，容易产生排外性、防卫心。",
+        "en": "You prefer to act in a fixed area for protection and security and are often the guardians of the family. You are more nostalgic and sensitive and have a deep sense of family, and are prone to xenophobia and defensiveness if you cannot be protected and comforted.",
+        "vn": "Họ thích hành động trong một phạm vi cố định để có được sự bảo vệ và cảm giác an toàn, họ thường là người bảo vệ của gia đình, có tính cách hoài cổ, nhạy cảm và có ý thức sâu sắc về gia đình. Tuy nhiên, nếu không được che chở và an ủi, bạn rất dễ nảy sinh tư tưởng bài ngoại và phòng thủ."
+    }, 
+    {
+        "name": "牡羊座",
+        "code": "ARI",
+        "tw": "較急切，做事講求效率，行動力十足，說做就做，創造性佳，但有時做事會三分鐘熱度、缺乏耐性，且過於衝動。",
+        "cn": "较急切，做事讲求效率，行动力十足，说做就做，创造性佳，但有时做事会三分钟热度、缺乏耐性，且过于冲动。",
+        "en": "Aries is one of the cardinal constellation signs, so you excel when it comes to taking eagerness and coming up with new creative ideas. More efficient, full of power, and always do what you say. But sometimes you are a “3-minute passion”(easy to give up) person and that makes you lack patience and too much impulsiveness.",
+        "vn": "Bạch Dương là một trong những cung thuộc chòm sao ưu tú, vì vậy họ nổi trội khi thể hiện sự háo hức và nảy ra những ý tưởng sáng tạo mới. Hiệu quả, tràn đầy sức mạnh và luôn làm những gì họ nói. Nhưng đôi khi họ là một người “đam mê 3 phút” (dễ bỏ cuộc) và điều đó khiến họ trở nên thiếu kiên nhẫn và quá bốc đồng."
+    }, 
+    {
+        "name": "金牛座",
+        "code": "TAU",
+        "tw": "務實、沈默寡言，對於自己的朋友相當忠誠，是值得讓人依靠的好對象；內心常已有想法，或清楚事情的真相，較不願聽取他人意見，若嘗試當個傾聽者，未來會更美好。",
+        "cn": "务实、沉默寡言，对于自己的朋友相当忠诚，是值得让人依靠的好对象；内心常已有想法，或清楚事情的真相，较不愿听取他人意见，若尝试当个倾听者，未来会更美好。",
+        "en": "Pragmatic, taciturn in speech. You are very loyal to your friends and everyone can count on you when they need help. You will mostly keep their thoughts to yourself, make decisions in a very focused way, and don't care what others think about it. But ​if you can be a listener, your future will be very successful.",
+        "vn": "Thực dụng và khá ít nói. Bạn rất trung thành với bạn bè và mọi người có thể dựa dẫm vào bạn khi họ cần sự giúp đỡ. Bạn hầu như sẽ giữ những suy nghĩ cho riêng mình, đưa ra quyết định một cách rất chắc chắn và không quan tâm người khác nghĩ gì về nó. Nhưng nếu bạn có thể trở thành một người biết lắng nghe, bạn sẽ rất thành công trong tương lai."
+    }, 
+    {
+        "name": "射手座",
+        "code": "SGR",
+        "tw": "崇尚自由、無拘無束及追求速度，生性樂觀、熱情，是個享樂主義派。有陽剛的氣息、寬大體貼的精神，重視公理與正義的伸張。有著遠大的理想，任何時地都不會放棄希望和理想。",
+        "cn": "崇尚自由、无拘无束及追求速度，生性乐观、热情，是个享乐主义派。有阳刚的气息、宽大体贴的精神，重视公理与正义的伸张。有着远大的理想，任何时地都不会放弃希望和理想。",
+        "en": "You are optimistic, enthusiastic, hedonists by nature, who believe in freedom, unrestrained and speedy. Sagittarius are known as a masculine sign as are generous and considerate, with an emphasis on justice and the pursuit of righteousness. With an ambitious vision, you will never give up your hopes and ideals at any time and place.",
+        "vn": "Chủ trương tự do, không bị gò bó và theo đuổi tốc độ. Bản chất lạc quan và nhiệt tình, là một người theo chủ nghĩa khoái lạc. Có khí chất nam nhi, tinh thần hào phóng, ân cần, coi trọng việc đề cao công lý và chính nghĩa. Với lý tưởng cao cả, bạn sẽ không bao giờ từ bỏ hy vọng và lý tưởng của mình bất kể gặp khó khăn, thách thức nào."
+    }, 
+    {
+        "name": "處女座",
+        "code": "VIR",
+        "tw": "思想充滿完美的主義者，任何事情都是用嚴謹態度去面對；但是相對的過於理性，有時候會轉不過來，需要放輕鬆去幻想一下，讓自己換個方向，或許會有更多收穫。",
+        "cn": "思想充满完美的主义者，任何事情都是用严谨态度去面对；但是相对的过于理性，有时候会转不过来，需要放轻松去幻想一下，让自己换个方向，或许会有更多收获。",
+        "en": "Recognize that perfectionistic thought,  perfection-driven emotional movements, and facing everything with rigor are your specialties. You are pretty set in your ways and are not easily convinced to try something new. One of the most important things for a Virgo to remember is to relax and fantasize. Let yourself change direction and it will be more rewarding.",
+        "vn": "Thừa nhận rằng suy nghĩ theo chủ nghĩa hoàn hảo và mọi thứ đều phải đối mặt với thái độ khắc khe là những đặc trưng của cung hoàng đạo này. Virgos sống khá lý trí và không dễ bị thuyết phục. Một trong những điều quan trọng nhất đối với một Xử Nữ cần nhớ chính là thư giãn và tưởng tượng. Hãy để bản thân thay đổi hướng đi và bạn sẽ đạt được nhiều thành tựu."
+    }, 
+    {
+        "name": "獅子座",
+        "code": "LEO",
+        "tw": "是個極為成功的領導者，面對再難的困境，都會樂觀勇於面對，並且激勵身旁的人們；但會使自己稍微傲慢，若保持謙遜的心熱於學習，會讓自己的道路更廣。",
+        "cn": "是个极为成功的领导者，面对再难的困境，都会乐观勇于面对，并且激励身旁的人们；但会使自己稍微傲慢，若保持谦逊的心热于学习，会让自己的道路更广。",
+        "en": "A highly successful leader who faces even the most difficult situations with optimism and courage, and always inspires those around you. All of that makes you slightly arrogant, if you remain humble and eager to learn, you will be able to broaden your path.",
+        "vn": "Bạn là một nhà lãnh đạo tài ba, người đối mặt với ngay cả những tình huống khó khăn nhất với sự lạc quan và can đảm, luôn truyền cảm hứng cho những người xung quanh. Tất cả những điều đó khiến bạn trở nên có chút kiêu ngạo, nhưng nếu vẫn giữ được thái độ khiêm tốn và ham học hỏi, bạn sẽ mở rộng con đường của chính mình."
+    }, 
+    {
+        "name": "摩羯座",
+        "code": "CAP",
+        "tw": "具有堅毅的耐力，務實的態度，作事一步一腳印，個性嚴謹、守紀律，但受土星的影響，有時會表現出冷漠、憂鬱、悲觀、壓抑、欠缺浪漫與不易溝通的特質。",
+        "cn": "具有坚毅的耐力，务实的态度，作事一步一脚印，个性严谨、守纪律，但受土星的影响，有时会表现出冷漠、忧郁、悲观、压抑、欠缺浪漫与不易沟通的特质。",
+        "en": "You have the stamina and pragmatism to take things step by step. The strict and disciplined personality, but under the influence of Saturn, Capricorn sometimes shows indifference as depression, pessimism, depression, lack of romance, and difficulty communicating traits.",
+        "vn": "Với tính cách kiên trì, thái độ thực dụng, làm việc theo từng bước, tính cách nghiêm khắc, kỷ luật. Nhưng dưới ảnh hưởng của sao Thổ, đôi khi bạn tỏ ra thờ ơ, u uất, bi quan, chán nản, thiếu lãng mạn và khó giao tiếp."
+    },
+    {
+        "name": "雙子座",
+        "code": "GEM",
+        "tw": "動與靜、明與暗，相互消長，共榮共存的，意志具有一體兩面的積極與消極。通常很多才多藝，也可同時處理很多事情，有些則會表現出明顯的兩種或多種人格，這種多變的特性，往往令人難以捉摸。",
+        "cn": "动与静、明与暗，相互消长，共荣共存的，意志具有一体两面的积极与消极。通常很多才多艺，也可同时处理很多事情，有些则会表现出明显的两种或多种人格，这种多变的特性，往往令人难以捉摸。",
+        "en": "Movement and stillness, darkness and light, mutual consumption and coexistence, the will has both positive and negative sides. Some are usually multi-talented and can handle many things at the same time. You often show two or more distinct personalities, this versatile characteristic is often difficult to understand.",
+        "vn": "Chuyển động và tĩnh lặng, bóng tối và ánh sáng, sự tồn tại và tiêu vong, ý chí có cả mặt tích cực và tiêu cực. Một số Gemini thường đa tài và có thể xử lý nhiều việc cùng một lúc. Bạn thường thể hiện hai hoặc nhiều tính cách khác biệt, đặc điểm này thường khó nhận biết."
+    }, 
+    {
+        "name": "雙魚座",
+        "code": "PSC",
+        "tw": "浪漫，多愁善感，愛作夢，也無時在幻想，也常將這種情結搬到現實環境中，而顯得有些不切實際，但他們是善良的，有絕對捨己助人的犧牲奉獻精神。",
+        "cn": "浪漫，多愁善感，爱作梦，也无时在幻想，也常将这种情结搬到现实环境中，而显得有些不切实际，但他们是善良的，有绝对舍己助人的牺牲奉献精神。",
+        "en": "You are romantic, sentimental, dreamy, and fantasizing all the time. You are also artistic and use your vivid imaginations to think up ideas many others wouldn't, which may seem a bit unrealistic. Besides, kindness and self-sacrifice pump the Piscean ego, you are known for prioritizing others’ needs over your own vitals.",
+        "vn": "Bạn rất lãng mạn, đa cảm, mơ mộng và viển vông. Bạn có thiên hướng nghệ thuật và sử dụng trí tưởng tượng sống động của mình để nghĩ ra những điều người khác không làm được, thỉnh thoảng có chút phi thực tế. Bên cạnh đó, lòng tốt và sự hy sinh của bản thân thổi bùng cái tôi của cung hoàng đạo này, chính vì vậy bạn được biết đến là người ưu tiên nhu cầu của người khác hơn là chính bản thân mình."
+    }
+]
