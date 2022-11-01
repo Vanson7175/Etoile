@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="" />
   <meta property="og:description" content=""/>
-  <meta property="og:image" content="./img/icon/logo.png" />
+  <meta property="og:image" content="./img/xii_persona/icon/logo.png" />
   <meta property="og:image:alt" content="" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="" />
@@ -86,11 +86,11 @@
           </li>
         </ul>
         <div class="col-md-12 text-center mt-2 mb-5 menuIcon">
-          <a href="https://discord.com/invite/ZM2HTT6pNs" target="_blank"><img class="media-icon ml-1 mr-1" id="discordPhone" src="./img/icon/discord.png" alt="discord" @mouseover="iconHover(discordPhone, 'discord')"  @mouseleave="iconLeave(discordPhone, 'discord')"></a>
-          <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitterPhone" src="./img/icon/twitter.png" alt="twitter" @mouseover="iconHover(twitterPhone, 'twitter')"  @mouseleave="iconLeave(twitterPhone, 'twitter')"></a>
-          <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramPhone" src="./img/icon/instagram.png" alt="instagram" @mouseover="iconHover(instagramPhone, 'instagram')"  @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
-          <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-1 mr-1" id="facebookPhone" src="./img/ic./img/on/facebook.png" alt="facebook" @mouseover="iconHover(facebookPhone, 'facebook')"  @mouseleave="iconLeave(facebookPhone, 'facebook')"></a>
-          <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potatoPhone" src="./img/icon/potato.png" alt="potato" @mouseover="iconHover(potatoPhone, 'potato')"  @mouseleave="iconLeave(potatoPhone, 'potato')"></a>
+          <a href="https://discord.com/invite/5fjqCQHShY" target="_blank"><img class="media-icon ml-1 mr-1" id="discordPhone" src="./img/xii_test/icon/discord.png" alt="discord" @mouseover="iconHover(discordPhone, 'discord')"  @mouseleave="iconLeave(discordPhone, 'discord')"></a>
+          <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitterPhone" src="./img/xii_test/icon/twitter.png" alt="twitter" @mouseover="iconHover(twitterPhone, 'twitter')"  @mouseleave="iconLeave(twitterPhone, 'twitter')"></a>
+          <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramPhone" src="./img/xii_test/icon/instagram.png" alt="instagram" @mouseover="iconHover(instagramPhone, 'instagram')"  @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
+          <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-1 mr-1" id="facebookPhone" src="./img/xii_test/icon/facebook.png" alt="facebook" @mouseover="iconHover(facebookPhone, 'facebook')"  @mouseleave="iconLeave(facebookPhone, 'facebook')"></a>
+          <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potatoPhone" src="./img/xii_test/icon/potato.png" alt="potato" @mouseover="iconHover(potatoPhone, 'potato')"  @mouseleave="iconLeave(potatoPhone, 'potato')"></a>
         </div>
       </div>
     </div>
@@ -377,12 +377,13 @@
                     <button class="btn step-button rounded-pill" @click="step3($t('step3.q12.code'), 'website', '999')"><% $t('step3.q12.question') %></button>
                   </p> -->
                 </div>
-                <div class="col-xl-4 col-12 mt-5">
+                <div class="col-xl-4 col-12 mt-5 mb-4">
                   <div class="dropdown-select" :class="{'dropbtn-active': active}" @click="status">
-                    <button class="dropbtn" id="dropbtn"><span><% step3Choose %></span></button>
+
                     <div class="dropdown-content">
                       <a href="#" v-for="item in $t('questionList3Phone')" @click="step3(item.code, 'phone', item.question)"><% item.question %></a>
                     </div>
+                    <button class="dropbtn" id="dropbtn"><span><% step3Choose %></span></button>
                   </div>
                 </div>
               </div>
@@ -392,7 +393,7 @@
         <div class="col-12">
           <div class="center-content"></div>
         </div>
-        <div class="col-12 text-right-to-center px-4">
+        <div class="col-12 text-right-to-center px-4 mt-5">
           <button class="btn step-button rounded-pill btn-prevPage" @click="prevPage(3)"><% $t('step3.prevPage') %></button>
         </div>
         <div class="col-4 text-left">
@@ -449,10 +450,10 @@
         <div class="col-12 text-right-to-center px-4 mt-5">
           <button class="btn step-button rounded-pill btn-prevPage" @click="prevPage(4)"><% $t('step4.prevPage') %></button>
         </div>
-        <div class="col-4 text-left">
+        <div class="col-3 text-left">
           <a :href="'#' + cssLocal + 'step4'" class="btn-nextPage" @click="prevPage(4)"><img src="./img/xii_test/icon/prev_page.png" width="30" alt=""></a>
         </div>
-        <div class="col-4 text-right-to-center">
+        <div class="col-6 text-right-to-center">
           <button class="btn next-step-button rounded-pill btn-nextPage" @click="nextPage(4)"><% $t('step4.nextPage') %></button>
         </div>
       </div>
@@ -460,7 +461,7 @@
   </section>
 
   <!-- Ans -->
-  <section :id="cssLocal + 'ans'" class="page-section ans mt-5 px-lg-5" style="display: none;">
+  <section :id="cssLocal + 'ans'" class="page-section ans px-lg-5" style="display: none;">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 col-md-12 col-12 align-self-center">
@@ -530,7 +531,7 @@
         <div class="col-xl-3 col-3 mt-5 mb-5 px-0 text-left footer-media">
           <span class="copyright"><% $t('footer.socialMedia') %></span><br>
           <div class="mt-3">
-            <a href="https://discord.com/invite/ZM2HTT6pNs" target="_blank"><img class="media-icon ml-2 mr-2"src="./img/xii_test/icon/discord.png" alt="discord"></a>
+            <a href="https://discord.com/invite/5fjqCQHShY" target="_blank"><img class="media-icon ml-2 mr-2"src="./img/xii_test/icon/discord.png" alt="discord"></a>
             <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/twitter.png" alt="twitter"></a>
             <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/instagram.png" alt="instagram"></a>
             <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/facebook.png" alt="facebook"></a>
@@ -544,7 +545,7 @@
         <div class="col-12 mt-5 mb-5 text-center footer-media-phone">
           <span class="copyright"><% $t('footer.socialMedia') %></span><br>
           <div class="mt-3">
-            <a href="https://discord.com/invite/ZM2HTT6pNs" target="_blank"><img class="media-icon ml-2 mr-2"src="./img/xii_test/icon/discord.png" alt="discord"></a>
+            <a href="https://discord.com/invite/5fjqCQHShY" target="_blank"><img class="media-icon ml-2 mr-2"src="./img/xii_test/icon/discord.png" alt="discord"></a>
             <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/twitter.png" alt="twitter"></a>
             <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/instagram.png" alt="instagram"></a>
             <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/facebook.png" alt="facebook"></a>
@@ -557,7 +558,7 @@
       <div class="row text-center">
         <div class="col-4 mt-5 mb-5 px-0">
           <br>
-          <a href="index.html" target="_blank"><img class="footer-img" src="./img/icon/logo.png" alt="logo"></a>
+          <a href="index.html" target="_blank"><img class="footer-img" src="./img/xii_persona/icon/logo.png" alt="logo"></a>
         </div>
         <div class="col-4 mt-5 mb-5 px-0">
           <br>
@@ -830,8 +831,8 @@
             "button1":"鑄造寶石",
             "button2":"取得結果圖",
             "button3":"下載專屬寶石",
-            "copyLink": "分享測驗連結",
-            "copyLinkPhone": "分享測驗",
+            "copyLink": "複製連結",
+            "copyLinkPhone": "複製連結",
             "prevPage":"上一頁",
             "restart": "重新測驗"
           },
@@ -942,8 +943,8 @@
             "button1":"铸造宝石",
             "button2":"取得结果图",
             "button3":"下载专属宝石",
-            "copyLink": "分享测验连结",
-            "copyLinkPhone": "分享测验",
+            "copyLink": "复制连结",
+            "copyLinkPhone": "复制连结",
             "prevPage":"上一页",
             "restart": "重新测验"
           },
@@ -962,7 +963,7 @@
           "slider":{
             "heading":"Select your destiny",
             "intro1":"Choose your chosen ",
-            "intro2":"『XII Persona』gem",
+            "intro2":"『XII Persona』 gem",
             "introText1":"Find your own personality, how would it be?",
             "introText2":"After answering all the questions, your exclusive destiny gem will be revealed",
             "startTest":"Start the test"
@@ -985,7 +986,7 @@
             {"question": "Ｅ. 25~31", "code":"SPR"}
           ],
           "step2":{
-            "heading":"Ⅱ. Which day of the week your most lifeful day?",
+            "heading":"Ⅱ. Which day of the week is your most lifeful day?",
             "q1":{"question": "Ａ. Monday", "code":"R"},
             "q2":{"question": "Ｂ. Tuesday", "code":"H"},
             "q3":{"question": "Ｃ. Wednesday", "code":"P"},
@@ -1009,33 +1010,33 @@
           "step3":{
             "heading":"Ⅲ. Which personality trait suits you best?",
             "q1":{"question": "Impulsive", "code":"ARI"},
-            "q2":{"question": "fanciful", "code":"AQU"},
-            "q3":{"question": "fickle", "code":"GEM"},
-            "q4":{"question": "Clean", "code":"VIR"},
-            "q5":{"question": "pragmatic", "code":"CAP"},
-            "q6":{"question": "dedicated", "code":"CNC"},
+            "q2":{"question": "Dreamy", "code":"AQU"},
+            "q3":{"question": "Fickle", "code":"GEM"},
+            "q4":{"question": "Tidy", "code":"VIR"},
+            "q5":{"question": "Realistic", "code":"CAP"},
+            "q6":{"question": "Dedicate", "code":"CNC"},
             "q7":{"question": "Liberal", "code":"SGR"},
-            "q8":{"question": "sensual", "code":"PSC"},
-            "q9":{"question": "intellectual", "code":"LIB"},
+            "q8":{"question": "Emotional", "code":"PSC"},
+            "q9":{"question": "Intellectual", "code":"LIB"},
             "q10":{"question": "Delicate", "code":"SCO"},
-            "q11":{"question": "passionate", "code":"LEO"},
-            "q12":{"question": "stubborn", "code":"TAU"},
+            "q11":{"question": "Passionate", "code":"LEO"},
+            "q12":{"question": "Stubborn", "code":"TAU"},
             "prevPage":"Previous Page",
             "nextPage":"Next"
           },
           "questionList3Phone":[
             {"question": "Impulsive", "code":"ARI"},
-            {"question": "fanciful", "code":"AQU"},
-            {"question": "fickle", "code":"GEM"},
-            {"question": "Clean", "code":"VIR"},
-            {"question": "pragmatic", "code":"CAP"},
-            {"question": "dedicated", "code":"CNC"},
+            {"question": "Dreamy", "code":"AQU"},
+            {"question": "Fickle", "code":"GEM"},
+            {"question": "Tidy", "code":"VIR"},
+            {"question": "Realistic", "code":"CAP"},
+            {"question": "Dedicate", "code":"CNC"},
             {"question": "Liberal", "code":"SGR"},
-            {"question": "sensual", "code":"PSC"},
-            {"question": "intellectual", "code":"LIB"},
+            {"question": "Emotional", "code":"PSC"},
+            {"question": "Intellectual", "code":"LIB"},
             {"question": "Delicate", "code":"SCO"},
-            {"question": "passionate", "code":"LEO"},
-            {"question": "stubborn", "code":"TAU"},
+            {"question": "Passionate", "code":"LEO"},
+            {"question": "Stubborn", "code":"TAU"},
           ],
           "step4":{
             "heading":"IV. Do you think you are an Introvert or an Extrovert?",
@@ -1054,8 +1055,8 @@
             "button1":"Mint your Gem",
             "button2":"Get the results graph",
             "button3":"Download Exclusive Gems",
-            "copyLink": "Share link",
-            "copyLinkPhone": "Share link",
+            "copyLink": "Copy Link",
+            "copyLinkPhone": "Copy Link",
             "prevPage":"Previous page",
             "restart": "Retest"
           },
@@ -1087,7 +1088,7 @@
             "q4":{"question": "Ｄ. 19~24", "code":"EMD"},
             "q5":{"question": "Ｅ. 25~31", "code":"SPR"},
             "prevPage":"Trang trước",
-            "nextPage":"Câu tiếp theo"
+            "nextPage":"Next"
           },
           "questionList1Phone":[
             {"question": "Ａ. 01~06", "code":"DO"},
@@ -1107,7 +1108,7 @@
             "q6":{"question": "Ｆ. Thứ bảy", "code":"T"},
             "q7":{"question": "Ｇ. Chủ nhật", "code":"OC"},
             "prevPage":"Trang trước",
-            "nextPage":"Câu tiếp theo"
+            "nextPage":"Next"
           },
           "questionList2Phone":[
             {"question": "Ａ. Thứ hai", "code":"R"},
@@ -1121,10 +1122,10 @@
           "step3":{
             "heading":"Ⅲ. Tính cách nào phù hợp với bạn nhất?",
             "q1":{"question": "Bốc đồng", "code":"ARI"},
-            "q2":{"question": "Thích tưởng tượng", "code":"AQU"},
+            "q2":{"question": "Mơ mộng", "code":"AQU"},
             "q3":{"question": "Hay thay đổi.", "code":"GEM"},
-            "q4":{"question": "Sạch sẽ", "code":"VIR"},
-            "q5":{"question": "Thực dụng", "code":"CAP"},
+            "q4":{"question": "Gọn gàng", "code":"VIR"},
+            "q5":{"question": "Thực tế", "code":"CAP"},
             "q6":{"question": "Tận tâm.", "code":"CNC"},
             "q7":{"question": "Phóng khoáng", "code":"SGR"},
             "q8":{"question": "Nhạy cảm", "code":"PSC"},
@@ -1133,14 +1134,14 @@
             "q11":{"question": "Đam mê", "code":"LEO"},
             "q12":{"question": "Bướng bỉnh.", "code":"TAU"},
             "prevPage":"Trang trước",
-            "nextPage":"Câu tiếp theo"
+            "nextPage":"Next"
           },
           "questionList3Phone":[
             {"question": "Bốc đồng", "code":"ARI"},
-            {"question": "Thích tưởng tượng", "code":"AQU"},
+            {"question": "Mơ mộng", "code":"AQU"},
             {"question": "Hay thay đổi.", "code":"GEM"},
-            {"question": "Sạch sẽ", "code":"VIR"},
-            {"question": "Thực dụng", "code":"CAP"},
+            {"question": "Gọn gàng", "code":"VIR"},
+            {"question": "Thực tế", "code":"CAP"},
             {"question": "Tận tâm.", "code":"CNC"},
             {"question": "Phóng khoáng", "code":"SGR"},
             {"question": "Nhạy cảm", "code":"PSC"},
@@ -1166,8 +1167,8 @@
             "button1":"Đúc đá quý",
             "button2":"Nhận kết quả",
             "button3":"Tải xuống đá quý độc quyền",
-            "copyLink": "chia sẻ liên kết câu đố",
-            "copyLinkPhone": "chia sẻ câu đố",
+            "copyLink": "Copy Link",
+            "copyLinkPhone": "Copy Link",
             "prevPage":"Trang trước",
             "restart": "Làm lại bài kiểm tra"
           },
@@ -1192,15 +1193,15 @@
 
       const routes = [
         { 
-          path: '/psychometric.html',
+          path: '',
           children:[
             {
               path:'',
               name: 'index',
-              redirect: '/xii_persona/test' ,
+              // redirect: '/xii_persona/test' ,
             },
             { 
-              path: '/xii_persona/test/:lang',
+              path: '/:lang',
               name: 'lang',
             },
             {
@@ -1274,21 +1275,21 @@
             '$route.path': {
               handler: function(path) {
                 // console.log(path)
-                if(path=='/xii_persona/test'){
+                if(path=='/'){
                   this.locale = 'tw'
                   this.lanName = '繁體中文'
                   this.cssLocal = ''
                   this.alert = '請選擇一個答案！'
                   this.step3Choose = "請選擇"
                   this.url = window.location.href;
-                }else if(path=='/xii_persona/test/CN'){
+                }else if(path=='/CN'){
                   this.locale = 'cn'
                   this.lanName = '简体中文'
                   this.cssLocal = ''
                   this.alert = '请选择一个答案！'
                   this.step3Choose = "请选择"
                   this.url = window.location.href;
-                }else if (path=='/xii_persona/test/EN'){
+                }else if (path=='/EN'){
                   this.locale = 'en'
                   this.cssLocal = 'en_'
                   this.menuName = 'Psychometric test'
@@ -1296,7 +1297,7 @@
                   this.alert = 'Please choose an answer!'
                   this.step3Choose = "choose"
                   this.url = window.location.href;
-                }else if (path=='/xii_persona/test/VN'){
+                }else if (path=='/VN'){
                   this.locale = 'vn'
                   this.lanName = 'Tiếng Việt'
                   this.menuName = 'Khái niệm sáng tạo'
@@ -1421,9 +1422,10 @@
                 }
               },
               start: function() {
+                $("#MenuLink").addClass("disabled")
                 $(".start-test").hide()
                 $(".step1").show()
-                this.stepTyprWriter("step1TypeWriter")
+                this.stepTyprWriter("step1TypeWriter", this.locale)
               },
               prevPage: function(step) {
                 if (step == 1) {
@@ -1432,20 +1434,20 @@
                 }else if (step == 2) {
                   $(".step1").show()
                   $(".step2").hide()
-                  this.stepTyprWriter("step1TypeWriter")
+                  this.stepTyprWriter("step1TypeWriter", this.locale)
                 }else if (step == 3) {
                   $(".step2").show()
                   $(".step3").hide()
-                  this.stepTyprWriter("step2TypeWriter")
+                  this.stepTyprWriter("step2TypeWriter", this.locale)
                 }else if (step == 4) {
                   $(".step3").show()
                   $(".step4").hide()
-                  this.stepTyprWriter("step3TypeWriter")
+                  this.stepTyprWriter("step3TypeWriter", this.locale)
                 }else if (step == "ans") {
                   $(".step4").show()
                   $(".ans").hide()
                   $(".footer").hide()
-                  this.stepTyprWriter("step4TypeWriter")
+                  this.stepTyprWriter("step4TypeWriter", this.locale)
                 }
                 
               },
@@ -1453,15 +1455,15 @@
                 if (step == 1 && this.stepAns1) {
                   $(".step2").show()
                   $(".step1").hide()
-                  this.stepTyprWriter("step2TypeWriter")
+                  this.stepTyprWriter("step2TypeWriter", this.locale)
                 }else if (step == 2 && this.stepAns2) {
                   $(".step3").show()
                   $(".step2").hide()
-                  this.stepTyprWriter("step3TypeWriter")
+                  this.stepTyprWriter("step3TypeWriter", this.locale)
                 }else if (step == 3 && this.stepAns3) {
                   $(".step4").show()
                   $(".step3").hide()
-                  this.stepTyprWriter("step4TypeWriter")
+                  this.stepTyprWriter("step4TypeWriter", this.locale)
                 }else if (step == 4  && this.stepAns4) {
                   $(".ans").show()
                   $(".footer").show()
@@ -1475,7 +1477,7 @@
                 if (types == "website") {
                   $(".step1").hide()
                   $(".step2").show()
-                  this.stepTyprWriter("step2TypeWriter")
+                  this.stepTyprWriter("step2TypeWriter", this.locale)
                 }
                 if (types == "phone") {
                   this.step1BtnActive = index
@@ -1486,7 +1488,7 @@
                 if (types == "website") {
                   $(".step2").hide()
                   $(".step3").show()
-                  this.stepTyprWriter("step3TypeWriter")
+                  this.stepTyprWriter("step3TypeWriter", this.locale)
                 }
                 if (types == "phone") {
                   this.step2BtnActive = index
@@ -1497,7 +1499,7 @@
                 if (types == "website") {
                   $(".step3").hide()
                   $(".step4").show()
-                  this.stepTyprWriter("step4TypeWriter")
+                  this.stepTyprWriter("step4TypeWriter", this.locale)
                 }
                 if (types == "phone") {
                   this.step3Choose = question
@@ -1529,6 +1531,7 @@
                 $(".step4").hide()
                 $(".ans").hide()
                 $(".footer").hide()
+                $("#MenuLink").removeClass("disabled")
               },
               loadAnsData: function(answer) {
                 let self = this;
@@ -1627,7 +1630,9 @@
               copyLink: function () {
                 let self = this;
                 let clipboard = new ClipboardJS(".btn-copyLink"); // 这里括号里填写上面点击事件绑定的class名
+                console.log("!!")
                 clipboard.on("success", e => {
+                  
                   clipboard.destroy();
                 });
                 clipboard.on("error", e => {
@@ -1653,7 +1658,7 @@
                   a.click();
                 });
               },
-              setupTypewriter: function(t) {
+              setupTypewriter: function(t, locale) {
                 // 打字機效果
                 var HTML = t.innerHTML;
                 t.innerHTML = "";
@@ -1665,6 +1670,9 @@
                     typeSpeed = 100,
                   tempTypeSpeed = 0;
 
+                if (locale == "en" || locale == "vn") {
+                  typeSpeed = 0
+                }
                 var type = function() {
                   
                     if (writingTag === true) {
@@ -1717,9 +1725,9 @@
                     type: type
                 };
             },
-            stepTyprWriter: function(elementId) {
+            stepTyprWriter: function(elementId, locale) {
               var typewriter = document.getElementById(elementId);
-              typewriter = this.setupTypewriter(typewriter);
+              typewriter = this.setupTypewriter(typewriter, locale);
               typewriter.type();
             }
 

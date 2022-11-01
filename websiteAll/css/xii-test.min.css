@@ -310,6 +310,10 @@ img::-moz-selection {
     text-align: right;
 }
 
+.ans {
+    margin-top: 3rem;
+}
+
 .ans-img-pos {
     /* text-align: right; */
     text-align: center;
@@ -321,12 +325,17 @@ img::-moz-selection {
 }
 
 @media (max-width: 992px) {
+    
     .text-pos {
         text-align: center;
     }
 
     .step-img-pos {
         text-align: center;
+    }
+
+    .ans {
+        margin-top: 0;
     }
 
     .ans-img-pos {
@@ -1254,8 +1263,9 @@ header .page-header {
 .dropdown-select span::after {
     font-family: "Font Awesome 5 Free";
     float: right;
-    content: "\f078";
+    content: "\f077";
     font-weight: 900;
+    margin-left: 3px;
 }
 /* .dropdown:hover .dropdown-content {
     display: block;
@@ -1342,6 +1352,17 @@ header .page-header {
 #step3 .step-img,
 #step4 .step-img {
     width: 450px;
+}
+
+@media (max-width: 992px) {
+
+    #step1,
+    #step2,
+    #step3,
+    #step4 {
+        margin-top: 0px;
+    }
+
 }
 
 @media (max-width: 425px) {
@@ -2136,6 +2157,17 @@ header .page-header {
     width: 450px;
 }
 
+@media (max-width: 992px) {
+
+    #en_step1,
+    #en_step2,
+    #en_step3,
+    #en_step4 {
+        margin-top: 0px;
+    }
+
+}
+
 @media (max-width: 425px) {
 
     #en_step1 .step-img,
@@ -2529,6 +2561,17 @@ header .page-header {
     animation-timing-function: ease-in;
     animation-direction: alternate;
     transform: rotate(45deg);
+}
+
+@media (max-width: 992px) {
+
+    #vn_step1,
+    #vn_step2,
+    #vn_step3,
+    #vn_step4 {
+        margin-top: 0px;
+    }
+
 }
 
 @media (max-width: 425px) {
