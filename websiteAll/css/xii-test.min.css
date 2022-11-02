@@ -1316,9 +1316,9 @@ header .page-header {
     .step-phone-content {
         display: block;
     }
-    .get-img {
+    /* .get-img {
         display: none;
-    }
+    } */
     .get-img-phone {
         display: inline;
     }

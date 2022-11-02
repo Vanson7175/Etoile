@@ -88,7 +88,7 @@
         <div class="col-md-12 text-center mt-2 mb-5 menuIcon">
           <a href="https://discord.com/invite/5fjqCQHShY" target="_blank"><img class="media-icon ml-1 mr-1" id="discordPhone" src="./img/xii_test/icon/discord.png" alt="discord" @mouseover="iconHover(discordPhone, 'discord')"  @mouseleave="iconLeave(discordPhone, 'discord')"></a>
           <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitterPhone" src="./img/xii_test/icon/twitter.png" alt="twitter" @mouseover="iconHover(twitterPhone, 'twitter')"  @mouseleave="iconLeave(twitterPhone, 'twitter')"></a>
-          <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramPhone" src="./img/xii_test/icon/instagram.png" alt="instagram" @mouseover="iconHover(instagramPhone, 'instagram')"  @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
+          <a href="https://www.instagram.com/etoileart2022/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramPhone" src="./img/xii_test/icon/instagram.png" alt="instagram" @mouseover="iconHover(instagramPhone, 'instagram')"  @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
           <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-1 mr-1" id="facebookPhone" src="./img/xii_test/icon/facebook.png" alt="facebook" @mouseover="iconHover(facebookPhone, 'facebook')"  @mouseleave="iconLeave(facebookPhone, 'facebook')"></a>
           <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potatoPhone" src="./img/xii_test/icon/potato.png" alt="potato" @mouseover="iconHover(potatoPhone, 'potato')"  @mouseleave="iconLeave(potatoPhone, 'potato')"></a>
         </div>
@@ -462,7 +462,7 @@
 
   <!-- Ans -->
   <section :id="cssLocal + 'ans'" class="page-section ans px-lg-5" style="display: none;">
-    <div class="container">
+    <div class="container" id="download-container" style="background-color: #1f213c;">
       <div class="row">
         <div class="col-lg-7 col-md-12 col-12 align-self-center">
           <div class="text-center">
@@ -478,8 +478,7 @@
                 <span class="intro"><% $t('ans.intro1') %></span>
               </p> -->
               <div class="ans-img-pos-phone">
-                <!-- <img class="ans-img" :src="ansImageUrl" alt="ans" crossOrigin="anonymous"> -->
-                <img class="ans-img" :src="ansImageUrl" alt="ans">
+                <img class="ans-img" :src="ansImageUrl + '?' + new Date().getTime()" alt="ans" crossOrigin="Anonymous">
                 <img class="light-img" src="./img/xii_test/bg/light.png" alt="spotlight">
               </div>
               <span class="intro-sm"><% $t('ans.intro2') %></span>
@@ -488,17 +487,18 @@
                   <% description %>
                 </div>
               </div>
-              <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('ans.button1') %></a>
-              <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img" href="#" @click="getImg"><% $t('ans.button2') %></a>
-              <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img-phone" href="#" @click="getImgByPhone"><% $t('ans.button2') %></a>
-              <a v-if="isDownload && !isPhone" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto" href="#" @click="downloadImg"><% $t('ans.button3') %></a>
+              <a v-if="!isDownload" id="mint-gem" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('ans.button1') %></a>
+              <a v-if="!isDownload" id="download-img" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img" href="#" @click="downloadImg"><% $t('ans.button2') %></a>
+              <!-- <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img" href="#" @click="getImg"><% $t('ans.button2') %></a> -->
+              <!-- <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img-phone" href="#" @click="downloadImg"><% $t('ans.button2') %></a> -->
+              <!-- <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img-phone" href="#" @click="getImgByPhone"><% $t('ans.button2') %></a> -->
+              <!-- <a v-if="isDownload && !isPhone" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto" href="#" @click="downloadImg"><% $t('ans.button3') %></a> -->
             </div>
           </div>
         </div>
         <div class="col-lg-5 col-md-12 col-12 align-self-center">
           <div class="ans-img-pos">
-            <!-- <img class="ans-img" :src="ansImageUrl" alt="ans" crossOrigin="anonymous"> -->
-            <img class="ans-img" :src="ansImageUrl" alt="ans">
+            <img class="ans-img" :src="ansImageUrl + '?' + new Date().getTime()" alt="ans" crossOrigin="Anonymous">
             <!-- <img class="light-img" src="./img/xii_test/bg/spotlight.png" alt="spotlight"> -->
             <img class="light-img" src="./img/xii_test/bg/light.png" alt="spotlight">
           </div>
@@ -506,12 +506,12 @@
         
       </div>
     </div>
-    <div class="container-fluid px-4 mt-5"">
+    <div class="container-fluid px-4 mt-5">
       <div class="col-12 text-right-to-center">
-        <button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLink') %></button>
+        <button type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink" :data-clipboard-text="url" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><% $t('ans.copyLink') %></button>
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-prevPage" @click="prevPage('ans')"><% $t('ans.prevPage') %></button>
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-restart"  @click="restart"><% $t('ans.restart') %></button>
-        <p><button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button></p>
+        <p><button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><% $t('ans.copyLinkPhone') %></button></p>
       </div>
     </div>
   </section>
@@ -533,7 +533,7 @@
           <div class="mt-3">
             <a href="https://discord.com/invite/5fjqCQHShY" target="_blank"><img class="media-icon ml-2 mr-2"src="./img/xii_test/icon/discord.png" alt="discord"></a>
             <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/twitter.png" alt="twitter"></a>
-            <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/instagram.png" alt="instagram"></a>
+            <a href="https://www.instagram.com/etoileart2022/" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/instagram.png" alt="instagram"></a>
             <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/facebook.png" alt="facebook"></a>
             <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/potato.png" alt="potato"></a>
           </div>
@@ -547,7 +547,7 @@
           <div class="mt-3">
             <a href="https://discord.com/invite/5fjqCQHShY" target="_blank"><img class="media-icon ml-2 mr-2"src="./img/xii_test/icon/discord.png" alt="discord"></a>
             <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/twitter.png" alt="twitter"></a>
-            <a href="https://www.instagram.com/etoile__2022_6/" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/instagram.png" alt="instagram"></a>
+            <a href="https://www.instagram.com/etoileart2022/" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/instagram.png" alt="instagram"></a>
             <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/facebook.png" alt="facebook"></a>
             <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-2 mr-2" src="./img/xii_test/icon/potato.png" alt="potato"></a>
           </div>
@@ -591,6 +591,8 @@
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+  <!-- metro -->
+  <script src="vendor/metro/metro.min.js"></script>
   <!-- html2canvas -->
   <!-- <script src="js/html2canvas.min.js"></script> -->
   <script src="js/html2canvas.js"></script>
@@ -1630,7 +1632,6 @@
               copyLink: function () {
                 let self = this;
                 let clipboard = new ClipboardJS(".btn-copyLink"); // 这里括号里填写上面点击事件绑定的class名
-                console.log("!!")
                 clipboard.on("success", e => {
                   
                   clipboard.destroy();
@@ -1643,20 +1644,26 @@
                 });
               },
               downloadImg: function () {
+                $("#mint-gem").hide()
+                $("#download-img").hide()
                 var opts = {
                   useCORS: true,
                   scrollY: 0,
                   logging: true
                 };
-
-                html2canvas(document.querySelector("#app"), opts).then(function (canvas) {
-                  a = document.createElement("a");
-                  a.href = canvas
-                    .toDataURL("image/jpeg", 0.92)
-                    .replace("image/jpeg", "image/octet-stream");
-                  a.download = "gem.jpg";
-                  a.click();
-                });
+                setTimeout(() => {
+                  html2canvas(document.querySelector("#download-container"), opts).then(function (canvas) {
+                    a = document.createElement("a");
+                    a.href = canvas
+                      .toDataURL("image/jpeg", 0.92)
+                      .replace("image/jpeg", "image/octet-stream");
+                    a.download = "gem.jpg";
+                    a.click();
+                  });
+                  $("#mint-gem").show();
+                  $("#download-img").show();
+                }, 1000)
+                
               },
               setupTypewriter: function(t, locale) {
                 // 打字機效果
@@ -1670,6 +1677,7 @@
                     typeSpeed = 100,
                   tempTypeSpeed = 0;
 
+                // 若是英文、越南文，速度調快
                 if (locale == "en" || locale == "vn") {
                   typeSpeed = 0
                 }
