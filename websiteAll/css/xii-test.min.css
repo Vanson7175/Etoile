@@ -472,7 +472,10 @@ img::-moz-selection {
     .btn-prevPage {
         display: none;
     }
-    .btn-copyLink-phone,
+    .btn-copyLink-phone {
+        display: block;
+        margin: auto;
+    }
     .btn-nextPage {
         display: inline;
     }
@@ -1375,6 +1378,12 @@ header .page-header {
     }
 
 
+}
+
+.popper {
+    color: black;
+    background-color: white;
+    padding: 10px;
 }
 
 .ans-img {

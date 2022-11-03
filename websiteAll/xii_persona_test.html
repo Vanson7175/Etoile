@@ -508,10 +508,37 @@
     </div>
     <div class="container-fluid px-4 mt-5">
       <div class="col-12 text-right-to-center">
-        <button type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink" :data-clipboard-text="url" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><% $t('ans.copyLink') %></button>
+        <popper
+          trigger="clickToOpen"
+          :options="{
+            placement: 'top',
+            modifiers: { offset: { offset: '0,20px' } }
+          }">
+          <div class="popper">
+            <% $t('ans.copied') %>
+          </div>
+      
+          <button slot="reference" type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink" :data-clipboard-text="url">
+            <% $t('ans.copyLink') %>
+          </button>
+        </popper>
+        <!-- <button type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLink') %></button> -->
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-prevPage" @click="prevPage('ans')"><% $t('ans.prevPage') %></button>
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-restart"  @click="restart"><% $t('ans.restart') %></button>
-        <p><button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><% $t('ans.copyLinkPhone') %></button></p>
+        <!-- <p><button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button></p> -->
+        
+        <popper
+          trigger="clickToOpen"
+          :options="{
+            placement: 'top',
+            modifiers: { offset: { offset: '0,10px' } }
+          }">
+          <div class="popper">
+            <% $t('ans.copied') %>
+          </div>
+          <button slot="reference" type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button>
+        </popper>
+        
       </div>
     </div>
   </section>
@@ -578,6 +605,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/bootstrap/js/popper.min.js"></script>
   <!-- Vue.js -->
   <script src="vendor/vue/vue.min.js"></script>
   <!-- Vue-18n -->
@@ -591,8 +619,7 @@
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- metro -->
-  <script src="vendor/metro/metro.min.js"></script>
+  <script src="js/vue-popper.min.js"></script>
   <!-- html2canvas -->
   <!-- <script src="js/html2canvas.min.js"></script> -->
   <script src="js/html2canvas.js"></script>
@@ -604,7 +631,6 @@
   <script src="js/jqBootstrapValidation.js"></script>
   <!-- clipboard -->
   <script src="js/clipboard.min.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
   <!-- Custom scripts for this template -->
   <script src="vendor/owl/owl.carousel.min.js"></script>
   <script src="vendor/aos/aos.js"></script>
@@ -835,6 +861,7 @@
             "button3":"下載專屬寶石",
             "copyLink": "複製連結",
             "copyLinkPhone": "複製連結",
+            "copied": "已複製連結!!",
             "prevPage":"上一頁",
             "restart": "重新測驗"
           },
@@ -947,6 +974,7 @@
             "button3":"下载专属宝石",
             "copyLink": "复制连结",
             "copyLinkPhone": "复制连结",
+            "copied": "已复制连结!!",
             "prevPage":"上一页",
             "restart": "重新测验"
           },
@@ -1059,6 +1087,7 @@
             "button3":"Download Exclusive Gems",
             "copyLink": "Copy Link",
             "copyLinkPhone": "Copy Link",
+            "copied": "Link Copied !!",
             "prevPage":"Previous page",
             "restart": "Retest"
           },
@@ -1171,6 +1200,7 @@
             "button3":"Tải xuống đá quý độc quyền",
             "copyLink": "Copy Link",
             "copyLinkPhone": "Copy Link",
+            "copied": "Copy thành công !!",
             "prevPage":"Trang trước",
             "restart": "Làm lại bài kiểm tra"
           },
@@ -1741,7 +1771,7 @@
 
           },
           components: {
-              
+            'popper': VuePopper
           }
       });
   });<!-- End-Document_Ready -->
