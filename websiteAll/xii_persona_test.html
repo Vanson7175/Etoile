@@ -526,7 +526,9 @@
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-prevPage" @click="prevPage('ans')"><% $t('ans.prevPage') %></button>
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-restart"  @click="restart"><% $t('ans.restart') %></button>
         <!-- <p><button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button></p> -->
-        
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+          Tooltip on top
+        </button>
         <popper
           trigger="clickToOpen"
           :options="{
@@ -549,7 +551,7 @@
       <div class="row text-center justify-content-center">
         <div class="col-xl-3 col-4 mt-5 mb-5 px-0">
           <br>
-          <a href="index.html" target="_blank"><img class="footer-img" src="./img/xii_persona/icon/logo.png" alt="logo"></a>
+          <a href="https://etoileart.io/xii_persona.html" target="_blank"><img class="footer-img" src="./img/xii_persona/icon/logo.png" alt="logo"></a>
         </div>
         <div class="col-xl-3 col-4 mt-5 mb-5 px-0 text-left-to-center">
           <br>
@@ -585,7 +587,7 @@
       <div class="row text-center">
         <div class="col-4 mt-5 mb-5 px-0">
           <br>
-          <a href="index.html" target="_blank"><img class="footer-img" src="./img/xii_persona/icon/logo.png" alt="logo"></a>
+          <a href="https://etoileart.io/xii_persona.html" target="_blank"><img class="footer-img" src="./img/xii_persona/icon/logo.png" alt="logo"></a>
         </div>
         <div class="col-4 mt-5 mb-5 px-0">
           <br>
@@ -647,6 +649,8 @@
         $("#dropbtn").addClass("dropbtn-active")
       })
     $(document).ready(function () {
+      console.log("5555")
+      $('[data-toggle="tooltip"]').tooltip();
       AOS.init();
       $('.owl-carousel').owlCarousel({
         items: 1,
@@ -669,7 +673,7 @@
               "tw": "妳/你是極具有魅力的人物，會吸引到身旁人的目光，願意犧牲奉獻幫助身旁的人；有時太過於好強，會讓自己受了些傷，深呼吸一口氣，敞開心懷會更好的！",
               "cn": "妳/你是极具有魅力的人物，会吸引到身旁人的目光，愿意牺牲奉献帮助身旁的人；有时太过于好强，会让自己受了些伤，深呼吸一口气，敞开心怀会更好的！",
               "en": "You are charismatic and charming. You know how to impress people and always attract the attention of those around you. If you care about someone,  you can be very sacrificing, bending over backward at times, to prove your devotion, loyalty, and the depth of your relationship. Sometimes being too strong will hurt yourself a little bit, take a deep breath and open your heart will be better!",
-              "vn": "Scorpios rất lôi cuốn và quyến rũ. Bạn biết cách gây ấn tượng với mọi người và luôn thu hút sự chú ý của những người xung quanh. Nếu Scorpios quan tâm đến ai đó, họ có thể hy sinh, đôi khi cúi xuống lùi lại phía sau, để chứng minh sự tận tâm, lòng trung thành của họ dành cho mối quan hệ đó. Nhưng đôi khi sự mạnh mẽ này sẽ khiến bản thân bạn bị tổn thương, hãy hít thở thật sâu và mở lòng sẽ tốt hơn nhé!"
+              "vn": "Thiên Yết rất lôi cuốn và quyến rũ. Bạn biết cách gây ấn tượng với mọi người và luôn thu hút sự chú ý của những người xung quanh. Nếu bạn quan tâm đến ai đó, bạn có thể hy sinh, đôi khi cúi xuống lùi lại phía sau, để chứng minh sự tận tâm, lòng trung thành của bạn dành cho mối quan hệ đó. Nhưng đôi khi sự mạnh mẽ này sẽ khiến bản thân bạn bị tổn thương, hãy hít thở thật sâu và mở lòng sẽ tốt hơn nhé!"
           }, 
           {
               "name": "水瓶座",
@@ -677,7 +681,7 @@
               "tw": "頗富知性，且具有銳利的觀察力、推測能力、以及富有冒險的開拓精神。水瓶座的個性是具有求知慾，對於社會種種的不平等以及矛盾現象，總產生懷疑的態度或不平之心，而逐漸傾向反體制的思想。",
               "cn": "颇富知性，且具有锐利的观察力、推测能力、以及富有冒险的开拓精神。水瓶座的个性是具有求知欲，对于社会种种的不平等以及矛盾现象，总产生怀疑的态度或不平之心，而逐渐倾向反体制的思想。",
               "en": "Those born under the Aquarius sign have the highest levels of analytical intelligence and have a sharp sense of observation. Besides, you also possess an ability to infer and an adventurous pioneering spirit. Your personality is inquisitive and always skeptical or unjust about social inequalities and contradictions, and gradually inclined to anti-social.",
-              "vn": "Những người sinh ra dưới cung Bảo Bình có mức độ thông minh phân tích cao nhất và có óc quan sát nhạy bén. Bên cạnh đó, họ còn sở hữu khả năng suy luận và tinh thần tiên phong mạo hiểm. Tính cách của họ ham học hỏi và luôn hoài nghi hoặc bất công về những bất bình đẳng và mâu thuẫn xã hội, lâu dần có xu hướng chống đối xã hội."
+              "vn": "Những người sinh ra dưới cung Bảo Bình có mức độ thông minh phân tích cao nhất và có óc quan sát nhạy bén. Bên cạnh đó, bạn còn sở hữu khả năng suy luận và tinh thần tiên phong mạo hiểm. Tính cách của bạn ham học hỏi và luôn hoài nghi hoặc bất công về những bất bình đẳng và mâu thuẫn xã hội, lâu dần có xu hướng chống đối xã hội."
           }, 
           {
               "name": "巨蟹座",
@@ -685,7 +689,7 @@
               "tw": "偏好在固定範疇內行事，以求得保護與安全感，常是家庭的守護者，個性較念舊敏銳，家庭意識深厚，若無法受到保護與慰藉時，容易產生排外性、防衛心。",
               "cn": "偏好在固定范畴内行事，以求得保护与安全感，常是家庭的守护者，个性较念旧敏锐，家庭意识深厚，若无法受到保护与慰藉时，容易产生排外性、防卫心。",
               "en": "You prefer to act in a fixed area for protection and security and are often the guardians of the family. You are more nostalgic and sensitive and have a deep sense of family, and are prone to xenophobia and defensiveness if you cannot be protected and comforted.",
-              "vn": "Họ thích hành động trong một phạm vi cố định để có được sự bảo vệ và cảm giác an toàn, họ thường là người bảo vệ của gia đình, có tính cách hoài cổ, nhạy cảm và có ý thức sâu sắc về gia đình. Tuy nhiên, nếu không được che chở và an ủi, bạn rất dễ nảy sinh tư tưởng bài ngoại và phòng thủ."
+              "vn": "Bạn thích hành động trong một phạm vi cố định để có được sự bảo vệ và cảm giác an toàn, bạn thường là người bảo vệ của gia đình, có tính cách hoài cổ, nhạy cảm và có ý thức sâu sắc về gia đình. Tuy nhiên, nếu không được che chở và an ủi, bạn rất dễ nảy sinh tư tưởng bài ngoại và phòng thủ."
           }, 
           {
               "name": "牡羊座",
@@ -693,7 +697,7 @@
               "tw": "較急切，做事講求效率，行動力十足，說做就做，創造性佳，但有時做事會三分鐘熱度、缺乏耐性，且過於衝動。",
               "cn": "较急切，做事讲求效率，行动力十足，说做就做，创造性佳，但有时做事会三分钟热度、缺乏耐性，且过于冲动。",
               "en": "Aries is one of the cardinal constellation signs, so you excel when it comes to taking eagerness and coming up with new creative ideas. More efficient, full of power, and always do what you say. But sometimes you are a “3-minute passion”(easy to give up) person and that makes you lack patience and too much impulsiveness.",
-              "vn": "Bạch Dương là một trong những cung thuộc chòm sao ưu tú, vì vậy họ nổi trội khi thể hiện sự háo hức và nảy ra những ý tưởng sáng tạo mới. Hiệu quả, tràn đầy sức mạnh và luôn làm những gì họ nói. Nhưng đôi khi họ là một người “đam mê 3 phút” (dễ bỏ cuộc) và điều đó khiến họ trở nên thiếu kiên nhẫn và quá bốc đồng."
+              "vn": "Bạch Dương là một trong những cung thuộc chòm sao ưu tú, vì vậy bạn nổi trội khi thể hiện sự háo hức và nảy ra những ý tưởng sáng tạo mới. Hiệu quả, tràn đầy sức mạnh và luôn làm những gì bạn nói. Nhưng đôi khi bạn là một người “đam mê 3 phút” (dễ bỏ cuộc) và điều đó khiến bạn trở nên thiếu kiên nhẫn và quá bốc đồng."
           }, 
           {
               "name": "金牛座",
@@ -701,7 +705,7 @@
               "tw": "務實、沈默寡言，對於自己的朋友相當忠誠，是值得讓人依靠的好對象；內心常已有想法，或清楚事情的真相，較不願聽取他人意見，若嘗試當個傾聽者，未來會更美好。",
               "cn": "务实、沉默寡言，对于自己的朋友相当忠诚，是值得让人依靠的好对象；内心常已有想法，或清楚事情的真相，较不愿听取他人意见，若尝试当个倾听者，未来会更美好。",
               "en": "Pragmatic, taciturn in speech. You are very loyal to your friends and everyone can count on you when they need help. You will mostly keep their thoughts to yourself, make decisions in a very focused way, and don't care what others think about it. But ​if you can be a listener, your future will be very successful.",
-              "vn": "Thực dụng và khá ít nói. Bạn rất trung thành với bạn bè và mọi người có thể dựa dẫm vào bạn khi họ cần sự giúp đỡ. Bạn hầu như sẽ giữ những suy nghĩ cho riêng mình, đưa ra quyết định một cách rất chắc chắn và không quan tâm người khác nghĩ gì về nó. Nhưng nếu bạn có thể trở thành một người biết lắng nghe, bạn sẽ rất thành công trong tương lai."
+              "vn": "Thực dụng và khá ít nói. Bạn rất trung thành với bạn bè và mọi người có thể dựa dẫm vào bạn khi bạn cần sự giúp đỡ. Bạn hầu như sẽ giữ những suy nghĩ cho riêng mình, đưa ra quyết định một cách rất chắc chắn và không quan tâm người khác nghĩ gì về nó. Nhưng nếu bạn có thể trở thành một người biết lắng nghe, bạn sẽ rất thành công trong tương lai."
           }, 
           {
               "name": "射手座",
@@ -717,7 +721,7 @@
               "tw": "思想充滿完美的主義者，任何事情都是用嚴謹態度去面對；但是相對的過於理性，有時候會轉不過來，需要放輕鬆去幻想一下，讓自己換個方向，或許會有更多收穫。",
               "cn": "思想充满完美的主义者，任何事情都是用严谨态度去面对；但是相对的过于理性，有时候会转不过来，需要放轻松去幻想一下，让自己换个方向，或许会有更多收获。",
               "en": "Recognize that perfectionistic thought,  perfection-driven emotional movements, and facing everything with rigor are your specialties. You are pretty set in your ways and are not easily convinced to try something new. One of the most important things for a Virgo to remember is to relax and fantasize. Let yourself change direction and it will be more rewarding.",
-              "vn": "Thừa nhận rằng suy nghĩ theo chủ nghĩa hoàn hảo và mọi thứ đều phải đối mặt với thái độ khắc khe là những đặc trưng của cung hoàng đạo này. Virgos sống khá lý trí và không dễ bị thuyết phục. Một trong những điều quan trọng nhất đối với một Xử Nữ cần nhớ chính là thư giãn và tưởng tượng. Hãy để bản thân thay đổi hướng đi và bạn sẽ đạt được nhiều thành tựu."
+              "vn": "Thừa nhận rằng suy nghĩ theo chủ nghĩa hoàn hảo và mọi thứ đều phải đối mặt với thái độ khắc khe là những đặc trưng của cung hoàng đạo này. Xử Nữ sống khá lý trí và không dễ bị thuyết phục. Một trong những điều quan trọng nhất đối với một Xử Nữ cần nhớ chính là thư giãn và tưởng tượng. Hãy để bản thân thay đổi hướng đi và bạn sẽ đạt được nhiều thành tựu."
           }, 
           {
               "name": "獅子座",
@@ -741,7 +745,7 @@
               "tw": "動與靜、明與暗，相互消長，共榮共存的，意志具有一體兩面的積極與消極。通常很多才多藝，也可同時處理很多事情，有些則會表現出明顯的兩種或多種人格，這種多變的特性，往往令人難以捉摸。",
               "cn": "动与静、明与暗，相互消长，共荣共存的，意志具有一体两面的积极与消极。通常很多才多艺，也可同时处理很多事情，有些则会表现出明显的两种或多种人格，这种多变的特性，往往令人难以捉摸。",
               "en": "Movement and stillness, darkness and light, mutual consumption and coexistence, the will has both positive and negative sides. Some are usually multi-talented and can handle many things at the same time. You often show two or more distinct personalities, this versatile characteristic is often difficult to understand.",
-              "vn": "Chuyển động và tĩnh lặng, bóng tối và ánh sáng, sự tồn tại và tiêu vong, ý chí có cả mặt tích cực và tiêu cực. Một số Gemini thường đa tài và có thể xử lý nhiều việc cùng một lúc. Bạn thường thể hiện hai hoặc nhiều tính cách khác biệt, đặc điểm này thường khó nhận biết."
+              "vn": "Chuyển động và tĩnh lặng, bóng tối và ánh sáng, sự tồn tại và tiêu vong, ý chí có cả mặt tích cực và tiêu cực. Một số Song Tử thường đa tài và có thể xử lý nhiều việc cùng một lúc. Bạn thường thể hiện hai hoặc nhiều tính cách khác biệt, đặc điểm này thường khó nhận biết."
           }, 
           {
               "name": "雙魚座",
@@ -1454,6 +1458,7 @@
                 }
               },
               start: function() {
+                $("#MenuLink").hide()
                 $("#MenuLink").addClass("disabled")
                 $(".start-test").hide()
                 $(".step1").show()
@@ -1463,6 +1468,8 @@
                 if (step == 1) {
                   $(".start-test").show()
                   $(".step1").hide()
+                  $("#MenuLink").show()
+                  $("#MenuLink").removeClass("disabled")
                 }else if (step == 2) {
                   $(".step1").show()
                   $(".step2").hide()
@@ -1563,6 +1570,7 @@
                 $(".step4").hide()
                 $(".ans").hide()
                 $(".footer").hide()
+                $("#MenuLink").show()
                 $("#MenuLink").removeClass("disabled")
               },
               loadAnsData: function(answer) {
