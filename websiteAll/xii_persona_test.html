@@ -513,12 +513,12 @@
           :options="{
             placement: 'top',
             modifiers: { offset: { offset: '0,20px' } }
-          }">
+          }" id="popper">
           <div class="popper">
             <% $t('ans.copied') %>
           </div>
       
-          <button slot="reference" type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink" :data-clipboard-text="url">
+          <button slot="reference" type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink('popper', 'btn-copyLink')" :data-clipboard-text="url">
             <% $t('ans.copyLink') %>
           </button>
         </popper>
@@ -526,19 +526,16 @@
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-prevPage" @click="prevPage('ans')"><% $t('ans.prevPage') %></button>
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-restart"  @click="restart"><% $t('ans.restart') %></button>
         <!-- <p><button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button></p> -->
-        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-          Tooltip on top
-        </button>
         <popper
           trigger="clickToOpen"
           :options="{
             placement: 'top',
             modifiers: { offset: { offset: '0,10px' } }
-          }">
+          }" id="popper-phone">
           <div class="popper">
             <% $t('ans.copied') %>
           </div>
-          <button slot="reference" type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button>
+          <button slot="reference" type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink('popper-phone', 'btn-copyLink-phone')" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button>
         </popper>
         
       </div>
@@ -616,12 +613,13 @@
   <script src="js/vue-router.js"></script>
   <!-- Vue-scrollto -->
   <script src="js/vue-scrollto.js"></script>
+  <!-- Vue-popper -->
+  <script src="js/vue-popper.min.js"></script>
   <!-- Axios -->
   <script src="js/axios.min.js"></script>
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <script src="js/vue-popper.min.js"></script>
   <!-- html2canvas -->
   <!-- <script src="js/html2canvas.min.js"></script> -->
   <script src="js/html2canvas.js"></script>
@@ -649,8 +647,6 @@
         $("#dropbtn").addClass("dropbtn-active")
       })
     $(document).ready(function () {
-      console.log("5555")
-      $('[data-toggle="tooltip"]').tooltip();
       AOS.init();
       $('.owl-carousel').owlCarousel({
         items: 1,
@@ -1667,19 +1663,28 @@
                 }, 1000)
 
               },
-              copyLink: function () {
+              copyLink: function (id, className) {
                 let self = this;
-                let clipboard = new ClipboardJS(".btn-copyLink"); // 这里括号里填写上面点击事件绑定的class名
+                let clipboard = new ClipboardJS("." + className); // 这里括号里填写上面点击事件绑定的class名
                 clipboard.on("success", e => {
                   
                   clipboard.destroy();
                 });
                 clipboard.on("error", e => {
-                  // 不支持复制，提示根据自己项目实际使用的UI来写
-                  // alert("cannot Copy")
                   // 释放内存
                   clipboard.destroy();
                 });
+                
+                $("#" + id + " span").show();
+                setTimeout(function() {
+                  $("#" + id + " span")[0].style.opacity = 1;
+                }, 200);
+                setTimeout(function() {
+                  $("#" + id + " span")[0].style.opacity = 0;
+                }, 1000);
+                setTimeout(function() {
+                  $("#" + id + " span").hide();
+                }, 1500);
               },
               downloadImg: function () {
                 $("#mint-gem").hide()
