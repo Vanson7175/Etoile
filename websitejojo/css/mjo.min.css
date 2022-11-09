@@ -1458,7 +1458,11 @@ img::-moz-selection {
     }
 }
 
-
+@media (max-width: 1200px) {
+    #join a:hover {
+        font-size: 24px;
+    }
+}
 
 @media (max-width: 1024px) {
     #join.page-section h2.section-heading {
