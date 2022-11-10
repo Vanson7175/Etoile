@@ -140,8 +140,11 @@
           <div class="step-angel"></div>
           <div class="text-center">
             <div class="intro-text text-pos">
-              <div class="intro-title">
+              <div class="text-center" v-if="fullWidth < 992">
                 <img src="./img/xii_test/bg/star3.png" alt="star">
+              </div>
+              <div class="intro-title">
+                <img src="./img/xii_test/bg/star3.png" alt="star" v-if="fullWidth > 991">
                 <!-- <p class="step-heading mt-4"><% $t('step1.heading') %></p> -->
                 <p id="step1TypeWriter" class="step-writer mt-4"><span><% $t('step1.heading') %></span></p>
               </div>
@@ -202,8 +205,11 @@
           <div class="step-angel"></div>
           <div class="text-center">
             <div class="intro-text text-pos">
-              <div class="intro-title">
+              <div class="text-center" v-if="fullWidth < 992">
                 <img src="./img/xii_test/bg/star3.png" alt="star">
+              </div>
+              <div class="intro-title">
+                <img src="./img/xii_test/bg/star3.png" alt="star" v-if="fullWidth > 991">
                 <!-- <p class="step-heading mt-4"><% $t('step2.heading') %></p> -->
                 <p id="step2TypeWriter" class="step-writer mt-4 step2-heading"><span><% $t('step2.heading') %></span></p>
               </div>
@@ -295,8 +301,11 @@
           <div class="step-angel"></div>
           <div class="text-center">
             <div class="intro-text text-pos">
-              <div class="intro-title">
+              <div class="text-center" v-if="fullWidth < 992">
                 <img src="./img/xii_test/bg/star3.png" alt="star">
+              </div>
+              <div class="intro-title">
+                <img src="./img/xii_test/bg/star3.png" alt="star" v-if="fullWidth > 991">
                 <!-- <p class="step-heading mt-4"><% $t('step3.heading') %></p> -->
                 <p id="step3TypeWriter" class="step-writer mt-4"><span><% $t('step3.heading') %></span><span v-if="step3.heading2"><% $t('step3.heading2') %></span></p>
               </div>
@@ -419,8 +428,11 @@
           <div class="step-angel"></div>
           <div class="text-center">
             <div class="intro-text text-pos">
-              <div class="intro-title">
+              <div class="text-center" v-if="fullWidth < 992">
                 <img src="./img/xii_test/bg/star3.png" alt="star">
+              </div>
+              <div class="intro-title">
+                <img src="./img/xii_test/bg/star3.png" alt="star" v-if="fullWidth > 991">
                 <!-- <p class="step-heading mt-4"><% $t('step4.heading') %></p> -->
                 <p id="step4TypeWriter" class="step-writer mt-4"><span><% $t('step4.heading') %></span><span v-if="step4.heading2"><% $t('step4.heading2') %></span></p>
               </div>
@@ -1286,6 +1298,7 @@
             step4BtnActive: "999",
             step3Choose:"",
             url:"",
+            fullWidth:"",
             // Language
             lanList:[
               {name:"繁體中文", href:"#", routeName:"index", router:""},
@@ -1297,6 +1310,13 @@
           },
           mounted: function () {
             // this.loadJson(this.locale);
+            const vm = this;
+            vm.fullWidth = window.innerWidth;
+            vm.fullHeight = window.innerHeight;
+            window.onresize = () => {
+              vm.fullWidth = window.innerWidth;
+              vm.fullHeight = window.innerHeight;
+            };
           },
           created: function () {
             this.$i18n.locale = this.locale;
