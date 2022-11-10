@@ -210,15 +210,9 @@
               </div>
               <div class="intro-title">
                 <img src="./img/xii_test/bg/star3.png" alt="star" v-if="fullWidth > 991">
-                <!-- <p class="step-heading mt-4"><% $t('step2.heading') %></p> -->
                 <p id="step2TypeWriter" class="step-writer mt-4 step2-heading"><span><% $t('step2.heading') %></span></p>
               </div>
               <div class="row pt-5">
-                <!-- <div v-for="item in $t('questionList2')" class="col-xl-6 col-12 step-content">
-                  <p class="mt-2">
-                    <button class="btn step-button rounded-pill" @click="step2(item.code, 'website', '999')"><% item.question %></button>
-                  </p>
-                </div> -->
                 <div class="step-content col-12">
                   <div class="row mb-4">
                     <div class="step2-col-fst">
@@ -247,21 +241,6 @@
                       <button class="btn step-button rounded-pill" @click="step2($t('step2.q6.code'), 'website', '999')"><% $t('step2.q6.question') %></button>
                     </div>
                   </div>
-
-                  
-                  <!-- <p class="mb-4">
-                    <button class="btn step-button rounded-pill mr-4" @click="step2($t('step2.q1.code'), 'website', '999')"><% $t('step2.q1.question') %></button>
-                    <button class="btn step-button rounded-pill mr-4" @click="step2($t('step2.q4.code'), 'website', '999')"><% $t('step2.q4.question') %></button>
-                    <button class="btn step-button rounded-pill" @click="step2($t('step2.q7.code'), 'website', '999')"><% $t('step2.q7.question') %></button>
-                  </p>
-                  <p class="mb-4">
-                    <button class="btn step-button rounded-pill mr-4" @click="step2($t('step2.q2.code'), 'website', '999')"><% $t('step2.q2.question') %></button>
-                    <button class="btn step-button rounded-pill" @click="step2($t('step2.q5.code'), 'website', '999')"><% $t('step2.q5.question') %></button>
-                  </p>
-                  <p>
-                    <button class="btn step-button rounded-pill mr-4" @click="step2($t('step2.q3.code'), 'website', '999')"><% $t('step2.q3.question') %></button>
-                    <button class="btn step-button rounded-pill" @click="step2($t('step2.q6.code'), 'website', '999')"><% $t('step2.q6.question') %></button>
-                  </p> -->
                 </div>
                 <div v-for="(item, index) in $t('questionList2Phone')" class="col-xl-6 col-12 step-phone-content">
                   <p class="mt-2">
@@ -306,20 +285,9 @@
               </div>
               <div class="intro-title">
                 <img src="./img/xii_test/bg/star3.png" alt="star" v-if="fullWidth > 991">
-                <!-- <p class="step-heading mt-4"><% $t('step3.heading') %></p> -->
                 <p id="step3TypeWriter" class="step-writer mt-4"><span><% $t('step3.heading') %></span><span v-if="step3.heading2"><% $t('step3.heading2') %></span></p>
               </div>
               <div class="row pt-5 pl-3">
-                <!-- <div class="col-xl-8 col-lg-12 col-md-12 col-12"> -->
-                <!-- <div class="col-12">
-                  <div class="row">
-                    <div v-for="item in $t('questionList3')" class="col-xl-4 col-4 step-content">
-                      <p class="mt-2">
-                        <button class="btn step-button rounded-pill" @click="step3(item.code, 'website', '999')"><% item.question %></button>
-                      </p>
-                    </div>
-                  </div>
-                </div> -->
                 <div class="step-content col-12">
                   <div class="row mb-4">
                     <div class="step3-col-fst">
@@ -365,26 +333,6 @@
                       <button class="btn step-button rounded-pill" @click="step3($t('step3.q12.code'), 'website', '999')"><% $t('step3.q12.question') %></button>
                     </div>
                   </div>
-                  <!-- <p class="mb-4">
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q1.code'), 'website', '999')"><% $t('step3.q1.question') %></button>
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q5.code'), 'website', '999')"><% $t('step3.q5.question') %></button>
-                    <button class="btn step-button rounded-pill" @click="step3($t('step3.q9.code'), 'website', '999')"><% $t('step3.q9.question') %></button>
-                  </p>
-                  <p class="mb-4">
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q2.code'), 'website', '999')"><% $t('step3.q2.question') %></button>
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q6.code'), 'website', '999')"><% $t('step3.q6.question') %></button>
-                    <button class="btn step-button rounded-pill" @click="step3($t('step3.q10.code'), 'website', '999')"><% $t('step3.q10.question') %></button>
-                  </p>
-                  <p class="mb-4">
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q3.code'), 'website', '999')"><% $t('step3.q3.question') %></button>
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q7.code'), 'website', '999')"><% $t('step3.q7.question') %></button>
-                    <button class="btn step-button rounded-pill" @click="step3($t('step3.q11.code'), 'website', '999')"><% $t('step3.q11.question') %></button>
-                  </p>
-                  <p>
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q4.code'), 'website', '999')"><% $t('step3.q4.question') %></button>
-                    <button class="btn step-button rounded-pill mr-4" @click="step3($t('step3.q8.code'), 'website', '999')"><% $t('step3.q8.question') %></button>
-                    <button class="btn step-button rounded-pill" @click="step3($t('step3.q12.code'), 'website', '999')"><% $t('step3.q12.question') %></button>
-                  </p> -->
                 </div>
                 <div class="col-xl-4 col-12 mt-5 mb-4">
                   <div class="dropdown-select" :class="{'dropbtn-active': active}" @click="status">
@@ -433,11 +381,9 @@
               </div>
               <div class="intro-title">
                 <img src="./img/xii_test/bg/star3.png" alt="star" v-if="fullWidth > 991">
-                <!-- <p class="step-heading mt-4"><% $t('step4.heading') %></p> -->
                 <p id="step4TypeWriter" class="step-writer mt-4"><span><% $t('step4.heading') %></span><span v-if="step4.heading2"><% $t('step4.heading2') %></span></p>
               </div>
               <div class="row p-5">
-                <!-- <div class="col-xl-7 col-lg-12 col-md-12 col-12"> -->
                 <div class="col-12">
                   <div class="row">
                     <div v-for="item in $t('questionList4')" class="col-12 step-content">
@@ -481,14 +427,9 @@
             <div class="intro-text text-pos">
               <div class="intro-title">
                 <img class="mx-2" src="./img/xii_test/bg/star2.png" alt="star">
-                <!-- <p class="intro-heading mt-4"><% $t('ans.heading') %></p> -->
-                <!-- <span class="intro"><% $t('ans.intro1') %></span> -->
                 <span class="intro-heading"><% $t('ans.intro1') %></span>
                 <img class="mx-1" src="./img/xii_test/bg/star2.png" alt="star">
               </div>
-              <!-- <p class="mt-2">
-                <span class="intro"><% $t('ans.intro1') %></span>
-              </p> -->
               <div class="ans-img-pos-phone">
                 <img class="ans-img" :src="ansImageUrl + '?' + new Date().getTime()" alt="ans" crossOrigin="Anonymous">
                 <img class="light-img" src="./img/xii_test/bg/light.png" alt="spotlight">
@@ -511,7 +452,6 @@
         <div class="col-lg-5 col-md-12 col-12 align-self-center">
           <div class="ans-img-pos">
             <img class="ans-img" :src="ansImageUrl + '?' + new Date().getTime()" alt="ans" crossOrigin="Anonymous">
-            <!-- <img class="light-img" src="./img/xii_test/bg/spotlight.png" alt="spotlight"> -->
             <img class="light-img" src="./img/xii_test/bg/light.png" alt="spotlight">
           </div>
         </div>
@@ -643,29 +583,16 @@
   <script src="js/jqBootstrapValidation.js"></script>
   <!-- clipboard -->
   <script src="js/clipboard.min.js"></script>
-  <!-- Custom scripts for this template -->
-  <script src="vendor/owl/owl.carousel.min.js"></script>
-  <script src="vendor/aos/aos.js"></script>
-  <script src="js/mjo.min.js"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
   <script>
       $("#dropbtn").click(function(){
-        console.log("dd")
         $("#dropbtn").addClass("dropbtn-active")
       })
     $(document).ready(function () {
-      AOS.init();
-      $('.owl-carousel').owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        dots: false
-      });
       const desData = [
           {
               "name": "天秤座",
@@ -1326,7 +1253,6 @@
           watch: {
             '$route.path': {
               handler: function(path) {
-                // console.log(path)
                 if(path=='/'){
                   this.locale = 'tw'
                   this.lanName = '繁體中文'
@@ -1384,7 +1310,6 @@
                   }
               },
               languageChange: function (lanName, index) {
-                // console.log(lanName);
                 this.checkIndex = index;
                 this.lanName = lanName
                 if(lanName == '繁體中文'){
@@ -1411,7 +1336,6 @@
                 }
                 this.loadDesData(this.stepAns3)
                 this.$i18n.locale = this.locale;
-                // console.log(this.$t("header.title"));
                 localStorage.setItem("locale", this.locale);
                 // this.loadJson(this.locale);
         
@@ -1449,11 +1373,9 @@
                 
               },
               loadJson: function(locale){
-                // console.log(locale)
                 let self = this;
                 let url = '../data/data.json'
                 axios.get(url).then(function (response) {
-                  //  console.log(response.data);
                    if(response.data) {
                       messages.tw = response.data.tw;
                       messages.cn = response.data.cn;
@@ -1466,7 +1388,6 @@
               },
               handleScroll: function(){
                 var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-                // console.log(scrollTop)
                 if(scrollTop >= 2100){
                   $('#angel-animation').addClass('angel-animation')
                 }else{
@@ -1561,7 +1482,6 @@
                 }
               },
               step4: function(code, types, index) {
-                // console.log(types)
                 this.isDownload = false;
                 this.stepAns4 = code;
                 let answer = this.stepAns3 + "-" + this.stepAns1 + "-" + this.stepAns2 + "-" + this.stepAns4;
@@ -1617,8 +1537,6 @@
               //  });
               },
               loadDesData: function(stepAns3) {
-                // console.log(stepAns3);
-                // console.log("stepAns3");
                 let self = this;
                 let url = './des.json'
                 for (item in desData) {
@@ -1662,7 +1580,6 @@
                 let width = app.offsetWidth
                 // let height = app.offsetHeight
                 let height = app.clientHeight
-                // console.log(height)
                 var opts = {
                   useCORS: true,
                   scrollY: 0,
@@ -1671,7 +1588,6 @@
                   // height
                 };
                 setTimeout(() => {
-                  console.log("Delayed for 1 second.");
                   html2canvas(document.querySelector("#app"), opts).then(function (canvas) {
                     url = Canvas2Image.convertToPNG(canvas, width, height)
                     url.style = "background"
