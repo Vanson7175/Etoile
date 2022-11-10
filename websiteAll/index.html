@@ -1301,7 +1301,6 @@
         // mode: 'history',
         routes,
       });
-      // console.log(route.query);
 
       let vue = new Vue({
           el: "#app",
@@ -1446,7 +1445,6 @@
           watch: { 
             '$route.path': {
               handler: function(path) {
-                console.log(path)
                 if(path=='/'){
                   this.locale = 'tw'
                   this.lanName = '繁體中文'
@@ -1513,7 +1511,6 @@
 
                 }
                 this.$i18n.locale = this.locale;
-                // console.log(this.$t("header.title"));
                 localStorage.setItem("locale", this.locale);
               },
               changeIcon: function() {
