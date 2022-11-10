@@ -226,9 +226,7 @@
           </p>
         </div>
         <div class="col-12 text-center mt-5">
-          <button class="btn-test js-scroll-trigger mx-auto"><% $t('psychometric.test') %></button>
-          <!-- <router-link :to="{ name:$t('psychometric.routeName'), params:{ lang:$t('psychometric.router')} }" class="btn-test js-scroll-trigger mx-auto" :href="$t('psychometric.url')" target="_blank"><% $t('psychometric.test') %></router-link> -->
-          <!-- <router-link :to="{ name:$t('psychometric.routeName'), params:{ lang:locale} }" class="btn-test js-scroll-trigger mx-auto" href="psychometric.html"><% $t('psychometric.test') %></router-link> -->
+          <a class="btn-test js-scroll-trigger mx-auto" :href="url" target="_blank"><% $t('psychometric.test') %></a>
         </div>
       </div>
     </div>
@@ -535,7 +533,7 @@
             "content2":"『XII Persona』寶石",
             "content3":"測出你的真實性格. 請用第一直覺選擇答案，",
             "content4":"全部題目作答完，就能揭曉出你專屬的命定寶石。",
-            "test":"Coming Soon",
+            "test":"開始測驗",
             "routeName":"psychometric",
             "router":"psychometric",
             "url":"psychometric.html"
@@ -681,7 +679,7 @@
             "content2":"『XII Persona』宝石",
             "content3":"测出你的真实性格. 请用第一直觉选择答案，",
             "content4":"全部题目作答完，就能揭晓出你专属的命定宝石。",
-            "test":"Coming Soon",
+            "test":"开始测验",
             "routeName":"psychometric",
             "router":"psychometric",
             "url":"psychometric.html"
@@ -827,7 +825,7 @@
             "content2":"【XII Persona】 Gemstone",
             "content3":"Find out your true personality. Use your first instinct to choose the answer.",
             "content4":"After answering all the questions, you will be revealed your exclusive destiny gem.",
-            "test":"Coming Soon",
+            "test":"Start the test",
             "routeName":"psychometric",
             "router":"psychometric",
             "url":"psychometric.html"
@@ -973,7 +971,7 @@
             "content2":"[XII Persona] của bạn",
             "content3":"Tìm ra tính cách thực sự của bạn. Vui lòng sử dụng trực giác đầu tiên để chọn câu trả lời.",
             "content4":"Sau khi trả lời tất cả các câu hỏi, bạn sẽ được tiết lộ viên ngọc định mệnh độc quyền của mình.",
-            "test":"Sắp ra mắt",
+            "test":"Bắt đầu thử nghiệm",
             "routeName":"psychometric",
             "router":"psychometric",
             "url":"psychometric.html"
@@ -1148,6 +1146,7 @@
               active:'',
             },
             fullWidth:"",
+            url:"",
             // Language
             lanList:[
               {name:"繁體中文", href:"#", routeName:"index", router:""},
@@ -1175,25 +1174,28 @@
           watch: {
             '$route.path': {
               handler: function(path) {
-                console.log(path)
                 if(path=='/'){
                   this.locale = 'tw'
                   this.lanName = '繁體中文'
                   this.cssLocal = ''
+                  this.url = this.replaceUrl(window.location.href, "/");
                 }else if(path=='/CN'){
                   this.locale = 'cn'
                   this.lanName = '简体中文'
                    this.cssLocal = ''
+                   this.url = this.replaceUrl(window.location.href, "/CN");
                 }else if (path=='/EN'){
                   this.locale = 'en'
                   this.cssLocal = 'en_'
                   this.menuName = 'Psychometric test'
                   this.lanName = 'English'
+                  this.url = this.replaceUrl(window.location.href, "/EN");
                 }else if (path=='/VN'){
                   this.locale = 'vn'
                   this.lanName = 'Tiếng Việt'
                   this.menuName = 'Khái niệm sáng tạo'
                   this.cssLocal = 'vn_'
+                  this.url = this.replaceUrl(window.location.href, "/VN");
                 }
                 this.$i18n.locale = this.locale
                 // this.loadJson(this.locale);
@@ -1221,7 +1223,6 @@
                   }
               },
               languageChange: function (lanName, index) {
-                console.log(lanName);
                 this.checkIndex = index;
                 this.lanName = lanName
                 if(lanName == '繁體中文'){
@@ -1239,7 +1240,6 @@
 
                 }
                 this.$i18n.locale = this.locale;
-                // console.log(this.$t("header.title"));
                 localStorage.setItem("locale", this.locale);
                 // this.loadJson(this.locale);
         
@@ -1277,11 +1277,9 @@
                 
               },
               loadJson: function(locale){
-                console.log(locale)
                 let self = this;
                 let url = '../data/data.json'
                 axios.get(url).then(function (response) {
-                  //  console.log(response.data);
                    if(response.data) {
                       messages.tw = response.data.tw;
                       messages.cn = response.data.cn;
@@ -1376,6 +1374,10 @@
                   $("#cts-check-out").hide()
                   $("#cts-check-in").show()
                 }
+              },
+              replaceUrl: function(url, lan) {
+                url = url.replace("xii_persona.html#", "xii_persona_test.html#")
+                return url
               }
               
           },
