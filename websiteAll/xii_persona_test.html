@@ -440,12 +440,9 @@
                   <% description %>
                 </div>
               </div>
-              <a v-if="!isDownload" id="mint-gem" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('ans.button1') %></a>
-              <a v-if="!isDownload" id="download-img" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img" href="#" @click="downloadImg"><% $t('ans.button2') %></a>
-              <!-- <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img" href="#" @click="getImg"><% $t('ans.button2') %></a> -->
-              <!-- <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img-phone" href="#" @click="downloadImg"><% $t('ans.button2') %></a> -->
-              <!-- <a v-if="!isDownload" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto get-img-phone" href="#" @click="getImgByPhone"><% $t('ans.button2') %></a> -->
-              <!-- <a v-if="isDownload && !isPhone" class="btn-xii-test rounded-pill js-scroll-trigger mx-auto" href="#" @click="downloadImg"><% $t('ans.button3') %></a> -->
+              <a v-if="!isDownload" id="mint-gem" class="btn btn-xii-test rounded-pill mx-auto" :href="mintUrl" target="_blank"><% $t('ans.button1') %></a>
+              <a v-if="!isDownload" id="download-img" class="btn btn-xii-test rounded-pill mx-auto get-img" href="#" @click="downloadImg('web')"><% $t('ans.button2') %></a>
+              <p><button v-if="!isDownload" id="download-img-phone" class="btn btn-xii-test rounded-pill mx-auto get-img-phone mt-3" @click="downloadImg('phone')"><% $t('ans.button2') %></button></p>
             </div>
           </div>
         </div>
@@ -455,7 +452,6 @@
             <img class="light-img" src="./img/xii_test/bg/light.png" alt="spotlight">
           </div>
         </div>
-        
       </div>
     </div>
     <div class="container-fluid px-4 mt-5">
@@ -474,10 +470,8 @@
             <% $t('ans.copyLink') %>
           </button>
         </popper>
-        <!-- <button type="button" v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLink') %></button> -->
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-prevPage" @click="prevPage('ans')"><% $t('ans.prevPage') %></button>
         <button v-if="!isDownload" class="btn step-button rounded-pill btn-restart"  @click="restart"><% $t('ans.restart') %></button>
-        <!-- <p><button v-if="!isDownload" class="btn step-button rounded-pill btn-copyLink-phone mt-3" @click="copyLink" :data-clipboard-text="url"><% $t('ans.copyLinkPhone') %></button></p> -->
         <popper
           trigger="clickToOpen"
           :options="{
@@ -1622,9 +1616,13 @@
                   $("#" + id + " span").hide();
                 }, 1500);
               },
-              downloadImg: function () {
+              downloadImg: function (type) {
                 $("#mint-gem").hide()
-                $("#download-img").hide()
+                if (type == "web") {
+                  $("#download-img").hide()
+                } else if (type == "phone") {
+                  $("#download-img-phone").hide()
+                }
                 var opts = {
                   useCORS: true,
                   scrollY: 0,
@@ -1640,7 +1638,11 @@
                     a.click();
                   });
                   $("#mint-gem").show();
-                  $("#download-img").show();
+                  if (type == "web") {
+                    $("#download-img").show()
+                  } else if (type == "phone") {
+                    $("#download-img-phone").show()
+                  }
                 }, 1000)
                 
               },

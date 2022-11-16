@@ -1322,9 +1322,9 @@ header .page-header {
     /* .get-img {
         display: none;
     } */
-    .get-img-phone {
+    /* .get-img-phone {
         display: inline;
-    }
+    } */
     .dropdown-select {
         display: inline-block;
     }
@@ -1340,6 +1340,15 @@ header .page-header {
     }
     .step-button:hover {
         font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .get-img {
+        display: none;
+    }
+    .get-img-phone {
+        display: block;
     }
 }
 
@@ -1784,6 +1793,12 @@ header .page-header {
 @media (max-width: 425px) {
     .footer-img {
         height: 30px;
+    }   
+}
+
+@media (max-width: 375px) {
+    .footer-img {
+        height: 25px;
     }   
 }
 
