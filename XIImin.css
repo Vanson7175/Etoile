@@ -1,0 +1,12 @@
+
+
+.xii ul li{
+    margin-left: 15px;
+}
+
+.xii li a img{
+    max-width: 300px;
+    /* min-width: 350px; */
+    margin-right: 15px;
+    margin-top: 15px;
+}
