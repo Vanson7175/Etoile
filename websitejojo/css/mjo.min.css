@@ -1533,20 +1533,61 @@ img::-moz-selection {
     width: 100%;
 }
 
-.toTop-arrow {
-	width: 2.5rem;
-	height: 2.5rem;
+.music-container {
+	width: 130px;
+	height: 99px;
 	padding: 0;
 	margin: 0;
 	border: 0;
-	border-radius: 33%;
-	opacity: 0.6;
-	background: #000;
+	border-radius: 10px;
+	background: #4E4E4E;
 	cursor: pointer;
 	position:fixed;
-	right: 1rem;
-	bottom: 1rem;
-	display: none;
+	left: 64px;
+	bottom: 35px;
+	transition: all 0.5s;
+    z-index: 9999;
+}
+
+.music-container .music {
+    height: 100%;
+    padding: 20px 28px 20px 99px;
+}
+
+.music-container .music-img {
+    position: absolute;
+    top: -15px;
+    transition: all 0.5s;
+}
+
+.music-container .arrow-btn .arrow-img {
+    transition: all 0.5s;  
+}
+
+.music-container .arrow-btn .arrow-img.rotate {
+    transform: rotate(180deg);    
+}
+
+.music-container.active {
+    width: 458px;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* right: -28px; */
+    height: 100%;
+    background-color: #4E4E4E;
+    border-radius: 0 10px 10px 0;
+    border-left: 2px solid #D9D9D9;
+    border-top: 2px solid #4E4E4E;
+    border-bottom: 2px solid #4E4E4E;
+    border-right: 2px solid #4E4E4E;
+}
+
+.arrow-btn:focus {
+    outline: 0px auto -webkit-focus-ring-color;
 }
 
 .btn {

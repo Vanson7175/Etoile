@@ -336,7 +336,7 @@
     <div class="container-fluid mt-5 mb-5">
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-7 text-center mb-5">
-          <img src="./img/join/dc.png" class="join-img">
+          <img src="./img/join/tw.png" class="join-img">
         </div>
         <div class="col-lg-5 mb-5 text-center">
           <div class="p-5">
@@ -411,12 +411,24 @@
       </div>
     </div>
   </footer>
-  <div class="toTop-arrow">
-    <audio controls>
-      <source src="music.ogg" type="audio/ogg">
-      <source src="music.mp3" type="audio/mpeg">
+  <div class="music-container active">
+    <div class="music-img">
+      <img src="./img/music/music_pic.png" alt="">
+    </div>
+    <div class="music">
+      <div>
+        music
+      </div>
+    </div>
+    <button class="arrow-btn" @click="musicArrowBtn">
+      <img class="arrow-img" src="./img/music/arrow.png" alt="">
+    </button>
+    
+
+    <!-- <audio controls>
+      <source src="./img/music/Meta Of Chaos.mp3" type="audio/mpeg">
       你的瀏覽器不支援 audio tag！
-    </audio>
+    </audio> -->
   </div>
   <router-view></router-view>
   </main>
@@ -1350,6 +1362,10 @@
               iconClick: function(iconType, iconName){
                 console.log(iconType)
                 console.log(iconName)
+              },
+              musicArrowBtn: function() {
+                $(".music-container").toggleClass("active");
+		            $(".arrow-img").toggleClass("rotate");
               }
           },
           components: {
