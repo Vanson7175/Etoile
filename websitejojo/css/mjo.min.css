@@ -1502,6 +1502,53 @@ img::-moz-selection {
 } */
 
 
+#discord {
+    background: url("../img/bg/faq_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 777px; */
+    width: 100%;
+}
+
+#discord.page-section h2.section-heading {
+    font-size: 3rem;
+    font-family: 'Cubic'
+}
+
+#discord.page-section h2.section-heading::before,
+#discord.page-section h2.section-heading::after {
+    content: "";
+    /* content: attr(data-text);
+    position: absolute;
+    text-shadow: 3px 0px 5px #ff00ff,
+        -3px 0px 5px #2eccfb;
+    left: 0px;
+    clip-path: inset(33px 0 7px 3px);
+    animation: anil2 2s infinite linear alternate-reverse; */
+}
+
+#twitter {
+    background: url("../img/bg/roadmap_bg.png") no-repeat center;
+    background-size: cover;
+    /* height: 777px; */
+    width: 100%;
+}
+
+.toTop-arrow {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 33%;
+	opacity: 0.6;
+	background: #000;
+	cursor: pointer;
+	position:fixed;
+	right: 1rem;
+	bottom: 1rem;
+	display: none;
+}
+
 .btn {
     font-family: 'Cubic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-weight: 700;
@@ -1522,6 +1569,28 @@ img::-moz-selection {
     line-height: 1.5;
     border-radius: 3rem;
     border: 2px solid;
+}
+
+.btn-join {
+    color: white;
+    text-shadow: 0px 0px 5px #FFF73C, 
+        0px 0px 15px #FFF73C;
+    box-shadow: 0px 0px 5px #FFF73C, 
+        0px 0px 15px #FFF73C, 
+        inset 0px 0px 5px #FFF73C, 
+        inset 0px 0px 15px #FFF73C;
+    border: 1px solid #FFF73C;
+    background-color: transparent;
+    border: 5px solid #FFF73C;
+    font-family: "Arial-Black";
+}
+
+.btn-join:active,
+.btn-join:focus,
+.btn-join:hover {
+    background-color: #fff73cab !important;
+    border-color: #FFF73C !important;
+    color: white
 }
 
 .btn-nft {

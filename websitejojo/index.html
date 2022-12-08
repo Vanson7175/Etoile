@@ -301,6 +301,53 @@
     </div>
   </section>
 
+  <!-- Discord -->
+  <section class="page-section " :id="cssLocal + 'discord'">
+    <div class="container-fluid mt-5 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 mb-5">
+          <div class="p-5">
+            <widgetbot
+              server="991918755317825557"
+              channel="991923732387995758"
+              width="100%"
+              height="800"
+            ></widgetbot>
+            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+          </div>
+        </div>
+        <div class="col-lg-7 mb-5 text-center">
+          <div class="p-5">
+            <img src="./img/join/dc.png" class="join-img">
+            <div class="section-title mt-5">
+              <h2 class="section-heading text-uppercase" :data-text="$t('discord.heading')"><% $t('discord.heading') %></h2>
+            </div>
+            <div class="mt-5">
+              <a href="https://discord.gg/tjQnQwsAq7" target="_blank" role="button" class="btn btn-join btn-md mt-2">JOIN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Twitter -->
+  <section class="page-section" :id="cssLocal + 'twitter'">
+    <div class="container-fluid mt-5 mb-5">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-7 text-center mb-5">
+          <img src="./img/join/dc.png" class="join-img">
+        </div>
+        <div class="col-lg-5 mb-5 text-center">
+          <div class="p-5">
+            <a class="twitter-timeline" data-height="800" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- QA -->
 <section class="page-section " :id="cssLocal + 'qa'">
     <div class="container mt-5  mb-5">
@@ -355,15 +402,22 @@
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12 text-center mt-2">
-          <a href="https://discord.gg/tjQnQwsAq7" target="_blank"><img class="media-icon ml-1 mr-1" id="discord" src="./img/icon/discord.png" @mouseover="iconHover(discord, 'discord')" @mouseleave="iconLeave(discord, 'discord')" alt="discord"></a>
-          <a href="https://twitter.com/majinjojo2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitter" src="./img/icon/twitter.png" @mouseover="iconHover(twitter, 'twitter')" @mouseleave="iconLeave(twitter, 'twitter')" alt="twitter"></a>
-          <a href="https://www.instagram.com/majin_jojo2022/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagram" src="./img/icon/instagram.png" @mouseover="iconHover(instagram, 'instagram')" @mouseleave="iconLeave(instagram, 'instagram')" alt="instagram"></a>
-          <a href="https://www.facebook.com/Majin-JoJo-111593898266363" target="_blank"><img class="media-icon ml-1 mr-1" id="facebook" src="./img/icon/facebook.png" @mouseover="iconHover(facebook, 'facebook')" @mouseleave="iconLeave(facebook, 'facebook')" alt="facebook"></a>
-          <a href="https://www.potatomedia.co/user/5ef708e8-90aa-4fc9-985e-dd9744d3abd6/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potato" src="./img/icon/potato.png" @mouseover="iconHover(potato, 'potato')" @mouseleave="iconLeave(potato, 'potato')" alt="potato"></a>
+          <a href="https://discord.gg/tjQnQwsAq7" target="_blank"><img class="media-icon ml-1 mr-1" id="discordIcon" src="./img/icon/discord.png" @mouseover="iconHover(discordIcon, 'discord')" @mouseleave="iconLeave(discordIcon, 'discord')" alt="discord"></a>
+          <a href="https://twitter.com/majinjojo2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitterIcon" src="./img/icon/twitter.png" @mouseover="iconHover(twitterIcon, 'twitter')" @mouseleave="iconLeave(twitterIcon, 'twitter')" alt="twitter"></a>
+          <a href="https://www.instagram.com/majin_jojo2022/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramIcon" src="./img/icon/instagram.png" @mouseover="iconHover(instagramIcon, 'instagram')" @mouseleave="iconLeave(instagramIcon, 'instagram')" alt="instagram"></a>
+          <a href="https://www.facebook.com/Majin-JoJo-111593898266363" target="_blank"><img class="media-icon ml-1 mr-1" id="facebookIcon" src="./img/icon/facebook.png" @mouseover="iconHover(facebookIcon, 'facebook')" @mouseleave="iconLeave(facebookIcon, 'facebook')" alt="facebook"></a>
+          <a href="https://www.potatomedia.co/user/5ef708e8-90aa-4fc9-985e-dd9744d3abd6/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potatoIcon" src="./img/icon/potato.png" @mouseover="iconHover(potatoIcon, 'potato')" @mouseleave="iconLeave(potatoIcon, 'potato')" alt="potato"></a>
         </div>
       </div>
     </div>
   </footer>
+  <div class="toTop-arrow">
+    <audio controls>
+      <source src="music.ogg" type="audio/ogg">
+      <source src="music.mp3" type="audio/mpeg">
+      你的瀏覽器不支援 audio tag！
+    </audio>
+  </div>
   <router-view></router-view>
   </main>
 
@@ -514,6 +568,10 @@
             text:"歡迎有任何商務與合作上的需求，或是想成為Ｍajin Jojo的一員，都可以來信詢問，和我們一起玩耍吧!",
             mailText:"信箱：",
             mailUrl:'majinjojo2022@gmail.com',
+          },
+          // Discord
+          discord:{
+            heading:"不要錯過我們最新任何消息！！",
           },
           // 常見問題
           faq:{
@@ -674,6 +732,10 @@
             mailText:"信箱：",
             mailUrl:'majinjojo2022@gmail.com',
           },
+          // Discord
+          discord:{
+            heading:"不要错过我们最新任何消息！ ！",
+          },
           // 常見問題
           faq:{
             heading:"FAQ"
@@ -833,6 +895,10 @@
             mailText:"Email：",
             mailUrl:'majinjojo2022@gmail.com',
           },
+          // Discord
+          discord:{
+            heading:"Don’t miss any of our latest news!!",
+          },
           // 常見問題
           faq:{
             heading:"FAQ"
@@ -991,6 +1057,10 @@
             text:"Nếu bạn có bất kì nhu cầu kinh doanh, hợp tác nào, hoặc muốn trở thành một thành viên của Majin Jojo, bạn có thể viết thư đến và tham gia cùng chúng tôi !",
             mailText:"thư：",
             mailUrl:'majinjojo2022@gmail.com',
+          },
+          // Discord
+          discord:{
+            heading:"Đừng bỏ lỡ tin tức mới nhất nào của chúng tôi!!",
           },
           // 常見問題
           faq:{
