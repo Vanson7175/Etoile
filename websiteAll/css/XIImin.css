@@ -1,0 +1,29 @@
+
+.new-black-xii{
+    background-image: url(../img/xii_persona/bg/type_bg.png);
+}
+
+.xii ul li{
+    margin-left: 15px;
+}
+
+.xii li a img{
+    max-width: 300px;
+    /* min-width: 350px; */
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.page-section .mask button{
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px){
+   
+    .new-black-xii .container div  ul li a img{
+        margin-right: 0;
+    }
+
+  }
+
+
