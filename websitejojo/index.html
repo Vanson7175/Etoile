@@ -318,7 +318,7 @@
         </div>
         <div class="col-lg-7 mb-5 text-center">
           <div class="p-5">
-            <img src="./img/join/dc.png" class="join-img">
+            <img src="./img/join/dc.png" class="dc-img">
             <div class="section-title mt-5">
               <h2 class="section-heading text-uppercase" :data-text="$t('discord.heading')"><% $t('discord.heading') %></h2>
             </div>
@@ -332,14 +332,14 @@
   </section>
 
   <!-- Twitter -->
-  <section class="page-section" :id="cssLocal + 'twitter'">
+  <section class="page-section" id="twitter">
     <div class="container-fluid mt-5 mb-5">
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-7 text-center mb-5">
-          <img src="./img/join/tw.png" class="join-img">
+          <img src="./img/join/tw.png" class="tw-img">
         </div>
         <div class="col-lg-5 mb-5 text-center">
-          <div class="p-5">
+          <div class="p-4">
             <a class="twitter-timeline" data-height="800" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
@@ -411,24 +411,60 @@
       </div>
     </div>
   </footer>
+
   <div class="music-container active">
     <div class="music-img">
-      <img src="./img/music/music_pic.png" alt="">
+      <img src="./img/music/music_pic.png" alt="music_pic">
     </div>
-    <div class="music">
-      <div>
-        music
+    <div class="music-message show">
+      <div class="music row" id="music">
+        <div class="col-3 align-self-center text-center">
+          <img @click="playMusic" :src="musicBtn" alt="start">
+        </div>
+        <div class="col-8">
+          <div class="row">
+            <div class="col-8 p-0">
+              <div class="music-name">
+                Meta Of Chaos
+              </div>
+            </div>
+            <div class="col-4 p-0">
+              <img @click="displayVolume" src="./img/music/Volume Up.png" alt="Volume">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8 p-0">
+              <div class="music-auth">
+                Tom Bao
+              </div>
+            </div>
+            <div class="col-4 p-0">
+              <span class="music-time">
+                <span id="musicCurrentTime">0:00</span>
+                <span id="musicFullTime"></span>
+              </span>
+            </div>
+          </div>
+
+        </div>
       </div>
+      <div class="progress" id="progress"></div>
+      <audio id="audio" controls style="display: none;">
+        <source src="./img/music/Meta Of Chaos.mp3" type="audio/mpeg">
+        你的瀏覽器不支援 audio tag！
+      </audio>
     </div>
     <button class="arrow-btn" @click="musicArrowBtn">
       <img class="arrow-img" src="./img/music/arrow.png" alt="">
     </button>
-    
-
-    <!-- <audio controls>
-      <source src="./img/music/Meta Of Chaos.mp3" type="audio/mpeg">
-      你的瀏覽器不支援 audio tag！
-    </audio> -->
+    <div class="volume">
+      <div class="volume-container">
+        <input class="volume-range" type="range" min="0" max="100" value="100" v-on:change="volumeRangeChange">
+        <img src="./img/music/Volume Up.png" alt="Volume">
+      </div>
+      <div>
+      </div>
+    </div>
   </div>
   <router-view></router-view>
   </main>
@@ -746,7 +782,7 @@
           },
           // Discord
           discord:{
-            heading:"不要错过我们最新任何消息！ ！",
+            heading:"不要错过我们最新任何消息！！",
           },
           // 常見問題
           faq:{
@@ -1181,6 +1217,7 @@
               transition:'',
               active:'',
             },
+            musicBtn:"./img/music/start.png",
             // Media Icon
             mediaIcon:[
               {url:"https://discord.gg/tjQnQwsAq7", id:"discord", phoneId:"discordPhone", image:"", imageHover:""},
@@ -1251,9 +1288,11 @@
                   },
               }
               });
+              
           },
           created: function () {
             this.$i18n.locale = this.locale;
+            this.getMusicFullTime();
           },
           watch: {
             '$route.path': {
@@ -1282,14 +1321,14 @@
               immediate: true
             }
           },
-          computed: {
-              checkBadge: function (badge) {
-                  if(badge === 'Coming Soon') {
-                      return "badge-soon";
-                  } else {
-                      return "badge-beige";
-                  }
-              }
+          computed: function(){
+              
+          },
+          beforeUpdated: function() {
+            
+          },
+          updated: function() {
+            
           },
           methods: {
               checkBadge: function (isValue) {
@@ -1365,7 +1404,65 @@
               },
               musicArrowBtn: function() {
                 $(".music-container").toggleClass("active");
+                $(".music-message").toggleClass("show");
+                $(".volume").removeClass("active");
 		            $(".arrow-img").toggleClass("rotate");
+              },
+              playMusic: function() {
+                $("#music").toggleClass("play");
+                var play = $('#music').hasClass('play');
+                if (play) {
+                  this.musicBtn = this.musicBtn.replace("start", "pause")
+                  $('#audio').get(0).play();
+                  this.handleProgress();
+                } else {
+                  this.musicBtn = this.musicBtn.replace("pause", "start")
+                  $('#audio').get(0).pause();
+                }
+              },
+              handleProgress: function() {
+                setInterval(() => {
+                  var duration = $('#audio').get(0).duration;
+                  var currentTime = $('#audio')[0].currentTime;
+                  const progressBar = $('#progress');
+                  const progressPercent = (currentTime / duration) * 100;
+
+                  //currentTime目前播放時間去與影片長度duration轉換成百分比，即可得到目前播放時間的百分比
+                  progressBar.css('width', `${progressPercent}%`);
+                  currentTime = this.secondToDate(currentTime)
+                  $("#musicCurrentTime").html(currentTime);
+                }, "100")
+                
+              },
+              secondToDate: function(result) {
+                  //轉換秒到mm:ss 
+                  var hh = Math.floor(result / 3600);
+                  var mm = Math.floor((result / 60 % 60));
+                  var ss = Math.floor((result % 60));
+                  // hh = hh < 10 ? "0" + hh : hh;
+                  // mm = mm < 10 ? "0" + mm : mm;
+                  ss = ss < 10 ? "0" + ss : ss;
+                  return result = mm + ":" + ss;
+              },
+              getMusicFullTime: function() {
+                // 處理音樂全部時間
+                var duration = $('#audio').get(0).duration;
+                var musicFullTime = this.secondToDate(duration)
+                $("#musicFullTime").html("/ " + musicFullTime);
+              },
+              handleMusicCurrentTime: function() {
+                setInterval(() => {
+                  var currentTime = $('#audio')[0].currentTime;
+                  currentTime = this.secondToDate(currentTime)
+                $("#musicCurrentTime").html(currentTime);
+                }, "100")
+              },
+              displayVolume: function() {
+                $(".volume").toggleClass("active");
+              },
+              volumeRangeChange: function(e) {
+                var value = parseInt(e.path[0].value) / 100;
+                $('#audio')[0].volume = value;
               }
           },
           components: {
