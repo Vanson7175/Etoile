@@ -1509,6 +1509,10 @@ img::-moz-selection {
     width: 100%;
 }
 
+#discord .container-fluid {
+    max-width: 1440px;
+}
+
 #discord.page-section h2.section-heading {
     font-size: 3rem;
     font-family: 'Cubic'
@@ -1526,11 +1530,21 @@ img::-moz-selection {
     }
 }
 
+@media (max-width: 992px) {
+    #discord.page-section h2.section-heading {
+        font-size: 24px;
+    }
+}
+
 #twitter {
     background: url("../img/bg/roadmap_bg.png") no-repeat center;
     background-size: cover;
     /* height: 777px; */
     width: 100%;
+}
+
+#twitter .container-fluid {
+    max-width: 1440px;
 }
 
 @media (max-width: 1025px) {
@@ -3642,6 +3656,11 @@ header .page-header {
     width: 100%;
 }
 
+#en_discord .container-fluid {
+    max-width: 1440px;
+}
+
+
 #en_discord.page-section h2.section-heading {
     font-size: 3rem;
     font-family: 'Arial-Black'
@@ -3656,6 +3675,12 @@ header .page-header {
     #en_discord .dc-img {
         height: 100%;
         width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    #en_discord.page-section h2.section-heading {
+        font-size: 24px;
     }
 }
 
@@ -4908,6 +4933,11 @@ body .vn_ {
     width: 100%;
 }
 
+#vn_discord .container-fluid {
+    max-width: 1440px;
+}
+
+
 #vn_discord.page-section h2.section-heading {
     font-size: 3rem;
     font-family: 'Roboto-Medium'
@@ -4922,6 +4952,12 @@ body .vn_ {
     #vn_discord .dc-img {
         height: 100%;
         width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    #vn_discord.page-section h2.section-heading {
+        font-size: 24px;
     }
 }
 
