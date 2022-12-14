@@ -306,12 +306,21 @@
     <div class="container-fluid mt-5 mb-5">
       <div class="row justify-content-center">
         <div class="col-lg-5 mb-5">
-          <div class="p-5">
+          <div v-if="fullWidth > 991" class="p-5">
             <widgetbot
               server="991918755317825557"
               channel="991923732387995758"
               width="100%"
               height="800"
+            ></widgetbot>
+            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+          </div>
+          <div v-if="fullWidth < 991" class="p-5">
+            <widgetbot
+              server="991918755317825557"
+              channel="991923732387995758"
+              width="100%"
+              height="400"
             ></widgetbot>
             <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
           </div>
@@ -329,7 +338,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> 
 
   <!-- Twitter -->
   <section class="page-section" id="twitter">
@@ -339,16 +348,14 @@
           <img src="./img/join/tw.png" class="img-fluid">
         </div>
         <div class="col-lg-5 mb-5 text-center">
-          <a class="twitter-timeline" data-height="800" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          <!-- <div v-if="fullWidth > 991" class="p-4">
+          <div v-show="fullWidth > 991" class="p-4">
             <a class="twitter-timeline" data-height="800" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
-          <div v-if="fullWidth < 991" class="p-4">
-            <a  class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
+          <div v-show="fullWidth < 991" class="p-4">
+            <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -465,7 +472,7 @@
     </button>
     <div class="volume">
       <div class="volume-container">
-        <input class="volume-range" type="range" min="0" max="100" value="100" v-on:change="volumeRangeChange">
+        <input class="volume-range" type="range" min="0" max="100" value="60" v-on:change="volumeRangeChange">
         <img src="./img/music/Volume Up.png" alt="Volume">
       </div>
       <div>
@@ -1303,13 +1310,14 @@
                 vm.fullWidth = window.innerWidth;
                 vm.fullHeight = window.innerHeight;
               };
+              // 先設定音量
+              $('#audio')[0].volume = 0.6;
               // console.log(vm.fullWidth)
           },
           created: function () {
             this.$i18n.locale = this.locale;
             this.getMusicFullTime();
             this.playMusic();
-            // this.changeDiscordAndTwitter();
           },
           watch: {
             '$route.path': {
@@ -1336,11 +1344,6 @@
               },
               deep: true,
               immediate: true
-            },
-            "fullWidth": {
-              handler: function(fullWidth) {
-                this.changeDiscordAndTwitter(fullWidth);
-              }
             }
           },
           computed: function(){
@@ -1485,15 +1488,6 @@
               volumeRangeChange: function(e) {
                 var value = parseInt(e.path[0].value) / 100;
                 $('#audio')[0].volume = value;
-              },
-              changeDiscordAndTwitter: function(fullWidth) {
-                // console.log("!!!!!", $("#twitter-widget-0").attr("style"))
-                if (fullWidth <= 991) {
-                  // console.log(fullWidth)
-                  $("#twitter-widget-0").attr("style", "position: static; visibility: visible; width: 490px; height: 400px; display: block; flex-grow: 1;")
-                } else {
-                  $("#twitter-widget-0").attr("style", "position: static; visibility: visible; width: 490px; height: 800px; display: block; flex-grow: 1;")
-                }
               }
           },
           components: {
