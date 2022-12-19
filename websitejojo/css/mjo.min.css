@@ -1848,9 +1848,135 @@ input[type="range"]:disabled::-webkit-slider-thumb {
 	cursor: not-allowed;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 412px) {
     .music-container {
+        width: 105px;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 10px;
+        background: #4E4E4E;
+        cursor: pointer;
+        position: fixed;
+        left: 15px;
+    }
+
+    .music-container.active {
+        width: 326px;
+    }
+
+    .music-container .music-message {
+        background: #4E4E4E;
+        position: relative;
         display: none;
+        height: 70px;
+        max-width: 301px;
+        border-radius: 10px 0x 0 10px;
+        -moz-border-radius: 10px 0 0 10px;
+        -webkit-border-radius: 10px 0 0 10px;
+        overflow: hidden;
+    }
+    
+    .music-container .music-message.show {
+        display: block;
+    }
+    
+    .music-container .music {
+        height: 100%;
+        padding: 13px 0 13px 85px; 
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .music-container .music img{
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .music-container .music .start-btn {
+        position: relative;
+        display: block;
+        min-width: 60px;
+        height: 60px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    .music-container .music-name {   
+        position: relative;
+        color: white;
+        display: block;
+        /* padding: 0 10px; */
+        /* line-height: 60px; */
+        text-align: start;
+        white-space: nowrap;
+        font-family: 'Arial-Black';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 23px;
+        overflow: hidden;
+    }
+    
+    .music-container .music-auth {   
+        position: relative;
+        color: white;
+        display: block;
+        /* padding: 0 10px; */
+        /* line-height: 60px; */
+        text-align: start;
+        white-space: nowrap;
+        font-family: 'Arial-Black';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 33px;
+        overflow: hidden;
+    }
+    
+    .music-container .music-time {   
+        position: relative;
+        color: #B3B3B3;
+        display: block;
+        text-align: start;
+        white-space: nowrap;
+        font-family: 'Arial-Black';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 33px;
+        overflow: hidden;
+    }
+    
+    .music-container .music-img {
+        position: absolute;
+        top: -10px;
+        transition: all 0.5s;
+        z-index: 9999;
+    }
+
+    .music-container .music-img img {
+        height: 78px;
+        width: 70px;
+    }
+    
+    .music-container .arrow-btn .arrow-img {
+        transition: all 0.5s;  
+    }
+    
+    .music-container .arrow-btn .arrow-img.rotate {
+        transform: rotate(180deg);    
+    }
+    
+    .music-container .progress {
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        border-radius: 0 10px 10px 0;
+        background-color: #D9D9D9;
+        
     }
 }
 

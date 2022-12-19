@@ -306,16 +306,16 @@
     <div class="container-fluid mt-5 mb-5">
       <div class="row justify-content-center">
         <div class="col-lg-5 mb-5">
-          <div v-if="fullWidth > 991" class="p-5">
+          <div v-if="fullWidth > 991" class="p-5 text-center">
             <widgetbot
               server="991918755317825557"
               channel="991923732387995758"
-              width="100%"
-              height="800"
+              width="525"
+              height="700"
             ></widgetbot>
             <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
           </div>
-          <div v-if="fullWidth < 991" class="p-5">
+          <div v-if="fullWidth < 991" class="p-5 text-center">
             <widgetbot
               server="991918755317825557"
               channel="991923732387995758"
@@ -442,7 +442,7 @@
               </div>
             </div>
             <div class="col-4 p-0">
-              <img @click="displayVolume" src="./img/music/Volume Up.png" alt="Volume">
+              <img class="volume-img" width="24" height="24" @click="displayVolume" src="./img/music/volume.png" alt="Volume">
             </div>
           </div>
           <div class="row">
@@ -472,8 +472,8 @@
     </button>
     <div class="volume">
       <div class="volume-container">
-        <input class="volume-range" type="range" min="0" max="100" value="60" v-on:change="volumeRangeChange">
-        <img src="./img/music/Volume Up.png" alt="Volume">
+        <input id="volume" class="volume-range" type="range" min="0" max="100" value="60" v-on:change="volumeRangeChange">
+        <img class="volume-img" src="./img/music/volume.png" alt="Volume" width="24" height="24" @click="toggleMute">
       </div>
       <div>
       </div>
@@ -1232,6 +1232,7 @@
             },
             musicBtn:"./img/music/start.png",
             fullWidth:"",
+            volumeValue:"0.6",
             // Media Icon
             mediaIcon:[
               {url:"https://discord.gg/tjQnQwsAq7", id:"discord", phoneId:"discordPhone", image:"", imageHover:""},
@@ -1487,7 +1488,39 @@
               },
               volumeRangeChange: function(e) {
                 var value = parseInt(e.path[0].value) / 100;
+                $("#volume").attr("value", e.path[0].value)
                 $('#audio')[0].volume = value;
+                this.volumeValue = value;
+                if (value) {
+                  this.changeVolumeImg(["mute", "volume"])
+                } else {
+                  this.changeVolumeImg(["volume", "mute"])
+                }
+              },
+              toggleMute: function(e) {
+                if ($('#audio')[0].volume) {
+                  $("#volume").attr("value", "0")
+                  $('#audio')[0].volume = 0;
+                  this.changeVolumeImg(["volume", "mute"])
+                } else {
+                  $("#volume").attr("value", this.volumeValue * 100)
+                  $('#audio')[0].volume = this.volumeValue;
+                  if ($('#audio')[0].volume == 0 && "mute" in $(".volume-img")[0].src) {
+                    return
+                  }
+                  this.changeVolumeImg(["mute", "volume"])
+                }
+                console.log($('#audio')[0].volume)
+              },
+              changeVolumeImg: function(replaceStr) {
+                var volumeImg = $(".volume-img");
+                for (img in volumeImg) {
+                  if (volumeImg[img].src == undefined) {
+                    continue;
+                  }
+                  var src = volumeImg[img].src
+                  volumeImg[img].src = src.replace(replaceStr[0], replaceStr[1])
+                }
               }
           },
           components: {
