@@ -1848,7 +1848,7 @@ input[type="range"]:disabled::-webkit-slider-thumb {
 	cursor: not-allowed;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 576px) {
     .music-container {
         width: 105px;
         height: 70px;
@@ -1884,7 +1884,7 @@ input[type="range"]:disabled::-webkit-slider-thumb {
     
     .music-container .music {
         height: 100%;
-        padding: 13px 0 13px 85px; 
+        padding: 5px 0 5px 75px; 
         overflow: hidden;
         white-space: nowrap;
     }
@@ -1915,8 +1915,8 @@ input[type="range"]:disabled::-webkit-slider-thumb {
         font-family: 'Arial-Black';
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
-        line-height: 23px;
+        font-size: 13px;
+        line-height: 30px;
         overflow: hidden;
     }
     
@@ -1978,7 +1978,22 @@ input[type="range"]:disabled::-webkit-slider-thumb {
         background-color: #D9D9D9;
         
     }
+
+    #musicBtn {
+        height: 30px;
+    }
+
+    .volume-img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .volume {
+        bottom: 75px;
+        right: 43px;
+    }
 }
+
 
 .btn {
     font-family: 'Cubic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';

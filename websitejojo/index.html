@@ -432,7 +432,7 @@
     <div class="music-message show">
       <div class="music row" id="music">
         <div class="col-3 align-self-center text-center">
-          <img @click="playMusic()" :src="musicBtn" alt="start">
+          <img id="musicBtn" @click="playMusic()" :src="musicBtn" alt="start">
         </div>
         <div class="col-8">
           <div class="row">
@@ -441,20 +441,20 @@
                 Meta Of Chaos
               </div>
             </div>
-            <div class="col-4 p-0">
+            <div class="col-4 p-0 text-center">
               <img class="volume-img" width="24" height="24" @click="displayVolume" src="./img/music/volume.png" alt="Volume">
             </div>
           </div>
           <div class="row">
-            <div class="col-8 p-0">
+            <div class="col-md-8 col-7 p-0">
               <div class="music-auth">
                 Tom Bao
               </div>
             </div>
-            <div class="col-4 p-0">
+            <div class="col-md-4 col-5 p-0">
               <span class="music-time">
                 <span id="musicCurrentTime">0:00</span>
-                <span id="musicFullTime"></span>
+                <span id="musicFullTime">/ 2:30</span>
               </span>
             </div>
           </div>
@@ -462,7 +462,7 @@
         </div>
       </div>
       <div class="progress" id="progress"></div>   
-      <audio id="audio" controls autoplay loop style="display: none;">
+      <audio id="audio" controls loop style="display: none;">
         <source src="./img/music/Meta Of Chaos.mp3" type="audio/mpeg">
         你的瀏覽器不支援 audio tag！
       </audio>
@@ -518,7 +518,7 @@
         autoplay: true,
         dots: false
       });
-      
+
       const messages = {
         tw: {
           // Menu
@@ -1317,8 +1317,8 @@
           },
           created: function () {
             this.$i18n.locale = this.locale;
-            this.getMusicFullTime();
-            this.playMusic();
+            // this.getMusicFullTime();
+            // this.playMusic();
           },
           watch: {
             '$route.path': {
@@ -1521,7 +1521,7 @@
                   var src = volumeImg[img].src
                   volumeImg[img].src = src.replace(replaceStr[0], replaceStr[1])
                 }
-              }
+              },
           },
           components: {
               
