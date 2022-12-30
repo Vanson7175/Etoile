@@ -1848,6 +1848,56 @@ input[type="range"]:disabled::-webkit-slider-thumb {
 	cursor: not-allowed;
 }
 
+.shop {
+	cursor: pointer;
+	position: fixed;
+	right: 64px;
+	bottom: 35px;
+    z-index: 9999;
+}
+
+.shop span{
+    position: absolute;
+    left: 24px;
+    top: -63px;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 3px 0px 2px #ff00ff,
+        3px 0px 5px #ff00ff,
+        -3px 0px 2px #2eccfb,
+        -3px 0px 5px #2eccfb;
+}
+
+.shop span::before {
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: 3px 0px 5px #ff00ff,
+        -3px 0px 5px #2eccfb;
+    left: -2px;
+    clip-path: inset(12px 0 26px -3px);
+    animation: anil 2s infinite linear alternate-reverse;
+}
+
+.shop span::after {
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: 3px 0px 5px #ff00ff,
+        -3px 0px 5px #2eccfb;
+    left: -2px;
+    clip-path: inset(33px 0 7px 3px);
+    animation: anil2 2s infinite linear alternate-reverse;
+}
+
+.shop img {
+	width: 120px;
+	height: 120px;
+	border: 4px solid #ff00ff;
+	border-radius: 50%;
+	background: transparent;
+	cursor: pointer;
+	position: relative;
+}
+
 @media (max-width: 576px) {
     .music-container {
         width: 105px;
