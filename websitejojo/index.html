@@ -65,6 +65,7 @@
         <ul class="navbar-nav text-uppercase ml-auto">
           <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto">
             <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='MINT'}" :href="mintUrl" target="_blank"><% $t(menu.name) %></a>
+            <a v-else-if="menu.name=='SHOP'" id="menuShop" class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='SHOP'}" :href="shopUrl" target="_blank" style="margin: 0.75em 0;"><% $t(menu.name) %></a>
             <a v-else class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='MINT'}" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id"><% $t(menu.name) %></a>
           </li>
           <li class="nav-item dropdown">
@@ -490,7 +491,7 @@
   </div>
 
   <div class="shop">
-    <a href="https://docs.google.com/forms/u/1/d/e/1FAIpQLSfdBADD3X38d0ZMvqYAN-koYe9VAeKeLNVGBfaB07YEcvb4nA/viewform" target="_blank">
+    <a :href="shopUrl" target="_blank">
       <span data-text="SHOP">SHOP</span>
       <img src="./img/icon/shop_icon.png" alt="shop_icon">
     </a>
@@ -545,6 +546,7 @@
             {name:"團隊",id: "team", },
             {name:"FAQ",id: "qa", },
             {name:"MINT",id: "mint", },
+            {name:"SHOP",id: "shop", },
           ],
           // Slider
           slider:{
@@ -708,6 +710,7 @@
             {name:"团队",id: "team", },
             {name:"FAQ",id: "qa", },
             {name:"MINT",id: "mint", },
+            {name:"SHOP",id: "shop", },
           ],
           // Slider
           slider:{
@@ -871,6 +874,7 @@
             {name:"TEAM",id: "team", },
             {name:"FAQ",id: "qa", },
             {name:"MINT",id: "mint", },
+            {name:"SHOP",id: "shop", },
           ],
           // Slider
           slider:{
@@ -1034,6 +1038,7 @@
             {name:"TEAM",id: "team", },
             {name:"FAQ",id: "qa", },
             {name:"MINT",id: "mint", },
+            {name:"SHOP",id: "shop", },
           ],
           // Slider
           slider:{
@@ -1249,6 +1254,7 @@
             musicBtn:"./img/music/start.png",
             fullWidth:"",
             volumeValue:"0.6",
+            shopUrl:"https://docs.google.com/forms/u/1/d/e/1FAIpQLSfdBADD3X38d0ZMvqYAN-koYe9VAeKeLNVGBfaB07YEcvb4nA/viewform",
             // Media Icon
             mediaIcon:[
               {url:"https://discord.gg/tjQnQwsAq7", id:"discord", phoneId:"discordPhone", image:"", imageHover:""},
