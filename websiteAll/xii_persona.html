@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 
@@ -9,12 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="">
   <meta name="keywords" content="XII Persona">
-  <meta name="description" content="XII Persona是要成為一種永久「保值」且「有價」的數位精品！除了能用於真實世界的優惠賦能外，也能實際當作資產去質押借貸，打造一個對比現實世界的精品，且會讓人有「感」的永恆鑽石。">
+  <meta name="description"
+    content="XII Persona是要成為一種永久「保值」且「有價」的數位精品！除了能用於真實世界的優惠賦能外，也能實際當作資產去質押借貸，打造一個對比現實世界的精品，且會讓人有「感」的永恆鑽石。">
 
   <!-- Facebook Opengraph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="XII Persona" />
-  <meta property="og:description" content="XII Persona是要成為一種永久「保值」且「有價」的數位精品！除了能用於真實世界的優惠賦能外，也能實際當作資產去質押借貸，打造一個對比現實世界的精品，且會讓人有「感」的永恆鑽石。"/>
+  <meta property="og:description"
+    content="XII Persona是要成為一種永久「保值」且「有價」的數位精品！除了能用於真實世界的優惠賦能外，也能實際當作資產去質押借貸，打造一個對比現實世界的精品，且會讓人有「感」的永恆鑽石。" />
   <meta property="og:image" content="./img/xii_persona/icon/logo.png" />
   <meta property="og:image:alt" content="" />
   <meta property="og:image:type" content="image/png" />
@@ -30,7 +30,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Swiper -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
   <!-- Custom styles for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -48,400 +48,603 @@
 </head>
 
 <body id="page-top">
-   <main id="app" :class="cssLocal" v-cloak>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-lg-5 " id="mainNav" :class="{'change':menuView}">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand js-scroll-trigger" id="BackTop" href="#" v-scroll-to="'#page-top'">
-        <img src="./img/xii_persona/icon/logo.png" alt="logo" :style="[logoStyle]">
-      </a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation" @click='changeIcon'> 
-        <i class="fas fa-bars" style="color:white;" ></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul v-if="locale != 'en' && locale != 'vn'" class="navbar-nav text-uppercase ml-auto">
-          <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto" :class="{ 'mx-2':menu.name=='MINT', 'mx-auto':menu.name!='MINT' }">
-            <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :href="mintUrl" target="_blank"><% $t(menu.name) %></a>
-            <a v-else class="nav-link js-scroll-trigger" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id"><% $t(menu.name) %></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="MenuLink"
-             ><% lanName %></a>
-            <div class="dropdown-menu" aria-labelledby="MenuLink">
-              <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList" class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)"><% lan.name %></router-link>
-            </div>
-          </li>
-        </ul>
-        <ul v-if="locale == 'en' || locale == 'vn'" class="navbar-nav text-uppercase ml-auto show-menu">
-          <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto" :class="{ 'mx-2':menu.name=='MINT', 'mx-auto':menu.name!='MINT' }">
-            <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :href="mintUrl" target="_blank"><% $t(menu.name) %></a>
-            <a v-else class="nav-link js-scroll-trigger" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id"><% $t(menu.name) %></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="MenuLink"
-             ><% lanName %></a>
-            <div class="dropdown-menu" aria-labelledby="MenuLink">
-              <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList" class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)"><% lan.name %></router-link>
-            </div>
-          </li>
-        </ul>
-        <ul v-if="locale == 'en' || locale == 'vn'" class="navbar-nav text-uppercase ml-auto show-menu2">
-          <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto">
-            <a v-if="!menu.dropdown && menu.name!='MINT'" class="nav-link js-scroll-trigger" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id"><% $t(menu.name) %></a>
-          </li>
-          <li class="nav-item dropdown menu">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="Menu"
-             ><i class="fas fa-bars"></i></a>
-            <div class="dropdown-menu dropdown-menu-right mb-2" aria-labelledby="Menu">
-              <a v-for="(menu, index) in $t('menuList')" v-if="menu.dropdown && menu.name!='MINT'" class="dropdown-item" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id"><% $t(menu.name) %></a>
-            </div>
-          </li>
-          <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-2" :class="{ 'mx-2':menu.name=='MINT', 'mx-auto':menu.name!='MINT' }" >
-            <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :href="mintUrl" target="_blank"><% $t(menu.name) %></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="MenuLink"
-             ><% lanName %></a>
-            <div class="dropdown-menu" aria-labelledby="MenuLink">
-              <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList" class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)"><% lan.name %></router-link>
-            </div>
-          </li>
-        </ul>
-        <div class="col-md-12 text-center mt-2 mb-5 menuIcon">
-          <a href="https://discord.gg/5fjqCQHShY" target="_blank"><img class="media-icon ml-1 mr-1" id="discordPhone" src="./img/xii_persona/icon/discord.png" alt="discord" @mouseover="iconHover(discordPhone, 'discord')"  @mouseleave="iconLeave(discordPhone, 'discord')"></a>
-          <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitterPhone" src="./img/xii_persona/icon/twitter.png" alt="twitter" @mouseover="iconHover(twitterPhone, 'twitter')"  @mouseleave="iconLeave(twitterPhone, 'twitter')"></a>
-          <a href="https://www.instagram.com/etoileart2022/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramPhone" src="./img/xii_persona/icon/instagram.png" alt="instagram" @mouseover="iconHover(instagramPhone, 'instagram')"  @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
-          <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-1 mr-1" id="facebookPhone" src="./img/xii_persona/icon/facebook.png" alt="facebook" @mouseover="iconHover(facebookPhone, 'facebook')"  @mouseleave="iconLeave(facebookPhone, 'facebook')"></a>
-          <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potatoPhone" src="./img/xii_persona/icon/potato.png" alt="potato" @mouseover="iconHover(potatoPhone, 'potato')"  @mouseleave="iconLeave(potatoPhone, 'potato')"></a>
+  <main id="app" :class="cssLocal" v-cloak>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-lg-5 " id="mainNav" :class="{'change':menuView}">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand js-scroll-trigger" id="BackTop" href="#" v-scroll-to="'#page-top'">
+          <img src="./img/xii_persona/icon/logo.png" alt="logo" :style="[logoStyle]">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+          aria-label="Toggle navigation" @click='changeIcon'>
+          <i class="fas fa-bars" style="color:white;"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul v-if="locale != 'en' && locale != 'vn'" class="navbar-nav text-uppercase ml-auto">
+            <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto"
+              :class="{ 'mx-2':menu.name=='MINT', 'mx-auto':menu.name!='MINT' }">
+              <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :href="mintUrl" target="_blank">
+                <% $t(menu.name) %>
+              </a>
+              <a v-else class="nav-link js-scroll-trigger" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id">
+                <% $t(menu.name) %>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false" id="MenuLink">
+                <% lanName %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="MenuLink">
+                <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList"
+                  class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)">
+                  <% lan.name %>
+                </router-link>
+              </div>
+            </li>
+          </ul>
+          <ul v-if="locale == 'en' || locale == 'vn'" class="navbar-nav text-uppercase ml-auto show-menu">
+            <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto"
+              :class="{ 'mx-2':menu.name=='MINT', 'mx-auto':menu.name!='MINT' }">
+              <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :href="mintUrl" target="_blank">
+                <% $t(menu.name) %>
+              </a>
+              <a v-else class="nav-link js-scroll-trigger" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id">
+                <% $t(menu.name) %>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false" id="MenuLink">
+                <% lanName %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="MenuLink">
+                <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList"
+                  class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)">
+                  <% lan.name %>
+                </router-link>
+              </div>
+            </li>
+          </ul>
+          <ul v-if="locale == 'en' || locale == 'vn'" class="navbar-nav text-uppercase ml-auto show-menu2">
+            <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto">
+              <a v-if="!menu.dropdown && menu.name!='MINT'" class="nav-link js-scroll-trigger" :href="menu.id"
+                v-scroll-to="'#' + cssLocal + menu.id">
+                <% $t(menu.name) %>
+              </a>
+            </li>
+            <li class="nav-item dropdown menu">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false" id="Menu"><i class="fas fa-bars"></i></a>
+              <div class="dropdown-menu dropdown-menu-right mb-2" aria-labelledby="Menu">
+                <a v-for="(menu, index) in $t('menuList')" v-if="menu.dropdown && menu.name!='MINT'"
+                  class="dropdown-item" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id">
+                  <% $t(menu.name) %>
+                </a>
+              </div>
+            </li>
+            <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-2"
+              :class="{ 'mx-2':menu.name=='MINT', 'mx-auto':menu.name!='MINT' }">
+              <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :href="mintUrl" target="_blank">
+                <% $t(menu.name) %>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false" id="MenuLink">
+                <% lanName %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="MenuLink">
+                <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList"
+                  class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)">
+                  <% lan.name %>
+                </router-link>
+              </div>
+            </li>
+          </ul>
+          <div class="col-md-12 text-center mt-2 mb-5 menuIcon">
+            <a href="https://discord.gg/5fjqCQHShY" target="_blank"><img class="media-icon ml-1 mr-1" id="discordPhone"
+                src="./img/xii_persona/icon/discord.png" alt="discord" @mouseover="iconHover(discordPhone, 'discord')"
+                @mouseleave="iconLeave(discordPhone, 'discord')"></a>
+            <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-1 mr-1"
+                id="twitterPhone" src="./img/xii_persona/icon/twitter.png" alt="twitter"
+                @mouseover="iconHover(twitterPhone, 'twitter')" @mouseleave="iconLeave(twitterPhone, 'twitter')"></a>
+            <a href="https://www.instagram.com/etoileart2022/" target="_blank"><img class="media-icon ml-1 mr-1"
+                id="instagramPhone" src="./img/xii_persona/icon/instagram.png" alt="instagram"
+                @mouseover="iconHover(instagramPhone, 'instagram')"
+                @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
+            <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-1 mr-1"
+                id="facebookPhone" src="./img/xii_persona/icon/facebook.png" alt="facebook"
+                @mouseover="iconHover(facebookPhone, 'facebook')"
+                @mouseleave="iconLeave(facebookPhone, 'facebook')"></a>
+            <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img
+                class="media-icon ml-1 mr-1" id="potatoPhone" src="./img/xii_persona/icon/potato.png" alt="potato"
+                @mouseover="iconHover(potatoPhone, 'potato')" @mouseleave="iconLeave(potatoPhone, 'potato')"></a>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
- 
-  <header :id="cssLocal + 'slider'" class="page-header">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="slider-gift-img">
-            <img class="gift-img-br" src="./img/xii_persona/bg/gift_br.png" alt="gift">
-            <img class="gift-img-b" src="./img/xii_persona/bg/gift_b.png" alt="gift">
-            <img class="gift-img-w" src="./img/xii_persona/bg/gift_w.png" alt="gift">
-            <div class="text-center">
-              <div class="intro-text text-center">
-                <img class="gift-img-d" src="./img/xii_persona/bg/diamond.png" alt="diamond">
-                <p class="mt-2">
-                  <span class="intro"><% $t('slider.intro1') %></span>
-                  <span class="intro"><% $t('slider.intro2') %></span>
-                </p>
-                <p class="intro-heading mt-4"><% $t('slider.heading') %></p>
-                <p class="mt-5"><a class="btn-xii js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('slider.mint') %></a></p>
+    </nav>
+
+    <header :id="cssLocal + 'slider'" class="page-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="slider-gift-img">
+              <img class="gift-img-br" src="./img/xii_persona/bg/gift_br.png" alt="gift">
+              <img class="gift-img-b" src="./img/xii_persona/bg/gift_b.png" alt="gift">
+              <img class="gift-img-w" src="./img/xii_persona/bg/gift_w.png" alt="gift">
+              <div class="text-center">
+                <div class="intro-text text-center">
+                  <img class="gift-img-d" src="./img/xii_persona/bg/diamond.png" alt="diamond">
+                  <p class="mt-2">
+                    <span class="intro">
+                      <% $t('slider.intro1') %>
+                    </span>
+                    <span class="intro">
+                      <% $t('slider.intro2') %>
+                    </span>
+                  </p>
+                  <p class="intro-heading mt-4">
+                    <% $t('slider.heading') %>
+                  </p>
+                  <p class="mt-5"><a class="btn-xii js-scroll-trigger mx-auto" :href="mintUrl" target="_blank">
+                      <% $t('slider.mint') %>
+                    </a></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Story -->
-  <section class="page-section " :id="cssLocal + 'story'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <h2 class="section-heading text-uppercase" :data-text="$t('story.heading')"><% $t('story.heading') %></h2>
-            <img class="ic-animation" src="./img/xii_persona/bg/story_ic.png">
+    <!-- Story -->
+    <section class="page-section " :id="cssLocal + 'story'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('story.heading')">
+                <% $t('story.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/story_ic.png">
+            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-9">
-          <p class="text-justify section-text " data-aos="zoom-in-right">
-            <% $t('story.content1') %>
-          </p>
-          <p class="text-justify section-text" data-aos="zoom-in-right">
-            <% $t('story.content2') %>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Mythology -->
-  <section class="page-section" :id="cssLocal + 'mythology'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <h2 class="section-heading text-uppercase" :data-text="$t('mythology.heading')"><% $t('mythology.heading') %></h2>
-            <img class="ic-animation" src="./img/xii_persona/bg/mythology_ic.png">
-          </div>
-        </div>
-        <div class="col-12 col-md-12">
-          <p class="text-justify section-text" data-aos="zoom-in-right">
-            <% $t('mythology.content1') %>
-          </p>
-          <div class="mythology-hide collapse multi-collapse" id="mythology-display">
-            <p class="text-justify section-text" data-aos="zoom-in-right">
-              <% $t('mythology.content2') %>
+          <div class="col-12 col-md-9">
+            <p class="text-justify section-text " data-aos="zoom-in-right">
+              <% $t('story.content1') %>
             </p>
             <p class="text-justify section-text" data-aos="zoom-in-right">
-              <% $t('mythology.content3') %>
+              <% $t('story.content2') %>
             </p>
           </div>
         </div>
-        <div class="col-12 text-center" id="check-out">
-          <!-- <button class="btn-mythology mt-5" id="check-in"  @click="checkIn">展開全部</button> -->
-          <button class="btn-mythology-up mt-5" data-toggle="collapse" data-target="#mythology-display" aria-expanded="false" aria-controls="mythology-display" @click="checkOut('mythology')"><% $t('mythology.button2') %></button>
-        </div>
       </div>
-    </div>
-    <div class="mask" id="check-in">
-      <button class="btn-mythology-down mt-5 mx-auto" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="mythology-display"  @click="checkIn('mythology')"><% $t('mythology.button1') %></button>
-    </div>
-  </section>
+    </section>
 
-  <!-- New XII black -->
-  <section class="new-black-xii">
-    <div class="container">
-      <ul class="row justify-content-center gem xii p-0">
-        <li>
-          <a href="https://www.potatomedia.co/post/dbd3173c-64b0-44e3-a35c-4eeb65e3eb33" target="_blank"><img src="./img/XII/Xll persona-1.png" alt=""></a>
-        </li>
-        <li>
-          <a href="https://www.potatomedia.co/post/a120b816-8fb2-4b0b-9e44-1119017acf48" target="_blank"><img src="./img/XII/Xll persona-2.png" alt=""></a>
-        </li>
-        <li>
-          <a href="https://www.potatomedia.co/post/67cdce02-4af5-40fd-bed8-c7e7dc9204e2" target="_blank"><img src="./img/XII/Xll persona-3.png" alt=""></a>   
-        </li>
-        <li>
-          <a href="https://www.potatomedia.co/post/c6eaa9cd-d33b-4e88-9721-cfb9eea34954" target="_blank"><img src="./img/XII/Xll persona-4.png" alt=""></a>   
-        </li>
-        <li>
-          <a href="https://www.potatomedia.co/post/569904e0-683d-42c4-bd40-8391c34017ba" target="_blank"><img src="./img/XII/Xll persona-5.png" alt=""></a>
-        </li>
-        <li>
-          <a href="https://www.potatomedia.co/post/4fbd4884-1e3c-4df5-b369-b8a0e9e19ad1" target="_blank"><img src="./img/XII/Xll-persona-6.jpg" alt=""></a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Psychometric -->
-  <section class="page-section " :id="cssLocal + 'psychometric'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <h2 class="section-heading text-uppercase" :data-text="$t('psychometric.heading')"><% $t('psychometric.heading') %></h2>
-            <img class="ic-animation" src="./img/xii_persona/bg/psychometric_ic.png">
+    <!-- News -->
+    <section class="page-section " :id="cssLocal + 'news'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('news.heading')">
+                <% $t('news.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/story_ic.png">
+            </div>
+          </div>
+          <div class="row justify-content-center" v-for="news in $t('newsList')">
+            <div class="col-md-5 col-10">
+              <img class="img-fluid" :src="news.img" alt="">
+            </div>
+            <div class="col-md-7 col-10 news">
+              <p class="news-title">
+                <% $t(news.title) %>
+              </p>
+              <p class="news-content">
+                <% $t(news.content) %>
+              </p>
+              <a class="news-button" :href="news.url" target="_blank">
+                <% $t(news.button) %>
+              </a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-9 col-md-12 col-12 mb-5">
-          <div class="angel-animation" id="angel-animation"></div>
-          <p class="text-center section-text " data-aos="zoom-in-right">
+      </div>
+    </section>
+
+    <!-- Mythology -->
+    <section class="page-section" :id="cssLocal + 'mythology'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('mythology.heading')">
+                <% $t('mythology.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/mythology_ic.png">
+            </div>
+          </div>
+          <div class="col-12 col-md-12">
+            <p class="text-justify section-text" data-aos="zoom-in-right">
+              <% $t('mythology.content1') %>
+            </p>
+            <div class="mythology-hide collapse multi-collapse" id="mythology-display">
+              <p class="text-justify section-text" data-aos="zoom-in-right">
+                <% $t('mythology.content2') %>
+              </p>
+              <p class="text-justify section-text" data-aos="zoom-in-right">
+                <% $t('mythology.content3') %>
+              </p>
+            </div>
+          </div>
+          <div class="col-12 text-center" id="check-out">
+            <!-- <button class="btn-mythology mt-5" id="check-in"  @click="checkIn">展開全部</button> -->
+            <button class="btn-mythology-up mt-5" data-toggle="collapse" data-target="#mythology-display"
+              aria-expanded="false" aria-controls="mythology-display" @click="checkOut('mythology')">
+              <% $t('mythology.button2') %>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mask" id="check-in">
+        <button class="btn-mythology-down mt-5 mx-auto" data-toggle="collapse" data-target=".multi-collapse"
+          aria-expanded="false" aria-controls="mythology-display" @click="checkIn('mythology')">
+          <% $t('mythology.button1') %>
+        </button>
+      </div>
+    </section>
+
+    <!-- New XII black -->
+    <section class="new-black-xii">
+      <div class="container">
+        <ul class="row justify-content-center gem xii p-0">
+          <li>
+            <a href="https://www.potatomedia.co/post/dbd3173c-64b0-44e3-a35c-4eeb65e3eb33" target="_blank"><img
+                src="./img/XII/Xll persona-1.png" alt=""></a>
+          </li>
+          <li>
+            <a href="https://www.potatomedia.co/post/a120b816-8fb2-4b0b-9e44-1119017acf48" target="_blank"><img
+                src="./img/XII/Xll persona-2.png" alt=""></a>
+          </li>
+          <li>
+            <a href="https://www.potatomedia.co/post/67cdce02-4af5-40fd-bed8-c7e7dc9204e2" target="_blank"><img
+                src="./img/XII/Xll persona-3.png" alt=""></a>
+          </li>
+          <li>
+            <a href="https://www.potatomedia.co/post/c6eaa9cd-d33b-4e88-9721-cfb9eea34954" target="_blank"><img
+                src="./img/XII/Xll persona-4.png" alt=""></a>
+          </li>
+          <li>
+            <a href="https://www.potatomedia.co/post/569904e0-683d-42c4-bd40-8391c34017ba" target="_blank"><img
+                src="./img/XII/Xll persona-5.png" alt=""></a>
+          </li>
+          <li>
+            <a href="https://www.potatomedia.co/post/4fbd4884-1e3c-4df5-b369-b8a0e9e19ad1" target="_blank"><img
+                src="./img/XII/Xll-persona-6.jpg" alt=""></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Psychometric -->
+    <section class="page-section " :id="cssLocal + 'psychometric'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('psychometric.heading')">
+                <% $t('psychometric.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/psychometric_ic.png">
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-12 col-12 mb-5">
+            <div class="angel-animation" id="angel-animation"></div>
+            <p class="text-center section-text " data-aos="zoom-in-right">
             <h2 class="psychometric-text">
-              <span class="psychometric-content"><% $t('psychometric.content1') %></span>
-              <span class="psychometric-content"><% $t('psychometric.content2') %></span>
+              <span class="psychometric-content">
+                <% $t('psychometric.content1') %>
+              </span>
+              <span class="psychometric-content">
+                <% $t('psychometric.content2') %>
+              </span>
             </h2>
             <div class="psychometric-border"></div>
-          </p>
-          <p class="text-center section-text mt-5 psychometric-p" data-aos="zoom-in-right">
-            <% $t('psychometric.content3') %><br>
-            <% $t('psychometric.content4') %>
-          </p>
-        </div>
-        <div class="col-12 text-center mt-5">
-          <a class="btn-test js-scroll-trigger mx-auto" :href="url" target="_blank"><% $t('psychometric.test') %></a>
+            </p>
+            <p class="text-center section-text mt-5 psychometric-p" data-aos="zoom-in-right">
+              <% $t('psychometric.content3') %><br>
+                <% $t('psychometric.content4') %>
+            </p>
+          </div>
+          <div class="col-12 text-center mt-5">
+            <a class="btn-test js-scroll-trigger mx-auto" :href="url" target="_blank">
+              <% $t('psychometric.test') %>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Type -->
-  <section class="page-section " :id="cssLocal + 'type'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <h2 class="section-heading text-uppercase" :data-text="$t('type.heading')"><% $t('type.heading') %></h2>
-            <img class="ic-animation" src="./img/xii_persona/bg/type_ic.png">
-          </div>
-        </div>
-        <div class="col-12 mb-3 text-center">
-          <span class="type-name"><% $t('type.typeName1') %></span>
-        </div>
-        <div class="col-lg-12 col-md-12 mb-5">
-          <div class="row justify-content-center gem">
-            <div class="col-lg-2 col-gem" :class="{ 'col-md-12':gem.isFirst,'col-md-6 col-sm-6 col-6 type-hide type-gem-display collapse gem-multi-collapse':!gem.isFirst, 'show':!gem.isFirst && fullWidth > 991 }" :id="'gem'+index" v-for="gem,index in $t('gemList')">
-              <div class="text-center">
-                <img :src="gem.image" class="" width="" alt="gem">
-              </div>
-              <div class="text-center mt-3">
-                <span><% $t(gem.name) %></span>
-              </div>
-            </div>
-            <div class="col-12 text-center">
-              <button class="btn-mythology-down mt-5" @click="checkIn('gem')" data-toggle="collapse" data-target=".type-gem-display" aria-expanded="false" aria-controls="type-gem-display" id="gem-check-in"><% $t('type.button1') %></button>
-              <button class="btn-mythology-up mt-5" @click="checkOut('gem')" data-toggle="collapse" data-target=".gem-multi-collapse" aria-expanded="false" aria-controls="type-gem-display" id="gem-check-out"><% $t('type.button2') %></button>
+    <!-- Type -->
+    <section class="page-section " :id="cssLocal + 'type'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('type.heading')">
+                <% $t('type.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/type_ic.png">
             </div>
           </div>
-        </div>
-        <div class="col-12 mb-3 mt-5 text-center">
-          <span class="type-name"><% $t('type.typeName2') %></span>
-        </div>
-        <div class="col-lg-12 col-md-12 mb-5">
-          <div class="row justify-content-center shape">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 col-shape" :class="{ 'type-hide type-shape-display collapse shape-multi-collapse':!shape.isFirst,'show':!shape.isFirst && fullWidth > 991 }" :id="'shape'+index" v-for="shape,index in $t('shapeList1')">
-              <div class="text-center">
-                <img :src="shape.image" class="" width="" alt="shape">
+          <div class="col-12 mb-3 text-center">
+            <span class="type-name">
+              <% $t('type.typeName1') %>
+            </span>
+          </div>
+          <div class="col-lg-12 col-md-12 mb-5">
+            <div class="row justify-content-center gem">
+              <div class="col-lg-2 col-gem"
+                :class="{ 'col-md-12':gem.isFirst,'col-md-6 col-sm-6 col-6 type-hide type-gem-display collapse gem-multi-collapse':!gem.isFirst, 'show':!gem.isFirst && fullWidth > 991 }"
+                :id="'gem'+index" v-for="gem,index in $t('gemList')">
+                <div class="text-center">
+                  <img :src="gem.image" class="" width="" alt="gem">
+                </div>
+                <div class="text-center mt-3">
+                  <span>
+                    <% $t(gem.name) %>
+                  </span>
+                </div>
               </div>
-              <div class="text-center mt-3">
-                <span><% $t(shape.name) %></span>
+              <div class="col-12 text-center">
+                <button class="btn-mythology-down mt-5" @click="checkIn('gem')" data-toggle="collapse"
+                  data-target=".type-gem-display" aria-expanded="false" aria-controls="type-gem-display"
+                  id="gem-check-in">
+                  <% $t('type.button1') %>
+                </button>
+                <button class="btn-mythology-up mt-5" @click="checkOut('gem')" data-toggle="collapse"
+                  data-target=".gem-multi-collapse" aria-expanded="false" aria-controls="type-gem-display"
+                  id="gem-check-out">
+                  <% $t('type.button2') %>
+                </button>
               </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 col-shape2" :class="{ 'type-hide type-shape-display collapse shape-multi-collapse':!shape2.isFirst,'show':!shape2.isFirst && fullWidth > 991  }" :id="'shape2'+index" v-for="shape2,index in $t('shapeList2')">
-              <div class="text-center">
-                <img :src="shape2.image" class="" width="" alt="shape2">
-              </div>
-              <div class="text-center mt-3">
-                <span><% $t(shape2.name) %></span>
-              </div>
-            </div>
-            <div class="col-12 text-center">
-              <button class="btn-mythology-down mt-5" @click="checkIn('shape')" data-toggle="collapse" data-target=".type-shape-display" aria-expanded="false" aria-controls="type-shape-display" id="shape-check-in"><% $t('type.button1') %></button>
-              <button class="btn-mythology-up mt-5" @click="checkOut('shape')" data-toggle="collapse" data-target=".shape-multi-collapse" aria-expanded="false" aria-controls="type-shape-display" id="shape-check-out"><% $t('type.button2') %></button>
             </div>
           </div>
-        </div>
-        <div class="col-12 mb-3 mt-5 text-center">
-          <span class="type-name"><% $t('type.typeName3') %></span>
-        </div>
-        <div class="col-lg-12 col-md-12">
-          <div class="row justify-content-center constellations">
-            <div class="col-lg-2 col-md-4 col-sm-4 col-4 col-constellations mb-5" :class="{ 'type-hide type-constellations-display collapse constellations-multi-collapse':!constellations.isFirst,'show':!constellations.isFirst && fullWidth > 991  }" :id="'constellations'+index" v-for="constellations,index in $t('constellationsList')">
-              <div class="text-center">
-                <img :src="constellations.image" class="" width="" alt="">
+          <div class="col-12 mb-3 mt-5 text-center">
+            <span class="type-name">
+              <% $t('type.typeName2') %>
+            </span>
+          </div>
+          <div class="col-lg-12 col-md-12 mb-5">
+            <div class="row justify-content-center shape">
+              <div class="col-lg-3 col-md-6 col-sm-6 col-6 col-shape"
+                :class="{ 'type-hide type-shape-display collapse shape-multi-collapse':!shape.isFirst,'show':!shape.isFirst && fullWidth > 991 }"
+                :id="'shape'+index" v-for="shape,index in $t('shapeList1')">
+                <div class="text-center">
+                  <img :src="shape.image" class="" width="" alt="shape">
+                </div>
+                <div class="text-center mt-3">
+                  <span>
+                    <% $t(shape.name) %>
+                  </span>
+                </div>
               </div>
-              <div class="text-center mt-3">
-                <span><% $t(constellations.name) %></span>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-6 col-shape2"
+                :class="{ 'type-hide type-shape-display collapse shape-multi-collapse':!shape2.isFirst,'show':!shape2.isFirst && fullWidth > 991  }"
+                :id="'shape2'+index" v-for="shape2,index in $t('shapeList2')">
+                <div class="text-center">
+                  <img :src="shape2.image" class="" width="" alt="shape2">
+                </div>
+                <div class="text-center mt-3">
+                  <span>
+                    <% $t(shape2.name) %>
+                  </span>
+                </div>
               </div>
-            </div>
-            <div class="col-12 text-center">
-              <button class="btn-mythology-down mt-5" @click="checkIn('constellations')" data-toggle="collapse" data-target=".type-constellations-display" aria-expanded="false" aria-controls="type-constellations-display" id="cts-check-in"><% $t('type.button1') %></button>
-              <button class="btn-mythology-up mt-5" @click="checkOut('constellations')" data-toggle="collapse" data-target=".constellations-multi-collapse" aria-expanded="false" aria-controls="type-constellations-display" id="cts-check-out"><% $t('type.button2') %></button>
+              <div class="col-12 text-center">
+                <button class="btn-mythology-down mt-5" @click="checkIn('shape')" data-toggle="collapse"
+                  data-target=".type-shape-display" aria-expanded="false" aria-controls="type-shape-display"
+                  id="shape-check-in">
+                  <% $t('type.button1') %>
+                </button>
+                <button class="btn-mythology-up mt-5" @click="checkOut('shape')" data-toggle="collapse"
+                  data-target=".shape-multi-collapse" aria-expanded="false" aria-controls="type-shape-display"
+                  id="shape-check-out">
+                  <% $t('type.button2') %>
+                </button>
+              </div>
             </div>
           </div>
-          <p class="text-center mt-5">
-            <a class="btn-test js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('type.mint') %></a>
-          </p>
+          <div class="col-12 mb-3 mt-5 text-center">
+            <span class="type-name">
+              <% $t('type.typeName3') %>
+            </span>
+          </div>
+          <div class="col-lg-12 col-md-12">
+            <div class="row justify-content-center constellations">
+              <div class="col-lg-2 col-md-4 col-sm-4 col-4 col-constellations mb-5"
+                :class="{ 'type-hide type-constellations-display collapse constellations-multi-collapse':!constellations.isFirst,'show':!constellations.isFirst && fullWidth > 991  }"
+                :id="'constellations'+index" v-for="constellations,index in $t('constellationsList')">
+                <div class="text-center">
+                  <img :src="constellations.image" class="" width="" alt="">
+                </div>
+                <div class="text-center mt-3">
+                  <span>
+                    <% $t(constellations.name) %>
+                  </span>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <button class="btn-mythology-down mt-5" @click="checkIn('constellations')" data-toggle="collapse"
+                  data-target=".type-constellations-display" aria-expanded="false"
+                  aria-controls="type-constellations-display" id="cts-check-in">
+                  <% $t('type.button1') %>
+                </button>
+                <button class="btn-mythology-up mt-5" @click="checkOut('constellations')" data-toggle="collapse"
+                  data-target=".constellations-multi-collapse" aria-expanded="false"
+                  aria-controls="type-constellations-display" id="cts-check-out">
+                  <% $t('type.button2') %>
+                </button>
+              </div>
+            </div>
+            <p class="text-center mt-5">
+              <a class="btn-test js-scroll-trigger mx-auto" :href="mintUrl" target="_blank">
+                <% $t('type.mint') %>
+              </a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Empowerment -->
-  <section class="page-section " :id="cssLocal + 'empowerment'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <h2 class="section-heading text-uppercase" :data-text="$t('empowerment.heading')"><% $t('empowerment.heading') %></h2>
-            <img class="ic-animation" src="./img/xii_persona/bg/empowerment_ic.png">
-          </div>
-        </div>
-        <div class="col-lg-12 col-md-12">
-          <div class="row">
-            <div class="col-12">
-              <div class="row empowerment-row">
-                <div class="empowerment-star col-lg-6 col-md-12 ml-16 mb-20px">
-                  <span><% $t('empowerment.text1') %></span>
-                </div>
-                <div class="empowerment-star col-lg-6 col-md-12 ml-35 mb-55px">
-                  <span><% $t('empowerment.text2') %></span>
-                </div>
-                <div class="empowerment-star col-lg-6 col-md-12 offset-md-1">
-                  <span><% $t('empowerment.text3') %></span>
-                </div>
-                <div class="empowerment-star col-lg-6 col-md-12 ml-10">
-                  <span class="empowerment-star2"><% $t('empowerment.text4') %></span>
-                </div>
-                <div class="empowerment-star col-lg-6 col-md-12 ml-51 mb-45px">
-                  <span class="empowerment-star2"><% $t('empowerment.text5') %></span>
-                </div>
-                <div class="empowerment-star col-lg-6 col-md-12 ml-23 mb-130px">
-                  <span class="empowerment-star2"><% $t('empowerment.text6') %></span>
-                </div>
-                <div class="empowerment-star col-lg-6 col-md-12 ml-54 mb-75px">
-                  <span class="empowerment-star2"><% $t('empowerment.text7') %></span>
-                </div>
-                <div class="empowerment-star col-lg-6 col-md-12 ml-43">
-                  <span><% $t('empowerment.text8') %></span>
-                </div>
-              </div>
+    <!-- Empowerment -->
+    <section class="page-section " :id="cssLocal + 'empowerment'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('empowerment.heading')">
+                <% $t('empowerment.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/empowerment_ic.png">
             </div>
           </div>
-        </div>
-        <div class="col-12 text-center mt-5">
-          <!-- <a class="btn-empowerment js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('type.mint') %></a> -->
-          <a class="btn-test js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('empowerment.mint') %></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Creation -->
-  <section class="page-section " :id="cssLocal + 'creation'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <h2 class="section-heading text-uppercase" :data-text="$t('creation.heading')"><% $t('creation.heading') %></h2>
-            <img class="ic-animation" src="./img/xii_persona/bg/creation_ic.png">
-          </div>
-        </div>
-        <div class="col-12 col-md-9">
-          <p class="text-justify section-text" data-aos="zoom-in-right">
-            <% $t('creation.content') %>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QA -->
-<section class="page-section " :id="cssLocal + 'qa'">
-    <div class="container mt-5  mb-5">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <div class="section-title">
-            <h2 class="section-heading text-uppercase" :data-text="$t('faq.heading')"><% $t('faq.heading') %></h2>
-            <img class="ic-animation" src="./img/xii_persona/bg/faq_ic.png">
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-9 col-lg-7 align-self-center">
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-contact-1" role="tabpanel"
-              aria-labelledby="pills-contact-tab">
-              <div v-for="(item, index) in $t('faqList')" :key="item" class="accordion qa-box" :id="'qaBox_' + index">
-                <div class="card" :class="qaStyle.active">
-                  <div class="card-header" id="contact_1_q1" :style="qaStyle.boxShadow + qaStyle.transition">
-                    <h2 class="mb-0 collapsed" data-toggle="collapse" :data-target="'#contact_' + index" aria-expanded="false"  @click="qaStyleClick(index)">
-                      <% $t(item.question) %>
-                    </h2>
+          <div class="col-lg-12 col-md-12">
+            <div class="row">
+              <div class="col-12">
+                <div class="row empowerment-row">
+                  <div class="empowerment-star col-lg-6 col-md-12 ml-16 mb-20px">
+                    <span>
+                      <% $t('empowerment.text1') %>
+                    </span>
                   </div>
-                  <div :id="'contact_' + index" class="collapse" :data-parent="'#qaBox_' + index">
+                  <div class="empowerment-star col-lg-6 col-md-12 ml-35 mb-55px">
+                    <span>
+                      <% $t('empowerment.text2') %>
+                    </span>
+                  </div>
+                  <div class="empowerment-star col-lg-6 col-md-12 offset-md-1">
+                    <span>
+                      <% $t('empowerment.text3') %>
+                    </span>
+                  </div>
+                  <div class="empowerment-star col-lg-6 col-md-12 ml-10">
+                    <span class="empowerment-star2">
+                      <% $t('empowerment.text4') %>
+                    </span>
+                  </div>
+                  <div class="empowerment-star col-lg-6 col-md-12 ml-51 mb-45px">
+                    <span class="empowerment-star2">
+                      <% $t('empowerment.text5') %>
+                    </span>
+                  </div>
+                  <div class="empowerment-star col-lg-6 col-md-12 ml-23 mb-130px">
+                    <span class="empowerment-star2">
+                      <% $t('empowerment.text6') %>
+                    </span>
+                  </div>
+                  <div class="empowerment-star col-lg-6 col-md-12 ml-54 mb-75px">
+                    <span class="empowerment-star2">
+                      <% $t('empowerment.text7') %>
+                    </span>
+                  </div>
+                  <div class="empowerment-star col-lg-6 col-md-12 ml-43">
+                    <span>
+                      <% $t('empowerment.text8') %>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-center mt-5">
+            <!-- <a class="btn-empowerment js-scroll-trigger mx-auto" :href="mintUrl" target="_blank"><% $t('type.mint') %></a> -->
+            <a class="btn-test js-scroll-trigger mx-auto" :href="mintUrl" target="_blank">
+              <% $t('empowerment.mint') %>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creation -->
+    <section class="page-section " :id="cssLocal + 'creation'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('creation.heading')">
+                <% $t('creation.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/creation_ic.png">
+            </div>
+          </div>
+          <div class="col-12 col-md-9">
+            <p class="text-justify section-text" data-aos="zoom-in-right">
+              <% $t('creation.content') %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QA -->
+    <section class="page-section " :id="cssLocal + 'qa'">
+      <div class="container mt-5  mb-5">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-title">
+              <h2 class="section-heading text-uppercase" :data-text="$t('faq.heading')">
+                <% $t('faq.heading') %>
+              </h2>
+              <img class="ic-animation" src="./img/xii_persona/bg/faq_ic.png">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-9 col-lg-7 align-self-center">
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-contact-1" role="tabpanel"
+                aria-labelledby="pills-contact-tab">
+                <div v-for="(item, index) in $t('faqList')" :key="item" class="accordion qa-box" :id="'qaBox_' + index">
+                  <div class="card" :class="qaStyle.active">
+                    <div class="card-header" id="contact_1_q1" :style="qaStyle.boxShadow + qaStyle.transition">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" :data-target="'#contact_' + index"
+                        aria-expanded="false" @click="qaStyleClick(index)">
+                        <% $t(item.question) %>
+                      </h2>
+                    </div>
+                    <div :id="'contact_' + index" class="collapse" :data-parent="'#qaBox_' + index">
                       <div class="card-body">
-                        <P v-if="$t(item.ans1)"><% $t(item.ans1) %></P>
-                        <P v-if="$t(item.ans2)"><% $t(item.ans2) %></P>
-                        <P v-if="$t(item.ans3)" ><% $t(item.ans3) %></P>
-                        <p><a v-if="$t(item.urlText)" :href="item.url" target="_blank"><% $t(item.urlText) %></a></p>
-                        <p><a v-if="$t(item.urlText2)" :href="item.url2" target="_blank"><% $t(item.urlText2) %></a></p>
-                        <p><a v-if="$t(item.urlText3)" :href="item.url3" target="_blank"><% $t(item.urlText3) %></a></p>
-                        <p><% $t(item.eamilText) %><a v-if="$t(item.eamilText)" :href="'https://mail.google.com/mail/?view=cm&fs=1&to='+ item.emailUrl" target="_blank"><% $t(item.emailUrl) %></a></p>
+                        <P v-if="$t(item.ans1)">
+                          <% $t(item.ans1) %>
+                        </P>
+                        <P v-if="$t(item.ans2)">
+                          <% $t(item.ans2) %>
+                        </P>
+                        <P v-if="$t(item.ans3)">
+                          <% $t(item.ans3) %>
+                        </P>
+                        <p><a v-if="$t(item.urlText)" :href="item.url" target="_blank">
+                            <% $t(item.urlText) %>
+                          </a></p>
+                        <p><a v-if="$t(item.urlText2)" :href="item.url2" target="_blank">
+                            <% $t(item.urlText2) %>
+                          </a></p>
+                        <p><a v-if="$t(item.urlText3)" :href="item.url3" target="_blank">
+                            <% $t(item.urlText3) %>
+                          </a></p>
+                        <p>
+                          <% $t(item.eamilText) %><a v-if="$t(item.eamilText)"
+                              :href="'https://mail.google.com/mail/?view=cm&fs=1&to='+ item.emailUrl" target="_blank">
+                              <% $t(item.emailUrl) %>
+                            </a>
+                        </p>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -449,32 +652,41 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-12 mt-5 mb-5">
-          <img src="./img/xii_persona/icon/logo.png" alt="logo">
-        </div>
-        <div class="col-md-12 text-center mt-2">
-          <a href="https://discord.gg/5fjqCQHShY" target="_blank"><img class="media-icon ml-2 mr-2" id="discord" src="./img/xii_persona/icon/discord.png" @mouseover="iconHover(discord, 'discord')" @mouseleave="iconLeave(discord, 'discord')" alt="discord"></a>
-          <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-2 mr-2" id="twitter" src="./img/xii_persona/icon/twitter.png" @mouseover="iconHover(twitter, 'twitter')" @mouseleave="iconLeave(twitter, 'twitter')" alt="twitter"></a>
-          <a href="https://www.instagram.com/etoileart2022/" target="_blank"><img class="media-icon ml-2 mr-2" id="instagram" src="./img/xii_persona/icon/instagram.png" @mouseover="iconHover(instagram, 'instagram')" @mouseleave="iconLeave(instagram, 'instagram')" alt="instagram"></a>
-          <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-2 mr-2" id="facebook" src="./img/xii_persona/icon/facebook.png" @mouseover="iconHover(facebook, 'facebook')" @mouseleave="iconLeave(facebook, 'facebook')" alt="facebook"></a>
-          <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img class="media-icon ml-2 mr-2" id="potato" src="./img/xii_persona/icon/potato.png" @mouseover="iconHover(potato, 'potato')" @mouseleave="iconLeave(potato, 'potato')" alt="potato"></a>
-        </div>
-        <div class="col-md-12 text-center mt-4">
-          <span class="copyright">
-            &copy; 2022 Etoile Art. All rights reserved. &ensp;
-          </span>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 mt-5 mb-5">
+            <img src="./img/xii_persona/icon/logo.png" alt="logo">
+          </div>
+          <div class="col-md-12 text-center mt-2">
+            <a href="https://discord.gg/5fjqCQHShY" target="_blank"><img class="media-icon ml-2 mr-2" id="discord"
+                src="./img/xii_persona/icon/discord.png" @mouseover="iconHover(discord, 'discord')"
+                @mouseleave="iconLeave(discord, 'discord')" alt="discord"></a>
+            <a href="https://twitter.com/Etoile___2022" target="_blank"><img class="media-icon ml-2 mr-2" id="twitter"
+                src="./img/xii_persona/icon/twitter.png" @mouseover="iconHover(twitter, 'twitter')"
+                @mouseleave="iconLeave(twitter, 'twitter')" alt="twitter"></a>
+            <a href="https://www.instagram.com/etoileart2022/" target="_blank"><img class="media-icon ml-2 mr-2"
+                id="instagram" src="./img/xii_persona/icon/instagram.png" @mouseover="iconHover(instagram, 'instagram')"
+                @mouseleave="iconLeave(instagram, 'instagram')" alt="instagram"></a>
+            <a href="https://www.facebook.com/Etoile-108247735273167" target="_blank"><img class="media-icon ml-2 mr-2"
+                id="facebook" src="./img/xii_persona/icon/facebook.png" @mouseover="iconHover(facebook, 'facebook')"
+                @mouseleave="iconLeave(facebook, 'facebook')" alt="facebook"></a>
+            <a href="https://www.potatomedia.co/user/6fdf6952-79a2-4b54-93ae-591cfcc531da/posts" target="_blank"><img
+                class="media-icon ml-2 mr-2" id="potato" src="./img/xii_persona/icon/potato.png"
+                @mouseover="iconHover(potato, 'potato')" @mouseleave="iconLeave(potato, 'potato')" alt="potato"></a>
+          </div>
+          <div class="col-md-12 text-center mt-4">
+            <span class="copyright">
+              &copy; 2022 Etoile Art. All rights reserved. &ensp;
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <router-view></router-view>
+    </footer>
+    <router-view></router-view>
   </main>
 
   <!-- Bootstrap core JavaScript -->
@@ -524,607 +736,655 @@
       // }
       const messages = {
         "tw": {
-          "menuList":[
-            {"name":"品牌", "id": "story"},
-            {"name":"神話","id": "mythology"},
-            {"name":"心理測驗","id": "psychometric"},
-            {"name":"類別","id": "type"},
-            {"name":"賦能","id": "empowerment"},
-            {"name":"創作理念","id": "creation"},
-            {"name":"FAQ","id": "qa"},
-            {"name":"MINT","id": "mint"}
+          "menuList": [
+            { "name": "品牌", "id": "story" },
+            { "name": "神話", "id": "mythology" },
+            { "name": "心理測驗", "id": "psychometric" },
+            { "name": "類別", "id": "type" },
+            { "name": "賦能", "id": "empowerment" },
+            { "name": "創作理念", "id": "creation" },
+            { "name": "FAQ", "id": "qa" },
+            { "name": "MINT", "id": "mint" }
           ],
-          "slider":{
-            "intro1":"數位世界裡",
-            "intro2":"最閃耀的那顆鑽石",
-            "heading":"想要送什麼禮物給「她」或「他」了嗎？",
-            "mint":"鑄造數位精品"
+          "slider": {
+            "intro1": "數位世界裡",
+            "intro2": "最閃耀的那顆鑽石",
+            "heading": "想要送什麼禮物給「她」或「他」了嗎？",
+            "mint": "鑄造數位精品"
           },
-          "story":{
-            "heading":"品牌故事",
-            "content1":"太陽在天球上經過黃道，將其劃分為 12 個區域，12 星座由此誕生。12 星座，12 種由星群組成的不同圖樣，象徵 12 種不同的人格、樣貌、屬性，有熱情洋溢者，亦有沉穩內斂者；有狂放不羈者，亦有溫柔浪漫者...。",
-            "content2":"依據 12 種不同星座去挑選摯愛之人的禮物，讓這份禮物成為專屬於「她」或「他」的摯愛。"
+          "story": {
+            "heading": "品牌故事",
+            "content1": "太陽在天球上經過黃道，將其劃分為 12 個區域，12 星座由此誕生。12 星座，12 種由星群組成的不同圖樣，象徵 12 種不同的人格、樣貌、屬性，有熱情洋溢者，亦有沉穩內斂者；有狂放不羈者，亦有溫柔浪漫者...。",
+            "content2": "依據 12 種不同星座去挑選摯愛之人的禮物，讓這份禮物成為專屬於「她」或「他」的摯愛。"
           },
-          "mythology":{
-            "heading":"神話",
-            "content1":"相傳在億萬年前，宇宙星系出現前所未有的混亂，不同種類的生命體為了存活爭奪地位，展開了戰爭，開始互相殘殺。天神宙斯為了結束這一切的災厄，把宇宙劃分成十二個不同的神聖結界，也就是我們現在所知的十二星座；每個結界擁永自己的守護神，祂們運用各自強大的能量，共同鎮住了這場戰亂，來終結這場可能造成毀滅的危機，讓宇宙再度恢復和平。",
-            "content2":"天神宙斯為了不再重蹈赴撤，請各自結界的守護神，把祂們的能量提煉成神奇的寶石，十二個結界的守護神，誕生了各自屬於自己的寶石，散落在宇宙裡各個不同的角落。祂們被稱為「 The Stone Of Prayer’s Tear 」。",
-            "content3":"到了現代，元宇宙團隊Coeur 決定把「 The Stone Of Prayer’s Tear 」的經典故事，重新打造成數位精品「​​No Matter What, Happy Birthday」，生日通常是人們最快樂的一天，親朋好友都會再一起慶祝，許下新的願望，生日也會讓人有重新開始的感覺，更有力量勇往直前！",
-            "button1":"展開全部",
-            "button2":"收合內容"
+          "news": {
+            "heading": "活動消息",
           },
-          "psychometric":{
-            "heading":"心理測驗",
-            "content1":"選出你/妳的天選",
-            "content2":"『XII Persona』寶石",
-            "content3":"測出你的真實性格. 請用第一直覺選擇答案，",
-            "content4":"全部題目作答完，就能揭曉出你專屬的命定寶石。",
-            "test":"開始測驗",
-            "routeName":"psychometric",
-            "router":"psychometric",
-            "url":"psychometric.html"
-          },
-          "type":{
-            "heading":"類別",
-            "typeName1":"【 寶石 】",
-            "typeName2":"【 形狀 】",
-            "typeName3":"【 十二星座 】",
-            "button1":"展開全部",
-            "button2":"收合內容",
-            "mint":"MINT"
-          },
-          "gemList":[
-            {"image":"./img/xii_persona/gem/Diamond.png", "name":"鑽石", "isFirst":true},
-            {"image":"./img/xii_persona/gem/Ruby.png", "name":"紅寶石", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Argyle.png", "name":"紫寶石", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Sapphire.png", "name":"藍寶石", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Emerald.png", "name":"祖母綠", "isFirst":false}
-          ],
-          "shapeList1":[
-            {"image":"./img/xii_persona/shape/Round.png", "name":"圓形", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Heart.png", "name":"心形", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Pear.png", "name":"梨形", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Baguette.png", "name":"方形", "isFirst":false},
-          ],
-          "shapeList2":[
-            {"image":"./img/xii_persona/shape/Oval.png", "name":"卵形", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Triangular.png", "name":"三角形", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Octagon.png", "name":"八角形", "isFirst":false},
-          ],
-          "constellationsList":[        
-            {"image":"./img/xii_persona/constellations/Libra.png", "name":"天秤座", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Scorpio.png", "name":"天蠍座", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Aquarius.png", "name":"水瓶座", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Cancer.png", "name":"巨蟹座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Aries.png", "name":"牡羊座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Taurus.png", "name":"金牛座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Gemini.png", "name":"雙子座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Pisces.png", "name":"雙魚座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Sagittarius.png", "name":"射手座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Virgo.png", "name":"處女座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Leo.png", "name":"獅子座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Capricorn.png", "name":"摩羯座", "isFirst":false}
-          ],
-          "empowerment":{
-            "heading":"賦能",
-            "mint":"MINT",
-            "text1":"與知名星座專家聯名－探索人生美好未來",
-            "text2":"質押借貸功能",
-            "text3":"打造專屬虛擬商場",
-            "text4":"聯名打造精緻工藝",
-            "text5":"每月精選女性成長課程",
-            "text6":"獨家專屬尊爵卡片",
-            "text7":"燒毀寶石打造全新的NFT",
-            "text8":"後續將推出更多典藏的賦能"
-          },
-          "creation":{
-            "heading":"創作理念",
-            "content":"在現今的NFT的領域裡，大多充斥著價格炒作，這也造成對NFT不了解的群眾們，對這個新科技敬而遠之。而Etoile Art打造的XII Persona是要成為一種永久「保值」且「有價」的數位精品！除了能用於真實世界的優惠賦能外，也能實際當作資產去質押借貸，打造一個對比現實世界的精品，且會讓人有「感」的永恆鑽石；未來展望也要推廣更多當地藝術、文創以及工藝，讓更多當地好作品給更多人看到。"
-          },
-          "faq":{
-            "heading":"FAQ"
-          },
-          "faqList":[
+          "newsList": [
             {
-              "question":"XII Persona發行計畫",
-              "ans1":"共有840款XII Persona的寶石NFT，使用ERC-1155協議發行。",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "img": "./img/xii_persona/events/events.png",
+              "title": "XII Persona 價格將於2月1日進行價格調漲",
+              "content": "EtoileArt 將於亞洲農曆年後，2023/2/1對旗下最熱門的XII Persona 寶石NFT進行價格調漲，成為一種永久「保值」且「有價」的數位精品！對於手上已經有購入NFT的收藏者而言，這是一個激勵市場的振奮消息，也是讓長期收藏家的互動價值提升。",
+              "button": "前往鑄造",
+              "url": "https://www.chaebol.art/store/120000000000000001",
+            },
+          ],
+          "mythology": {
+            "heading": "神話",
+            "content1": "相傳在億萬年前，宇宙星系出現前所未有的混亂，不同種類的生命體為了存活爭奪地位，展開了戰爭，開始互相殘殺。天神宙斯為了結束這一切的災厄，把宇宙劃分成十二個不同的神聖結界，也就是我們現在所知的十二星座；每個結界擁永自己的守護神，祂們運用各自強大的能量，共同鎮住了這場戰亂，來終結這場可能造成毀滅的危機，讓宇宙再度恢復和平。",
+            "content2": "天神宙斯為了不再重蹈赴撤，請各自結界的守護神，把祂們的能量提煉成神奇的寶石，十二個結界的守護神，誕生了各自屬於自己的寶石，散落在宇宙裡各個不同的角落。祂們被稱為「 The Stone Of Prayer’s Tear 」。",
+            "content3": "到了現代，元宇宙團隊Coeur 決定把「 The Stone Of Prayer’s Tear 」的經典故事，重新打造成數位精品「​​No Matter What, Happy Birthday」，生日通常是人們最快樂的一天，親朋好友都會再一起慶祝，許下新的願望，生日也會讓人有重新開始的感覺，更有力量勇往直前！",
+            "button1": "展開全部",
+            "button2": "收合內容"
+          },
+          "psychometric": {
+            "heading": "心理測驗",
+            "content1": "選出你/妳的天選",
+            "content2": "『XII Persona』寶石",
+            "content3": "測出你的真實性格. 請用第一直覺選擇答案，",
+            "content4": "全部題目作答完，就能揭曉出你專屬的命定寶石。",
+            "test": "開始測驗",
+            "routeName": "psychometric",
+            "router": "psychometric",
+            "url": "psychometric.html"
+          },
+          "type": {
+            "heading": "類別",
+            "typeName1": "【 寶石 】",
+            "typeName2": "【 形狀 】",
+            "typeName3": "【 十二星座 】",
+            "button1": "展開全部",
+            "button2": "收合內容",
+            "mint": "MINT"
+          },
+          "gemList": [
+            { "image": "./img/xii_persona/gem/Diamond.png", "name": "鑽石", "isFirst": true },
+            { "image": "./img/xii_persona/gem/Ruby.png", "name": "紅寶石", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Argyle.png", "name": "紫寶石", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Sapphire.png", "name": "藍寶石", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Emerald.png", "name": "祖母綠", "isFirst": false }
+          ],
+          "shapeList1": [
+            { "image": "./img/xii_persona/shape/Round.png", "name": "圓形", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Heart.png", "name": "心形", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Pear.png", "name": "梨形", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Baguette.png", "name": "方形", "isFirst": false },
+          ],
+          "shapeList2": [
+            { "image": "./img/xii_persona/shape/Oval.png", "name": "卵形", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Triangular.png", "name": "三角形", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Octagon.png", "name": "八角形", "isFirst": false },
+          ],
+          "constellationsList": [
+            { "image": "./img/xii_persona/constellations/Libra.png", "name": "天秤座", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Scorpio.png", "name": "天蠍座", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Aquarius.png", "name": "水瓶座", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Cancer.png", "name": "巨蟹座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Aries.png", "name": "牡羊座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Taurus.png", "name": "金牛座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Gemini.png", "name": "雙子座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Pisces.png", "name": "雙魚座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Sagittarius.png", "name": "射手座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Virgo.png", "name": "處女座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Leo.png", "name": "獅子座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Capricorn.png", "name": "摩羯座", "isFirst": false }
+          ],
+          "empowerment": {
+            "heading": "賦能",
+            "mint": "MINT",
+            "text1": "與知名星座專家聯名－探索人生美好未來",
+            "text2": "質押借貸功能",
+            "text3": "打造專屬虛擬商場",
+            "text4": "聯名打造精緻工藝",
+            "text5": "每月精選女性成長課程",
+            "text6": "獨家專屬尊爵卡片",
+            "text7": "燒毀寶石打造全新的NFT",
+            "text8": "後續將推出更多典藏的賦能"
+          },
+          "creation": {
+            "heading": "創作理念",
+            "content": "在現今的NFT的領域裡，大多充斥著價格炒作，這也造成對NFT不了解的群眾們，對這個新科技敬而遠之。而Etoile Art打造的XII Persona是要成為一種永久「保值」且「有價」的數位精品！除了能用於真實世界的優惠賦能外，也能實際當作資產去質押借貸，打造一個對比現實世界的精品，且會讓人有「感」的永恆鑽石；未來展望也要推廣更多當地藝術、文創以及工藝，讓更多當地好作品給更多人看到。"
+          },
+          "faq": {
+            "heading": "FAQ"
+          },
+          "faqList": [
+            {
+              "question": "XII Persona發行計畫",
+              "ans1": "共有840款XII Persona的寶石NFT，使用ERC-1155協議發行。",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"ERC1155協議是什麼？",
-              "ans1":"ERC20協議為同質化代幣、ERC721協議為非同質化代幣。",
-              "ans2":"ERC1155協議可以讓你在同一個協議中，同時做到同質、非同質以及半同質的代幣標準區分，最常使用就是遊戲的案例，遊戲點數需要用到同質化代幣來交換，但其中的寶物又需要用到非同質化代幣，這時如果使用ERC1155協議，就可以同時進行兩個代幣交換行為。",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "question": "ERC1155協議是什麼？",
+              "ans1": "ERC20協議為同質化代幣、ERC721協議為非同質化代幣。",
+              "ans2": "ERC1155協議可以讓你在同一個協議中，同時做到同質、非同質以及半同質的代幣標準區分，最常使用就是遊戲的案例，遊戲點數需要用到同質化代幣來交換，但其中的寶物又需要用到非同質化代幣，這時如果使用ERC1155協議，就可以同時進行兩個代幣交換行為。",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"如何鑄造購買XII Persona？",
-              "ans1":"",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"請參閱XII Persona的公開鑄造文章說明",
-              "url":"https://www.potatomedia.co/post/f721acd3-afd8-427e-a288-df9a64b1ff0c",
-              "urlText2":"請參閱XII Persona的白名單鑄造文章說明",
-              "url2":"https://www.potatomedia.co/post/d8f84a25-a772-45bf-8a5f-105d5ad59119",
-              "urlText3":"如何轉帳加密貨幣到CHAEBOL錢包？",
-              "url3":"https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%84%B2%E5%80%BC%E6%8F%90%E9%A0%98-c9f1fe6aba",
-              "show":false
+              "question": "如何鑄造購買XII Persona？",
+              "ans1": "",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "請參閱XII Persona的公開鑄造文章說明",
+              "url": "https://www.potatomedia.co/post/f721acd3-afd8-427e-a288-df9a64b1ff0c",
+              "urlText2": "請參閱XII Persona的白名單鑄造文章說明",
+              "url2": "https://www.potatomedia.co/post/d8f84a25-a772-45bf-8a5f-105d5ad59119",
+              "urlText3": "如何轉帳加密貨幣到CHAEBOL錢包？",
+              "url3": "https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%84%B2%E5%80%BC%E6%8F%90%E9%A0%98-c9f1fe6aba",
+              "show": false
             },
             {
-              "question":"如何聯繫我們？",
-              "ans1":"歡迎有任何商務與合作上的需求，都請來信詢問。",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
+              "question": "如何聯繫我們？",
+              "ans1": "歡迎有任何商務與合作上的需求，都請來信詢問。",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
               "eamilText": "Email：",
               "emailUrl": "etoile666777@gmail.com",
-              "show":false
+              "show": false
             }
           ]
         },
         "cn": {
-          "menuList":[
-            {"name":"品牌", "id": "story"},
-            {"name":"神话","id": "mythology"},
-            {"name":"心理测验","id": "psychometric"},
-            {"name":"类别","id": "type"},
-            {"name":"赋能","id": "empowerment"},
-            {"name":"创作理念","id": "creation"},
-            {"name":"FAQ","id": "qa"},
-            {"name":"MINT","id": "mint"}
+          "menuList": [
+            { "name": "品牌", "id": "story" },
+            { "name": "神话", "id": "mythology" },
+            { "name": "心理测验", "id": "psychometric" },
+            { "name": "类别", "id": "type" },
+            { "name": "赋能", "id": "empowerment" },
+            { "name": "创作理念", "id": "creation" },
+            { "name": "FAQ", "id": "qa" },
+            { "name": "MINT", "id": "mint" }
           ],
-          "slider":{
-            "intro1":"数位世界里",
-            "intro2":"最闪耀的那颗钻石",
-            "heading":"想要送什么礼物给「她」或「他」了吗？",
-            "mint":"铸造数位精品"
+          "slider": {
+            "intro1": "数位世界里",
+            "intro2": "最闪耀的那颗钻石",
+            "heading": "想要送什么礼物给「她」或「他」了吗？",
+            "mint": "铸造数位精品"
           },
-          "story":{
-            "heading":"品牌故事",
-            "content1":"太阳在天球上经过黄道，将其划分为 12 个区域，12 星座由此诞生。 12 星座，12 种由星群组成的不同图样，象征 12 种不同的人格、样貌、属性，有热情洋溢者，亦有沉稳内敛者；有狂放不羁者，亦有温柔浪漫者...。",
-            "content2":"依据 12 种不同星座去挑选挚爱之人的礼物，让这份礼物成为专属于「她」或「他」的挚爱。"
+          "story": {
+            "heading": "品牌故事",
+            "content1": "太阳在天球上经过黄道，将其划分为 12 个区域，12 星座由此诞生。 12 星座，12 种由星群组成的不同图样，象征 12 种不同的人格、样貌、属性，有热情洋溢者，亦有沉稳内敛者；有狂放不羁者，亦有温柔浪漫者...。",
+            "content2": "依据 12 种不同星座去挑选挚爱之人的礼物，让这份礼物成为专属于「她」或「他」的挚爱。"
           },
-          "mythology":{
-            "heading":"神话",
-            "content1":"相传在亿万年前，宇宙星系出现前所未有的混乱，不同种类的生命体为了存活争夺地位，展开了战争，开始互相残杀。天神宙斯为了结束这一切的灾厄，把宇宙划分成十二个不同的神圣结界，也就是我们现在所知的十二星座；每个结界拥永自己的守护神，祂们运用各自强大的能量，共同镇住了这场战乱，来终结这场可能造成毁灭的危机，让宇宙再度恢复和平。",
-            "content2":"天神宙斯为了不再重蹈赴撤，请各自结界的守护神，把祂们的能量提炼成神奇的宝石，十二个结界的守护神，诞生了各自属于自己的宝石，散落在宇宙里各个不同的角落。祂们被称为「 The Stone Of Prayer’s Tear 」。",
-            "content3":"到了现代，元宇宙团队Coeur 决定把「 The Stone Of Prayer’s Tear 」的经典故事，重新打造成数位精品「​​No Matter What, Happy Birthday」，生日通常是人们最快乐的一天，亲朋好友都会再一起庆祝，许下新的愿望，生日也会让人有重新开始的感觉，更有力量勇往直前！",
-            "button1":"展开全部",
-            "button2":"收合内容"
+          "news": {
+            "heading": "活动消息",
           },
-          "psychometric":{
-            "heading":"心理测验",
-            "content1":"选出你/妳的天选",
-            "content2":"『XII Persona』宝石",
-            "content3":"测出你的真实性格. 请用第一直觉选择答案，",
-            "content4":"全部题目作答完，就能揭晓出你专属的命定宝石。",
-            "test":"开始测验",
-            "routeName":"psychometric",
-            "router":"psychometric",
-            "url":"psychometric.html"
-          },
-          "type":{
-            "heading":"类别",
-            "typeName1":"【 宝石 】",
-            "typeName2":"【 形状 】",
-            "typeName3":"【 十二星座 】",
-            "button1":"展开全部",
-            "button2":"收合内容",
-            "mint":"MINT"
-          },
-          "gemList":[
-            {"image":"./img/xii_persona/gem/Diamond.png", "name":"钻石", "isFirst":true},
-            {"image":"./img/xii_persona/gem/Ruby.png", "name":"红宝石", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Argyle.png", "name":"紫宝石", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Sapphire.png", "name":"蓝宝石", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Emerald.png", "name":"祖母绿", "isFirst":false}
-          ],
-          "shapeList1":[
-            {"image":"./img/xii_persona/shape/Round.png", "name":"圆形", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Heart.png", "name":"心形", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Pear.png", "name":"梨形", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Baguette.png", "name":"方形", "isFirst":false},
-          ],
-          "shapeList2":[
-            {"image":"./img/xii_persona/shape/Oval.png", "name":"卵形", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Triangular.png", "name":"三角形", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Octagon.png", "name":"八角形", "isFirst":false},
-          ],
-          "constellationsList":[
-            {"image":"./img/xii_persona/constellations/Libra.png", "name":"天秤座", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Scorpio.png", "name":"天蝎座", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Aquarius.png", "name":"水瓶座", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Cancer.png", "name":"巨蟹座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Aries.png", "name":"牡羊座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Taurus.png", "name":"金牛座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Gemini.png", "name":"双子座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Pisces.png", "name":"双鱼座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Sagittarius.png", "name":"射手座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Virgo.png", "name":"处女座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Leo.png", "name":"狮子座", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Capricorn.png", "name":"摩羯座", "isFirst":false}
-          ],
-          "empowerment":{
-            "heading":"赋能",
-            "mint":"MINT",
-            "text1":"与知名星座专家联名－探索人生美好未来",
-            "text2":"质押借贷功能",
-            "text3":"打造专属虚拟商场",
-            "text4":"联名打造精致工艺",
-            "text5":"每月精选女性成长课程",
-            "text6":"独家专属尊爵卡片",
-            "text7":"烧毁宝石打造全新的NFT",
-            "text8":"后续将推出更多典藏的赋能"
-          },
-          "creation":{
-            "heading":"创作理念",
-            "content":"在现今的NFT的领域里，大多充斥着价格炒作，这也造成对NFT不了解的群众们，对这个新科技敬而远之。而Etoile Art打造的Xll Persona是要成为一种永久「保值」且「有价」的数位精品！除了能用于真实世界的优惠赋能外，也能实际当作资产去质押借贷，打造一个对比现实世界的精品，且会让人有「感」的永恒钻石；未来展望也要推广更多当地艺术、文创以及工艺，让更多当地好作品给更多人看到。"
-          },
-          "faq":{
-            "heading":"FAQ"
-          },
-          "faqList":[
+          "newsList": [
             {
-              "question":"XII Persona发行计画",
-              "ans1":"共有840款XII Persona的宝石NFT，使用ERC-1155协议发行。",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "img": "./img/xii_persona/events/events.png",
+              "title": "XII Persona 价格将于2月1日进行价格调涨",
+              "content": "EtoileArt 将于亚洲农历年后，2023/2/1对旗下最热门的XII Persona 宝石NFT进行价格调涨，成为一种永久「保值」且「有价」的数位精品！对于手上已经有购入NFT的收藏者而言，这是一个激励市场的振奋消息，也是让长期收藏家的互动价值提升。",
+              "button": "前往铸造",
+              "url": "https://www.chaebol.art/store/120000000000000001",
+            },
+          ],
+          "mythology": {
+            "heading": "神话",
+            "content1": "相传在亿万年前，宇宙星系出现前所未有的混乱，不同种类的生命体为了存活争夺地位，展开了战争，开始互相残杀。天神宙斯为了结束这一切的灾厄，把宇宙划分成十二个不同的神圣结界，也就是我们现在所知的十二星座；每个结界拥永自己的守护神，祂们运用各自强大的能量，共同镇住了这场战乱，来终结这场可能造成毁灭的危机，让宇宙再度恢复和平。",
+            "content2": "天神宙斯为了不再重蹈赴撤，请各自结界的守护神，把祂们的能量提炼成神奇的宝石，十二个结界的守护神，诞生了各自属于自己的宝石，散落在宇宙里各个不同的角落。祂们被称为「 The Stone Of Prayer’s Tear 」。",
+            "content3": "到了现代，元宇宙团队Coeur 决定把「 The Stone Of Prayer’s Tear 」的经典故事，重新打造成数位精品「​​No Matter What, Happy Birthday」，生日通常是人们最快乐的一天，亲朋好友都会再一起庆祝，许下新的愿望，生日也会让人有重新开始的感觉，更有力量勇往直前！",
+            "button1": "展开全部",
+            "button2": "收合内容"
+          },
+          "psychometric": {
+            "heading": "心理测验",
+            "content1": "选出你/妳的天选",
+            "content2": "『XII Persona』宝石",
+            "content3": "测出你的真实性格. 请用第一直觉选择答案，",
+            "content4": "全部题目作答完，就能揭晓出你专属的命定宝石。",
+            "test": "开始测验",
+            "routeName": "psychometric",
+            "router": "psychometric",
+            "url": "psychometric.html"
+          },
+          "type": {
+            "heading": "类别",
+            "typeName1": "【 宝石 】",
+            "typeName2": "【 形状 】",
+            "typeName3": "【 十二星座 】",
+            "button1": "展开全部",
+            "button2": "收合内容",
+            "mint": "MINT"
+          },
+          "gemList": [
+            { "image": "./img/xii_persona/gem/Diamond.png", "name": "钻石", "isFirst": true },
+            { "image": "./img/xii_persona/gem/Ruby.png", "name": "红宝石", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Argyle.png", "name": "紫宝石", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Sapphire.png", "name": "蓝宝石", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Emerald.png", "name": "祖母绿", "isFirst": false }
+          ],
+          "shapeList1": [
+            { "image": "./img/xii_persona/shape/Round.png", "name": "圆形", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Heart.png", "name": "心形", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Pear.png", "name": "梨形", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Baguette.png", "name": "方形", "isFirst": false },
+          ],
+          "shapeList2": [
+            { "image": "./img/xii_persona/shape/Oval.png", "name": "卵形", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Triangular.png", "name": "三角形", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Octagon.png", "name": "八角形", "isFirst": false },
+          ],
+          "constellationsList": [
+            { "image": "./img/xii_persona/constellations/Libra.png", "name": "天秤座", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Scorpio.png", "name": "天蝎座", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Aquarius.png", "name": "水瓶座", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Cancer.png", "name": "巨蟹座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Aries.png", "name": "牡羊座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Taurus.png", "name": "金牛座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Gemini.png", "name": "双子座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Pisces.png", "name": "双鱼座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Sagittarius.png", "name": "射手座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Virgo.png", "name": "处女座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Leo.png", "name": "狮子座", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Capricorn.png", "name": "摩羯座", "isFirst": false }
+          ],
+          "empowerment": {
+            "heading": "赋能",
+            "mint": "MINT",
+            "text1": "与知名星座专家联名－探索人生美好未来",
+            "text2": "质押借贷功能",
+            "text3": "打造专属虚拟商场",
+            "text4": "联名打造精致工艺",
+            "text5": "每月精选女性成长课程",
+            "text6": "独家专属尊爵卡片",
+            "text7": "烧毁宝石打造全新的NFT",
+            "text8": "后续将推出更多典藏的赋能"
+          },
+          "creation": {
+            "heading": "创作理念",
+            "content": "在现今的NFT的领域里，大多充斥着价格炒作，这也造成对NFT不了解的群众们，对这个新科技敬而远之。而Etoile Art打造的Xll Persona是要成为一种永久「保值」且「有价」的数位精品！除了能用于真实世界的优惠赋能外，也能实际当作资产去质押借贷，打造一个对比现实世界的精品，且会让人有「感」的永恒钻石；未来展望也要推广更多当地艺术、文创以及工艺，让更多当地好作品给更多人看到。"
+          },
+          "faq": {
+            "heading": "FAQ"
+          },
+          "faqList": [
+            {
+              "question": "XII Persona发行计画",
+              "ans1": "共有840款XII Persona的宝石NFT，使用ERC-1155协议发行。",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"ERC1155协议是什么？",
-              "ans1":"ERC20协议为同质化代币、ERC721协议为非同质化代币。",
-              "ans2":"ERC1155协议可以让你在同一个协议中，同时做到同质、非同质以及半同质的代币标准区分，最常使用就是游戏的案例，游戏点数需要用到同质化代币来交换，但其中的宝物又需要用到非同质化代币，这时如果使用ERC1155协议，就可以同时进行两个代币交换行为。",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "question": "ERC1155协议是什么？",
+              "ans1": "ERC20协议为同质化代币、ERC721协议为非同质化代币。",
+              "ans2": "ERC1155协议可以让你在同一个协议中，同时做到同质、非同质以及半同质的代币标准区分，最常使用就是游戏的案例，游戏点数需要用到同质化代币来交换，但其中的宝物又需要用到非同质化代币，这时如果使用ERC1155协议，就可以同时进行两个代币交换行为。",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"如何铸造与购买XII Persona？",
-              "ans1":"",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"请参阅XII Persona的公开铸造文章说明",
-              "url":"https://www.potatomedia.co/post/be9a73c2-fb46-4f95-9335-95da63ce3663",
-              "urlText2":"请参阅XII Persona的白名单铸造文章说明",
-              "url2":"https://www.potatomedia.co/post/43adb381-02dd-4d0e-947b-302b6e376b8e",
-              "urlText3":"如何转帐加密货币到CHAEBOL钱包？",
-              "url3":"https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%82%A8%E5%80%BC%E6%8F%90%E9%A2%86-4258a319986a",
-              "show":false
+              "question": "如何铸造与购买XII Persona？",
+              "ans1": "",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "请参阅XII Persona的公开铸造文章说明",
+              "url": "https://www.potatomedia.co/post/be9a73c2-fb46-4f95-9335-95da63ce3663",
+              "urlText2": "请参阅XII Persona的白名单铸造文章说明",
+              "url2": "https://www.potatomedia.co/post/43adb381-02dd-4d0e-947b-302b6e376b8e",
+              "urlText3": "如何转帐加密货币到CHAEBOL钱包？",
+              "url3": "https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%82%A8%E5%80%BC%E6%8F%90%E9%A2%86-4258a319986a",
+              "show": false
             },
             {
-              "question":"如何联系我们？",
-              "ans1":"欢迎有任何商务与合作上的需求，都请来信询问。",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
+              "question": "如何联系我们？",
+              "ans1": "欢迎有任何商务与合作上的需求，都请来信询问。",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
               "eamilText": "Email：",
               "emailUrl": "etoile666777@gmail.com",
-              "show":false
+              "show": false
             }
           ]
         },
         "en": {
-          "menuList":[
-            {"name":"Brand Story", "id": "story", "dropdown": false},
-            {"name":"Mythology Prequel","id": "mythology", "dropdown": false},
-            {"name":"Psychometric test","id": "psychometric", "dropdown": false},
-            {"name":"Type","id": "type", "dropdown": true},
-            {"name":"Empowerment","id": "empowerment", "dropdown": true},
-            {"name":"Creation Concept","id": "creation", "dropdown": true},
-            {"name":"FAQ","id": "qa", "dropdown": true},
-            {"name":"MINT","id": "mint", "dropdown": false}
+          "menuList": [
+            { "name": "Brand Story", "id": "story", "dropdown": false },
+            { "name": "Mythology Prequel", "id": "mythology", "dropdown": false },
+            { "name": "Psychometric test", "id": "psychometric", "dropdown": false },
+            { "name": "Type", "id": "type", "dropdown": true },
+            { "name": "Empowerment", "id": "empowerment", "dropdown": true },
+            { "name": "Creation Concept", "id": "creation", "dropdown": true },
+            { "name": "FAQ", "id": "qa", "dropdown": true },
+            { "name": "MINT", "id": "mint", "dropdown": false }
           ],
-          "slider":{
-            "intro1":"The Brightest Diamond ",
-            "intro2":"in the Digital Word",
-            "heading":"Do you wish to send a gift to her/him ?",
-            "mint":"Digital Mint Store"
+          "slider": {
+            "intro1": "The Brightest Diamond ",
+            "intro2": "in the Digital Word",
+            "heading": "Do you wish to send a gift to her/him ?",
+            "mint": "Digital Mint Store"
           },
-          "story":{
-            "heading":"Brand Story",
-            "content1":"The Sun revolves around the earth in an elliptical path which is known as the “celestial sphere”. Along with the movement of the sun, it is divided into 12 equal segments corresponding to 12 constellations. It reveals the person’s traits, personalities, their strengths and weaknesses.",
-            "content2":"While some have their inimitable charm, easily get mad, gone wild, others are blessed with the ability to stay calm, be gentle or even can be really romantic... .Choose a gift for your beloved one based on 12 different constellations, and make this perfect present just for “her” or “him”."
+          "story": {
+            "heading": "Brand Story",
+            "content1": "The Sun revolves around the earth in an elliptical path which is known as the “celestial sphere”. Along with the movement of the sun, it is divided into 12 equal segments corresponding to 12 constellations. It reveals the person’s traits, personalities, their strengths and weaknesses.",
+            "content2": "While some have their inimitable charm, easily get mad, gone wild, others are blessed with the ability to stay calm, be gentle or even can be really romantic... .Choose a gift for your beloved one based on 12 different constellations, and make this perfect present just for “her” or “him”."
           },
-          "mythology":{
-            "heading":"Mythology Prequel",
-            "content1":"Legend has it that billions of years ago, there was unprecedented chaos in the galaxy, and different kinds of life-forms began to wage war, compete for status and kill each other out of survival. Putting an end to this chaos, the god Zeus divided the universe into twelve different sacred boundaries, which we know as the twelve constellations. Each area has its own patron god, who used their own unique powerful energy to stop the war, end this potentially devastating crisis and restore peace to the universe.",
-            "content2":"In order not to repeat the same mistake, Zeus asked the patron gods of their respective realms to refine their energy into magical gems. And as a result the twelve patron gods gave birth to their own gems, which were scattered in different corners of the universe. They are called “The Stone Of Prayer’s Tears”.",
-            "content3":"Nowadays, Coeur decided to recreate the classic story “The Stone Of Prayer’s Tear” into a digital product called “No Matter What, Happy Birthday”. Birthday is always one of the happiest days for anyone, a day when friends and family get together to celebrate and make new wishes. Besides, birthdays will also make people feel like starting over and having more strength to move forward!",
-            "button1":"More",
-            "button2":"Less"
+          "news": {
+            "heading": "Events",
           },
-          "psychometric":{
-            "heading":"Psychometric test ",
-            "content1":"Choose your",
-            "content2":"【XII Persona】 Gemstone",
-            "content3":"Find out your true personality. Use your first instinct to choose the answer.",
-            "content4":"After answering all the questions, you will be revealed your exclusive destiny gem.",
-            "test":"Start the test",
-            "routeName":"psychometric",
-            "router":"psychometric",
-            "url":"psychometric.html"
-          },
-          "type":{
-            "heading":"Type",
-            "typeName1":"【 Gem 】",
-            "typeName2":"【 Shape 】",
-            "typeName3":"【 12 Constellations 】",
-            "button1":"More",
-            "button2":"Less",
-            "mint":"MINT"
-          },
-          "gemList":[
-            {"image":"./img/xii_persona/gem/Diamond.png", "name":"Diamond", "isFirst":true},
-            {"image":"./img/xii_persona/gem/Ruby.png", "name":"Ruby", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Argyle.png", "name":"Argyle", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Sapphire.png", "name":"Sapphire", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Emerald.png", "name":"Emerald", "isFirst":false}
-          ],
-          "shapeList1":[
-            {"image":"./img/xii_persona/shape/Round.png", "name":"Round", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Heart.png", "name":"Heart", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Pear.png", "name":"Pear", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Baguette.png", "name":"Baguette", "isFirst":false},
-          ],
-          "shapeList2":[
-            {"image":"./img/xii_persona/shape/Oval.png", "name":"Oval", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Triangular.png", "name":"Triangular", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Octagon.png", "name":"Octagon", "isFirst":false},
-          ],
-          "constellationsList":[
-            {"image":"./img/xii_persona/constellations/Libra.png", "name":"Libra", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Scorpio.png", "name":"Scorpio", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Aquarius.png", "name":"Aquarius", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Cancer.png", "name":"Cancer", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Aries.png", "name":"Aries", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Taurus.png", "name":"Taurus", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Gemini.png", "name":"Gemini", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Pisces.png", "name":"Pisces", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Sagittarius.png", "name":"Sagittarius", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Virgo.png", "name":"Virgo", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Leo.png", "name":"Leo", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Capricorn.png", "name":"Capricorn", "isFirst":false}
-          ],
-          "empowerment":{
-            "heading":"Empowerment",
-            "mint":"MINT",
-            "text1":"Discover bright future in your life with renowned astrologers",
-            "text2":"Pledge lending function",
-            "text3":"Create your own virtual mall",
-            "text4":"Jointly create exquisite craftsmanship",
-            "text5":"Monthly Women's Growth Course",
-            "text6":"Exclusive Prestige Card",
-            "text7":"Burning gemstones to create a new NFT",
-            "text8":"More collections will be launched in the future"
-          },
-          "creation":{
-            "heading":"Creation Concept ",
-            "content":"In today’s NFT field, most of them are full of price hype, which makes people who don't know much about NFT to stay away from this new technology. XII Persona was created by Etoile Art to be a permanent “preservation” and “valuable” digital store! In addition to being used to real world privileges, it can also be used as an asset to pledge loans, creating a timeless diamond that is comparable to the real world and will give people a “sense” of permanence. In the future, we will also promote more local art, cultural creations and crafts, so that people can see more good local works."
-          },
-          "faq":{
-            "heading":"FAQ"
-          },
-          "faqList":[
+          "newsList": [
             {
-              "question":"XII Persona Release Plan ",
-              "ans1":"There are 840 XII Persona NFT gems, via the ERC – 1155 protocol.",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "img": "./img/xii_persona/events/events.png",
+              "title": "The price of XII Persona will increase on February 1st",
+              "content": 'After Lunar New Year, EtoileArt will increase the price of its most popular XII Persona gem NFT on February 1, 2023 and become a permanent "value-preserving" and "valid" digital store far! For collectors who have purchased NFTs, this is exciting news to stimulate the market and it also increases the engagement value of long-term collectors.',
+              "button": "MINT",
+              "url": "https://www.chaebol.art/store/120000000000000001",
+            },
+          ],
+          "mythology": {
+            "heading": "Mythology Prequel",
+            "content1": "Legend has it that billions of years ago, there was unprecedented chaos in the galaxy, and different kinds of life-forms began to wage war, compete for status and kill each other out of survival. Putting an end to this chaos, the god Zeus divided the universe into twelve different sacred boundaries, which we know as the twelve constellations. Each area has its own patron god, who used their own unique powerful energy to stop the war, end this potentially devastating crisis and restore peace to the universe.",
+            "content2": "In order not to repeat the same mistake, Zeus asked the patron gods of their respective realms to refine their energy into magical gems. And as a result the twelve patron gods gave birth to their own gems, which were scattered in different corners of the universe. They are called “The Stone Of Prayer’s Tears”.",
+            "content3": "Nowadays, Coeur decided to recreate the classic story “The Stone Of Prayer’s Tear” into a digital product called “No Matter What, Happy Birthday”. Birthday is always one of the happiest days for anyone, a day when friends and family get together to celebrate and make new wishes. Besides, birthdays will also make people feel like starting over and having more strength to move forward!",
+            "button1": "More",
+            "button2": "Less"
+          },
+          "psychometric": {
+            "heading": "Psychometric test ",
+            "content1": "Choose your",
+            "content2": "【XII Persona】 Gemstone",
+            "content3": "Find out your true personality. Use your first instinct to choose the answer.",
+            "content4": "After answering all the questions, you will be revealed your exclusive destiny gem.",
+            "test": "Start the test",
+            "routeName": "psychometric",
+            "router": "psychometric",
+            "url": "psychometric.html"
+          },
+          "type": {
+            "heading": "Type",
+            "typeName1": "【 Gem 】",
+            "typeName2": "【 Shape 】",
+            "typeName3": "【 12 Constellations 】",
+            "button1": "More",
+            "button2": "Less",
+            "mint": "MINT"
+          },
+          "gemList": [
+            { "image": "./img/xii_persona/gem/Diamond.png", "name": "Diamond", "isFirst": true },
+            { "image": "./img/xii_persona/gem/Ruby.png", "name": "Ruby", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Argyle.png", "name": "Argyle", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Sapphire.png", "name": "Sapphire", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Emerald.png", "name": "Emerald", "isFirst": false }
+          ],
+          "shapeList1": [
+            { "image": "./img/xii_persona/shape/Round.png", "name": "Round", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Heart.png", "name": "Heart", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Pear.png", "name": "Pear", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Baguette.png", "name": "Baguette", "isFirst": false },
+          ],
+          "shapeList2": [
+            { "image": "./img/xii_persona/shape/Oval.png", "name": "Oval", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Triangular.png", "name": "Triangular", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Octagon.png", "name": "Octagon", "isFirst": false },
+          ],
+          "constellationsList": [
+            { "image": "./img/xii_persona/constellations/Libra.png", "name": "Libra", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Scorpio.png", "name": "Scorpio", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Aquarius.png", "name": "Aquarius", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Cancer.png", "name": "Cancer", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Aries.png", "name": "Aries", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Taurus.png", "name": "Taurus", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Gemini.png", "name": "Gemini", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Pisces.png", "name": "Pisces", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Sagittarius.png", "name": "Sagittarius", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Virgo.png", "name": "Virgo", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Leo.png", "name": "Leo", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Capricorn.png", "name": "Capricorn", "isFirst": false }
+          ],
+          "empowerment": {
+            "heading": "Empowerment",
+            "mint": "MINT",
+            "text1": "Discover bright future in your life with renowned astrologers",
+            "text2": "Pledge lending function",
+            "text3": "Create your own virtual mall",
+            "text4": "Jointly create exquisite craftsmanship",
+            "text5": "Monthly Women's Growth Course",
+            "text6": "Exclusive Prestige Card",
+            "text7": "Burning gemstones to create a new NFT",
+            "text8": "More collections will be launched in the future"
+          },
+          "creation": {
+            "heading": "Creation Concept ",
+            "content": "In today’s NFT field, most of them are full of price hype, which makes people who don't know much about NFT to stay away from this new technology. XII Persona was created by Etoile Art to be a permanent “preservation” and “valuable” digital store! In addition to being used to real world privileges, it can also be used as an asset to pledge loans, creating a timeless diamond that is comparable to the real world and will give people a “sense” of permanence. In the future, we will also promote more local art, cultural creations and crafts, so that people can see more good local works."
+          },
+          "faq": {
+            "heading": "FAQ"
+          },
+          "faqList": [
+            {
+              "question": "XII Persona Release Plan ",
+              "ans1": "There are 840 XII Persona NFT gems, via the ERC – 1155 protocol.",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"What is the ERC1155 protocol?",
-              "ans1":"The ERC20 protocol is homogenous tokens and the ERC721 protocol is non-homogenous tokens.",
-              "ans2":"The ERC1155 protocol allows you to distinguish between homogeneous, non-homogeneous and semi-homogeneous tokens in the same protocol. The most common use of this protocol is in the case of a game, where homogeneous tokens are needed to exchange game points, but the treasures inside need to use non-homogeneous tokens.",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "question": "What is the ERC1155 protocol?",
+              "ans1": "The ERC20 protocol is homogenous tokens and the ERC721 protocol is non-homogenous tokens.",
+              "ans2": "The ERC1155 protocol allows you to distinguish between homogeneous, non-homogeneous and semi-homogeneous tokens in the same protocol. The most common use of this protocol is in the case of a game, where homogeneous tokens are needed to exchange game points, but the treasures inside need to use non-homogeneous tokens.",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"How to mint and buy XII Persona?",
-              "ans1":"",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"Click to see XII Persona public mint instruction article",
-              "url":"https://www.potatomedia.co/post/481d08e3-25f0-4db0-bff1-571d4d1217af",
-              "urlText2":"Click to see XII Persona Whitelist mint explanation article",
-              "url2":"https://www.potatomedia.co/post/ab655182-a4fa-4108-add5-a92b83282d0c",
-              "urlText3":"How to transfer crypto assets to CHAEBOL wallet?",
-              "url3":"https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641",
-              "show":false
+              "question": "How to mint and buy XII Persona?",
+              "ans1": "",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "Click to see XII Persona public mint instruction article",
+              "url": "https://www.potatomedia.co/post/481d08e3-25f0-4db0-bff1-571d4d1217af",
+              "urlText2": "Click to see XII Persona Whitelist mint explanation article",
+              "url2": "https://www.potatomedia.co/post/ab655182-a4fa-4108-add5-a92b83282d0c",
+              "urlText3": "How to transfer crypto assets to CHAEBOL wallet?",
+              "url3": "https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641",
+              "show": false
             },
             {
-              "question":"How to contact us?",
-              "ans1":"If you have any business cooperation needs, please feel free to contact us.",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
+              "question": "How to contact us?",
+              "ans1": "If you have any business cooperation needs, please feel free to contact us.",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
               "eamilText": "Email：",
               "emailUrl": "etoile666777@gmail.com",
-              "show":false
+              "show": false
             }
           ]
         },
         "vn": {
-          "menuList":[
-            {"name":"Câu chuyện thương hiệu", "id": "story", "dropdown": false},
-            {"name":"Tiền truyện thần thoại","id": "mythology", "dropdown": false},
-            {"name":"Bài kiểm tra tâm lý","id": "psychometric", "dropdown": false},
-            {"name":"Type","id": "type", "dropdown": true},
-            {"name":"Trao quyền","id": "empowerment", "dropdown": true},
-            {"name":"Khái niệm sáng tạo","id": "creation", "dropdown": true},
-            {"name":"FAQ","id": "qa", "dropdown": true},
-            {"name":"MINT","id": "mint", "dropdown": false}
+          "menuList": [
+            { "name": "Câu chuyện thương hiệu", "id": "story", "dropdown": false },
+            { "name": "Tiền truyện thần thoại", "id": "mythology", "dropdown": false },
+            { "name": "Bài kiểm tra tâm lý", "id": "psychometric", "dropdown": false },
+            { "name": "Type", "id": "type", "dropdown": true },
+            { "name": "Trao quyền", "id": "empowerment", "dropdown": true },
+            { "name": "Khái niệm sáng tạo", "id": "creation", "dropdown": true },
+            { "name": "FAQ", "id": "qa", "dropdown": true },
+            { "name": "MINT", "id": "mint", "dropdown": false }
           ],
-          "slider":{
-            "intro1":"Viên kim cương sáng nhất ",
-            "intro2":"trong thế giới kỹ thuật số",
-            "heading":"Bạn có muốn tặng quà cho cô ấy / anh ấy không?",
-            "mint":"Cửa hàng mint kỹ thuật số "
+          "slider": {
+            "intro1": "Viên kim cương sáng nhất ",
+            "intro2": "trong thế giới kỹ thuật số",
+            "heading": "Bạn có muốn tặng quà cho cô ấy / anh ấy không?",
+            "mint": "Cửa hàng mint kỹ thuật số "
           },
-          "story":{
-            "heading":"Câu chuyện thương hiệu",
-            "content1":"Mặt trời xoay quanh trái đất theo một đường elip được gọi là “thiên cầu”. Cùng với sự chuyển động của mặt trời, nó được chia thành 12 đoạn bằng nhau, tương ứng với 12 cung hoàng đạo. Nó tiết lộ các đặc điểm, tính cách, điểm mạnh và điểm yếu của con người. Trong khi một số cá nhân có sức hấp dẫn lạ thường, thì những người khác lại may mắn có được khả năng giữ bình tĩnh hoặc không hoảng loạn khi mọi việc trở nên khó khăn...",
-            "content2":"Hãy chọn một món quà cho người thân yêu của bạn dựa trên 12 cung hoàng đạo và khiến món quà hoàn hảo này chỉ dành cho “cô ấy ”hoặc“anh ấy ”"
+          "story": {
+            "heading": "Câu chuyện thương hiệu",
+            "content1": "Mặt trời xoay quanh trái đất theo một đường elip được gọi là “thiên cầu”. Cùng với sự chuyển động của mặt trời, nó được chia thành 12 đoạn bằng nhau, tương ứng với 12 cung hoàng đạo. Nó tiết lộ các đặc điểm, tính cách, điểm mạnh và điểm yếu của con người. Trong khi một số cá nhân có sức hấp dẫn lạ thường, thì những người khác lại may mắn có được khả năng giữ bình tĩnh hoặc không hoảng loạn khi mọi việc trở nên khó khăn...",
+            "content2": "Hãy chọn một món quà cho người thân yêu của bạn dựa trên 12 cung hoàng đạo và khiến món quà hoàn hảo này chỉ dành cho “cô ấy ”hoặc“anh ấy ”"
           },
-          "mythology":{
-            "heading":"Tiền truyện thần thoại",
-            "content1":"Truyền thuyết kể rằng hàng trăm triệu năm trước, trong thiên hà đã xảy ra sự hỗn loạn chưa từng có, để tồn tại, các dạng sinh vật khác nhau đã tranh giành địa vị, phát động chiến tranh và bắt đầu tàn sát lẫn nhau. Để chấm dứt sự hỗn loạn này, thần Zeus đã chia vũ trụ thành mười hai ranh giới thiêng liêng khác nhau, cái mà ngày nay chúng ta gọi là mười hai chòm sao. Mỗi khu vực đều có vị thần hộ mệnh riêng và họ đã sử dụng các năng lực mạnh mẽ độc nhất của riêng mình để ngăn chặn chiến tranh, chấm dứt cuộc khủng hoảng có khả năng tàn phá này và khôi phục hòa bình cho vũ trụ.",
-            "content2":"Để không lặp lại sai lầm tương tự, Zeus đã yêu cầu các vị thần bảo trợ của các vương quốc tương ứng tinh luyện năng lượng của họ thành những viên ngọc phép thuật. Và kết quả là mười hai vị thần bảo trợ đã tạo ra những viên đá quý của riêng họ, chúng nằm rải rác ở các góc khác nhau của vũ trụ và được gọi là “The Stone Of Prayer’s Tear”.",
-            "content3":"Ngày nay, Coeur đã quyết định tái hiện câu chuyện kinh điển “The Stone Of Prayer’s Tear” thành một sản phẩm kỹ thuật số có tên “No Matter What, Happy Birthday”. Sinh nhật luôn là một trong những ngày hạnh phúc nhất đối với bất kỳ ai, là ngày mà bạn bè và gia đình quây quần bên nhau để chúc mừng và cầu mong những điều ước mới. Bên cạnh đó, ngày sinh nhật cũng sẽ khiến mọi người cảm thấy muốn bắt đầu lại một chương mới của cuộc sống và có thêm sức mạnh để tiến về phía trước!",
-            "button1":"Xem thêm",
-            "button2":"Rút gọn"
+          "news": {
+            "heading": "Sự kiện",
           },
-          "psychometric":{
-            "heading":"Bài kiểm tra tâm lý",
-            "content1":"Chọn Đá quý ",
-            "content2":"[XII Persona] của bạn",
-            "content3":"Tìm ra tính cách thực sự của bạn. Vui lòng sử dụng trực giác đầu tiên để chọn câu trả lời.",
-            "content4":"Sau khi trả lời tất cả các câu hỏi, bạn sẽ được tiết lộ viên ngọc định mệnh độc quyền của mình.",
-            "test":"Bắt đầu thử nghiệm",
-            "routeName":"psychometric",
-            "router":"psychometric",
-            "url":"psychometric.html"
-          },
-          "type":{
-            "heading":"Type",
-            "typeName1":"【 Gem 】",
-            "typeName2":"【 Shape 】",
-            "typeName3":"【 12 Constellations 】",
-            "button1":"Xem thêm",
-            "button2":"Rút gọn",
-            "mint":"MINT"
-          },
-          "gemList":[
-            {"image":"./img/xii_persona/gem/Diamond.png", "name":"Diamond", "isFirst":true},
-            {"image":"./img/xii_persona/gem/Ruby.png", "name":"Ruby", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Argyle.png", "name":"Argyle", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Sapphire.png", "name":"Sapphire", "isFirst":false},
-            {"image":"./img/xii_persona/gem/Emerald.png", "name":"Emerald", "isFirst":false}
-          ],
-          "shapeList1":[
-            {"image":"./img/xii_persona/shape/Round.png", "name":"Round", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Heart.png", "name":"Heart", "isFirst":true},
-            {"image":"./img/xii_persona/shape/Pear.png", "name":"Pear", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Baguette.png", "name":"Baguette", "isFirst":false},
-          ],
-          "shapeList2":[
-            {"image":"./img/xii_persona/shape/Oval.png", "name":"Oval", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Triangular.png", "name":"Triangular", "isFirst":false},
-            {"image":"./img/xii_persona/shape/Octagon.png", "name":"Octagon", "isFirst":false},
-          ],
-          "constellationsList":[
-            {"image":"./img/xii_persona/constellations/Libra.png", "name":"Libra", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Scorpio.png", "name":"Scorpio", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Aquarius.png", "name":"Aquarius", "isFirst":true},
-            {"image":"./img/xii_persona/constellations/Cancer.png", "name":"Cancer", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Aries.png", "name":"Aries", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Taurus.png", "name":"Taurus", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Gemini.png", "name":"Gemini", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Pisces.png", "name":"Pisces", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Sagittarius.png", "name":"Sagittarius", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Virgo.png", "name":"Virgo", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Leo.png", "name":"Leo", "isFirst":false},
-            {"image":"./img/xii_persona/constellations/Capricorn.png", "name":"Capricorn", "isFirst":false}
-          ],
-          "empowerment":{
-            "heading":"Trao quyền",
-            "mint":"MINT",
-            "text1":"Khám phá tương lai tươi sáng của bạn với các nhà chiêm tinh học nổi tiếng",
-            "text2":"Chức năng cho vay cầm cố",
-            "text3":"Tạo trung tâm mua sắm ảo của riêng bạn",
-            "text4":"Chung tay tạo ra những tay nghề thủ công tinh xảo",
-            "text5":"Khóa học hàng tháng về sự phát triển của phụ nữ",
-            "text6":"Card kỷ niệm độc quyền",
-            "text7":"Đốt đá quý để tạo NFT mới",
-            "text8":"Nhiều bộ sưu tập sẽ được tung ra trong tương lai"
-          },
-          "creation":{
-            "heading":"Khái niệm sáng tạo",
-            "content":"Trong lĩnh vực NFT ngày nay, hầu hết chúng đều bị thổi phồng về giá, điều này khiến những người không có kiến thức về NFT muốn tránh xa công nghệ mới này. Chính vì thế, XII Persona đã được tạo ra bởi Etoile Art để trở thành một kho lưu trữ kỹ thuật số “bảo tồn” và “có giá trị” vĩnh viễn! Ngoài việc có thể dùng để trao quyền ưu đãi trong thế giới thực, nó cũng có thể được sử dụng như một tài sản để cầm cố các khoản vay, tạo ra một viên kim cương vĩnh viễn có thể được so sánh với thế giới thực và sẽ mang lại cho mọi người một “cảm giác” về sự trường tồn. Trong tương lai, chúng tôi cũng sẽ quảng bá nghệ thuật, sáng tạo văn hóa và các mặt hàng thủ công của địa phương hơn nữa, để mọi người có thể xem thêm nhiều tác phẩm hay của địa phương."
-          },
-          "faq":{
-            "heading":"FAQ"
-          },
-          "faqList":[
+          "newsList": [
             {
-              "question":"Kế hoạch phát hành của XII Persona",
-              "ans1":"Có tổng cộng 840 NFT đá quý XII Persona và được phát hành bằng giao thức ERC-1155.",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "img": "./img/xii_persona/events/events.png",
+              "title": "Giá của XII Persona sẽ tăng vào ngày 1 tháng 2",
+              "content": 'Sau Tết Nguyên đán Châu Á, EtoileArt sẽ tăng giá NFT đá quý XII Persona phổ biến nhất của mình vào ngày 1 tháng 2 năm 2023 và trở thành một cửa hàng kỹ thuật số "bảo tồn giá trị" và "có giá trị" vĩnh viễn! Đối với những nhà sưu tập đã mua NFT, đây là một tin thú vị để kích thích thị trường và nó cũng làm tăng giá trị tương tác của những nhà sưu tập lâu dài.',
+              "button": "MINT",
+              "url": "https://www.chaebol.art/store/120000000000000001",
+            },
+          ],
+          "mythology": {
+            "heading": "Tiền truyện thần thoại",
+            "content1": "Truyền thuyết kể rằng hàng trăm triệu năm trước, trong thiên hà đã xảy ra sự hỗn loạn chưa từng có, để tồn tại, các dạng sinh vật khác nhau đã tranh giành địa vị, phát động chiến tranh và bắt đầu tàn sát lẫn nhau. Để chấm dứt sự hỗn loạn này, thần Zeus đã chia vũ trụ thành mười hai ranh giới thiêng liêng khác nhau, cái mà ngày nay chúng ta gọi là mười hai chòm sao. Mỗi khu vực đều có vị thần hộ mệnh riêng và họ đã sử dụng các năng lực mạnh mẽ độc nhất của riêng mình để ngăn chặn chiến tranh, chấm dứt cuộc khủng hoảng có khả năng tàn phá này và khôi phục hòa bình cho vũ trụ.",
+            "content2": "Để không lặp lại sai lầm tương tự, Zeus đã yêu cầu các vị thần bảo trợ của các vương quốc tương ứng tinh luyện năng lượng của họ thành những viên ngọc phép thuật. Và kết quả là mười hai vị thần bảo trợ đã tạo ra những viên đá quý của riêng họ, chúng nằm rải rác ở các góc khác nhau của vũ trụ và được gọi là “The Stone Of Prayer’s Tear”.",
+            "content3": "Ngày nay, Coeur đã quyết định tái hiện câu chuyện kinh điển “The Stone Of Prayer’s Tear” thành một sản phẩm kỹ thuật số có tên “No Matter What, Happy Birthday”. Sinh nhật luôn là một trong những ngày hạnh phúc nhất đối với bất kỳ ai, là ngày mà bạn bè và gia đình quây quần bên nhau để chúc mừng và cầu mong những điều ước mới. Bên cạnh đó, ngày sinh nhật cũng sẽ khiến mọi người cảm thấy muốn bắt đầu lại một chương mới của cuộc sống và có thêm sức mạnh để tiến về phía trước!",
+            "button1": "Xem thêm",
+            "button2": "Rút gọn"
+          },
+          "psychometric": {
+            "heading": "Bài kiểm tra tâm lý",
+            "content1": "Chọn Đá quý ",
+            "content2": "[XII Persona] của bạn",
+            "content3": "Tìm ra tính cách thực sự của bạn. Vui lòng sử dụng trực giác đầu tiên để chọn câu trả lời.",
+            "content4": "Sau khi trả lời tất cả các câu hỏi, bạn sẽ được tiết lộ viên ngọc định mệnh độc quyền của mình.",
+            "test": "Bắt đầu thử nghiệm",
+            "routeName": "psychometric",
+            "router": "psychometric",
+            "url": "psychometric.html"
+          },
+          "type": {
+            "heading": "Type",
+            "typeName1": "【 Gem 】",
+            "typeName2": "【 Shape 】",
+            "typeName3": "【 12 Constellations 】",
+            "button1": "Xem thêm",
+            "button2": "Rút gọn",
+            "mint": "MINT"
+          },
+          "gemList": [
+            { "image": "./img/xii_persona/gem/Diamond.png", "name": "Diamond", "isFirst": true },
+            { "image": "./img/xii_persona/gem/Ruby.png", "name": "Ruby", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Argyle.png", "name": "Argyle", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Sapphire.png", "name": "Sapphire", "isFirst": false },
+            { "image": "./img/xii_persona/gem/Emerald.png", "name": "Emerald", "isFirst": false }
+          ],
+          "shapeList1": [
+            { "image": "./img/xii_persona/shape/Round.png", "name": "Round", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Heart.png", "name": "Heart", "isFirst": true },
+            { "image": "./img/xii_persona/shape/Pear.png", "name": "Pear", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Baguette.png", "name": "Baguette", "isFirst": false },
+          ],
+          "shapeList2": [
+            { "image": "./img/xii_persona/shape/Oval.png", "name": "Oval", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Triangular.png", "name": "Triangular", "isFirst": false },
+            { "image": "./img/xii_persona/shape/Octagon.png", "name": "Octagon", "isFirst": false },
+          ],
+          "constellationsList": [
+            { "image": "./img/xii_persona/constellations/Libra.png", "name": "Libra", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Scorpio.png", "name": "Scorpio", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Aquarius.png", "name": "Aquarius", "isFirst": true },
+            { "image": "./img/xii_persona/constellations/Cancer.png", "name": "Cancer", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Aries.png", "name": "Aries", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Taurus.png", "name": "Taurus", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Gemini.png", "name": "Gemini", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Pisces.png", "name": "Pisces", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Sagittarius.png", "name": "Sagittarius", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Virgo.png", "name": "Virgo", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Leo.png", "name": "Leo", "isFirst": false },
+            { "image": "./img/xii_persona/constellations/Capricorn.png", "name": "Capricorn", "isFirst": false }
+          ],
+          "empowerment": {
+            "heading": "Trao quyền",
+            "mint": "MINT",
+            "text1": "Khám phá tương lai tươi sáng của bạn với các nhà chiêm tinh học nổi tiếng",
+            "text2": "Chức năng cho vay cầm cố",
+            "text3": "Tạo trung tâm mua sắm ảo của riêng bạn",
+            "text4": "Chung tay tạo ra những tay nghề thủ công tinh xảo",
+            "text5": "Khóa học hàng tháng về sự phát triển của phụ nữ",
+            "text6": "Card kỷ niệm độc quyền",
+            "text7": "Đốt đá quý để tạo NFT mới",
+            "text8": "Nhiều bộ sưu tập sẽ được tung ra trong tương lai"
+          },
+          "creation": {
+            "heading": "Khái niệm sáng tạo",
+            "content": "Trong lĩnh vực NFT ngày nay, hầu hết chúng đều bị thổi phồng về giá, điều này khiến những người không có kiến thức về NFT muốn tránh xa công nghệ mới này. Chính vì thế, XII Persona đã được tạo ra bởi Etoile Art để trở thành một kho lưu trữ kỹ thuật số “bảo tồn” và “có giá trị” vĩnh viễn! Ngoài việc có thể dùng để trao quyền ưu đãi trong thế giới thực, nó cũng có thể được sử dụng như một tài sản để cầm cố các khoản vay, tạo ra một viên kim cương vĩnh viễn có thể được so sánh với thế giới thực và sẽ mang lại cho mọi người một “cảm giác” về sự trường tồn. Trong tương lai, chúng tôi cũng sẽ quảng bá nghệ thuật, sáng tạo văn hóa và các mặt hàng thủ công của địa phương hơn nữa, để mọi người có thể xem thêm nhiều tác phẩm hay của địa phương."
+          },
+          "faq": {
+            "heading": "FAQ"
+          },
+          "faqList": [
+            {
+              "question": "Kế hoạch phát hành của XII Persona",
+              "ans1": "Có tổng cộng 840 NFT đá quý XII Persona và được phát hành bằng giao thức ERC-1155.",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"Giao thức ERC1155 là gì?",
-              "ans1":"Giao thức ERC20 là các token đồng nhất và giao thức ERC721 là các token không đồng nhất.",
-              "ans2":"Giao thức ERC1155 cho phép bạn phân biệt giữa các token đồng nhất, không đồng nhất và bán đồng nhất trong cùng một giao thức. Cách sử dụng phổ biến nhất của giao thức này là trong các trò chơi, trong đó các token đồng nhất là cần thiết để đổi điểm trò chơi, nhưng các kho báu bên trong cần sử dụng các token không đồng nhất.",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
-              "show":false
+              "question": "Giao thức ERC1155 là gì?",
+              "ans1": "Giao thức ERC20 là các token đồng nhất và giao thức ERC721 là các token không đồng nhất.",
+              "ans2": "Giao thức ERC1155 cho phép bạn phân biệt giữa các token đồng nhất, không đồng nhất và bán đồng nhất trong cùng một giao thức. Cách sử dụng phổ biến nhất của giao thức này là trong các trò chơi, trong đó các token đồng nhất là cần thiết để đổi điểm trò chơi, nhưng các kho báu bên trong cần sử dụng các token không đồng nhất.",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
+              "show": false
             },
             {
-              "question":"Làm thế nào để mint và mua XII Persona?",
-              "ans1":"",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"Nhấp để xem bài viết hướng dẫn cách mint công khai XII Persona",
-              "url":"https://www.potatomedia.co/post/b5f7fb28-168d-4835-a8b1-f9499a33d1ca",
-              "urlText2":"Nhấp để xem bài viết hướng dẫn cách mint riêng tư (whitelist) XII Persona",
-              "url2":"https://www.potatomedia.co/post/48d652a2-d2cd-46cc-9d51-f900550ea590",
-              "urlText3":"Làm cách nào để chuyển tài sản tiền điện tử sang ví CHAEBOL?",
-              "url3":"https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641",
-              "show":false
+              "question": "Làm thế nào để mint và mua XII Persona?",
+              "ans1": "",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "Nhấp để xem bài viết hướng dẫn cách mint công khai XII Persona",
+              "url": "https://www.potatomedia.co/post/b5f7fb28-168d-4835-a8b1-f9499a33d1ca",
+              "urlText2": "Nhấp để xem bài viết hướng dẫn cách mint riêng tư (whitelist) XII Persona",
+              "url2": "https://www.potatomedia.co/post/48d652a2-d2cd-46cc-9d51-f900550ea590",
+              "urlText3": "Làm cách nào để chuyển tài sản tiền điện tử sang ví CHAEBOL?",
+              "url3": "https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641",
+              "show": false
             },
             {
-              "question":"Thông tin liên hệ ?",
-              "ans1":"Hợp tác vui lòng liên hệ",
-              "ans2":"",
-              "ans3":"",
-              "urlText":"",
-              "url":"",
+              "question": "Thông tin liên hệ ?",
+              "ans1": "Hợp tác vui lòng liên hệ",
+              "ans2": "",
+              "ans3": "",
+              "urlText": "",
+              "url": "",
               "eamilText": "Email：",
               "emailUrl": "etoile666777@gmail.com",
-              "show":false
+              "show": false
             }
           ]
         }
       }
       const i18n = new VueI18n({
         //定義默認語言
-        locale: 'tw', 
-        messages:messages,
+        locale: 'tw',
+        messages: messages,
         silentTranslationWarn: true
       })
 
       const routes = [
-        { 
+        {
           path: '/',
-          children:[
+          children: [
             {
-              path:'',
+              path: '',
               name: 'index',
               // redirect: '/xii_persona' ,
             },
-            { 
+            {
               path: '/:lang',
               name: 'lang',
             },
@@ -1136,7 +1396,7 @@
         },
 
       ]
-      
+
       Vue.use(VueRouter);
       const router = new VueRouter({
         // mode: 'history',
@@ -1144,276 +1404,276 @@
       });
 
       let vue = new Vue({
-          el: "#app",
-          i18n:i18n,
-          router:router,
-          delimiters: ['<%', '%>'],
-          data: {
-            lanName:"繁體中文",
-            checkIndex:"",
-            menuView:false,
-            locale: "tw",
-            cssLocal:"",
-            menuImg:"./img/xii_persona/icon/Menu.png",
-            menuTrigger:false,
-            mintUrl:"https://www.chaebol.art/store/120000000000000001",
-            menuName:"",
-            logoStyle:{
-              display: ''
-            },
-            qaCheck:false,
-            checkQAIndex0:"0",
-            checkQAIndex1:"1",
-            checkQAIndex2:"2",
-            checkQAIndex:"0",
-            qaStyle:{
-              boxShadow:'',
-              transition:'',
-              active:'',
-            },
-            fullWidth:"",
-            url:"",
-            // Language
-            lanList:[
-              {name:"繁體中文", href:"#", routeName:"index", router:""},
-              {name:"简体中文", href:"#", routeName:"lang",router:"CN"},
-              {name:"English", href:"#", routeName:"lang",router:"EN"},
-              {name:"Tiếng Việt", href:"#", routeName:"lang",router:"VN"},
-            ]
-            
+        el: "#app",
+        i18n: i18n,
+        router: router,
+        delimiters: ['<%', '%>'],
+        data: {
+          lanName: "繁體中文",
+          checkIndex: "",
+          menuView: false,
+          locale: "tw",
+          cssLocal: "",
+          menuImg: "./img/xii_persona/icon/Menu.png",
+          menuTrigger: false,
+          mintUrl: "https://www.chaebol.art/store/120000000000000001",
+          menuName: "",
+          logoStyle: {
+            display: ''
           },
-          mounted: function () {
-            // this.loadJson(this.locale);
-            $('#text-toggle').hide();
-            const vm = this;
+          qaCheck: false,
+          checkQAIndex0: "0",
+          checkQAIndex1: "1",
+          checkQAIndex2: "2",
+          checkQAIndex: "0",
+          qaStyle: {
+            boxShadow: '',
+            transition: '',
+            active: '',
+          },
+          fullWidth: "",
+          url: "",
+          // Language
+          lanList: [
+            { name: "繁體中文", href: "#", routeName: "index", router: "" },
+            { name: "简体中文", href: "#", routeName: "lang", router: "CN" },
+            { name: "English", href: "#", routeName: "lang", router: "EN" },
+            { name: "Tiếng Việt", href: "#", routeName: "lang", router: "VN" },
+          ]
+
+        },
+        mounted: function () {
+          // this.loadJson(this.locale);
+          $('#text-toggle').hide();
+          const vm = this;
+          vm.fullWidth = window.innerWidth;
+          vm.fullHeight = window.innerHeight;
+          window.onresize = () => {
             vm.fullWidth = window.innerWidth;
             vm.fullHeight = window.innerHeight;
-            window.onresize = () => {
-              vm.fullWidth = window.innerWidth;
-              vm.fullHeight = window.innerHeight;
-            };
-          },
-          created: function () {
-            this.$i18n.locale = this.locale;
-            window.addEventListener("scroll", this.handleScroll);
-          },
-          watch: {
-            '$route.path': {
-              handler: function(path) {
-                if(path=='/'){
-                  this.locale = 'tw'
-                  this.lanName = '繁體中文'
-                  this.cssLocal = ''
-                  this.url = this.replaceUrl(window.location.href, "/");
-                }else if(path=='/CN'){
-                  this.locale = 'cn'
-                  this.lanName = '简体中文'
-                   this.cssLocal = ''
-                   this.url = this.replaceUrl(window.location.href, "/CN");
-                }else if (path=='/EN'){
-                  this.locale = 'en'
-                  this.cssLocal = 'en_'
-                  this.menuName = 'Psychometric test'
-                  this.lanName = 'English'
-                  this.url = this.replaceUrl(window.location.href, "/EN");
-                }else if (path=='/VN'){
-                  this.locale = 'vn'
-                  this.lanName = 'Tiếng Việt'
-                  this.menuName = 'Khái niệm sáng tạo'
-                  this.cssLocal = 'vn_'
-                  this.url = this.replaceUrl(window.location.href, "/VN");
-                }
-                this.$i18n.locale = this.locale
-                // this.loadJson(this.locale);
-              },
-              deep: true,
-              immediate: true
+          };
+        },
+        created: function () {
+          this.$i18n.locale = this.locale;
+          window.addEventListener("scroll", this.handleScroll);
+        },
+        watch: {
+          '$route.path': {
+            handler: function (path) {
+              if (path == '/') {
+                this.locale = 'tw'
+                this.lanName = '繁體中文'
+                this.cssLocal = ''
+                this.url = this.replaceUrl(window.location.href, "/");
+              } else if (path == '/CN') {
+                this.locale = 'cn'
+                this.lanName = '简体中文'
+                this.cssLocal = ''
+                this.url = this.replaceUrl(window.location.href, "/CN");
+              } else if (path == '/EN') {
+                this.locale = 'en'
+                this.cssLocal = 'en_'
+                this.menuName = 'Psychometric test'
+                this.lanName = 'English'
+                this.url = this.replaceUrl(window.location.href, "/EN");
+              } else if (path == '/VN') {
+                this.locale = 'vn'
+                this.lanName = 'Tiếng Việt'
+                this.menuName = 'Khái niệm sáng tạo'
+                this.cssLocal = 'vn_'
+                this.url = this.replaceUrl(window.location.href, "/VN");
+              }
+              this.$i18n.locale = this.locale
+              // this.loadJson(this.locale);
+            },
+            deep: true,
+            immediate: true
+          }
+        },
+        computed: {
+          checkBadge: function (badge) {
+            if (badge === 'Coming Soon') {
+              return "badge-soon";
+            } else {
+              return "badge-beige";
             }
           },
-          computed: {
-              checkBadge: function (badge) {
-                  if(badge === 'Coming Soon') {
-                      return "badge-soon";
-                  } else {
-                      return "badge-beige";
-                  }
-              },
-              
+
+        },
+        methods: {
+          checkBadge: function (isValue) {
+            if (isValue) {
+              return "badge-beige";
+            } else {
+              return "badge-soon";
+            }
           },
-          methods: {
-              checkBadge: function (isValue) {
-                  if(isValue) {
-                      return "badge-beige";
-                  } else {
-                      return "badge-soon";
-                  }
-              },
-              languageChange: function (lanName, index) {
-                this.checkIndex = index;
-                this.lanName = lanName
-                if(lanName == '繁體中文'){
-                  this.locale = 'tw'
-                  this.cssLocal = ''
-                }else if (lanName == '简体中文'){
-                  this.locale = 'cn'
-                  this.cssLocal = ''
-                }else if (lanName == 'English'){
-                  this.locale = 'en'
-                  this.cssLocal = 'en_'
-                }else if (lanName == 'Tiếng Việt'){
-                  this.locale = 'vn'
-                  this.cssLocal = 'vn_'
+          languageChange: function (lanName, index) {
+            this.checkIndex = index;
+            this.lanName = lanName
+            if (lanName == '繁體中文') {
+              this.locale = 'tw'
+              this.cssLocal = ''
+            } else if (lanName == '简体中文') {
+              this.locale = 'cn'
+              this.cssLocal = ''
+            } else if (lanName == 'English') {
+              this.locale = 'en'
+              this.cssLocal = 'en_'
+            } else if (lanName == 'Tiếng Việt') {
+              this.locale = 'vn'
+              this.cssLocal = 'vn_'
 
-                }
-                this.$i18n.locale = this.locale;
-                localStorage.setItem("locale", this.locale);
-                // this.loadJson(this.locale);
-        
-              },
-              changeIcon: function() {
-                this.menuView = !this.menuView;
-                
-                if (this.menuTrigger) {
-                  this.menuTrigger = false
-                  this.menuImg = "./img/xii_persona/icon/Menu.png"
-                  this.logoStyle.display = ''
-                }else{
-                  this.menuTrigger = true
-                  this.menuImg = "./img/xii_persona/icon/Close.png"
-                  this.logoStyle.display = 'none'
-                }
-                
-                
-              },
-              qaStyleClick: function(index){
-                if(index == '0'){
-                  this.checkQAIndex0
-                }
-                if(this.qaCheck){
-                  this.qaStyle.boxShadow = ''
-                  this.qaStyle.transition = ''
-                  this.qaStyle.active = ''
-                  this.qaCheck = false
-                }else{
-                  this.qaStyle.active = 'card-active'
-                  // this.qaStyle.boxShadow = 'box-shadow: 0px 37px 5px 18px #7c645a;'
-                  // this.qaStyle.transition = 'transition: all 1s ease 0.1s;'
-                  this.qaCheck = true
-                }
-                
-              },
-              loadJson: function(locale){
-                let self = this;
-                let url = '../data/data.json'
-                axios.get(url).then(function (response) {
-                   if(response.data) {
-                      messages.tw = response.data.tw;
-                      messages.cn = response.data.cn;
-                      messages.en = response.data.en;
-                      messages.vn = response.data.vn;
-                   } else {
+            }
+            this.$i18n.locale = this.locale;
+            localStorage.setItem("locale", this.locale);
+            // this.loadJson(this.locale);
 
-                   }
-               });
-              },
-              iconHover: function(iconType, iconName){
-                let newName = iconName + '-hover'
-                iconType.src = iconType.src.replace(iconName, newName);
-              },
-              iconLeave: function(iconType, iconName){
-                let name = iconName + '-hover'
-                iconType.src = iconType.src.replace(name, iconName);
-              },
-              handleScroll: function(){
-                var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-                // console.log(scrollTop)
-                if(scrollTop >= 2100){
-                  $('#angel-animation').addClass('angel-animation')
-                }else{
-                  $('#angel-animation').removeClass('angel-animation')
-                }
-              },
-              checkIn: function(type) {
-                if (type == "mythology"){
-                  $("#mythology-display").removeClass("mythology-hide")
-                  $("#mythology-display").addClass("mythology-show")
-                  // $(".mythology-hide").show()
-                  $("#check-out").show()
-                  $("#check-in").hide()
-                }
-                if (type == "gem"){
-                  // $(".type-gem-display").show()
-                  for (index = 1; index < 5; index++) {
-                    // 執行4次：從step為1到4
-                    $("#gem"+index).removeClass("type-hide")
-                    $("#gem"+index).addClass("type-show")
-                  }
-                  $("#gem-check-out").show()
-                  $("#gem-check-in").hide()
-                }
-                if (type == "shape"){
-                  // $(".type-shape-display").show()
-                  for (index = 0; index < 4; index++) {
-                    // 執行4次：從step為0到4
-                    $("#shape"+index).removeClass("type-hide")
-                    $("#shape"+index).addClass("type-show")
-                    $("#shape2"+index).removeClass("type-hide")
-                    $("#shape2"+index).addClass("type-show")
-                  }
-                  $("#shape-check-out").show()
-                  $("#shape-check-in").hide()
-                }
-                if (type == "constellations"){
-                  // $(".type-constellations-display").show()
-                  for (index = 3; index < 13; index++) {
-                    // 執行4次：從step為1到4
-                    $("#constellations"+index).removeClass("type-hide")
-                    $("#constellations"+index).addClass("type-show")
+          },
+          changeIcon: function () {
+            this.menuView = !this.menuView;
 
-                  }
-                  $("#cts-check-out").show()
-                  $("#cts-check-in").hide()
-                }
-                
-              },
-              checkOut: function(type) {
-                if (type == "mythology"){
-                  // $("#mythology-display").removeClass("mythology-show")
-                  // $("#mythology-display").addClass("mythology-hide")
-                  // $(".mythology-display").hide()
-                  $("#check-out").hide()
-                  $("#check-in").show()
-                }
-                if (type == "gem"){
-                  // $(".type-gem-display").hide()
-                  // $(".type-gem-display").attr("style", "display: none;")
-                  $("#gem-check-out").hide()
-                  $("#gem-check-in").show()
-                }
-                if (type == "shape"){
-                  // $(".type-shape-display").hide()
-                  $("#shape-check-out").hide()
-                  $("#shape-check-in").show()
-                }
-                if (type == "constellations"){
-                  // $(".type-constellations-display").hide()
-                  $("#cts-check-out").hide()
-                  $("#cts-check-in").show()
-                }
-              },
-              replaceUrl: function(url, lan) {
-                url = url.replace("xii_persona.html#", "xii_persona_test.html#")
-                return url
+            if (this.menuTrigger) {
+              this.menuTrigger = false
+              this.menuImg = "./img/xii_persona/icon/Menu.png"
+              this.logoStyle.display = ''
+            } else {
+              this.menuTrigger = true
+              this.menuImg = "./img/xii_persona/icon/Close.png"
+              this.logoStyle.display = 'none'
+            }
+
+
+          },
+          qaStyleClick: function (index) {
+            if (index == '0') {
+              this.checkQAIndex0
+            }
+            if (this.qaCheck) {
+              this.qaStyle.boxShadow = ''
+              this.qaStyle.transition = ''
+              this.qaStyle.active = ''
+              this.qaCheck = false
+            } else {
+              this.qaStyle.active = 'card-active'
+              // this.qaStyle.boxShadow = 'box-shadow: 0px 37px 5px 18px #7c645a;'
+              // this.qaStyle.transition = 'transition: all 1s ease 0.1s;'
+              this.qaCheck = true
+            }
+
+          },
+          loadJson: function (locale) {
+            let self = this;
+            let url = '../data/data.json'
+            axios.get(url).then(function (response) {
+              if (response.data) {
+                messages.tw = response.data.tw;
+                messages.cn = response.data.cn;
+                messages.en = response.data.en;
+                messages.vn = response.data.vn;
+              } else {
+
               }
-              
+            });
           },
-          components: {
-              
+          iconHover: function (iconType, iconName) {
+            let newName = iconName + '-hover'
+            iconType.src = iconType.src.replace(iconName, newName);
+          },
+          iconLeave: function (iconType, iconName) {
+            let name = iconName + '-hover'
+            iconType.src = iconType.src.replace(name, iconName);
+          },
+          handleScroll: function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            // console.log(scrollTop)
+            if (scrollTop >= 2100) {
+              $('#angel-animation').addClass('angel-animation')
+            } else {
+              $('#angel-animation').removeClass('angel-animation')
+            }
+          },
+          checkIn: function (type) {
+            if (type == "mythology") {
+              $("#mythology-display").removeClass("mythology-hide")
+              $("#mythology-display").addClass("mythology-show")
+              // $(".mythology-hide").show()
+              $("#check-out").show()
+              $("#check-in").hide()
+            }
+            if (type == "gem") {
+              // $(".type-gem-display").show()
+              for (index = 1; index < 5; index++) {
+                // 執行4次：從step為1到4
+                $("#gem" + index).removeClass("type-hide")
+                $("#gem" + index).addClass("type-show")
+              }
+              $("#gem-check-out").show()
+              $("#gem-check-in").hide()
+            }
+            if (type == "shape") {
+              // $(".type-shape-display").show()
+              for (index = 0; index < 4; index++) {
+                // 執行4次：從step為0到4
+                $("#shape" + index).removeClass("type-hide")
+                $("#shape" + index).addClass("type-show")
+                $("#shape2" + index).removeClass("type-hide")
+                $("#shape2" + index).addClass("type-show")
+              }
+              $("#shape-check-out").show()
+              $("#shape-check-in").hide()
+            }
+            if (type == "constellations") {
+              // $(".type-constellations-display").show()
+              for (index = 3; index < 13; index++) {
+                // 執行4次：從step為1到4
+                $("#constellations" + index).removeClass("type-hide")
+                $("#constellations" + index).addClass("type-show")
+
+              }
+              $("#cts-check-out").show()
+              $("#cts-check-in").hide()
+            }
+
+          },
+          checkOut: function (type) {
+            if (type == "mythology") {
+              // $("#mythology-display").removeClass("mythology-show")
+              // $("#mythology-display").addClass("mythology-hide")
+              // $(".mythology-display").hide()
+              $("#check-out").hide()
+              $("#check-in").show()
+            }
+            if (type == "gem") {
+              // $(".type-gem-display").hide()
+              // $(".type-gem-display").attr("style", "display: none;")
+              $("#gem-check-out").hide()
+              $("#gem-check-in").show()
+            }
+            if (type == "shape") {
+              // $(".type-shape-display").hide()
+              $("#shape-check-out").hide()
+              $("#shape-check-in").show()
+            }
+            if (type == "constellations") {
+              // $(".type-constellations-display").hide()
+              $("#cts-check-out").hide()
+              $("#cts-check-in").show()
+            }
+          },
+          replaceUrl: function (url, lan) {
+            url = url.replace("xii_persona.html#", "xii_persona_test.html#")
+            return url
           }
+
+        },
+        components: {
+
+        }
       });
-  });<!-- End-Document_Ready -->
+    });<!-- End-Document_Ready -->
   </script>
-  
+
 </body>
 
 </html>
