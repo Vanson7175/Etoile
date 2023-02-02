@@ -2413,12 +2413,12 @@ header .page-header {
     }
 }
 
-#twitter {
+#twitter-page {
     background: url("../img/xii_persona/bg/twitter_bg.png") no-repeat center;
     background-size: cover;
 }
 
-#twitter .container-fluid {
+#twitter-page .container-fluid {
     max-width: 1440px;
 }
 
