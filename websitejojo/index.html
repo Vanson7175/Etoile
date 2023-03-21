@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 
@@ -9,12 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="">
   <meta name="keywords" content="Majin Jojo,NFT,Majin Jojo NFT">
-  <meta name="description" content="動盪不安的年代 ， 再度吞噬『錢』的快感，Majin Jojo已經蠢蠢欲動了…。他們長的奇形怪狀、樣子齜牙裂嘴，但是優點就是超級有『錢』，世人們稱他們為Majin Jojo。">
+  <meta name="description"
+    content="動盪不安的年代 ， 再度吞噬『錢』的快感，Majin Jojo已經蠢蠢欲動了…。他們長的奇形怪狀、樣子齜牙裂嘴，但是優點就是超級有『錢』，世人們稱他們為Majin Jojo。">
 
   <!-- Facebook Opengraph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Majin Jojo  NFT" />
-  <meta property="og:description" content="動盪不安的年代 ， 再度吞噬『錢』的快感，Majin Jojo已經蠢蠢欲動了…。他們長的奇形怪狀、樣子齜牙裂嘴，但是優點就是超級有『錢』，世人們稱他們為Majin Jojo。"/>
+  <meta property="og:description"
+    content="動盪不安的年代 ， 再度吞噬『錢』的快感，Majin Jojo已經蠢蠢欲動了…。他們長的奇形怪狀、樣子齜牙裂嘴，但是優點就是超級有『錢』，世人們稱他們為Majin Jojo。" />
   <meta property="og:image" content="./img/icon/MZJJ.jpg" />
   <meta property="og:image:alt" content="Majin Jojo " />
   <meta property="og:image:type" content="image/png" />
@@ -30,7 +30,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Swiper -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
   <!-- Custom styles for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -45,200 +45,265 @@
 
   <link href="css/mjo.min.css" rel="stylesheet">
 
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TBJM53W');</script>
+  <!-- End Google Tag Manager -->
+
+
 </head>
 
 <body id="page-top">
-   <main id="app" :class="cssLocal" v-cloak>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-lg-5 " id="mainNav" :class="{'change':menuView}">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand js-scroll-trigger" id="BackTop" href="#" v-scroll-to="'#page-top'">
-        <img src="./img/icon/majin_jojo.png" alt="logo" :style="[logoStyle]">
-      </a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation" @click='changeIcon'> 
-        <i class="fas fa-bars" style="color:white;" ></i>
-        <!-- <img :src="menuImg" alt=""> -->
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto">
-            <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='MINT'}" :href="mintUrl" target="_blank"><% $t(menu.name) %></a>
-            <a v-else-if="menu.name=='SHOP'" id="menuShop" class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='SHOP'}" :href="shopUrl" target="_blank" style="margin: 0.75em 0;"><% $t(menu.name) %></a>
-            <a v-else class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='MINT'}" :href="menu.id" v-scroll-to="'#' + cssLocal + menu.id"><% $t(menu.name) %></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="MenuLink"
-             ><% lanName %></a>
-            <div class="dropdown-menu" aria-labelledby="MenuLink">
-              <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList" class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)"><% lan.name %></router-link>
-            </div>
-          </li>
-        </ul>
-        <div class="col-md-12 text-center mt-2 mb-5 menuIcon">
-          <a href="https://discord.gg/tjQnQwsAq7" target="_blank"><img class="media-icon ml-1 mr-1" id="discordPhone" src="./img/icon/discord.png" alt="discord" @mouseover="iconHover(discordPhone, 'discord')" @mouseleave="iconLeave(discordPhone, 'discord')" ></a>
-          <a href="https://twitter.com/majinjojo2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitterPhone" src="./img/icon/twitter.png" alt="twitter" @mouseover="iconHover(twitterPhone, 'twitter')" @mouseleave="iconLeave(twitterPhone, 'twitter')"></a>
-          <a href="https://www.instagram.com/majin_jojo2022/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramPhone" src="./img/icon/instagram.png" alt="instagram" @mouseover="iconHover(instagramPhone, 'instagram')" @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
-          <a href="https://www.facebook.com/Majin-JoJo-111593898266363" target="_blank"><img class="media-icon ml-1 mr-1" id="facebookPhone" src="./img/icon/facebook.png" alt="facebook" @mouseover="iconHover(facebookPhone, 'facebook')" @mouseleave="iconLeave(facebookPhone, 'facebook')"></a>
-          <a href="https://www.potatomedia.co/user/5ef708e8-90aa-4fc9-985e-dd9744d3abd6/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potatoPhone" src="./img/icon/potato.png" alt="potato" @mouseover="iconHover(potatoPhone, 'potato')" @mouseleave="iconLeave(potatoPhone, 'potato')"></a>
-      </div>
-    </div>
-  </nav>
- 
-  <header :id="cssLocal + 'slider'" class=" page-header">
-    <div class="slider-animation"></div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="text-center">
-            <div class="intro-text text-center">
-              <p class="mt-2">
-                <span class="intro"><% $t('slider.intro1') %></span>
-                <span class="intro"><% $t('slider.intro2') %></span>
-                <span class="intro"><% $t('slider.intro3') %></span>
-              </p>
-              <p class="intro-heading mt-5"><% $t('slider.heading') %></p>
-              <a class="btn btn-mint js-scroll-trigger mx-auto mt-5" :href="mintUrl" target="_blank" style="width: 150px; font-size: 1.5rem;">MINT</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJM53W" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-  <!-- Story -->
-  <section class="page-section " :id="cssLocal + 'story'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <img src="./img/cross.png" alt="" class="mx-3">
-            <h2 class="section-heading text-uppercase" :data-text="$t('story.heading')"><% $t('story.heading') %></h2>
-            <img src="./img/cross.png" alt="" class="mx-3">
+  <main id="app" :class="cssLocal" v-cloak>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-lg-5 " id="mainNav" :class="{'change':menuView}">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand js-scroll-trigger" id="BackTop" href="#" v-scroll-to="'#page-top'">
+          <img src="./img/icon/majin_jojo.png" alt="logo" :style="[logoStyle]">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+          aria-label="Toggle navigation" @click='changeIcon'>
+          <i class="fas fa-bars" style="color:white;"></i>
+          <!-- <img :src="menuImg" alt=""> -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li v-for="(menu, index) in $t('menuList')" class="nav-item mx-auto">
+              <a v-if="menu.name=='MINT'" class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='MINT'}"
+                :href="mintUrl" target="_blank">
+                <% $t(menu.name) %>
+              </a>
+              <a v-else-if="menu.name=='SHOP'" id="menuShop" class="nav-link js-scroll-trigger"
+                :class="{'btn': menu.name=='SHOP'}" :href="shopUrl" target="_blank" style="margin: 0.75em 0;">
+                <% $t(menu.name) %>
+              </a>
+              <a v-else class="nav-link js-scroll-trigger" :class="{'btn': menu.name=='MINT'}" :href="menu.id"
+                v-scroll-to="'#' + cssLocal + menu.id">
+                <% $t(menu.name) %>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false" id="MenuLink">
+                <% lanName %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="MenuLink">
+                <router-link :to="{ name:lan.routeName, params:{ lang:lan.router} }" v-for="(lan, index) in lanList"
+                  class="dropdown-item" :href="lan.href" @click="languageChange(lan.name, index)">
+                  <% lan.name %>
+                </router-link>
+              </div>
+            </li>
+          </ul>
+          <div class="col-md-12 text-center mt-2 mb-5 menuIcon">
+            <a href="https://discord.gg/tjQnQwsAq7" target="_blank"><img class="media-icon ml-1 mr-1" id="discordPhone"
+                src="./img/icon/discord.png" alt="discord" @mouseover="iconHover(discordPhone, 'discord')"
+                @mouseleave="iconLeave(discordPhone, 'discord')"></a>
+            <a href="https://twitter.com/majinjojo2022" target="_blank"><img class="media-icon ml-1 mr-1"
+                id="twitterPhone" src="./img/icon/twitter.png" alt="twitter"
+                @mouseover="iconHover(twitterPhone, 'twitter')" @mouseleave="iconLeave(twitterPhone, 'twitter')"></a>
+            <a href="https://www.instagram.com/majin_jojo2022/" target="_blank"><img class="media-icon ml-1 mr-1"
+                id="instagramPhone" src="./img/icon/instagram.png" alt="instagram"
+                @mouseover="iconHover(instagramPhone, 'instagram')"
+                @mouseleave="iconLeave(instagramPhone, 'instagram')"></a>
+            <a href="https://www.facebook.com/Majin-JoJo-111593898266363" target="_blank"><img
+                class="media-icon ml-1 mr-1" id="facebookPhone" src="./img/icon/facebook.png" alt="facebook"
+                @mouseover="iconHover(facebookPhone, 'facebook')"
+                @mouseleave="iconLeave(facebookPhone, 'facebook')"></a>
+            <a href="https://www.potatomedia.co/user/5ef708e8-90aa-4fc9-985e-dd9744d3abd6/posts" target="_blank"><img
+                class="media-icon ml-1 mr-1" id="potatoPhone" src="./img/icon/potato.png" alt="potato"
+                @mouseover="iconHover(potatoPhone, 'potato')" @mouseleave="iconLeave(potatoPhone, 'potato')"></a>
           </div>
         </div>
-        <div class="col-lg-5 col-md-12">
-          <img src="./img/story/story.png" class="story-img">
-        </div>
-        <div class="col-lg-7 col-md-12">
-          <p class="text-justify section-text " data-aos="zoom-in-right">
-            <% $t('story.content1') %><span><% $t('story.content2') %></span><% $t('story.content3') %>
-          </p>
-          <p class="text-justify section-text" data-aos="zoom-in-right">
-            <% $t('story.content4') %>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- LEVEL -->
-  <section class="page-section bg-beige" :id="cssLocal + 'level'">
-    <div class="container-fluid mt-5  mb-5">
-      <div class="row ">
-        <div class="col-12">
-          <div class="section-title">
-            <img src="./img/level/level_title.png">
-          </div>
-        </div>
-        <!-- Swiper -->
-        <div class="swiper media-swiper">
-          <div class="swiper-wrapper">
-            <div v-for="levelItem in $t('levelList')" class="swiper-slide">
-              <div class="row justify-content-md-center">
-                <div class="col-md-auto">
-                  <img :src="levelItem.image" alt="">
-                </div>
-                <div class="col-md-auto ">
-                  <img :src="levelItem.image2" alt="">
-                </div>
+    <header :id="cssLocal + 'slider'" class=" page-header">
+      <div class="slider-animation"></div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="text-center">
+              <div class="intro-text text-center">
+                <p class="mt-2">
+                  <span class="intro">
+                    <% $t('slider.intro1') %>
+                  </span>
+                  <span class="intro">
+                    <% $t('slider.intro2') %>
+                  </span>
+                  <span class="intro">
+                    <% $t('slider.intro3') %>
+                  </span>
+                </p>
+                <p class="intro-heading mt-5">
+                  <% $t('slider.heading') %>
+                </p>
+                <a class="btn btn-mint js-scroll-trigger mx-auto mt-5" :href="mintUrl" target="_blank"
+                  style="width: 150px; font-size: 1.5rem;">MINT</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Gallery -->
-  <section class="page-section bg-beige " id="gallery">
-    <div class="container-fluid mt-5  mb-5">
-      <div class="row">
-        <div class="marquee-container">
-          <div class="marquee mb-5 " style="--play: running;
-      --direction: normal;
-      --duration: 98.4s;
-      --delay: 0s;
-      --iteration-count: infinite;" >
-            <div class="mx-2" v-for="gallery1 in galleryList1" :key="gallery1">
-              <span>
-                <img :src="gallery1.image" alt="" class="img-br">
-              </span>
+    <!-- Story -->
+    <section class="page-section " :id="cssLocal + 'story'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <img src="./img/cross.png" alt="" class="mx-3">
+              <h2 class="section-heading text-uppercase" :data-text="$t('story.heading')">
+                <% $t('story.heading') %>
+              </h2>
+              <img src="./img/cross.png" alt="" class="mx-3">
             </div>
           </div>
-          <div class="marquee mb-5 " style="--play: running;
-      --direction: normal;
-      --duration: 98.4s;
-      --delay: 0s;
-      --iteration-count: infinite;" >
-            <div class="mx-2" v-for="gallery1 in galleryList1" :key="gallery1">
-              <span>
-                <img :src="gallery1.image" alt="" class="img-br">
-              </span>
-            </div>
+          <div class="col-lg-5 col-md-12">
+            <img src="./img/story/story.png" class="story-img">
           </div>
-        </div>
-        <div class="marquee-container">
-          <div class="marquee"style="--play: running;
-      --direction: reverse;
-      --duration: 98.4s;
-      --delay: 0s;
-      --iteration-count: infinite;" >
-            <div class="mx-2" v-for="gallery2 in galleryList2" :key="gallery2">
-              <span>
-                <img :src="gallery2.image" alt="" class="img-br">
-              </span>
-            </div>
-          </div>
-          <div class="marquee"style="--play: running;
-      --direction: reverse;
-      --duration: 98.4s;
-      --delay: 0s;
-      --iteration-count: infinite;" >
-            <div class="mx-2" v-for="gallery2 in galleryList2" :key="gallery2">
-              <span>
-                <img :src="gallery2.image" alt="" class="img-br">
-              </span>
-            </div>
+          <div class="col-lg-7 col-md-12">
+            <p class="text-justify section-text " data-aos="zoom-in-right">
+              <% $t('story.content1') %><span>
+                  <% $t('story.content2') %>
+                </span>
+                <% $t('story.content3') %>
+            </p>
+            <p class="text-justify section-text" data-aos="zoom-in-right">
+              <% $t('story.content4') %>
+            </p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="absolute z-10 top-0 h-full w-full mt-0" style="background: linear-gradient(to left, #0b1438, transparent 15%, transparent 85%, #0b1438);"></div>
-  </section>
+    </section>
 
-  <!-- Roadmap -->
-  <section class="page-section " :id="cssLocal + 'roadmap'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-end">
-        <div class="col-12">
-          <div class="section-title">
-            <img src="./img/cross.png" alt="" class="mx-3">
-            <h2 class="section-heading text-uppercase" :data-text="$t('roadmap.heading')"><% $t('roadmap.heading') %></h2>
-            <img src="./img/cross.png" alt="" class="mx-3">
+    <!-- LEVEL -->
+    <section class="page-section bg-beige" :id="cssLocal + 'level'">
+      <div class="container-fluid mt-5  mb-5">
+        <div class="row ">
+          <div class="col-12">
+            <div class="section-title">
+              <img src="./img/level/level_title.png">
+            </div>
           </div>
-          <div class="row mt-5">
-            <div class="timeline">
-              <div class="outer">
-                <div class="roadmap-card" v-for="roadmapItem in $t('roadmapList')">
-                  <div class="roadmap-info">
-                    <div class="roadmap-img">
-                      <img :src="roadmapItem.image">
+          <!-- Swiper -->
+          <div class="swiper media-swiper">
+            <div class="swiper-wrapper">
+              <div v-for="levelItem in $t('levelList')" class="swiper-slide">
+                <div class="row justify-content-md-center">
+                  <div class="col-md-auto">
+                    <img :src="levelItem.image" alt="">
+                  </div>
+                  <div class="col-md-auto ">
+                    <img :src="levelItem.image2" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="page-section bg-beige " id="gallery">
+      <div class="container-fluid mt-5  mb-5">
+        <div class="row">
+          <div class="marquee-container">
+            <div class="marquee mb-5 " style="--play: running;
+      --direction: normal;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;">
+              <div class="mx-2" v-for="gallery1 in galleryList1" :key="gallery1">
+                <span>
+                  <img :src="gallery1.image" alt="" class="img-br">
+                </span>
+              </div>
+            </div>
+            <div class="marquee mb-5 " style="--play: running;
+      --direction: normal;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;">
+              <div class="mx-2" v-for="gallery1 in galleryList1" :key="gallery1">
+                <span>
+                  <img :src="gallery1.image" alt="" class="img-br">
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="marquee-container">
+            <div class="marquee" style="--play: running;
+      --direction: reverse;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;">
+              <div class="mx-2" v-for="gallery2 in galleryList2" :key="gallery2">
+                <span>
+                  <img :src="gallery2.image" alt="" class="img-br">
+                </span>
+              </div>
+            </div>
+            <div class="marquee" style="--play: running;
+      --direction: reverse;
+      --duration: 98.4s;
+      --delay: 0s;
+      --iteration-count: infinite;">
+              <div class="mx-2" v-for="gallery2 in galleryList2" :key="gallery2">
+                <span>
+                  <img :src="gallery2.image" alt="" class="img-br">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute z-10 top-0 h-full w-full mt-0"
+        style="background: linear-gradient(to left, #0b1438, transparent 15%, transparent 85%, #0b1438);"></div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="page-section " :id="cssLocal + 'roadmap'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-end">
+          <div class="col-12">
+            <div class="section-title">
+              <img src="./img/cross.png" alt="" class="mx-3">
+              <h2 class="section-heading text-uppercase" :data-text="$t('roadmap.heading')">
+                <% $t('roadmap.heading') %>
+              </h2>
+              <img src="./img/cross.png" alt="" class="mx-3">
+            </div>
+            <div class="row mt-5">
+              <div class="timeline">
+                <div class="outer">
+                  <div class="roadmap-card" v-for="roadmapItem in $t('roadmapList')">
+                    <div class="roadmap-info">
+                      <div class="roadmap-img">
+                        <img :src="roadmapItem.image">
+                      </div>
+                      <h1 class="roadmap-title">
+                        <% $t(roadmapItem.title) %>
+                      </h1>
+                      <p class="roadmap-text">
+                        <% $t(roadmapItem.text) %>
+                      </p>
                     </div>
-                    <h1 class="roadmap-title"><% $t(roadmapItem.title) %></h1>
-                    <p class="roadmap-text"><% $t(roadmapItem.text) %></p>
                   </div>
                 </div>
               </div>
@@ -246,170 +311,195 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Team -->
-  <section class="page-section " :id="cssLocal + 'team'">
-    <div class="container mt-5  mb-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <div class="section-title">
-            <img src="./img/cross.png" alt="" class="mx-3">
-            <h2 class="section-heading text-uppercase" :data-text="$t('team.heading1')"><% $t('team.heading1') %></h2>
-            <img src="./img/cross.png" alt="" class="mx-3">
+    <!-- Team -->
+    <section class="page-section " :id="cssLocal + 'team'">
+      <div class="container mt-5  mb-5">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="section-title">
+              <img src="./img/cross.png" alt="" class="mx-3">
+              <h2 class="section-heading text-uppercase" :data-text="$t('team.heading1')">
+                <% $t('team.heading1') %>
+              </h2>
+              <img src="./img/cross.png" alt="" class="mx-3">
+            </div>
           </div>
-        </div>
-        <div class="col-lg-10 mb-5">
-          <p class="text-justify section-text" data-aos="zoom-in-right"><% $t('team.text1') %></p>
-          <p class="text-justify section-text" data-aos="zoom-in-right"><% $t('team.text2') %></p>
-        </div>
-        <div class="col-12">
-          <div class="text-center">
-            <a class="btn btn-nft btn-md mt-2" :href="$t('team.buttonUrl')" target="_blank" role="button"><% $t('team.button') %></a>
-            <a class="btn btn-whitePaper btn-md margin-t" :href="$t('team.whitePaperUrl')" target="_blank" role="button"><% $t('team.whitePaper') %></a>
-            <!-- <a class="btn btn-whitePaper btn-md margin-t" role="button"><% $t('team.whitePaper') %></a> -->
+          <div class="col-lg-10 mb-5">
+            <p class="text-justify section-text" data-aos="zoom-in-right">
+              <% $t('team.text1') %>
+            </p>
+            <p class="text-justify section-text" data-aos="zoom-in-right">
+              <% $t('team.text2') %>
+            </p>
+          </div>
+          <div class="col-12">
+            <div class="text-center">
+              <a class="btn btn-nft btn-md mt-2" :href="$t('team.buttonUrl')" target="_blank" role="button">
+                <% $t('team.button') %>
+              </a>
+              <a class="btn btn-whitePaper btn-md margin-t" :href="$t('team.whitePaperUrl')" target="_blank"
+                role="button">
+                <% $t('team.whitePaper') %>
+              </a>
+              <!-- <a class="btn btn-whitePaper btn-md margin-t" role="button"><% $t('team.whitePaper') %></a> -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Join -->
-  <section class="page-section " :id="cssLocal + 'join'">
-    <div class="container mt-5 mb-5">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-lg-7 mb-5">
-          <div class="row align-items-center">
-            <div class="col-lg-5 mb-5 text-center join-img-phone">
-              <img src="./img/join/astronaut.png" class="join-img">
-            </div>
-            <div class="col-12 align-self-center">
-              <div class="section-title">
-                <h2 class="section-heading text-uppercase" :data-text="$t('join.heading')"><% $t('join.heading') %></h2>
+    <!-- Join -->
+    <section class="page-section " :id="cssLocal + 'join'">
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-7 mb-5">
+            <div class="row align-items-center">
+              <div class="col-lg-5 mb-5 text-center join-img-phone">
+                <img src="./img/join/astronaut.png" class="join-img">
               </div>
-            </div> 
-            <div class="col-lg-10 col-12 align-self-center mt-4">
-              <p class="text-justify section-text" data-aos="zoom-in-right"><% $t('join.text') %></p>
-              <p class="section-text text-white" data-aos="zoom-in-right"><% $t('join.mailText') %><a class="text-color" :href="'https://mail.google.com/mail/?view=cm&fs=1&to='+ $t('join.mailUrl')" target="_blank"><% $t('join.mailUrl') %></a></p>
+              <div class="col-12 align-self-center">
+                <div class="section-title">
+                  <h2 class="section-heading text-uppercase" :data-text="$t('join.heading')">
+                    <% $t('join.heading') %>
+                  </h2>
+                </div>
+              </div>
+              <div class="col-lg-10 col-12 align-self-center mt-4">
+                <p class="text-justify section-text" data-aos="zoom-in-right">
+                  <% $t('join.text') %>
+                </p>
+                <p class="section-text text-white" data-aos="zoom-in-right">
+                  <% $t('join.mailText') %><a class="text-color"
+                      :href="'https://mail.google.com/mail/?view=cm&fs=1&to='+ $t('join.mailUrl')" target="_blank">
+                      <% $t('join.mailUrl') %>
+                    </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 mb-5 text-center join-img-cp">
+            <img src="./img/join/astronaut.png" class="join-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discord -->
+    <section class="page-section " :id="cssLocal + 'discord'">
+      <div class="container-fluid mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-5 mb-5">
+            <div v-if="fullWidth > 1200" class="p-5 text-center">
+              <widgetbot server="991918755317825557" channel="991923732387995758" width="525" height="700"></widgetbot>
+              <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+            </div>
+            <div v-if="fullWidth > 991 && fullWidth < 1200" class="p-5 text-center">
+              <widgetbot server="991918755317825557" channel="991923732387995758" width="100%" height="700"></widgetbot>
+              <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+            </div>
+            <div v-if="fullWidth < 991" class="p-5 text-center">
+              <widgetbot server="991918755317825557" channel="991923732387995758" width="100%" height="400"></widgetbot>
+              <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+            </div>
+          </div>
+          <div class="col-lg-7 mb-5 text-center">
+            <div class="p-5">
+              <img src="./img/join/dc.png" class="img-fluid">
+              <div class="section-title mt-5">
+                <h2 class="section-heading text-uppercase" :data-text="$t('discord.heading')">
+                  <% $t('discord.heading') %>
+                </h2>
+              </div>
+              <div class="mt-5">
+                <a href="https://discord.gg/tjQnQwsAq7" target="_blank" role="button"
+                  class="btn btn-join btn-md mt-2">JOIN</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-5 mb-5 text-center join-img-cp">
-          <img src="./img/join/astronaut.png" class="join-img">
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Discord -->
-  <section class="page-section " :id="cssLocal + 'discord'">
-    <div class="container-fluid mt-5 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-5 mb-5">
-          <div v-if="fullWidth > 1200" class="p-5 text-center">
-            <widgetbot
-              server="991918755317825557"
-              channel="991923732387995758"
-              width="525"
-              height="700"
-            ></widgetbot>
-            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+    <!-- Twitter -->
+    <section class="page-section" id="twitter">
+      <div class="container-fluid mt-5 mb-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-lg-7 text-center mb-5">
+            <img src="./img/join/tw.png" class="img-fluid">
           </div>
-          <div v-if="fullWidth > 991 && fullWidth < 1200" class="p-5 text-center">
-            <widgetbot
-              server="991918755317825557"
-              channel="991923732387995758"
-              width="100%"
-              height="700"
-            ></widgetbot>
-            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-          </div>
-          <div v-if="fullWidth < 991" class="p-5 text-center">
-            <widgetbot
-              server="991918755317825557"
-              channel="991923732387995758"
-              width="100%"
-              height="400"
-            ></widgetbot>
-            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-          </div>
-        </div>
-        <div class="col-lg-7 mb-5 text-center">
-          <div class="p-5">
-            <img src="./img/join/dc.png" class="img-fluid">
-            <div class="section-title mt-5">
-              <h2 class="section-heading text-uppercase" :data-text="$t('discord.heading')"><% $t('discord.heading') %></h2>
+          <div class="col-lg-5 mb-5 text-center">
+            <div v-show="fullWidth > 991" class="p-4">
+              <a class="twitter-timeline" data-height="800" data-theme="light"
+                href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-            <div class="mt-5">
-              <a href="https://discord.gg/tjQnQwsAq7" target="_blank" role="button" class="btn btn-join btn-md mt-2">JOIN</a>
+            <div v-show="fullWidth < 991" class="p-4">
+              <a class="twitter-timeline" data-height="400" data-theme="light"
+                href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section> 
+    </section>
 
-  <!-- Twitter -->
-  <section class="page-section" id="twitter">
-    <div class="container-fluid mt-5 mb-5">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-lg-7 text-center mb-5">
-          <img src="./img/join/tw.png" class="img-fluid">
-        </div>
-        <div class="col-lg-5 mb-5 text-center">
-          <div v-show="fullWidth > 991" class="p-4">
-            <a class="twitter-timeline" data-height="800" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-          <div v-show="fullWidth < 991" class="p-4">
-            <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/majinjojo2022?ref_src=twsrc%5Etfw">Tweets by majinjojo2022</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- QA -->
+    <section class="page-section " :id="cssLocal + 'qa'">
+      <div class="container mt-5  mb-5">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-title">
+              <img src="./img/cross.png" alt="" class="mx-3">
+              <h2 class="section-heading text-uppercase" :data-text="$t('faq.heading')">
+                <% $t('faq.heading') %>
+              </h2>
+              <img src="./img/cross.png" alt="" class="mx-3">
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QA -->
-<section class="page-section " :id="cssLocal + 'qa'">
-    <div class="container mt-5  mb-5">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <div class="section-title">
-            <img src="./img/cross.png" alt="" class="mx-3">
-            <h2 class="section-heading text-uppercase" :data-text="$t('faq.heading')"><% $t('faq.heading') %></h2>
-            <img src="./img/cross.png" alt="" class="mx-3">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 text-center">
+            <img src="./img/faq/faq_avatar.png" class="faq-img">
           </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-4 text-center">
-          <img src="./img/faq/faq_avatar.png" class="faq-img">
-        </div>
-        <div class="col-md-12 col-lg-7 align-self-center">
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-contact-1" role="tabpanel"
-              aria-labelledby="pills-contact-tab">
-              <div v-for="(item, index) in $t('faqList')" :key="item" class="accordion qa-box" :id="'qaBox_' + index">
-                <div class="card" :class="qaStyle.active">
-                  <div class="card-header" id="contact_1_q1" :style="qaStyle.boxShadow + qaStyle.transition">
-                    <h2 class="mb-0 collapsed" data-toggle="collapse" :data-target="'#contact_' + index" aria-expanded="false"  @click="qaStyleClick(index)">
-                      <% $t(item.question) %>
-                    </h2>
-                  </div>
-                  <div :id="'contact_' + index" class="collapse" :data-parent="'#qaBox_' + index">
+          <div class="col-md-12 col-lg-7 align-self-center">
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-contact-1" role="tabpanel"
+                aria-labelledby="pills-contact-tab">
+                <div v-for="(item, index) in $t('faqList')" :key="item" class="accordion qa-box" :id="'qaBox_' + index">
+                  <div class="card" :class="qaStyle.active">
+                    <div class="card-header" id="contact_1_q1" :style="qaStyle.boxShadow + qaStyle.transition">
+                      <h2 class="mb-0 collapsed" data-toggle="collapse" :data-target="'#contact_' + index"
+                        aria-expanded="false" @click="qaStyleClick(index)">
+                        <% $t(item.question) %>
+                      </h2>
+                    </div>
+                    <div :id="'contact_' + index" class="collapse" :data-parent="'#qaBox_' + index">
                       <div class="card-body">
                         <P v-if="$t(item.ans1)">
                           <% $t(item.ans1) %>
-                          <a v-if="$t(item.urlText)" :href="item.url" target="_blank"><% $t(item.urlText) %></a>
-                          <span v-if="$t(item.ans3)" ><% $t(item.ans3) %></span>
+                            <a v-if="$t(item.urlText)" :href="item.url" target="_blank">
+                              <% $t(item.urlText) %>
+                            </a>
+                            <span v-if="$t(item.ans3)">
+                              <% $t(item.ans3) %>
+                            </span>
                         </P>
-                        <P v-if="$t(item.ans2)"><% $t(item.ans2) %></P>
-                        <p><a v-if="$t(item.urlText1)" :href="item.url1" target="_blank"><% $t(item.urlText1) %></a></p>
-                        <p><a v-if="$t(item.urlText2)" :href="item.url2" target="_blank"><% $t(item.urlText2) %></a></p>
-                        <p><a v-if="$t(item.urlText3)" :href="item.url3" target="_blank"><% $t(item.urlText3) %></a></p>
+                        <P v-if="$t(item.ans2)">
+                          <% $t(item.ans2) %>
+                        </P>
+                        <p><a v-if="$t(item.urlText1)" :href="item.url1" target="_blank">
+                            <% $t(item.urlText1) %>
+                          </a></p>
+                        <p><a v-if="$t(item.urlText2)" :href="item.url2" target="_blank">
+                            <% $t(item.urlText2) %>
+                          </a></p>
+                        <p><a v-if="$t(item.urlText3)" :href="item.url3" target="_blank">
+                            <% $t(item.urlText3) %>
+                          </a></p>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -417,86 +507,99 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer ">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-12 text-center mt-2">
-          <a href="https://discord.gg/tjQnQwsAq7" target="_blank"><img class="media-icon ml-1 mr-1" id="discordIcon" src="./img/icon/discord.png" @mouseover="iconHover(discordIcon, 'discord')" @mouseleave="iconLeave(discordIcon, 'discord')" alt="discord"></a>
-          <a href="https://twitter.com/majinjojo2022" target="_blank"><img class="media-icon ml-1 mr-1" id="twitterIcon" src="./img/icon/twitter.png" @mouseover="iconHover(twitterIcon, 'twitter')" @mouseleave="iconLeave(twitterIcon, 'twitter')" alt="twitter"></a>
-          <a href="https://www.instagram.com/majin_jojo2022/" target="_blank"><img class="media-icon ml-1 mr-1" id="instagramIcon" src="./img/icon/instagram.png" @mouseover="iconHover(instagramIcon, 'instagram')" @mouseleave="iconLeave(instagramIcon, 'instagram')" alt="instagram"></a>
-          <a href="https://www.facebook.com/Majin-JoJo-111593898266363" target="_blank"><img class="media-icon ml-1 mr-1" id="facebookIcon" src="./img/icon/facebook.png" @mouseover="iconHover(facebookIcon, 'facebook')" @mouseleave="iconLeave(facebookIcon, 'facebook')" alt="facebook"></a>
-          <a href="https://www.potatomedia.co/user/5ef708e8-90aa-4fc9-985e-dd9744d3abd6/posts" target="_blank"><img class="media-icon ml-1 mr-1" id="potatoIcon" src="./img/icon/potato.png" @mouseover="iconHover(potatoIcon, 'potato')" @mouseleave="iconLeave(potatoIcon, 'potato')" alt="potato"></a>
+    <!-- Footer -->
+    <footer class="footer ">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 text-center mt-2">
+            <a href="https://discord.gg/tjQnQwsAq7" target="_blank"><img class="media-icon ml-1 mr-1" id="discordIcon"
+                src="./img/icon/discord.png" @mouseover="iconHover(discordIcon, 'discord')"
+                @mouseleave="iconLeave(discordIcon, 'discord')" alt="discord"></a>
+            <a href="https://twitter.com/majinjojo2022" target="_blank"><img class="media-icon ml-1 mr-1"
+                id="twitterIcon" src="./img/icon/twitter.png" @mouseover="iconHover(twitterIcon, 'twitter')"
+                @mouseleave="iconLeave(twitterIcon, 'twitter')" alt="twitter"></a>
+            <a href="https://www.instagram.com/majin_jojo2022/" target="_blank"><img class="media-icon ml-1 mr-1"
+                id="instagramIcon" src="./img/icon/instagram.png" @mouseover="iconHover(instagramIcon, 'instagram')"
+                @mouseleave="iconLeave(instagramIcon, 'instagram')" alt="instagram"></a>
+            <a href="https://www.facebook.com/Majin-JoJo-111593898266363" target="_blank"><img
+                class="media-icon ml-1 mr-1" id="facebookIcon" src="./img/icon/facebook.png"
+                @mouseover="iconHover(facebookIcon, 'facebook')" @mouseleave="iconLeave(facebookIcon, 'facebook')"
+                alt="facebook"></a>
+            <a href="https://www.potatomedia.co/user/5ef708e8-90aa-4fc9-985e-dd9744d3abd6/posts" target="_blank"><img
+                class="media-icon ml-1 mr-1" id="potatoIcon" src="./img/icon/potato.png"
+                @mouseover="iconHover(potatoIcon, 'potato')" @mouseleave="iconLeave(potatoIcon, 'potato')"
+                alt="potato"></a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <div class="music-container active">
-    <div class="music-img">
-      <img src="./img/music/music_pic.png" alt="music_pic">
-    </div>
-    <div class="music-message show">
-      <div class="music row" id="music">
-        <div class="col-3 align-self-center text-center">
-          <img id="musicBtn" @click="playMusic()" :src="musicBtn" alt="start">
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col-8 p-0">
-              <div class="music-name">
-                Meta Of Chaos
+    <div class="music-container active">
+      <div class="music-img">
+        <img src="./img/music/music_pic.png" alt="music_pic">
+      </div>
+      <div class="music-message show">
+        <div class="music row" id="music">
+          <div class="col-3 align-self-center text-center">
+            <img id="musicBtn" @click="playMusic()" :src="musicBtn" alt="start">
+          </div>
+          <div class="col-8">
+            <div class="row">
+              <div class="col-8 p-0">
+                <div class="music-name">
+                  Meta Of Chaos
+                </div>
+              </div>
+              <div class="col-4 p-0 text-center">
+                <img class="volume-img" width="24" height="24" @click="displayVolume" src="./img/music/volume.png"
+                  alt="Volume">
               </div>
             </div>
-            <div class="col-4 p-0 text-center">
-              <img class="volume-img" width="24" height="24" @click="displayVolume" src="./img/music/volume.png" alt="Volume">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-8 col-7 p-0">
-              <div class="music-auth">
-                Tom Bao
+            <div class="row">
+              <div class="col-md-8 col-7 p-0">
+                <div class="music-auth">
+                  Tom Bao
+                </div>
+              </div>
+              <div class="col-md-4 col-5 p-0">
+                <span class="music-time">
+                  <span id="musicCurrentTime">0:00</span>
+                  <span id="musicFullTime">/ 2:30</span>
+                </span>
               </div>
             </div>
-            <div class="col-md-4 col-5 p-0">
-              <span class="music-time">
-                <span id="musicCurrentTime">0:00</span>
-                <span id="musicFullTime">/ 2:30</span>
-              </span>
-            </div>
-          </div>
 
+          </div>
+        </div>
+        <div class="progress" id="progress"></div>
+        <audio id="audio" controls loop style="display: none;">
+          <source src="./img/music/Meta Of Chaos.mp3" type="audio/mpeg">
+          你的瀏覽器不支援 audio tag！
+        </audio>
+      </div>
+      <button class="arrow-btn" @click="musicArrowBtn">
+        <img class="arrow-img" src="./img/music/arrow.png" alt="">
+      </button>
+      <div class="volume">
+        <div class="volume-container">
+          <input id="volume" class="volume-range" type="range" min="0" max="100" value="60"
+            v-on:change="volumeRangeChange">
+          <img class="volume-img" src="./img/music/volume.png" alt="Volume" width="24" height="24" @click="toggleMute">
+        </div>
+        <div>
         </div>
       </div>
-      <div class="progress" id="progress"></div>   
-      <audio id="audio" controls loop style="display: none;">
-        <source src="./img/music/Meta Of Chaos.mp3" type="audio/mpeg">
-        你的瀏覽器不支援 audio tag！
-      </audio>
     </div>
-    <button class="arrow-btn" @click="musicArrowBtn">
-      <img class="arrow-img" src="./img/music/arrow.png" alt="">
-    </button>
-    <div class="volume">
-      <div class="volume-container">
-        <input id="volume" class="volume-range" type="range" min="0" max="100" value="60" v-on:change="volumeRangeChange">
-        <img class="volume-img" src="./img/music/volume.png" alt="Volume" width="24" height="24" @click="toggleMute">
-      </div>
-      <div>
-      </div>
-    </div>
-  </div>
 
-  <div class="shop">
-    <a :href="shopUrl" target="_blank">
-      <span data-text="SHOP">SHOP</span>
-      <img src="./img/icon/shop_icon.png" alt="shop_icon">
-    </a>
-  </div>
-  <router-view></router-view>
+    <div class="shop">
+      <a :href="shopUrl" target="_blank">
+        <span data-text="SHOP">SHOP</span>
+        <img src="./img/icon/shop_icon.png" alt="shop_icon">
+      </a>
+    </div>
+    <router-view></router-view>
   </main>
 
   <!-- Bootstrap core JavaScript -->
@@ -539,678 +642,678 @@
       const messages = {
         tw: {
           // Menu
-          menuList:[
-            {name:"品牌介紹", id: "story", },
-            {name:"LEVEL",id: "level", },
-            {name:"ROADMAP",id: "roadmap", },
-            {name:"團隊",id: "team", },
-            {name:"FAQ",id: "qa", },
-            {name:"MINT",id: "mint", },
-            {name:"SHOP",id: "shop", },
+          menuList: [
+            { name: "品牌介紹", id: "story", },
+            { name: "LEVEL", id: "level", },
+            { name: "ROADMAP", id: "roadmap", },
+            { name: "團隊", id: "team", },
+            { name: "FAQ", id: "qa", },
+            { name: "MINT", id: "mint", },
+            { name: "SHOP", id: "shop", },
           ],
           // Slider
-          slider:{
-            intro1:"動盪不安的年代",
-            intro2:"，",
-            intro3:"再度吞噬『錢』的快感",
-            heading:"Majin Jojo－已經蠢蠢欲動了…"
+          slider: {
+            intro1: "動盪不安的年代",
+            intro2: "，",
+            intro3: "再度吞噬『錢』的快感",
+            heading: "Majin Jojo－已經蠢蠢欲動了…"
           },
           // 品牌介紹 Story
-          story:{
-            heading:"STORY",
-            content1:"唉～ 經濟大蕭條、疫情的嚴重肆虐，大家的生活真的越來越難過了...在這混亂不安的年代，出現了一群超級有錢的公子哥，他們長的奇形怪狀、樣子齜牙裂嘴，以及身上穿金戴銀，雖然看起來超級貴重，完全跟時尚這兩個字，八竿子打不著，但是優點就是超級有『錢』，世人們稱他們為『",
-            content2:"Majin Jojo",
-            content3:"』",
-            content4:"他們共有10003名成員，每位都是獨一獨二的，他們長相都很奇特，面目都很猙獰，有像殭屍、外星人、野獸、木乃伊......等種族，全部角色共通的特點都是喜歡炫富，展現自己特別的金銀配飾。除此之外，他們還喜歡到處吸取『快樂』的泉源，無論是房地產、事業成就，甚至只是一點小確幸，他們都不肯放過!! 但最近他們有了新的點子，想要增加世人對他們的印象，打造新的世代 !!!!!!",
+          story: {
+            heading: "STORY",
+            content1: "唉～ 經濟大蕭條、疫情的嚴重肆虐，大家的生活真的越來越難過了...在這混亂不安的年代，出現了一群超級有錢的公子哥，他們長的奇形怪狀、樣子齜牙裂嘴，以及身上穿金戴銀，雖然看起來超級貴重，完全跟時尚這兩個字，八竿子打不著，但是優點就是超級有『錢』，世人們稱他們為『",
+            content2: "Majin Jojo",
+            content3: "』",
+            content4: "他們共有10003名成員，每位都是獨一獨二的，他們長相都很奇特，面目都很猙獰，有像殭屍、外星人、野獸、木乃伊......等種族，全部角色共通的特點都是喜歡炫富，展現自己特別的金銀配飾。除此之外，他們還喜歡到處吸取『快樂』的泉源，無論是房地產、事業成就，甚至只是一點小確幸，他們都不肯放過!! 但最近他們有了新的點子，想要增加世人對他們的印象，打造新的世代 !!!!!!",
           },
           // LEVEL
-          level:{
-            heading:"LEVEL"
+          level: {
+            heading: "LEVEL"
           },
-          levelList:[
+          levelList: [
             {
-              image:"./img/level/level6.png",
-              image2:"./img/level/sssrl.png",
-              level:"SSSRL",
+              image: "./img/level/level6.png",
+              image2: "./img/level/sssrl.png",
+              level: "SSSRL",
             },
             {
-              image:"./img/level/level1.png",
-              image2:"./img/level/sssr.png",
-              level:"SSSR",
+              image: "./img/level/level1.png",
+              image2: "./img/level/sssr.png",
+              level: "SSSR",
             },
             {
-              image:"./img/level/level2.png",
-              image2:"./img/level/ssr.png",
-              level:"SSR",
+              image: "./img/level/level2.png",
+              image2: "./img/level/ssr.png",
+              level: "SSR",
             },
             {
-              image:"./img/level/level3.png",
-              image2:"./img/level/sr.png",
-              level:"SR",
+              image: "./img/level/level3.png",
+              image2: "./img/level/sr.png",
+              level: "SR",
             },
             {
-              image:"./img/level/level4.png",
-              image2:"./img/level/s.png",
-              level:"R",
+              image: "./img/level/level4.png",
+              image2: "./img/level/s.png",
+              level: "R",
             },
             {
-              image:"./img/level/level5.png",
-              image2:"./img/level/n.png",
-              level:"N",
+              image: "./img/level/level5.png",
+              image2: "./img/level/n.png",
+              level: "N",
             }
           ],
           // Roadmap
-          roadmap:{
-            heading:"ROADMAP"
+          roadmap: {
+            heading: "ROADMAP"
           },
-          roadmapList:[
+          roadmapList: [
             {
-              image:"./img/roadmap/roadmap1.png",
-              title:"空投社會菁英", 
-              text:"邀請各行各業社會名人，和Jojo們一起同樂!",
+              image: "./img/roadmap/roadmap1.png",
+              title: "空投社會菁英",
+              text: "邀請各行各業社會名人，和Jojo們一起同樂!",
             },
             {
-              image:"./img/roadmap/roadmap2.png", 
-              title:"Majin Jojo首度降世", 
-              text:"首發白單鑄造以及公售！",
+              image: "./img/roadmap/roadmap2.png",
+              title: "Majin Jojo首度降世",
+              text: "首發白單鑄造以及公售！",
             },
             {
-              image:"./img/roadmap/roadmap3.png", 
-              title:"實體商家合作", 
-              text:"結合各行各業精選商家，一起吃喝玩樂！",
+              image: "./img/roadmap/roadmap3.png",
+              title: "實體商家合作",
+              text: "結合各行各業精選商家，一起吃喝玩樂！",
             },
             {
-              image:"./img/roadmap/roadmap4.png", 
-              title:"專屬Majin Jojo周邊商品", 
-              text:"獨一無二的周邊！！打造Jojo個人品牌精神！！",
+              image: "./img/roadmap/roadmap4.png",
+              title: "專屬Majin Jojo周邊商品",
+              text: "獨一無二的周邊！！打造Jojo個人品牌精神！！",
             },
             {
-              image:"./img/roadmap/roadmap5.png", 
-              title:"Majin Jojo宇宙開啟！！", 
-              text:"社群自治，創造自己的Majin Jojo空間，交友互動，建立屬於自己的宇宙",
+              image: "./img/roadmap/roadmap5.png",
+              title: "Majin Jojo宇宙開啟！！",
+              text: "社群自治，創造自己的Majin Jojo空間，交友互動，建立屬於自己的宇宙",
             }
           ],
           // 團隊 Team
-          team:{
-            heading1:"TEAM",
-            heading2:"未來願景",
-            text1:"Majin Jojo 是由元宇宙新星團隊JoJo 實驗室，所研發出來的反諷玩物NFT！有別於一般的NFT市場。創辦人Mr.Jo在傳統金融的世界裡行之有年，擁有豐富的金融經驗與對機構的厭惡，對於NFT這個新的技術，更有極大的熱情。去年爆紅的BAYC、Doodles、Cool Cats等NFT項目，他全部都有參與，並且見證這個新技術的應用，以及其改變人們的無限魅力。 對於社群共識『新未來社會』可以創造出無限可能，則是JoJo 實驗室發行NFT的信念。",
-            text2:"也找了知名內容創作者和視覺策劃人員，組建成JoJo 實驗室的核心團隊，除此之外，團隊正在積極擴編當中，尋找對區塊鏈和NFT有極大熱情的人才，一起打造出全新風格的NFT！他誓言要用個人成功經歷打造成全新NFT，也讓所有參與者一起共同來改變世界。",
-            button:"MINT",
-            buttonUrl:'https://www.chaebol.art/store/120000000000000004',
-            whitePaper:"WHITE PAPER",
-            whitePaperUrl:"https://docs.majinjojo.club"
+          team: {
+            heading1: "TEAM",
+            heading2: "未來願景",
+            text1: "Majin Jojo 是由元宇宙新星團隊JoJo 實驗室，所研發出來的反諷玩物NFT！有別於一般的NFT市場。創辦人Mr.Jo在傳統金融的世界裡行之有年，擁有豐富的金融經驗與對機構的厭惡，對於NFT這個新的技術，更有極大的熱情。去年爆紅的BAYC、Doodles、Cool Cats等NFT項目，他全部都有參與，並且見證這個新技術的應用，以及其改變人們的無限魅力。 對於社群共識『新未來社會』可以創造出無限可能，則是JoJo 實驗室發行NFT的信念。",
+            text2: "也找了知名內容創作者和視覺策劃人員，組建成JoJo 實驗室的核心團隊，除此之外，團隊正在積極擴編當中，尋找對區塊鏈和NFT有極大熱情的人才，一起打造出全新風格的NFT！他誓言要用個人成功經歷打造成全新NFT，也讓所有參與者一起共同來改變世界。",
+            button: "MINT",
+            buttonUrl: 'https://www.chaebol.art/store/120000000000000004',
+            whitePaper: "WHITE PAPER",
+            whitePaperUrl: "https://docs.majinjojo.club"
           },
           // 加入我們 Join
-          join:{
-            heading:"加入Majin Jojo宇宙",
-            text:"歡迎有任何商務與合作上的需求，或是想成為Ｍajin Jojo的一員，都可以來信詢問，和我們一起玩耍吧!",
-            mailText:"信箱：",
-            mailUrl:'majinjojo2022@gmail.com',
+          join: {
+            heading: "加入Majin Jojo宇宙",
+            text: "歡迎有任何商務與合作上的需求，或是想成為Ｍajin Jojo的一員，都可以來信詢問，和我們一起玩耍吧!",
+            mailText: "信箱：",
+            mailUrl: 'majinjojo2022@gmail.com',
           },
           // Discord
-          discord:{
-            heading:"不要錯過我們最新任何消息！！",
+          discord: {
+            heading: "不要錯過我們最新任何消息！！",
           },
           // 常見問題
-          faq:{
-            heading:"FAQ"
+          faq: {
+            heading: "FAQ"
           },
-          faqList:[
+          faqList: [
             {
-              question:'Majin Jojo理念',
-              ans1:'團隊們一直都很喜歡電影裡、動畫裡的反派角色，他們認為比起那些人人羨慕的超級英雄，反派的存在一直都更酷，也是整個劇情裡的整個張力。',
-              ans2:'新宇宙裡沒有正反派的區別，沒有善與惡的分別、美醜的定義，更無職業角色貴賤分別。 在這個世界裡，大家可以調皮搗蛋、瘋狂歡樂，也可以提供自身價值給所有參與的成員，也要一起幫助生活困苦的人們，翻轉他們自己的人生!!',
-              ans3:'',
-              urlText:'',
-              url:"",
-              show:false,
+              question: 'Majin Jojo理念',
+              ans1: '團隊們一直都很喜歡電影裡、動畫裡的反派角色，他們認為比起那些人人羨慕的超級英雄，反派的存在一直都更酷，也是整個劇情裡的整個張力。',
+              ans2: '新宇宙裡沒有正反派的區別，沒有善與惡的分別、美醜的定義，更無職業角色貴賤分別。 在這個世界裡，大家可以調皮搗蛋、瘋狂歡樂，也可以提供自身價值給所有參與的成員，也要一起幫助生活困苦的人們，翻轉他們自己的人生!!',
+              ans3: '',
+              urlText: '',
+              url: "",
+              show: false,
             },
             {
-              question:'如何鑄造與購買Majin Jojo',
-              ans1:'',
-              ans2:'',
-              ans3:'',
-              urlText:'',
-              url:'',
-              urlText1:'請參閱Majin Jojo的公開鑄造文章說明',
-              url1:'https://www.potatomedia.co/post/9ced2ffa-dc10-4f83-a06b-dc4a36195dce',
-              urlText2:'請參閱Majin Jojo的白名單鑄造文章說明',
-              url2:'https://www.potatomedia.co/post/2475d89d-23ff-4256-a4d8-16388fda115c',
-              urlText3:'如何轉帳加密貨幣到CHAEBOL錢包？',
-              url3:'https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%84%B2%E5%80%BC%E6%8F%90%E9%A0%98-c9f1fe6aba',
-              show:false,
+              question: '如何鑄造與購買Majin Jojo',
+              ans1: '',
+              ans2: '',
+              ans3: '',
+              urlText: '',
+              url: '',
+              urlText1: '請參閱Majin Jojo的公開鑄造文章說明',
+              url1: 'https://www.potatomedia.co/post/9ced2ffa-dc10-4f83-a06b-dc4a36195dce',
+              urlText2: '請參閱Majin Jojo的白名單鑄造文章說明',
+              url2: 'https://www.potatomedia.co/post/2475d89d-23ff-4256-a4d8-16388fda115c',
+              urlText3: '如何轉帳加密貨幣到CHAEBOL錢包？',
+              url3: 'https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%84%B2%E5%80%BC%E6%8F%90%E9%A0%98-c9f1fe6aba',
+              show: false,
             },
             {
-              question:'發售時程以及方式',
-              ans1:'耶～即將公佈白名單和公售時程，請密切追蹤官方',
-              ans2:'',
-              ans3:'，一起加入強大的『Majin Jojo』帝國！',
-              urlText:'Discord頻道連結',
-              url:'https://discord.gg/tjQnQwsAq7',
-              show:false,
+              question: '發售時程以及方式',
+              ans1: '耶～即將公佈白名單和公售時程，請密切追蹤官方',
+              ans2: '',
+              ans3: '，一起加入強大的『Majin Jojo』帝國！',
+              urlText: 'Discord頻道連結',
+              url: 'https://discord.gg/tjQnQwsAq7',
+              show: false,
             },
             {
-              question:'持有者的專屬賦能',
-              ans1:'享受合作商家的優惠、專屬周邊商品、與名人交流、進入Majin Jojo超元宇宙，以及更多專屬於Majin Jojo的特殊賦能…',
-              ans2:'',
-              ans3:'',
-              urlText:'',
-              url:'',
-              show:false,
+              question: '持有者的專屬賦能',
+              ans1: '享受合作商家的優惠、專屬周邊商品、與名人交流、進入Majin Jojo超元宇宙，以及更多專屬於Majin Jojo的特殊賦能…',
+              ans2: '',
+              ans3: '',
+              urlText: '',
+              url: '',
+              show: false,
             },
           ],
         },
         cn: {
           // Menu
-          menuList:[
-            {name:"品牌介绍", id: "story", },
-            {name:"LEVEL",id: "level", },
-            {name:"ROADMAP",id: "roadmap", },
-            {name:"团队",id: "team", },
-            {name:"FAQ",id: "qa", },
-            {name:"MINT",id: "mint", },
-            {name:"SHOP",id: "shop", },
+          menuList: [
+            { name: "品牌介绍", id: "story", },
+            { name: "LEVEL", id: "level", },
+            { name: "ROADMAP", id: "roadmap", },
+            { name: "团队", id: "team", },
+            { name: "FAQ", id: "qa", },
+            { name: "MINT", id: "mint", },
+            { name: "SHOP", id: "shop", },
           ],
           // Slider
-          slider:{
-            intro1:"动荡不安的年代",
-            intro2:"，",
-            intro3:"再度吞噬『钱』的快感",
-            heading:"Majin Jojo－已经蠢蠢欲动了…"
+          slider: {
+            intro1: "动荡不安的年代",
+            intro2: "，",
+            intro3: "再度吞噬『钱』的快感",
+            heading: "Majin Jojo－已经蠢蠢欲动了…"
           },
           // 品牌介紹 Story
-          story:{
-            heading:"STORY",
-            content1:"唉~ 经济大萧条、疫情的严重肆虐，大家的生活真的越来越难过了...在这混乱不安的年代，出现了一群超级有钱的公子哥，他们长的奇形怪状、样子龇牙裂嘴，以及身上穿金戴银，虽然看起来超级贵重，完全跟时尚这两个字，八竿子打不着，但是优点就是超级有'钱'，世人们称他们为『",
-            content2:"Majin Jojo",
-            content3:"』",
-            content4:"他们共有10003名成员，每位都是独一独二的，他们长相都很奇特，面目都很猙獰，有像僵尸、外星人、野兽、木乃伊...... 等种族，全部角色共通的特点都是喜欢炫富，展现自己特别的金银配饰。 除此之外，他们还喜欢到处吸取'快乐'的泉源，无论是房地产、事业成就，甚至只是一点小确幸，他们都不肯放过！！ 但最近他们有了新的点子，想要增加世人对他们的印象，打造新的世代!!!!!!",
+          story: {
+            heading: "STORY",
+            content1: "唉~ 经济大萧条、疫情的严重肆虐，大家的生活真的越来越难过了...在这混乱不安的年代，出现了一群超级有钱的公子哥，他们长的奇形怪状、样子龇牙裂嘴，以及身上穿金戴银，虽然看起来超级贵重，完全跟时尚这两个字，八竿子打不着，但是优点就是超级有'钱'，世人们称他们为『",
+            content2: "Majin Jojo",
+            content3: "』",
+            content4: "他们共有10003名成员，每位都是独一独二的，他们长相都很奇特，面目都很猙獰，有像僵尸、外星人、野兽、木乃伊...... 等种族，全部角色共通的特点都是喜欢炫富，展现自己特别的金银配饰。 除此之外，他们还喜欢到处吸取'快乐'的泉源，无论是房地产、事业成就，甚至只是一点小确幸，他们都不肯放过！！ 但最近他们有了新的点子，想要增加世人对他们的印象，打造新的世代!!!!!!",
           },
           // LEVEL
-          level:{
-            heading:"LEVEL"
+          level: {
+            heading: "LEVEL"
           },
-          levelList:[
+          levelList: [
             {
-              image:"./img/level/level6.png",
-              image2:"./img/level/sssrl.png",
-              level:"SSSRL",
+              image: "./img/level/level6.png",
+              image2: "./img/level/sssrl.png",
+              level: "SSSRL",
             },
             {
-              image:"./img/level/level1.png",
-              image2:"./img/level/sssr.png",
-              level:"SSSR",
+              image: "./img/level/level1.png",
+              image2: "./img/level/sssr.png",
+              level: "SSSR",
             },
             {
-              image:"./img/level/level2.png",
-              image2:"./img/level/ssr.png",
-              level:"SSR",
+              image: "./img/level/level2.png",
+              image2: "./img/level/ssr.png",
+              level: "SSR",
             },
             {
-              image:"./img/level/level3.png",
-              image2:"./img/level/sr.png",
-              level:"SR",
+              image: "./img/level/level3.png",
+              image2: "./img/level/sr.png",
+              level: "SR",
             },
             {
-              image:"./img/level/level4.png",
-              image2:"./img/level/s.png",
-              level:"R",
+              image: "./img/level/level4.png",
+              image2: "./img/level/s.png",
+              level: "R",
             },
             {
-              image:"./img/level/level5.png",
-              image2:"./img/level/n.png",
-              level:"N",
+              image: "./img/level/level5.png",
+              image2: "./img/level/n.png",
+              level: "N",
             }
           ],
           // Roadmap
-          roadmap:{
-            heading:"ROADMAP"
+          roadmap: {
+            heading: "ROADMAP"
           },
-          roadmapList:[
+          roadmapList: [
             {
-              image:"./img/roadmap/roadmap1.png",
-              title:"空投社会菁英", 
-              text:"邀请各行各业社会名人，和Jojo们一起同乐！",
+              image: "./img/roadmap/roadmap1.png",
+              title: "空投社会菁英",
+              text: "邀请各行各业社会名人，和Jojo们一起同乐！",
             },
             {
-              image:"./img/roadmap/roadmap2.png", 
-              title:"Majin Jojo首度降世", 
-              text:"首发白单铸造以及公售！",
+              image: "./img/roadmap/roadmap2.png",
+              title: "Majin Jojo首度降世",
+              text: "首发白单铸造以及公售！",
             },
             {
-              image:"./img/roadmap/roadmap3.png", 
-              title:"实体商家合作", 
-              text:"结合各行各业精选商家，一起吃喝玩乐！",
+              image: "./img/roadmap/roadmap3.png",
+              title: "实体商家合作",
+              text: "结合各行各业精选商家，一起吃喝玩乐！",
             },
             {
-              image:"./img/roadmap/roadmap4.png", 
-              title:"专属Majin Jojo周边商品", 
-              text:"独一无二的周边！！ 打造Jojo个人品牌精神！！",
+              image: "./img/roadmap/roadmap4.png",
+              title: "专属Majin Jojo周边商品",
+              text: "独一无二的周边！！ 打造Jojo个人品牌精神！！",
             },
             {
-              image:"./img/roadmap/roadmap5.png", 
-              title:"Majin Jojo宇宙开启！！", 
-              text:"社群自治，创造自己的Majin Jojo空间，交友互动，建立属于自己的宇宙",
+              image: "./img/roadmap/roadmap5.png",
+              title: "Majin Jojo宇宙开启！！",
+              text: "社群自治，创造自己的Majin Jojo空间，交友互动，建立属于自己的宇宙",
             }
           ],
           // 團隊 Team
-          team:{
-            heading1:"TEAM",
-            heading2:"未來願景",
-            text1:"Majin Jojo 是由元宇宙新星团队JoJo 实验室，所研发出来的反讽玩物NFT！有别于一般的NFT市场。创办人Mr.Jo在传统金融的世界里行之有年，拥有丰富的金融经验与对机构的厌恶，对于NFT这个新的技术，更有极大的热情。去年爆红的BAYC、Doodles、Cool Cats等NFT项目，他全部都有参与，并且见证这个新技术的应用，以及其改变人们的无限魅力。对于社群共识『新未来社会』可以创造出无限可能，则是JoJo 实验室发行NFT的信念。",
-            text2:"也找了知名内容创作者和视觉策划人员，组建成JoJo 实验室的核心团队，除此之外，团队正在积极扩编当中，寻找对区块链和NFT有极大热情的人才，一起打造出全新风格的NFT！他誓言要用个人成功经历打造成全新NFT，也让所有参与者一起共同来改变世界。",
-            button:"MINT",
-            buttonUrl:'https://www.chaebol.art/store/120000000000000004',
-            whitePaper:"WHITE PAPER",
-            whitePaperUrl:"https://docs.majinjojo.club"
+          team: {
+            heading1: "TEAM",
+            heading2: "未來願景",
+            text1: "Majin Jojo 是由元宇宙新星团队JoJo 实验室，所研发出来的反讽玩物NFT！有别于一般的NFT市场。创办人Mr.Jo在传统金融的世界里行之有年，拥有丰富的金融经验与对机构的厌恶，对于NFT这个新的技术，更有极大的热情。去年爆红的BAYC、Doodles、Cool Cats等NFT项目，他全部都有参与，并且见证这个新技术的应用，以及其改变人们的无限魅力。对于社群共识『新未来社会』可以创造出无限可能，则是JoJo 实验室发行NFT的信念。",
+            text2: "也找了知名内容创作者和视觉策划人员，组建成JoJo 实验室的核心团队，除此之外，团队正在积极扩编当中，寻找对区块链和NFT有极大热情的人才，一起打造出全新风格的NFT！他誓言要用个人成功经历打造成全新NFT，也让所有参与者一起共同来改变世界。",
+            button: "MINT",
+            buttonUrl: 'https://www.chaebol.art/store/120000000000000004',
+            whitePaper: "WHITE PAPER",
+            whitePaperUrl: "https://docs.majinjojo.club"
           },
           // 加入我們 Join
-          join:{
-            heading:"加入Majin Jojo宇宙",
-            text:"欢迎有任何商务与合作上的需求，或是想成为Ｍajin Jojo的一员，都可以来信询问，和我们一起玩耍吧!",
-            mailText:"信箱：",
-            mailUrl:'majinjojo2022@gmail.com',
+          join: {
+            heading: "加入Majin Jojo宇宙",
+            text: "欢迎有任何商务与合作上的需求，或是想成为Ｍajin Jojo的一员，都可以来信询问，和我们一起玩耍吧!",
+            mailText: "信箱：",
+            mailUrl: 'majinjojo2022@gmail.com',
           },
           // Discord
-          discord:{
-            heading:"不要错过我们最新任何消息！！",
+          discord: {
+            heading: "不要错过我们最新任何消息！！",
           },
           // 常見問題
-          faq:{
-            heading:"FAQ"
+          faq: {
+            heading: "FAQ"
           },
-          faqList:[
+          faqList: [
             {
-              question:'Majin Jojo理念',
-              ans1:"团队们一直都很喜欢电影里、动画里的反派角色，他们认为比起那些人人羡慕的超级英雄，反派的存在一直都更酷，也是整个剧情里的整个张力。",
-              ans2:'新宇宙里没有正反派的区别，没有善与恶的分别、美丑的定义，更无职业角色贵贱分别。 在这个世界里，大家可以调皮捣蛋、疯狂欢乐，也可以提供自身价值给所有参与的成员，也要一起帮助生活困苦的人们，翻转他们自己的人生！！',
-              ans3:'',
-              urlText:'',
-              url:"",
-              show:false,
+              question: 'Majin Jojo理念',
+              ans1: "团队们一直都很喜欢电影里、动画里的反派角色，他们认为比起那些人人羡慕的超级英雄，反派的存在一直都更酷，也是整个剧情里的整个张力。",
+              ans2: '新宇宙里没有正反派的区别，没有善与恶的分别、美丑的定义，更无职业角色贵贱分别。 在这个世界里，大家可以调皮捣蛋、疯狂欢乐，也可以提供自身价值给所有参与的成员，也要一起帮助生活困苦的人们，翻转他们自己的人生！！',
+              ans3: '',
+              urlText: '',
+              url: "",
+              show: false,
             },
             {
-              question:'如何铸造与购买Majin Jojo',
-              ans1:'',
-              ans2:'',
-              ans3:'',
-              urlText:'',
-              url:'',
-              urlText1:'请参阅Majin Jojo的公开铸造文章说明',
-              url1:'https://www.potatomedia.co/post/b3de3030-899c-4cb0-ac21-898947144690',
-              urlText2:'请参阅Majin Jojo的白名单铸造文章说明',
-              url2:'https://www.potatomedia.co/post/38e1d0a5-92f2-4641-a655-57f17265972b',
-              urlText3:'如何转帐加密货币到CHAEBOL钱包？',
-              url3:'https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%82%A8%E5%80%BC%E6%8F%90%E9%A2%86-4258a319986a',
-              show:false,
+              question: '如何铸造与购买Majin Jojo',
+              ans1: '',
+              ans2: '',
+              ans3: '',
+              urlText: '',
+              url: '',
+              urlText1: '请参阅Majin Jojo的公开铸造文章说明',
+              url1: 'https://www.potatomedia.co/post/b3de3030-899c-4cb0-ac21-898947144690',
+              urlText2: '请参阅Majin Jojo的白名单铸造文章说明',
+              url2: 'https://www.potatomedia.co/post/38e1d0a5-92f2-4641-a655-57f17265972b',
+              urlText3: '如何转帐加密货币到CHAEBOL钱包？',
+              url3: 'https://medium.com/@chaebol.marketing/%E5%A6%82%E4%BD%95%E5%82%A8%E5%80%BC%E6%8F%90%E9%A2%86-4258a319986a',
+              show: false,
             },
             {
-              question:'发售时程以及方式',
-              ans1:'耶~即将公布白名单和公售时程，请密切追踪官方',
-              ans2:'',
-              ans3:'，一起加入强大的『Majin Jojo』帝国！',
-              urlText:'Discord频道连结',
-              url:'https://discord.gg/tjQnQwsAq7',
-              show:false,
+              question: '发售时程以及方式',
+              ans1: '耶~即将公布白名单和公售时程，请密切追踪官方',
+              ans2: '',
+              ans3: '，一起加入强大的『Majin Jojo』帝国！',
+              urlText: 'Discord频道连结',
+              url: 'https://discord.gg/tjQnQwsAq7',
+              show: false,
             },
             {
-              question:'持有者的专属赋能',
-              ans1:'享受合作商家的优惠、专属周边商品、与名人交流、进入Majin Jojo超元宇宙，以及更多专属于Majin Jojo的特殊赋能...',
-              ans2:'',
-              ans3:'',
-              urlText:'',
-              url:'',
-              show:false,
+              question: '持有者的专属赋能',
+              ans1: '享受合作商家的优惠、专属周边商品、与名人交流、进入Majin Jojo超元宇宙，以及更多专属于Majin Jojo的特殊赋能...',
+              ans2: '',
+              ans3: '',
+              urlText: '',
+              url: '',
+              show: false,
             }
           ],
         },
         en: {
           // Menu
-          menuList:[
-            {name:"INTRODUCTION", id: "story", },
-            {name:"LEVEL",id: "level", },
-            {name:"ROADMAP",id: "roadmap", },
-            {name:"TEAM",id: "team", },
-            {name:"FAQ",id: "qa", },
-            {name:"MINT",id: "mint", },
-            {name:"SHOP",id: "shop", },
+          menuList: [
+            { name: "INTRODUCTION", id: "story", },
+            { name: "LEVEL", id: "level", },
+            { name: "ROADMAP", id: "roadmap", },
+            { name: "TEAM", id: "team", },
+            { name: "FAQ", id: "qa", },
+            { name: "MINT", id: "mint", },
+            { name: "SHOP", id: "shop", },
           ],
           // Slider
-          slider:{
-            intro1:'This is a chaotic era ',
-            intro2:' ',
-            intro3:'where money is pleasure',
-            heading:"Majin Jojo is here for everthing that is coming."
+          slider: {
+            intro1: 'This is a chaotic era ',
+            intro2: ' ',
+            intro3: 'where money is pleasure',
+            heading: "Majin Jojo is here for everthing that is coming."
           },
           // 品牌介紹 Story
-          story:{
-            heading:"STORY",
-            content1:'Eyy~ The Great Depression and the severe epidemic are raging, and everyone’s life is really getting sadder and sadder...In this chaotic era, there has been a group of super-wealthy young, who are strangely shaped, show their teeth and crack their mouths, and wear gold and silver on their bodies. Although they look super precious that it’s difficult to connect completely with fashion, but the advantage is that they are super wealthy, and people call them "',
-            content2:"Majin Jojo",
-            content3:'"!!',
-            content4:'They have a total of 10,003 members, and each of them is unique. They look kinda strange, and their faces are very hideous. There are races such as zombies, aliens, beasts, mummies, etc., and all characters are common. The characteristics are that they like to show off their wealth and show their special gold and silver accessories. In addition, they also like to absorb the source of "happiness" everywhere, whether it is real estate, career achievements, or even just a little luck, they are not willing to let it go!! But recently they have new ideas and want to increase The world’s impression of them, to create a new generation!!!!!!',
+          story: {
+            heading: "STORY",
+            content1: 'Eyy~ The Great Depression and the severe epidemic are raging, and everyone’s life is really getting sadder and sadder...In this chaotic era, there has been a group of super-wealthy young, who are strangely shaped, show their teeth and crack their mouths, and wear gold and silver on their bodies. Although they look super precious that it’s difficult to connect completely with fashion, but the advantage is that they are super wealthy, and people call them "',
+            content2: "Majin Jojo",
+            content3: '"!!',
+            content4: 'They have a total of 10,003 members, and each of them is unique. They look kinda strange, and their faces are very hideous. There are races such as zombies, aliens, beasts, mummies, etc., and all characters are common. The characteristics are that they like to show off their wealth and show their special gold and silver accessories. In addition, they also like to absorb the source of "happiness" everywhere, whether it is real estate, career achievements, or even just a little luck, they are not willing to let it go!! But recently they have new ideas and want to increase The world’s impression of them, to create a new generation!!!!!!',
           },
           // LEVEL
-          level:{
-            heading:"LEVEL"
+          level: {
+            heading: "LEVEL"
           },
-          levelList:[
+          levelList: [
             {
-              image:"./img/level/level6.png",
-              image2:"./img/level/sssrl.png",
-              level:"SSSRL",
+              image: "./img/level/level6.png",
+              image2: "./img/level/sssrl.png",
+              level: "SSSRL",
             },
             {
-              image:"./img/level/level1.png",
-              image2:"./img/level/sssr.png",
-              level:"SSSR",
+              image: "./img/level/level1.png",
+              image2: "./img/level/sssr.png",
+              level: "SSSR",
             },
             {
-              image:"./img/level/level2.png",
-              image2:"./img/level/ssr.png",
-              level:"SSR",
+              image: "./img/level/level2.png",
+              image2: "./img/level/ssr.png",
+              level: "SSR",
             },
             {
-              image:"./img/level/level3.png",
-              image2:"./img/level/sr.png",
-              level:"SR",
+              image: "./img/level/level3.png",
+              image2: "./img/level/sr.png",
+              level: "SR",
             },
             {
-              image:"./img/level/level4.png",
-              image2:"./img/level/s.png",
-              level:"R",
+              image: "./img/level/level4.png",
+              image2: "./img/level/s.png",
+              level: "R",
             },
             {
-              image:"./img/level/level5.png",
-              image2:"./img/level/n.png",
-              level:"N",
+              image: "./img/level/level5.png",
+              image2: "./img/level/n.png",
+              level: "N",
             }
           ],
           // Roadmap
-          roadmap:{
-            heading:"ROADMAP"
+          roadmap: {
+            heading: "ROADMAP"
           },
-          roadmapList:[
+          roadmapList: [
             {
-              image:"./img/roadmap/roadmap1.png",
-              title:"Airdrop Elite of Society", 
-              text:"Invite social celebrities from all walks of life to have fun with the JoJo-ers!",
+              image: "./img/roadmap/roadmap1.png",
+              title: "Airdrop Elite of Society",
+              text: "Invite social celebrities from all walks of life to have fun with the JoJo-ers!",
             },
             {
-              image:"./img/roadmap/roadmap2.png", 
-              title:"Majin Jojo first launch", 
-              text:"The first mint white list and public sale!",
+              image: "./img/roadmap/roadmap2.png",
+              title: "Majin Jojo first launch",
+              text: "The first mint white list and public sale!",
             },
             {
-              image:"./img/roadmap/roadmap3.png", 
-              title:"Business cooperation", 
-              text:"Combine selected merchants from all walks of life, eat, play, and have fun together!",
+              image: "./img/roadmap/roadmap3.png",
+              title: "Business cooperation",
+              text: "Combine selected merchants from all walks of life, eat, play, and have fun together!",
             },
             {
-              image:"./img/roadmap/roadmap4.png", 
-              title:"Exclusive Majin Jojo goods", 
-              text:"Unique surroundings! ! Create Jojo's personal brand spirit!!",
+              image: "./img/roadmap/roadmap4.png",
+              title: "Exclusive Majin Jojo goods",
+              text: "Unique surroundings! ! Create Jojo's personal brand spirit!!",
             },
             {
-              image:"./img/roadmap/roadmap5.png", 
-              title:"Majin universe opening", 
-              text:"Community autonomy, create your own magic space, make friends and interact, and build your own universe",
+              image: "./img/roadmap/roadmap5.png",
+              title: "Majin universe opening",
+              text: "Community autonomy, create your own magic space, make friends and interact, and build your own universe",
             }
           ],
           // 團隊 Team
-          team:{
-            heading1:"TEAM",
-            heading2:"未來願景",
-            text1:'Majin Jojo is an ironic NFT art developed by the potential metaverse team of JoJo labs and different from the general NFT market! The founder, Mr. Jo has been in the world of traditional finance for years with extensive experience. Although he has a version to the traditional market mechanism, there is more enthusiasm for NFT, a new technology. Last year, he participated in all of the famous NFT projects such as BAYC, Doodles, Cool Cats, etc., and witnessed the application of this new technology and its infinite charm in changing people. For the community consensus "New Future Society" can create limitless possibilities, it is the belief of JoJo Labs to release the NFT.',
-            text2:"JoJo Labs core team is made up of well-known content creators and visual planners. In addition, the team is actively expanding, looking for talented people with great enthusiasm for blockchain and NFT to create a new style of NFT together! Mr.Jo vows to use his personal success to build a new NFT, and also let all participants work together to change the world.",
-            button:"MINT",
-            buttonUrl:'https://www.chaebol.art/store/120000000000000004',
-            whitePaper:"WHITE PAPER",
-            whitePaperUrl:"https://docs.majinjojo.club"
+          team: {
+            heading1: "TEAM",
+            heading2: "未來願景",
+            text1: 'Majin Jojo is an ironic NFT art developed by the potential metaverse team of JoJo labs and different from the general NFT market! The founder, Mr. Jo has been in the world of traditional finance for years with extensive experience. Although he has a version to the traditional market mechanism, there is more enthusiasm for NFT, a new technology. Last year, he participated in all of the famous NFT projects such as BAYC, Doodles, Cool Cats, etc., and witnessed the application of this new technology and its infinite charm in changing people. For the community consensus "New Future Society" can create limitless possibilities, it is the belief of JoJo Labs to release the NFT.',
+            text2: "JoJo Labs core team is made up of well-known content creators and visual planners. In addition, the team is actively expanding, looking for talented people with great enthusiasm for blockchain and NFT to create a new style of NFT together! Mr.Jo vows to use his personal success to build a new NFT, and also let all participants work together to change the world.",
+            button: "MINT",
+            buttonUrl: 'https://www.chaebol.art/store/120000000000000004',
+            whitePaper: "WHITE PAPER",
+            whitePaperUrl: "https://docs.majinjojo.club"
           },
           // 加入我們 Join
-          join:{
-            heading:"Join the Majin Jojo universe",
-            text:"If you have any questions, co-operate on business, or want to be a part of Majin Jojo, you can write to us and play together!",
-            mailText:"Email：",
-            mailUrl:'majinjojo2022@gmail.com',
+          join: {
+            heading: "Join the Majin Jojo universe",
+            text: "If you have any questions, co-operate on business, or want to be a part of Majin Jojo, you can write to us and play together!",
+            mailText: "Email：",
+            mailUrl: 'majinjojo2022@gmail.com',
           },
           // Discord
-          discord:{
-            heading:"Don’t miss any of our latest news!!",
+          discord: {
+            heading: "Don’t miss any of our latest news!!",
           },
           // 常見問題
-          faq:{
-            heading:"FAQ"
+          faq: {
+            heading: "FAQ"
           },
-          faqList:[
+          faqList: [
             {
-              question:'Majin Jojo Foundation',
-              ans1:'The team has always liked the villains in movies and animations. They think that the existence of villains is always cooler than those superheroes that everyone envies, and it is also the tension in the whole drama.',
-              ans2:'In the new universe, there is no difference between pros and cons, no distinction between good and evil, no definition of beauty and ugliness, and no distinction between professional roles. In this world, everyone can be mischievous, crazy and happy, and they can also provide their own value to all participating members, and also help people who are struggling and turn their lives around!!',
-              ans3:'',
-              urlText:'',
-              url:"",
-              show:false,
+              question: 'Majin Jojo Foundation',
+              ans1: 'The team has always liked the villains in movies and animations. They think that the existence of villains is always cooler than those superheroes that everyone envies, and it is also the tension in the whole drama.',
+              ans2: 'In the new universe, there is no difference between pros and cons, no distinction between good and evil, no definition of beauty and ugliness, and no distinction between professional roles. In this world, everyone can be mischievous, crazy and happy, and they can also provide their own value to all participating members, and also help people who are struggling and turn their lives around!!',
+              ans3: '',
+              urlText: '',
+              url: "",
+              show: false,
             },
             {
-              question:'How to mint and buy Majin Jojo',
-              ans1:'',
-              ans2:'',
-              ans3:'',
-              urlText:"",
-              url:'',
-              urlText1:"Majin Jojo's Public Minting instructions article",
-              url1:'https://www.potatomedia.co/post/cec597f7-e26a-4b01-a55f-521d35f0e9f4',
-              urlText2:"Majin Jojo's White List Minting instructions article",
-              url2:'https://www.potatomedia.co/post/68f26584-4959-4567-849a-e210db63f889',
-              urlText3:'How do I transfer cryptocurrency to my CHAEBOL wallet？',
-              url3:'https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641',
-              show:false,
+              question: 'How to mint and buy Majin Jojo',
+              ans1: '',
+              ans2: '',
+              ans3: '',
+              urlText: "",
+              url: '',
+              urlText1: "Majin Jojo's Public Minting instructions article",
+              url1: 'https://www.potatomedia.co/post/cec597f7-e26a-4b01-a55f-521d35f0e9f4',
+              urlText2: "Majin Jojo's White List Minting instructions article",
+              url2: 'https://www.potatomedia.co/post/68f26584-4959-4567-849a-e210db63f889',
+              urlText3: 'How do I transfer cryptocurrency to my CHAEBOL wallet？',
+              url3: 'https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641',
+              show: false,
             },
             {
-              question:'Release schedule and method',
-              ans1:'Yay~ The whitelist and public sale schedule will be announced soon, please follow the official ',
-              ans2:'',
-              ans3:' closely and join the mighty "-Majin Jojo" empire together!',
-              urlText:'Discord channel link',
-              url:'https://discord.gg/tjQnQwsAq7',
-              show:false,
+              question: 'Release schedule and method',
+              ans1: 'Yay~ The whitelist and public sale schedule will be announced soon, please follow the official ',
+              ans2: '',
+              ans3: ' closely and join the mighty "-Majin Jojo" empire together!',
+              urlText: 'Discord channel link',
+              url: 'https://discord.gg/tjQnQwsAq7',
+              show: false,
             },
             {
-              question:'Holder’s exclusive empowerment',
-              ans1:'Enjoy discounts from partner merchants, exclusive merchandise, communicate with celebrities, enter the Majin metaverse, and more special empowerments exclusive to Jojo...',
-              ans2:'',
-              ans3:'',
-              urlText:'',
-              url:'',
-              show:false,
+              question: 'Holder’s exclusive empowerment',
+              ans1: 'Enjoy discounts from partner merchants, exclusive merchandise, communicate with celebrities, enter the Majin metaverse, and more special empowerments exclusive to Jojo...',
+              ans2: '',
+              ans3: '',
+              urlText: '',
+              url: '',
+              show: false,
             },
           ],
         },
         vn: {
           // Menu
-          menuList:[
-            {name:"Giới thiệu", id: "story", },
-            {name:"LEVEL",id: "level", },
-            {name:"ROADMAP",id: "roadmap", },
-            {name:"TEAM",id: "team", },
-            {name:"FAQ",id: "qa", },
-            {name:"MINT",id: "mint", },
-            {name:"SHOP",id: "shop", },
+          menuList: [
+            { name: "Giới thiệu", id: "story", },
+            { name: "LEVEL", id: "level", },
+            { name: "ROADMAP", id: "roadmap", },
+            { name: "TEAM", id: "team", },
+            { name: "FAQ", id: "qa", },
+            { name: "MINT", id: "mint", },
+            { name: "SHOP", id: "shop", },
           ],
           // Slider
-          slider:{
-            intro1:"Đây là một thời đại hỗn loạn",
-            intro2:",",
-            intro3:"nơi tiền bạc là niềm vui",
-            heading:"Majin Jojo đã xuất hiện để chuẩn bị cho tất cả những thứ sắp xảy ra"
+          slider: {
+            intro1: "Đây là một thời đại hỗn loạn",
+            intro2: ",",
+            intro3: "nơi tiền bạc là niềm vui",
+            heading: "Majin Jojo đã xuất hiện để chuẩn bị cho tất cả những thứ sắp xảy ra"
           },
           // 品牌介紹 Story
-          story:{
-            heading:"STORY",
-            content1:'Hỡi ơi ~ Đại suy thoái và đại dịch đang hoành hành, cuộc sống của mọi người thực sự ngày càng buồn hơn ...Trong thời đại hỗn loạn này, đã xuất hiện một nhóm người siêu giàu, họ có hình dáng kỳ lạ, răng khểnh, đeo vàng bạc trên người. Mặc dù trông có vẻ đắt đỏ để có thể hoà nhập hoàn toàn với thời trang, nhưng lợi thế là họ có số tài sản siêu "khủng", và người trong giới gọi họ là "',
-            content2:"Majin Jojo",
-            content3:'" !!',
-            content4:"Họ có tổng cộng 10.003 thành viên và mỗi người trong số họ đều là duy nhất. Họ trông khá kỳ lạ và khuôn mặt rất gớm ghiếc. Có các chủng tộc như thây ma, người ngoài hành tinh, quái thú, xác ướp, v.v. và tất cả các nhân vật đều có đặc điểm chung là họ thích phô trương sự giàu có, trưng dụng các phụ kiện vàng bạc, đặc biệt là họ cũng thích hút nguồn “phúc khí” ở khắp mọi nơi, cho dù đó là bất động sản, thành tựu sự nghiệp, hay thậm chí chỉ là một chút may mắn, họ đều nắm bắt và không bỏ lỡ !! Nhưng gần đây họ có những ý tưởng mới và muốn tăng ấn tượng của thế giới về họ, để tạo ra một thế hệ mới !!!!!!",
+          story: {
+            heading: "STORY",
+            content1: 'Hỡi ơi ~ Đại suy thoái và đại dịch đang hoành hành, cuộc sống của mọi người thực sự ngày càng buồn hơn ...Trong thời đại hỗn loạn này, đã xuất hiện một nhóm người siêu giàu, họ có hình dáng kỳ lạ, răng khểnh, đeo vàng bạc trên người. Mặc dù trông có vẻ đắt đỏ để có thể hoà nhập hoàn toàn với thời trang, nhưng lợi thế là họ có số tài sản siêu "khủng", và người trong giới gọi họ là "',
+            content2: "Majin Jojo",
+            content3: '" !!',
+            content4: "Họ có tổng cộng 10.003 thành viên và mỗi người trong số họ đều là duy nhất. Họ trông khá kỳ lạ và khuôn mặt rất gớm ghiếc. Có các chủng tộc như thây ma, người ngoài hành tinh, quái thú, xác ướp, v.v. và tất cả các nhân vật đều có đặc điểm chung là họ thích phô trương sự giàu có, trưng dụng các phụ kiện vàng bạc, đặc biệt là họ cũng thích hút nguồn “phúc khí” ở khắp mọi nơi, cho dù đó là bất động sản, thành tựu sự nghiệp, hay thậm chí chỉ là một chút may mắn, họ đều nắm bắt và không bỏ lỡ !! Nhưng gần đây họ có những ý tưởng mới và muốn tăng ấn tượng của thế giới về họ, để tạo ra một thế hệ mới !!!!!!",
           },
           // LEVEL
-          level:{
-            heading:"LEVEL"
+          level: {
+            heading: "LEVEL"
           },
-          levelList:[
+          levelList: [
             {
-              image:"./img/level/level6.png",
-              image2:"./img/level/sssrl.png",
-              level:"SSSRL",
+              image: "./img/level/level6.png",
+              image2: "./img/level/sssrl.png",
+              level: "SSSRL",
             },
             {
-              image:"./img/level/level1.png",
-              image2:"./img/level/sssr.png",
-              level:"SSSR",
+              image: "./img/level/level1.png",
+              image2: "./img/level/sssr.png",
+              level: "SSSR",
             },
             {
-              image:"./img/level/level2.png",
-              image2:"./img/level/ssr.png",
-              level:"SSR",
+              image: "./img/level/level2.png",
+              image2: "./img/level/ssr.png",
+              level: "SSR",
             },
             {
-              image:"./img/level/level3.png",
-              image2:"./img/level/sr.png",
-              level:"SR",
+              image: "./img/level/level3.png",
+              image2: "./img/level/sr.png",
+              level: "SR",
             },
             {
-              image:"./img/level/level4.png",
-              image2:"./img/level/s.png",
-              level:"R",
+              image: "./img/level/level4.png",
+              image2: "./img/level/s.png",
+              level: "R",
             },
             {
-              image:"./img/level/level5.png",
-              image2:"./img/level/n.png",
-              level:"N",
+              image: "./img/level/level5.png",
+              image2: "./img/level/n.png",
+              level: "N",
             }
           ],
           // Roadmap
-          roadmap:{
-            heading:"ROADMAP"
+          roadmap: {
+            heading: "ROADMAP"
           },
-          roadmapList:[
+          roadmapList: [
             {
-              image:"./img/roadmap/roadmap1.png",
-              title:"Airdrop cho cộng đồng thượng đẳng", 
-              text:"Mời những người nổi tiếng trên mạng xã hội từ mọi tầng lớp đến chung vui với các JoJo-ers!",
+              image: "./img/roadmap/roadmap1.png",
+              title: "Airdrop cho cộng đồng thượng đẳng",
+              text: "Mời những người nổi tiếng trên mạng xã hội từ mọi tầng lớp đến chung vui với các JoJo-ers!",
             },
             {
-              image:"./img/roadmap/roadmap2.png", 
-              title:"Majin Jojo ra mắt lần đầu tiên", 
-              text:"Danh sách mint đầu tiên và mở bán công khai !",
+              image: "./img/roadmap/roadmap2.png",
+              title: "Majin Jojo ra mắt lần đầu tiên",
+              text: "Danh sách mint đầu tiên và mở bán công khai !",
             },
             {
-              image:"./img/roadmap/roadmap3.png", 
-              title:"Hợp tác kinh doanh thực thể", 
-              text:"Kết hợp các thương gia được chọn từ mọi tầng lớp xã hội, ăn, chơi và cùng nhau tận hưởng sự vui vẻ!",
+              image: "./img/roadmap/roadmap3.png",
+              title: "Hợp tác kinh doanh thực thể",
+              text: "Kết hợp các thương gia được chọn từ mọi tầng lớp xã hội, ăn, chơi và cùng nhau tận hưởng sự vui vẻ!",
             },
             {
-              image:"./img/roadmap/roadmap4.png", 
-              title:"Hàng độc quyền của Majin Jojo", 
-              text:"Môi trường xung quanh độc đáo !! Tạo nên tinh thần thương hiệu cá nhân Jojo !!",
+              image: "./img/roadmap/roadmap4.png",
+              title: "Hàng độc quyền của Majin Jojo",
+              text: "Môi trường xung quanh độc đáo !! Tạo nên tinh thần thương hiệu cá nhân Jojo !!",
             },
             {
-              image:"./img/roadmap/roadmap5.png", 
-              title:"Mở vũ trụ Majin", 
-              text:"Quyền tự chủ của cộng đồng, tạo không gian kỳ diệu của riêng bạn, kết bạn và tương tác, và xây dựng vũ trụ của riêng bạn",
+              image: "./img/roadmap/roadmap5.png",
+              title: "Mở vũ trụ Majin",
+              text: "Quyền tự chủ của cộng đồng, tạo không gian kỳ diệu của riêng bạn, kết bạn và tương tác, và xây dựng vũ trụ của riêng bạn",
             }
           ],
           // 團隊 Team
-          team:{
-            heading1:"TEAM",
-            heading2:"未來願景",
-            text1:'Majin Jojo là một NFT nghệ thuật châm biếm được phát triển bởi nhóm metaverse tiềm năng của phòng thí nghiệm JoJo và khác với thị trường NFT nói chung! Nhà sáng lập, Mr.Jo đã hoạt động trong lĩnh vực tài chính truyền thống nhiều năm với những kinh nghiệm dày dặn. Mặc dù anh ấy không thích cơ chế thị trường truyền thống, nhưng lại có nhiều hứng thú với NFT, một công nghệ mới. Năm ngoái, anh ấy đã tham gia vào tất cả các dự án NFT nổi tiếng như BAYC, Doodles, Cool Cats, v.v., và đã chứng kiến khả năng ​​ứng dụng của công nghệ mới này cùng sức hấp dẫn vô hạn của nó trong việc thay đổi con người. Vì sự đồng thuận của cộng đồng, "Xã hội tương lai mới" có thể tạo ra những khả năng vô hạn, và đó cũng chính là niềm tin cho JoJo Labs trong việc phát hành các NFT.',
-            text2:"Đội ngũ cốt lõi của JoJo Labs bao gồm những nhà sáng tạo nội dung và các nhà hoạch định hình ảnh nổi tiếng. Ngoài ra, nhóm đang tích cực mở rộng, tìm kiếm những nhân tài có tâm huyết lớn với blockchain và NFT để cùng nhau tạo ra một phong cách NFT mới! Mr.Jo thề sẽ sử dụng những kinh nghiệm thành công của bản thân để xây dựng một NFT mới, đồng thời để tất cả những người tham gia làm việc cùng nhau thay đổi thế giới.",
-            button:"MINT",
-            buttonUrl:'https://www.chaebol.art/store/120000000000000004',
-            whitePaper:"WHITE PAPER",
-            whitePaperUrl:"https://docs.majinjojo.club"
+          team: {
+            heading1: "TEAM",
+            heading2: "未來願景",
+            text1: 'Majin Jojo là một NFT nghệ thuật châm biếm được phát triển bởi nhóm metaverse tiềm năng của phòng thí nghiệm JoJo và khác với thị trường NFT nói chung! Nhà sáng lập, Mr.Jo đã hoạt động trong lĩnh vực tài chính truyền thống nhiều năm với những kinh nghiệm dày dặn. Mặc dù anh ấy không thích cơ chế thị trường truyền thống, nhưng lại có nhiều hứng thú với NFT, một công nghệ mới. Năm ngoái, anh ấy đã tham gia vào tất cả các dự án NFT nổi tiếng như BAYC, Doodles, Cool Cats, v.v., và đã chứng kiến khả năng ​​ứng dụng của công nghệ mới này cùng sức hấp dẫn vô hạn của nó trong việc thay đổi con người. Vì sự đồng thuận của cộng đồng, "Xã hội tương lai mới" có thể tạo ra những khả năng vô hạn, và đó cũng chính là niềm tin cho JoJo Labs trong việc phát hành các NFT.',
+            text2: "Đội ngũ cốt lõi của JoJo Labs bao gồm những nhà sáng tạo nội dung và các nhà hoạch định hình ảnh nổi tiếng. Ngoài ra, nhóm đang tích cực mở rộng, tìm kiếm những nhân tài có tâm huyết lớn với blockchain và NFT để cùng nhau tạo ra một phong cách NFT mới! Mr.Jo thề sẽ sử dụng những kinh nghiệm thành công của bản thân để xây dựng một NFT mới, đồng thời để tất cả những người tham gia làm việc cùng nhau thay đổi thế giới.",
+            button: "MINT",
+            buttonUrl: 'https://www.chaebol.art/store/120000000000000004',
+            whitePaper: "WHITE PAPER",
+            whitePaperUrl: "https://docs.majinjojo.club"
           },
           // 加入我們 Join
-          join:{
-            heading:"Tham gia vũ trụ Majin Jojo",
-            text:"Nếu bạn có bất kì nhu cầu kinh doanh, hợp tác nào, hoặc muốn trở thành một thành viên của Majin Jojo, bạn có thể viết thư đến và tham gia cùng chúng tôi !",
-            mailText:"thư：",
-            mailUrl:'majinjojo2022@gmail.com',
+          join: {
+            heading: "Tham gia vũ trụ Majin Jojo",
+            text: "Nếu bạn có bất kì nhu cầu kinh doanh, hợp tác nào, hoặc muốn trở thành một thành viên của Majin Jojo, bạn có thể viết thư đến và tham gia cùng chúng tôi !",
+            mailText: "thư：",
+            mailUrl: 'majinjojo2022@gmail.com',
           },
           // Discord
-          discord:{
-            heading:"Đừng bỏ lỡ tin tức mới nhất nào của chúng tôi!!",
+          discord: {
+            heading: "Đừng bỏ lỡ tin tức mới nhất nào của chúng tôi!!",
           },
           // 常見問題
-          faq:{
-            heading:"FAQ"
+          faq: {
+            heading: "FAQ"
           },
-          faqList:[
+          faqList: [
             {
-              question:'Nền tảng của Majin Jojo ',
-              ans1:'Nhóm nghiên cứu luôn thích những nhân vật phản diện trong phim và hoạt hình. Họ cho rằng sự tồn tại của những nhân vật phản diện luôn lạnh lùng hơn những siêu anh hùng mà mọi người ghen tị, và đó cũng là sự kịch tính trong cả bộ phim.',
-              ans2:'Trong vũ trụ mới, không có sự khác biệt giữa ưu và khuyết điểm, không có sự phân biệt giữa thiện và ác, không có định nghĩa về cái đẹp và cái xấu, và không có sự phân biệt giữa các vai trò nghề nghiệp. Trong thế giới này, ai cũng có thể nghịch ngợm, điên rồ và vui vẻ, và họ cũng có thể cung cấp giá trị của riêng mình cho tất cả các thành viên tham gia, và cũng có thể giúp đỡ những người đang gặp khó khăn và xoay chuyển cuộc sống của họ !!',
-              ans3:'',
-              urlText:'',
-              url:"",
-              show:false,
+              question: 'Nền tảng của Majin Jojo ',
+              ans1: 'Nhóm nghiên cứu luôn thích những nhân vật phản diện trong phim và hoạt hình. Họ cho rằng sự tồn tại của những nhân vật phản diện luôn lạnh lùng hơn những siêu anh hùng mà mọi người ghen tị, và đó cũng là sự kịch tính trong cả bộ phim.',
+              ans2: 'Trong vũ trụ mới, không có sự khác biệt giữa ưu và khuyết điểm, không có sự phân biệt giữa thiện và ác, không có định nghĩa về cái đẹp và cái xấu, và không có sự phân biệt giữa các vai trò nghề nghiệp. Trong thế giới này, ai cũng có thể nghịch ngợm, điên rồ và vui vẻ, và họ cũng có thể cung cấp giá trị của riêng mình cho tất cả các thành viên tham gia, và cũng có thể giúp đỡ những người đang gặp khó khăn và xoay chuyển cuộc sống của họ !!',
+              ans3: '',
+              urlText: '',
+              url: "",
+              show: false,
             },
             {
-              question:'Cách Mint và mua Majin Jojo',
-              ans1:'',
-              ans2:'',
-              ans3:'',
-              urlText:"",
-              url:'',
-              urlText1:"Bài viết hướng dẫn Mint  công khai Majin Jojo",
-              url1:'https://www.potatomedia.co/post/581eb25a-09d5-4413-b3ec-d45e358f0d1d',
-              urlText2:"Bài viết hướng dẫn Mint Whitelist của Majin Jojo",
-              url2:'https://www.potatomedia.co/post/aed10644-a5d0-4a9f-8aa3-b892b8cb8e3e',
-              urlText3:'Làm cách nào để chuyển tiền điện tử sang ví CHAEBOL？',
-              url3:'https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641',
-              show:false,
+              question: 'Cách Mint và mua Majin Jojo',
+              ans1: '',
+              ans2: '',
+              ans3: '',
+              urlText: "",
+              url: '',
+              urlText1: "Bài viết hướng dẫn Mint  công khai Majin Jojo",
+              url1: 'https://www.potatomedia.co/post/581eb25a-09d5-4413-b3ec-d45e358f0d1d',
+              urlText2: "Bài viết hướng dẫn Mint Whitelist của Majin Jojo",
+              url2: 'https://www.potatomedia.co/post/aed10644-a5d0-4a9f-8aa3-b892b8cb8e3e',
+              urlText3: 'Làm cách nào để chuyển tiền điện tử sang ví CHAEBOL？',
+              url3: 'https://medium.com/@chaebol.marketing/how-to-withdraw-and-deposit-e4b1c54fd641',
+              show: false,
             },
             {
-              question:'Lịch phát hành và cách thức',
-              ans1:'Yay~ Danh sách trắng và lịch bán công khai sẽ sớm được công bố, hãy theo dõi chặt chẽ link kênh ',
-              ans2:'',
-              ans3:' và cùng nhau gia nhập đế chế "-Majin Jojo" hùng mạnh nhé!',
-              urlText:'Discord chính thức',
-              url:'https://discord.gg/tjQnQwsAq7',
-              show:false,
+              question: 'Lịch phát hành và cách thức',
+              ans1: 'Yay~ Danh sách trắng và lịch bán công khai sẽ sớm được công bố, hãy theo dõi chặt chẽ link kênh ',
+              ans2: '',
+              ans3: ' và cùng nhau gia nhập đế chế "-Majin Jojo" hùng mạnh nhé!',
+              urlText: 'Discord chính thức',
+              url: 'https://discord.gg/tjQnQwsAq7',
+              show: false,
             },
             {
-              question:'Quyền độc quyền của chủ sở hữu',
-              ans1:'Tận hưởng chiết khấu từ các thương gia đối tác, hàng hóa độc quyền, giao tiếp với những người nổi tiếng, tham gia Majin metaverse và nhiều quyền đặc biệt hơn dành riêng cho Jojo ...',
-              ans2:'',
-              ans3:'',
-              urlText:'',
-              url:'',
-              show:false,
+              question: 'Quyền độc quyền của chủ sở hữu',
+              ans1: 'Tận hưởng chiết khấu từ các thương gia đối tác, hàng hóa độc quyền, giao tiếp với những người nổi tiếng, tham gia Majin metaverse và nhiều quyền đặc biệt hơn dành riêng cho Jojo ...',
+              ans2: '',
+              ans3: '',
+              urlText: '',
+              url: '',
+              show: false,
             },
           ],
         }
       }
       const i18n = new VueI18n({
         //定義默認語言
-        locale: 'tw', 
-        messages:messages,
+        locale: 'tw',
+        messages: messages,
         silentTranslationWarn: true
       })
 
       const routes = [
-        { 
+        {
           path: '/',
-          children:[
+          children: [
             {
-              path:'',
+              path: '',
               name: 'index',
               // redirect: '/index' ,
             },
-            { 
+            {
               path: '/:lang',
               name: 'lang',
             },
@@ -1225,333 +1328,333 @@
       });
 
       let vue = new Vue({
-          el: "#app",
-          i18n:i18n,
-          router:router,
-          delimiters: ['<%', '%>'],
-          data: {
-            lanName:"繁體中文",
-            checkIndex:"",
-            menuView:false,
-            locale: "tw",
-            cssLocal:"",
-            menuImg:"./img/icon/Menu.png",
-            menuTrigger:false,
-            mintUrl:"https://www.chaebol.art/store/120000000000000004",
-            logoStyle:{
-              display: ''
-            },
-            qaCheck:false,
-            checkQAIndex0:"0",
-            checkQAIndex1:"1",
-            checkQAIndex2:"2",
-            checkQAIndex:"0",
-            qaStyle:{
-              boxShadow:'',
-              transition:'',
-              active:'',
-            },
-            musicBtn:"./img/music/start.png",
-            fullWidth:"",
-            volumeValue:"0.6",
-            shopUrl:"https://docs.google.com/forms/u/1/d/e/1FAIpQLSfdBADD3X38d0ZMvqYAN-koYe9VAeKeLNVGBfaB07YEcvb4nA/viewform",
-            // Media Icon
-            mediaIcon:[
-              {url:"https://discord.gg/tjQnQwsAq7", id:"discord", phoneId:"discordPhone", image:"", imageHover:""},
-              {url:"https://twitter.com/majinjojo2022", id:"twitter", phoneId:"twitterPhone", image:"", imageHover:""},
-              {url:"", id:"", phoneId:"", image:"", imageHover:""},
-              {url:"", id:"", phoneId:"", image:"", imageHover:""},
-              {url:"", id:"", phoneId:"", image:"", imageHover:""},
+        el: "#app",
+        i18n: i18n,
+        router: router,
+        delimiters: ['<%', '%>'],
+        data: {
+          lanName: "繁體中文",
+          checkIndex: "",
+          menuView: false,
+          locale: "tw",
+          cssLocal: "",
+          menuImg: "./img/icon/Menu.png",
+          menuTrigger: false,
+          mintUrl: "https://www.chaebol.art/store/120000000000000004",
+          logoStyle: {
+            display: ''
+          },
+          qaCheck: false,
+          checkQAIndex0: "0",
+          checkQAIndex1: "1",
+          checkQAIndex2: "2",
+          checkQAIndex: "0",
+          qaStyle: {
+            boxShadow: '',
+            transition: '',
+            active: '',
+          },
+          musicBtn: "./img/music/start.png",
+          fullWidth: "",
+          volumeValue: "0.6",
+          shopUrl: "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfdBADD3X38d0ZMvqYAN-koYe9VAeKeLNVGBfaB07YEcvb4nA/viewform",
+          // Media Icon
+          mediaIcon: [
+            { url: "https://discord.gg/tjQnQwsAq7", id: "discord", phoneId: "discordPhone", image: "", imageHover: "" },
+            { url: "https://twitter.com/majinjojo2022", id: "twitter", phoneId: "twitterPhone", image: "", imageHover: "" },
+            { url: "", id: "", phoneId: "", image: "", imageHover: "" },
+            { url: "", id: "", phoneId: "", image: "", imageHover: "" },
+            { url: "", id: "", phoneId: "", image: "", imageHover: "" },
 
-            ],
-            // Language
-            lanList:[
-              {name:"繁體中文", href:"#", routeName:"index", router:""},
-              {name:"简体中文", href:"#", routeName:"lang",router:"CN"},
-              {name:"English", href:"#", routeName:"lang",router:"EN"},
-              {name:"Tiếng Việt", href:"#", routeName:"lang",router:"VN"},
-            ],
-            // 畫廊
-            galleryList1:[
-              {image:"./img/gallery/gallery1.png"},
-              {image:"./img/gallery/gallery2.png"},
-              {image:"./img/gallery/gallery3.png"},
-              {image:"./img/gallery/gallery4.png"},
-              {image:"./img/gallery/gallery5.png"},
-              {image:"./img/gallery/gallery6.png"},
-            ],
-            galleryList2:[
-              {image:"./img/gallery/gallery7.png"},
-              {image:"./img/gallery/gallery8.png"},
-              {image:"./img/gallery/gallery9.png"},
-              {image:"./img/gallery/gallery10.png"},
-              {image:"./img/gallery/gallery11.png"},
-              {image:"./img/gallery/gallery12.png"},
-            ],
-            
-          },
-          mounted: function () {
-            // LEVEL
-            var mediaSwiper = new Swiper(".media-swiper", {
-                slidesPerView: 3,
-                spaceBetween: 0,
-                slidesPerGroup: 1,
-                loop: true,
-                loopFillGroupWithBlank: true,
-                pagination: {
-                  el: ".swiper-pagination",
-                  clickable: true,
-                },
-                navigation: {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                },
-                breakpoints: {
-                  320: {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                  },
-                  760: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                  },
-                  1280: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                  1440: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-              }
-              });
+          ],
+          // Language
+          lanList: [
+            { name: "繁體中文", href: "#", routeName: "index", router: "" },
+            { name: "简体中文", href: "#", routeName: "lang", router: "CN" },
+            { name: "English", href: "#", routeName: "lang", router: "EN" },
+            { name: "Tiếng Việt", href: "#", routeName: "lang", router: "VN" },
+          ],
+          // 畫廊
+          galleryList1: [
+            { image: "./img/gallery/gallery1.png" },
+            { image: "./img/gallery/gallery2.png" },
+            { image: "./img/gallery/gallery3.png" },
+            { image: "./img/gallery/gallery4.png" },
+            { image: "./img/gallery/gallery5.png" },
+            { image: "./img/gallery/gallery6.png" },
+          ],
+          galleryList2: [
+            { image: "./img/gallery/gallery7.png" },
+            { image: "./img/gallery/gallery8.png" },
+            { image: "./img/gallery/gallery9.png" },
+            { image: "./img/gallery/gallery10.png" },
+            { image: "./img/gallery/gallery11.png" },
+            { image: "./img/gallery/gallery12.png" },
+          ],
 
-              const vm = this;
-              vm.fullWidth = window.innerWidth;
-              vm.fullHeight = window.innerHeight;
-              window.onresize = () => {
-                vm.fullWidth = window.innerWidth;
-                vm.fullHeight = window.innerHeight;
-              };
-              // 先設定音量
-              $('#audio')[0].volume = 0.6;
-              // console.log(vm.fullWidth)
-          },
-          created: function () {
-            this.$i18n.locale = this.locale;
-            // this.getMusicFullTime();
-            // this.playMusic();
-          },
-          watch: {
-            '$route.path': {
-              handler: function(path) {
-                // console.log(path)
-                if(path=='/'){
-                  this.locale = 'tw'
-                  this.lanName = '繁體中文'
-                  this.cssLocal = ''
-                }else if(path=='/CN'){
-                  this.locale = 'cn'
-                  this.lanName = '简体中文'
-                   this.cssLocal = ''
-                }else if (path=='/EN'){
-                  this.locale = 'en'
-                  this.cssLocal = 'en_'
-                  this.lanName = 'English'
-                }else if (path=='/VN'){
-                  this.locale = 'vn'
-                  this.lanName = 'Tiếng Việt'
-                  this.cssLocal = 'vn_'
-                }
-                this.$i18n.locale = this.locale
+        },
+        mounted: function () {
+          // LEVEL
+          var mediaSwiper = new Swiper(".media-swiper", {
+            slidesPerView: 3,
+            spaceBetween: 0,
+            slidesPerGroup: 1,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 30,
               },
-              deep: true,
-              immediate: true
+              760: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              1280: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1440: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }
+          });
+
+          const vm = this;
+          vm.fullWidth = window.innerWidth;
+          vm.fullHeight = window.innerHeight;
+          window.onresize = () => {
+            vm.fullWidth = window.innerWidth;
+            vm.fullHeight = window.innerHeight;
+          };
+          // 先設定音量
+          $('#audio')[0].volume = 0.6;
+          // console.log(vm.fullWidth)
+        },
+        created: function () {
+          this.$i18n.locale = this.locale;
+          // this.getMusicFullTime();
+          // this.playMusic();
+        },
+        watch: {
+          '$route.path': {
+            handler: function (path) {
+              // console.log(path)
+              if (path == '/') {
+                this.locale = 'tw'
+                this.lanName = '繁體中文'
+                this.cssLocal = ''
+              } else if (path == '/CN') {
+                this.locale = 'cn'
+                this.lanName = '简体中文'
+                this.cssLocal = ''
+              } else if (path == '/EN') {
+                this.locale = 'en'
+                this.cssLocal = 'en_'
+                this.lanName = 'English'
+              } else if (path == '/VN') {
+                this.locale = 'vn'
+                this.lanName = 'Tiếng Việt'
+                this.cssLocal = 'vn_'
+              }
+              this.$i18n.locale = this.locale
+            },
+            deep: true,
+            immediate: true
+          }
+        },
+        computed: function () {
+
+        },
+        beforeUpdated: function () {
+
+        },
+        updated: function () {
+
+        },
+        methods: {
+          checkBadge: function (isValue) {
+            if (isValue) {
+              return "badge-beige";
+            } else {
+              return "badge-soon";
             }
           },
-          computed: function(){
-              
-          },
-          beforeUpdated: function() {
-            
-          },
-          updated: function() {
-            
-          },
-          methods: {
-              checkBadge: function (isValue) {
-                  if(isValue) {
-                      return "badge-beige";
-                  } else {
-                      return "badge-soon";
-                  }
-              },
-              languageChange: function (lanName, index) {
-                // console.log(lanName);
-                this.checkIndex = index;
-                this.lanName = lanName
-                if(lanName == '繁體中文'){
-                  this.locale = 'tw'
-                  this.cssLocal = ''
-                }else if (lanName == '简体中文'){
-                  this.locale = 'cn'
-                  this.cssLocal = ''
-                }else if (lanName == 'English'){
-                  this.locale = 'en'
-                  this.cssLocal = 'en_'
-                }else if (lanName == 'Tiếng Việt'){
-                  this.locale = 'vn'
-                  this.cssLocal = 'vn_'
+          languageChange: function (lanName, index) {
+            // console.log(lanName);
+            this.checkIndex = index;
+            this.lanName = lanName
+            if (lanName == '繁體中文') {
+              this.locale = 'tw'
+              this.cssLocal = ''
+            } else if (lanName == '简体中文') {
+              this.locale = 'cn'
+              this.cssLocal = ''
+            } else if (lanName == 'English') {
+              this.locale = 'en'
+              this.cssLocal = 'en_'
+            } else if (lanName == 'Tiếng Việt') {
+              this.locale = 'vn'
+              this.cssLocal = 'vn_'
 
-                }
-                this.$i18n.locale = this.locale;
-                localStorage.setItem("locale", this.locale);
-        
-              },
-              changeIcon: function() {
-                this.menuView = !this.menuView;
-                
-                if (this.menuTrigger) {
-                  this.menuTrigger = false
-                  this.menuImg = "./img/icon/Menu.png"
-                  this.logoStyle.display = ''
-                }else{
-                  this.menuTrigger = true
-                  this.menuImg = "./img/icon/Close.png"
-                  this.logoStyle.display = 'none'
-                }
-                
-                
-              },
-              qaStyleClick: function(index){
-                if(index == '0'){
-                  this.checkQAIndex0
-                }
-                if(this.qaCheck){
-                  this.qaStyle.boxShadow = ''
-                  this.qaStyle.transition = ''
-                  this.qaStyle.active = ''
-                  this.qaCheck = false
-                }else{
-                  this.qaStyle.active = 'card-active'
-                  this.qaCheck = true
-                }
-                
-              },
-              iconHover: function(iconType, iconName){
-                let newName = iconName + '-hover'
-                iconType.src = iconType.src.replace(iconName, newName);
-              },
-              iconLeave: function(iconType, iconName){
-                let name = iconName + '-hover'
-                iconType.src = iconType.src.replace(name, iconName);
-              },
-              iconClick: function(iconType, iconName){
-                console.log(iconType)
-                console.log(iconName)
-              },
-              musicArrowBtn: function() {
-                $(".music-container").toggleClass("active");
-                $(".music-message").toggleClass("show");
-                $(".volume").removeClass("active");
-		            $(".arrow-img").toggleClass("rotate");
-              },
-              playMusic: function() {
-                $("#music").toggleClass("play");
-                var play = $('#music').hasClass('play');
-                if (play) {
-                  this.musicBtn = this.musicBtn.replace("start", "pause")
-                  $('#audio').get(0).play();
-                  this.handleProgress();
-                } else {
-                  this.musicBtn = this.musicBtn.replace("pause", "start")
-                  $('#audio').get(0).pause();
-                }
-              },
-              handleProgress: function() {
-                setInterval(() => {
-                  var duration = $('#audio').get(0).duration;
-                  var currentTime = $('#audio')[0].currentTime;
-                  const progressBar = $('#progress');
-                  const progressPercent = (currentTime / duration) * 100;
+            }
+            this.$i18n.locale = this.locale;
+            localStorage.setItem("locale", this.locale);
 
-                  //currentTime目前播放時間去與影片長度duration轉換成百分比，即可得到目前播放時間的百分比
-                  progressBar.css('width', `${progressPercent}%`);
-                  currentTime = this.secondToDate(currentTime)
-                  $("#musicCurrentTime").html(currentTime);
-                }, "100")
-                
-              },
-              secondToDate: function(result) {
-                  //轉換秒到mm:ss 
-                  var hh = Math.floor(result / 3600);
-                  var mm = Math.floor((result / 60 % 60));
-                  var ss = Math.floor((result % 60));
-                  // hh = hh < 10 ? "0" + hh : hh;
-                  // mm = mm < 10 ? "0" + mm : mm;
-                  ss = ss < 10 ? "0" + ss : ss;
-                  return result = mm + ":" + ss;
-              },
-              getMusicFullTime: function() {
-                // 處理音樂全部時間
-                var duration = $('#audio').get(0).duration;
-                var musicFullTime = this.secondToDate(duration)
-                $("#musicFullTime").html("/ " + musicFullTime);
-              },
-              handleMusicCurrentTime: function() {
-                setInterval(() => {
-                  var currentTime = $('#audio')[0].currentTime;
-                  currentTime = this.secondToDate(currentTime)
-                $("#musicCurrentTime").html(currentTime);
-                }, "100")
-              },
-              displayVolume: function() {
-                $(".volume").toggleClass("active");
-              },
-              volumeRangeChange: function(e) {
-                var value = parseInt(e.path[0].value) / 100;
-                $("#volume").attr("value", e.path[0].value)
-                $('#audio')[0].volume = value;
-                this.volumeValue = value;
-                if (value) {
-                  this.changeVolumeImg(["mute", "volume"])
-                } else {
-                  this.changeVolumeImg(["volume", "mute"])
-                }
-              },
-              toggleMute: function(e) {
-                if ($('#audio')[0].volume) {
-                  $("#volume").attr("value", "0")
-                  $('#audio')[0].volume = 0;
-                  this.changeVolumeImg(["volume", "mute"])
-                } else {
-                  $("#volume").attr("value", this.volumeValue * 100)
-                  $('#audio')[0].volume = this.volumeValue;
-                  if ($('#audio')[0].volume == 0 && "mute" in $(".volume-img")[0].src) {
-                    return
-                  }
-                  this.changeVolumeImg(["mute", "volume"])
-                }
-                console.log($('#audio')[0].volume)
-              },
-              changeVolumeImg: function(replaceStr) {
-                var volumeImg = $(".volume-img");
-                for (img in volumeImg) {
-                  if (volumeImg[img].src == undefined) {
-                    continue;
-                  }
-                  var src = volumeImg[img].src
-                  volumeImg[img].src = src.replace(replaceStr[0], replaceStr[1])
-                }
-              },
           },
-          components: {
-              
-          }
+          changeIcon: function () {
+            this.menuView = !this.menuView;
+
+            if (this.menuTrigger) {
+              this.menuTrigger = false
+              this.menuImg = "./img/icon/Menu.png"
+              this.logoStyle.display = ''
+            } else {
+              this.menuTrigger = true
+              this.menuImg = "./img/icon/Close.png"
+              this.logoStyle.display = 'none'
+            }
+
+
+          },
+          qaStyleClick: function (index) {
+            if (index == '0') {
+              this.checkQAIndex0
+            }
+            if (this.qaCheck) {
+              this.qaStyle.boxShadow = ''
+              this.qaStyle.transition = ''
+              this.qaStyle.active = ''
+              this.qaCheck = false
+            } else {
+              this.qaStyle.active = 'card-active'
+              this.qaCheck = true
+            }
+
+          },
+          iconHover: function (iconType, iconName) {
+            let newName = iconName + '-hover'
+            iconType.src = iconType.src.replace(iconName, newName);
+          },
+          iconLeave: function (iconType, iconName) {
+            let name = iconName + '-hover'
+            iconType.src = iconType.src.replace(name, iconName);
+          },
+          iconClick: function (iconType, iconName) {
+            console.log(iconType)
+            console.log(iconName)
+          },
+          musicArrowBtn: function () {
+            $(".music-container").toggleClass("active");
+            $(".music-message").toggleClass("show");
+            $(".volume").removeClass("active");
+            $(".arrow-img").toggleClass("rotate");
+          },
+          playMusic: function () {
+            $("#music").toggleClass("play");
+            var play = $('#music').hasClass('play');
+            if (play) {
+              this.musicBtn = this.musicBtn.replace("start", "pause")
+              $('#audio').get(0).play();
+              this.handleProgress();
+            } else {
+              this.musicBtn = this.musicBtn.replace("pause", "start")
+              $('#audio').get(0).pause();
+            }
+          },
+          handleProgress: function () {
+            setInterval(() => {
+              var duration = $('#audio').get(0).duration;
+              var currentTime = $('#audio')[0].currentTime;
+              const progressBar = $('#progress');
+              const progressPercent = (currentTime / duration) * 100;
+
+              //currentTime目前播放時間去與影片長度duration轉換成百分比，即可得到目前播放時間的百分比
+              progressBar.css('width', `${progressPercent}%`);
+              currentTime = this.secondToDate(currentTime)
+              $("#musicCurrentTime").html(currentTime);
+            }, "100")
+
+          },
+          secondToDate: function (result) {
+            //轉換秒到mm:ss 
+            var hh = Math.floor(result / 3600);
+            var mm = Math.floor((result / 60 % 60));
+            var ss = Math.floor((result % 60));
+            // hh = hh < 10 ? "0" + hh : hh;
+            // mm = mm < 10 ? "0" + mm : mm;
+            ss = ss < 10 ? "0" + ss : ss;
+            return result = mm + ":" + ss;
+          },
+          getMusicFullTime: function () {
+            // 處理音樂全部時間
+            var duration = $('#audio').get(0).duration;
+            var musicFullTime = this.secondToDate(duration)
+            $("#musicFullTime").html("/ " + musicFullTime);
+          },
+          handleMusicCurrentTime: function () {
+            setInterval(() => {
+              var currentTime = $('#audio')[0].currentTime;
+              currentTime = this.secondToDate(currentTime)
+              $("#musicCurrentTime").html(currentTime);
+            }, "100")
+          },
+          displayVolume: function () {
+            $(".volume").toggleClass("active");
+          },
+          volumeRangeChange: function (e) {
+            var value = parseInt(e.path[0].value) / 100;
+            $("#volume").attr("value", e.path[0].value)
+            $('#audio')[0].volume = value;
+            this.volumeValue = value;
+            if (value) {
+              this.changeVolumeImg(["mute", "volume"])
+            } else {
+              this.changeVolumeImg(["volume", "mute"])
+            }
+          },
+          toggleMute: function (e) {
+            if ($('#audio')[0].volume) {
+              $("#volume").attr("value", "0")
+              $('#audio')[0].volume = 0;
+              this.changeVolumeImg(["volume", "mute"])
+            } else {
+              $("#volume").attr("value", this.volumeValue * 100)
+              $('#audio')[0].volume = this.volumeValue;
+              if ($('#audio')[0].volume == 0 && "mute" in $(".volume-img")[0].src) {
+                return
+              }
+              this.changeVolumeImg(["mute", "volume"])
+            }
+            console.log($('#audio')[0].volume)
+          },
+          changeVolumeImg: function (replaceStr) {
+            var volumeImg = $(".volume-img");
+            for (img in volumeImg) {
+              if (volumeImg[img].src == undefined) {
+                continue;
+              }
+              var src = volumeImg[img].src
+              volumeImg[img].src = src.replace(replaceStr[0], replaceStr[1])
+            }
+          },
+        },
+        components: {
+
+        }
       });
-  });<!-- End-Document_Ready -->
+    });<!-- End-Document_Ready -->
   </script>
-  
+
 </body>
 
 </html>
